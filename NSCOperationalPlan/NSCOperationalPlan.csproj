@@ -506,8 +506,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\Debug\Reports\" />
+    <Folder Include="bin\Release\Reports\" />
     <Folder Include="Properties\DataSources\" />
-    <Folder Include="Reports\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

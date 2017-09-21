@@ -132,8 +132,9 @@ namespace NSCOperationalPlan
                 }
 
                 //string exeFolder = Path.GetDirectoryName(Application.ExecutablePath);
+                
                 OPGlobals.reportParth = Path.Combine(exeFolder, @"Reports\");
-               
+                
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 frmOperationPlan frmMDI = new frmOperationPlan();
