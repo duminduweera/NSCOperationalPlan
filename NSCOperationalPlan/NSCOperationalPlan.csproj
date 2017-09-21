@@ -400,6 +400,70 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Report2.rdlc" />
+    <None Include="bin\Debug\Reports\gphActionByStatus.rdlc" />
+    <None Include="bin\Debug\Reports\gphActionByTheme.rdlc" />
+    <None Include="bin\Debug\Reports\gphBudgetSummary.rdlc" />
+    <None Include="bin\Debug\Reports\gphBudgetSummaryDepartment.rdlc" />
+    <None Include="bin\Debug\Reports\rpt1.rdlc" />
+    <None Include="bin\Debug\Reports\rpt2.rdlc" />
+    <None Include="bin\Debug\Reports\rpt3.rdlc" />
+    <None Include="bin\Debug\Reports\rptAction.rdlc" />
+    <None Include="bin\Debug\Reports\rptCompletedActionsByStrategy.rdlc" />
+    <None Include="bin\Debug\Reports\rptCouncilSourcePlan.rdlc" />
+    <None Include="bin\Debug\Reports\rptCouncilSourcePlanORIGINAL.rdlc" />
+    <None Include="bin\Debug\Reports\rptcpw.rdlc" />
+    <None Include="bin\Debug\Reports\rptcpwqbr.rdlc" />
+    <None Include="bin\Debug\Reports\rptCPWServiceSummary.rdlc" />
+    <None Include="bin\Debug\Reports\rptCPWServiceWise.rdlc" />
+    <None Include="bin\Debug\Reports\rptcpw_progress.rdlc" />
+    <None Include="bin\Debug\Reports\rptcpw_progressCouncil.rdlc" />
+    <None Include="bin\Debug\Reports\rptDashBoard.rdlc" />
+    <None Include="bin\Debug\Reports\rptDashBoard001.rdlc" />
+    <None Include="bin\Debug\Reports\rptDashBoard002.rdlc" />
+    <None Include="bin\Debug\Reports\rptDashBoard003.rdlc" />
+    <None Include="bin\Debug\Reports\rptDashBoard004.rdlc" />
+    <None Include="bin\Debug\Reports\rptKPIProgress.rdlc" />
+    <None Include="bin\Debug\Reports\rptKPMProgressFull.rdlc" />
+    <None Include="bin\Debug\Reports\rptMonthlyProgress.rdlc" />
+    <None Include="bin\Debug\Reports\rptMonthlyProgress_forCouncil.rdlc" />
+    <None Include="bin\Debug\Reports\rptProgress_Status.rdlc" />
+    <None Include="bin\Debug\Reports\rptStatus.rdlc" />
+    <None Include="bin\Debug\Reports\rptStrategy.rdlc" />
+    <None Include="bin\Debug\Reports\rptStrategyObjective.rdlc" />
+    <None Include="bin\Debug\Reports\rptTheme.rdlc" />
+    <None Include="bin\Release\NSCOperationalPlan.exe.config" />
+    <None Include="bin\Release\NSCOperationalPlan.vshost.exe.config" />
+    <None Include="bin\Release\Reports\gphActionByStatus.rdlc" />
+    <None Include="bin\Release\Reports\gphActionByTheme.rdlc" />
+    <None Include="bin\Release\Reports\gphBudgetSummary.rdlc" />
+    <None Include="bin\Release\Reports\gphBudgetSummaryDepartment.rdlc" />
+    <None Include="bin\Release\Reports\rpt1.rdlc" />
+    <None Include="bin\Release\Reports\rpt2.rdlc" />
+    <None Include="bin\Release\Reports\rpt3.rdlc" />
+    <None Include="bin\Release\Reports\rptAction.rdlc" />
+    <None Include="bin\Release\Reports\rptCompletedActionsByStrategy.rdlc" />
+    <None Include="bin\Release\Reports\rptCouncilSourcePlan.rdlc" />
+    <None Include="bin\Release\Reports\rptCouncilSourcePlanORIGINAL.rdlc" />
+    <None Include="bin\Release\Reports\rptcpw.rdlc" />
+    <None Include="bin\Release\Reports\rptcpwqbr.rdlc" />
+    <None Include="bin\Release\Reports\rptCPWServiceSummary.rdlc" />
+    <None Include="bin\Release\Reports\rptCPWServiceWise.rdlc" />
+    <None Include="bin\Release\Reports\rptcpw_progress.rdlc" />
+    <None Include="bin\Release\Reports\rptcpw_progressCouncil.rdlc" />
+    <None Include="bin\Release\Reports\rptDashBoard.rdlc" />
+    <None Include="bin\Release\Reports\rptDashBoard001.rdlc" />
+    <None Include="bin\Release\Reports\rptDashBoard002.rdlc" />
+    <None Include="bin\Release\Reports\rptDashBoard003.rdlc" />
+    <None Include="bin\Release\Reports\rptDashBoard004.rdlc" />
+    <None Include="bin\Release\Reports\rptKPIProgress.rdlc" />
+    <None Include="bin\Release\Reports\rptKPMProgressFull.rdlc" />
+    <None Include="bin\Release\Reports\rptMonthlyProgress.rdlc" />
+    <None Include="bin\Release\Reports\rptMonthlyProgress_forCouncil.rdlc" />
+    <None Include="bin\Release\Reports\rptProgress_Status.rdlc" />
+    <None Include="bin\Release\Reports\rptStatus.rdlc" />
+    <None Include="bin\Release\Reports\rptStrategy.rdlc" />
+    <None Include="bin\Release\Reports\rptStrategyObjective.rdlc" />
+    <None Include="bin\Release\Reports\rptTheme.rdlc" />
     <None Include="nsc_operation_plan_17_to_21DataSet.xsc">
       <DependentUpon>nsc_operation_plan_17_to_21DataSet.xsd</DependentUpon>
     </None>
@@ -439,6 +503,9 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\Reports\logo_only.png" />
+    <Content Include="bin\Release\NSCOperationalPlan.vshost.exe" />
+    <Content Include="bin\Release\Reports\logo_only.png" />
     <Content Include="edit.ico" />
     <Content Include="External References\DataGridviewCalendarColumn.dll" />
     <Content Include="nsc.ico" />
@@ -506,8 +573,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="bin\Debug\Reports\" />
-    <Folder Include="bin\Release\Reports\" />
     <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
