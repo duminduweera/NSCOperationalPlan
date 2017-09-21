@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="actionreport" targetNamespace="http://tempuri.org/actionreport.xsd" xmlns:mstns="http://tempuri.org/actionreport.xsd" xmlns="http://tempuri.org/actionreport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="nsc_operation_planConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="nsc_operation_planConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.NSCOperationalPlan.Properties.Settings.GlobalReference.Default.nsc_operation_planConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="action_view_02TableAdapter" GeneratorDataComponentClassName="action_view_02TableAdapter" Name="action_view_02" UserDataComponentName="action_view_02TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="nsc_operation_planConnectionString (Settings)" DbObjectName="nsc_operation_plan.action_view_02" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `theme_id`, `theme_short`, `theme_description`, `theme_color_R`, `theme_color_G`, `theme_color_B`, `strategy_id`, `strategy`, `action_id`, `action_rank`, `action_description`, `action_partner_org`, `performance_indicator_id`, `description`, `manager_id`, `manager_description`, `manager_name`, `director_id`, `director_name` FROM `nsc_operation_plan`.`action_view_02`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="theme_id" DataSetColumn="theme_id" />
+              <Mapping SourceColumn="theme_short" DataSetColumn="theme_short" />
+              <Mapping SourceColumn="theme_description" DataSetColumn="theme_description" />
+              <Mapping SourceColumn="theme_color_R" DataSetColumn="theme_color_R" />
+              <Mapping SourceColumn="theme_color_G" DataSetColumn="theme_color_G" />
+              <Mapping SourceColumn="theme_color_B" DataSetColumn="theme_color_B" />
+              <Mapping SourceColumn="strategy_id" DataSetColumn="strategy_id" />
+              <Mapping SourceColumn="strategy" DataSetColumn="strategy" />
+              <Mapping SourceColumn="action_id" DataSetColumn="action_id" />
+              <Mapping SourceColumn="action_rank" DataSetColumn="action_rank" />
+              <Mapping SourceColumn="action_description" DataSetColumn="action_description" />
+              <Mapping SourceColumn="action_partner_org" DataSetColumn="action_partner_org" />
+              <Mapping SourceColumn="performance_indicator_id" DataSetColumn="performance_indicator_id" />
+              <Mapping SourceColumn="description" DataSetColumn="description" />
+              <Mapping SourceColumn="manager_id" DataSetColumn="manager_id" />
+              <Mapping SourceColumn="manager_description" DataSetColumn="manager_description" />
+              <Mapping SourceColumn="manager_name" DataSetColumn="manager_name" />
+              <Mapping SourceColumn="director_id" DataSetColumn="director_id" />
+              <Mapping SourceColumn="director_name" DataSetColumn="director_name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="actionreport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="actionreport" msprop:Generator_UserDSName="actionreport">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="action_view_02" msprop:Generator_TableClassName="action_view_02DataTable" msprop:Generator_TableVarName="tableaction_view_02" msprop:Generator_TablePropName="action_view_02" msprop:Generator_RowDeletingName="action_view_02RowDeleting" msprop:Generator_RowChangingName="action_view_02RowChanging" msprop:Generator_RowEvHandlerName="action_view_02RowChangeEventHandler" msprop:Generator_RowDeletedName="action_view_02RowDeleted" msprop:Generator_UserTableName="action_view_02" msprop:Generator_RowChangedName="action_view_02RowChanged" msprop:Generator_RowEvArgName="action_view_02RowChangeEvent" msprop:Generator_RowClassName="action_view_02Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="theme_id" msprop:Generator_ColumnVarNameInTable="columntheme_id" msprop:Generator_ColumnPropNameInRow="theme_id" msprop:Generator_ColumnPropNameInTable="theme_idColumn" msprop:Generator_UserColumnName="theme_id">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="theme_short" msprop:Generator_ColumnVarNameInTable="columntheme_short" msprop:Generator_ColumnPropNameInRow="theme_short" msprop:Generator_ColumnPropNameInTable="theme_shortColumn" msprop:Generator_UserColumnName="theme_short" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="theme_description" msprop:Generator_ColumnVarNameInTable="columntheme_description" msprop:Generator_ColumnPropNameInRow="theme_description" msprop:Generator_ColumnPropNameInTable="theme_descriptionColumn" msprop:Generator_UserColumnName="theme_description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="theme_color_R" msprop:Generator_ColumnVarNameInTable="columntheme_color_R" msprop:Generator_ColumnPropNameInRow="theme_color_R" msprop:Generator_ColumnPropNameInTable="theme_color_RColumn" msprop:Generator_UserColumnName="theme_color_R" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="theme_color_G" msprop:Generator_ColumnVarNameInTable="columntheme_color_G" msprop:Generator_ColumnPropNameInRow="theme_color_G" msprop:Generator_ColumnPropNameInTable="theme_color_GColumn" msprop:Generator_UserColumnName="theme_color_G" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="theme_color_B" msprop:Generator_ColumnVarNameInTable="columntheme_color_B" msprop:Generator_ColumnPropNameInRow="theme_color_B" msprop:Generator_ColumnPropNameInTable="theme_color_BColumn" msprop:Generator_UserColumnName="theme_color_B" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="strategy_id" msprop:Generator_ColumnVarNameInTable="columnstrategy_id" msprop:Generator_ColumnPropNameInRow="strategy_id" msprop:Generator_ColumnPropNameInTable="strategy_idColumn" msprop:Generator_UserColumnName="strategy_id">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="strategy" msprop:Generator_ColumnVarNameInTable="columnstrategy" msprop:Generator_ColumnPropNameInRow="strategy" msprop:Generator_ColumnPropNameInTable="strategyColumn" msprop:Generator_UserColumnName="strategy" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5592405" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="action_id" msprop:Generator_ColumnVarNameInTable="columnaction_id" msprop:Generator_ColumnPropNameInRow="action_id" msprop:Generator_ColumnPropNameInTable="action_idColumn" msprop:Generator_UserColumnName="action_id">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="action_rank" msprop:Generator_ColumnVarNameInTable="columnaction_rank" msprop:Generator_ColumnPropNameInRow="action_rank" msprop:Generator_ColumnPropNameInTable="action_rankColumn" msprop:Generator_UserColumnName="action_rank" type="xs:byte" minOccurs="0" />
+              <xs:element name="action_description" msprop:Generator_ColumnVarNameInTable="columnaction_description" msprop:Generator_ColumnPropNameInRow="action_description" msprop:Generator_ColumnPropNameInTable="action_descriptionColumn" msprop:Generator_UserColumnName="action_description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5592405" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="action_partner_org" msprop:Generator_ColumnVarNameInTable="columnaction_partner_org" msprop:Generator_ColumnPropNameInRow="action_partner_org" msprop:Generator_ColumnPropNameInTable="action_partner_orgColumn" msprop:Generator_UserColumnName="action_partner_org" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="performance_indicator_id" msprop:Generator_ColumnVarNameInTable="columnperformance_indicator_id" msprop:Generator_ColumnPropNameInRow="performance_indicator_id" msprop:Generator_ColumnPropNameInTable="performance_indicator_idColumn" msprop:Generator_UserColumnName="performance_indicator_id" type="xs:unsignedByte" />
+              <xs:element name="description" msprop:Generator_ColumnVarNameInTable="columndescription" msprop:Generator_ColumnPropNameInRow="description" msprop:Generator_ColumnPropNameInTable="descriptionColumn" msprop:Generator_UserColumnName="description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5592405" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="manager_id" msprop:Generator_ColumnVarNameInTable="columnmanager_id" msprop:Generator_ColumnPropNameInRow="manager_id" msprop:Generator_ColumnPropNameInTable="manager_idColumn" msprop:Generator_UserColumnName="manager_id">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="manager_description" msprop:Generator_ColumnVarNameInTable="columnmanager_description" msprop:Generator_ColumnPropNameInRow="manager_description" msprop:Generator_ColumnPropNameInTable="manager_descriptionColumn" msprop:Generator_UserColumnName="manager_description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="manager_name" msprop:Generator_ColumnVarNameInTable="columnmanager_name" msprop:Generator_ColumnPropNameInRow="manager_name" msprop:Generator_ColumnPropNameInTable="manager_nameColumn" msprop:Generator_UserColumnName="manager_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="director_id" msprop:Generator_ColumnVarNameInTable="columndirector_id" msprop:Generator_ColumnPropNameInRow="director_id" msprop:Generator_ColumnPropNameInTable="director_idColumn" msprop:Generator_UserColumnName="director_id" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="director_name" msprop:Generator_ColumnVarNameInTable="columndirector_name" msprop:Generator_ColumnPropNameInRow="director_name" msprop:Generator_ColumnPropNameInTable="director_nameColumn" msprop:Generator_UserColumnName="director_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:action_view_02" />
+      <xs:field xpath="mstns:theme_id" />
+      <xs:field xpath="mstns:strategy_id" />
+      <xs:field xpath="mstns:action_id" />
+      <xs:field xpath="mstns:performance_indicator_id" />
+      <xs:field xpath="mstns:manager_id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
