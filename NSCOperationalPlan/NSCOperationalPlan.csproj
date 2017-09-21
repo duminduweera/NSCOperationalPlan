@@ -400,6 +400,125 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Reports\Backup\gphActionByStatus.rdlc" />
+    <EmbeddedResource Include="Reports\Backup\gphActionByTheme.rdlc" />
+    <EmbeddedResource Include="Reports\Backup\gphBudgetSummary.rdlc" />
+    <EmbeddedResource Include="Reports\Backup\gphBudgetSummaryDepartment.rdlc" />
+    <EmbeddedResource Include="Reports\Backup\OldReport1.rdlc" />
+    <EmbeddedResource Include="Reports\Backup\OldReport3.rdlc" />
+    <EmbeddedResource Include="Reports\Backup\rptAction.rdlc" />
+    <EmbeddedResource Include="Reports\Backup\rptCompletedActionsByStrategy.rdlc" />
+    <EmbeddedResource Include="Reports\Backup\rptcpw - Copy.rdlc" />
+    <EmbeddedResource Include="Reports\Backup\rptcpw.rdlc" />
+    <EmbeddedResource Include="Reports\Backup\rptcpwqbr.rdlc" />
+    <EmbeddedResource Include="Reports\Backup\rptCPWServiceSummary.rdlc" />
+    <EmbeddedResource Include="Reports\Backup\rptCPWServiceSummary_old.rdlc" />
+    <EmbeddedResource Include="Reports\Backup\rptcpw_progress.rdlc" />
+    <EmbeddedResource Include="Reports\Backup\rptDashBoard.rdlc" />
+    <EmbeddedResource Include="Reports\Backup\rptDashBoard001.rdlc" />
+    <EmbeddedResource Include="Reports\Backup\rptDashBoard002.rdlc" />
+    <EmbeddedResource Include="Reports\Backup\rptDashBoard003.rdlc" />
+    <EmbeddedResource Include="Reports\Backup\rptDashBoard004.rdlc" />
+    <EmbeddedResource Include="Reports\Backup\rptMonthlyProgress - Copy.rdlc" />
+    <EmbeddedResource Include="Reports\Backup\rptMonthlyProgress.rdlc" />
+    <EmbeddedResource Include="Reports\Backup\rptProgress_Status.rdlc" />
+    <EmbeddedResource Include="Reports\Backup\rptStatus.rdlc" />
+    <EmbeddedResource Include="Reports\Backup\rptStrategy.rdlc" />
+    <EmbeddedResource Include="Reports\Backup\rptStrategyObjective.rdlc" />
+    <EmbeddedResource Include="Reports\Backup\rptTheme.rdlc" />
+    <EmbeddedResource Include="Reports\gphActionByStatus.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\gphActionByTheme.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\gphBudgetSummary.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\gphBudgetSummaryDepartment.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt1.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt2.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt3.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptAction.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptCompletedActionsByStrategy.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptCouncilSourcePlan.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptCouncilSourcePlanORIGINAL.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptcpw.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptcpwqbr.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptCPWServiceSummary.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptCPWServiceWise.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptcpw_progress.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptcpw_progressCouncil.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptDashBoard.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptDashBoard001.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptDashBoard002.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptDashBoard003.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptDashBoard004.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptKPIProgress.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptKPMProgressFull.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptMonthlyProgress.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptMonthlyProgress_forCouncil.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptProgress_Status.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptStatus.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptStrategy.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptStrategyObjective.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptTheme.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="nsc_operation_plan_17_to_21DataSet.xsc">
       <DependentUpon>nsc_operation_plan_17_to_21DataSet.xsd</DependentUpon>
     </None>
@@ -443,6 +562,7 @@
     <Content Include="External References\DataGridviewCalendarColumn.dll" />
     <Content Include="nsc.ico" />
     <Content Include="op.ico" />
+    <Content Include="Reports\logo_only.png" />
     <None Include="Resources\login02_32.png" />
     <None Include="Resources\login01_32.png" />
     <None Include="Resources\restore_32.png" />
