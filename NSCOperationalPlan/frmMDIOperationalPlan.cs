@@ -480,6 +480,20 @@ namespace NSCOperationalPlan
             ArrangeForm(frmSP);
             frmSP.ShowDialog();
         }
+
+        private void tsStrategyMeasure_Click(object sender, EventArgs e)
+        {
+            frmStrategyMeasuresMonthly frmStraMeasureMonthly = new frmStrategyMeasuresMonthly();
+            ArrangeForm(frmStraMeasureMonthly);
+            frmStraMeasureMonthly.ShowDialog();
+        }
+
+        private void importSMeasuresFromExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmImportStartegyMeasuresfromExcel frmImportSMeasures = new frmImportStartegyMeasuresfromExcel();
+            ArrangeForm(frmImportSMeasures);
+            frmImportSMeasures.ShowDialog();
+        }
     }
 
 }
