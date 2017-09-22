@@ -86,8 +86,8 @@ namespace NSCOperationalPlan
                 if (AD_INTERGRATE)
                 {
                     //NSCUtils.ADUser u = new NSCUtils.ADUser("farrego");
-                    //NSCUtils.ADUser u = new NSCUtils.ADUser("mccleti");
-                    NSCUtils.ADUser u = new ADUser();
+                    NSCUtils.ADUser u = new NSCUtils.ADUser("masonli");
+                   //NSCUtils.ADUser u = new ADUser();
                     if (string.IsNullOrEmpty(u.UserName))
                     {
                         throw new Exception("Sorry, You don't have enough permission to run this Program");
@@ -157,7 +157,8 @@ namespace NSCOperationalPlan
             if (aduser.LoginName.Equals("mccleti", StringComparison.OrdinalIgnoreCase)
                 || aduser.LoginName.Equals("ratlesa", StringComparison.OrdinalIgnoreCase)
                 || aduser.LoginName.Equals("perersu", StringComparison.OrdinalIgnoreCase)
-                || aduser.LoginName.Equals("toddste", StringComparison.OrdinalIgnoreCase))
+                || aduser.LoginName.Equals("toddste", StringComparison.OrdinalIgnoreCase)
+                || aduser.LoginName.Equals("weeradu", StringComparison.OrdinalIgnoreCase))
             //if (aduser.UserName.Equals("mccleti", StringComparison.InvariantCultureIgnoreCase)
             //    || aduser.UserName.Equals("ratlesa", StringComparison.InvariantCultureIgnoreCase)
             //    || aduser.Permission == UserRights.Administrator)
@@ -168,6 +169,9 @@ namespace NSCOperationalPlan
             {
                 OPGlobals.CapitalWorksEnabled = Convert.ToBoolean(Convert.ToInt32(tb.Rows[0][0].ToString()));
             }
+           
+
+
         }
 
         public static bool OPLogin(string username, string password)
@@ -212,6 +216,9 @@ namespace NSCOperationalPlan
 
                 SetMenus(user);
                 setCapitalWorksEnabled(user);
+                #if DEBUG
+                OPGlobals.CapitalWorksEnabled = true;
+                #endif
 
                 if (usertype == "P")
                 {
