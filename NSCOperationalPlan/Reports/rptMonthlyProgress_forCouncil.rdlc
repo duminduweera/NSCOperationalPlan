@@ -204,6 +204,7 @@
                                     <FontFamily>Calibri</FontFamily>
                                     <FontSize>14pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -224,6 +225,7 @@
                           </Style>
                         </Textbox>
                         <ColSpan>6</ColSpan>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell />
@@ -238,14 +240,14 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="sub_department1">
+                        <Textbox Name="service_plan">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!sub_department.Value</Value>
+                                  <Value>=Fields!service_plan.Value</Value>
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
                                     <FontSize>11pt</FontSize>
@@ -258,7 +260,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>sub_department1</rd:DefaultName>
+                          <rd:DefaultName>service_plan</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -953,7 +955,7 @@
                     <TablixMember>
                       <Group Name="manager_id">
                         <GroupExpressions>
-                          <GroupExpression>=Fields!manager_id.Value</GroupExpression>
+                          <GroupExpression>=Fields!service_plan.Value</GroupExpression>
                         </GroupExpressions>
                         <PageBreak>
                           <BreakLocation>Between</BreakLocation>

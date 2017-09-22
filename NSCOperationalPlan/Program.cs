@@ -86,8 +86,8 @@ namespace NSCOperationalPlan
                 if (AD_INTERGRATE)
                 {
                     //NSCUtils.ADUser u = new NSCUtils.ADUser("farrego");
-                    //NSCUtils.ADUser u = new NSCUtils.ADUser("mccleti");
-                    NSCUtils.ADUser u = new ADUser();
+                    NSCUtils.ADUser u = new NSCUtils.ADUser("weeradu");
+                    //NSCUtils.ADUser u = new ADUser();
                     if (string.IsNullOrEmpty(u.UserName))
                     {
                         throw new Exception("Sorry, You don't have enough permission to run this Program");
@@ -212,6 +212,12 @@ namespace NSCOperationalPlan
 
                 SetMenus(user);
                 setCapitalWorksEnabled(user);
+
+#if DEBUG
+                OPGlobals.CapitalWorksEnabled = true;
+
+#endif
+
 
                 if (usertype == "P")
                 {
