@@ -190,6 +190,12 @@
     <Compile Include="frmImportCPWfromExcel.Designer.cs">
       <DependentUpon>frmImportCPWfromExcel.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmImportStartegyMeasuresfromExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImportStartegyMeasuresfromExcel.Designer.cs">
+      <DependentUpon>frmImportStartegyMeasuresfromExcel.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmKPI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +280,12 @@
     <Compile Include="frmStrategy.Designer.cs">
       <DependentUpon>frmStrategy.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmStrategyMeasuresMonthly.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStrategyMeasuresMonthly.Designer.cs">
+      <DependentUpon>frmStrategyMeasuresMonthly.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmStrategyObjective.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -341,6 +353,9 @@
     <EmbeddedResource Include="frmImportCPWfromExcel.resx">
       <DependentUpon>frmImportCPWfromExcel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmImportStartegyMeasuresfromExcel.resx">
+      <DependentUpon>frmImportStartegyMeasuresfromExcel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmKPI.resx">
       <DependentUpon>frmKPI.cs</DependentUpon>
     </EmbeddedResource>
@@ -383,6 +398,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmStrategy.resx">
       <DependentUpon>frmStrategy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStrategyMeasuresMonthly.resx">
+      <DependentUpon>frmStrategyMeasuresMonthly.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStrategyObjective.resx">
       <DependentUpon>frmStrategyObjective.cs</DependentUpon>

@@ -149,18 +149,13 @@ namespace NSCOperationalPlan
                         revised = Double.Parse(row["cpw_original_budget"].ToString(), NumberStyles.Currency);
                     }
 
-                    if (projected==0)
-                    {
-                        projected = revised;
-                    }
-
                     dgv01.Rows.Add(new String[] {(dgv01.RowCount+1).ToString(),
                         row["cpw_id"].ToString(),
                         row["service_plan"].ToString(),
                         row["cpw_description"].ToString(),
                         string.Format("{0:$0,0.00}", revised),     //row["cpw_revised_budget"]),
                         string.Format("{0:$0,0.00}", string.IsNullOrEmpty(row["cpw_ytod"].ToString()) ? 0 : Double.Parse(row["cpw_ytod"].ToString(), NumberStyles.Currency)),
-                        string.Format("{0:$0,0.00}", projected),
+                        string.Format("{0:$0,0.00}", (projected==0) ? revised : projected),
                         string.IsNullOrEmpty(row["cpw_percentage"].ToString()) ? "" : row["cpw_percentage"].ToString(),
                         row["cpw_remark"].ToString(),
                         string.Format("{0:$0,0.00}", projected),
