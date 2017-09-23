@@ -537,6 +537,7 @@
     <EmbeddedResource Include="Reports\rptTheme.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <None Include="Imported Files\Stategy Measures.xlsx" />
     <None Include="nsc_operation_plan_17_to_21DataSet.xsc">
       <DependentUpon>nsc_operation_plan_17_to_21DataSet.xsd</DependentUpon>
     </None>
