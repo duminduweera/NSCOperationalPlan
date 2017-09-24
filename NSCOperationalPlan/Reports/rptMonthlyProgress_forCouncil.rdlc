@@ -188,7 +188,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.86458cm</Height>
+                  <Height>0.07938cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -225,7 +225,6 @@
                           </Style>
                         </Textbox>
                         <ColSpan>6</ColSpan>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell />
@@ -338,6 +337,7 @@
                           </Style>
                         </Textbox>
                         <ColSpan>2</ColSpan>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell />
@@ -1077,7 +1077,11 @@
                             </CellContents>
                           </TablixHeader>
                           <TablixMembers>
-                            <TablixMember />
+                            <TablixMember>
+                              <FixedData>true</FixedData>
+                              <KeepWithGroup>After</KeepWithGroup>
+                              <RepeatOnNewPage>true</RepeatOnNewPage>
+                            </TablixMember>
                           </TablixMembers>
                         </TablixMember>
                         <TablixMember>
@@ -1140,6 +1144,7 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
+            <RepeatColumnHeaders>true</RepeatColumnHeaders>
             <RepeatRowHeaders>true</RepeatRowHeaders>
             <FixedRowHeaders>true</FixedRowHeaders>
             <DataSetName>DataSet1</DataSetName>
@@ -1147,7 +1152,7 @@
               <BreakLocation>End</BreakLocation>
             </PageBreak>
             <Top>0.10583cm</Top>
-            <Height>2.66458cm</Height>
+            <Height>1.87938cm</Height>
             <Width>18.89342cm</Width>
             <Style>
               <Border>
@@ -1156,7 +1161,7 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>1.09071in</Height>
+        <Height>0.81988in</Height>
         <Style />
       </Body>
       <Width>7.43835in</Width>

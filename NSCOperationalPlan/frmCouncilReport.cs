@@ -159,11 +159,11 @@ namespace NSCOperationalPlan
                     case "3":
                         if (cboDirector.SelectedValue.ToString() != "-0-")  // && cboManager.SelectedValue.ToString() != "-0-")
                         {
-                            clsReports.PrintKPIProgress(cboOPYear.Text, (int)m, cboDirector.SelectedValue.ToString(), cboManager.SelectedValue.ToString());
+                            clsReports.PrintKPIProgressCouncil(cboOPYear.Text, (int)m, cboDirector.SelectedValue.ToString(), cboManager.SelectedValue.ToString());
                         }
                         else
                         {
-                            clsReports.PrintKPIProgress(cboOPYear.Text, (int)m);
+                            clsReports.PrintKPIProgressCouncil(cboOPYear.Text, (int)m);
                         }
                         break;
                 }

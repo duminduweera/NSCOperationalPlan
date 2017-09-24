@@ -457,6 +457,21 @@ namespace NSCOperationalPlan
 
         }
 
+        private static void PrintKPIProgressReportCouncil(string strsql)
+        {
+            frmPrint frmprint = new frmPrint();
+
+            Database db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
+            DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
+            DataTable tb = db.GetDataTable(conn, strsql);
+
+            frmprint.dataTable = tb;
+            frmprint.reportName = @"rptKPIProgress_Council.rdlc";
+
+            frmprint.Show();
+
+        }
+
         private static void PrintKPIProgressReportFull(string strsql)
         {
             frmPrint frmprint = new frmPrint();
@@ -487,6 +502,23 @@ namespace NSCOperationalPlan
             string strsql = KeyPerformanceIndex.GetMonthlyKPIProgressQuery(opYear, opMonth, directorID, managerId);
             PrintKPIProgressReport(strsql);
         }
+
+        public static void PrintKPIProgressCouncil(string opYear, int opMonth)
+        {
+            string strsql = KeyPerformanceIndex.GetMonthlyKPIProgressQuery(opYear, opMonth);
+            PrintKPIProgressReportCouncil(strsql);
+        }
+        public static void PrintKPIProgressCouncil(string opYear, int opMonth, string managerId)
+        {
+            string strsql = KeyPerformanceIndex.GetMonthlyKPIProgressQuery(opYear, opMonth, managerId);
+            PrintKPIProgressReportCouncil(strsql);
+        }
+        public static void PrintKPIProgressCouncil(string opYear, int opMonth, string directorID, string managerId)
+        {
+            string strsql = KeyPerformanceIndex.GetMonthlyKPIProgressQuery(opYear, opMonth, directorID, managerId);
+            PrintKPIProgressReportCouncil(strsql);
+        }
+
 
         public static void PrintKPIProgressFull(string opYear, int opMonth)
         {
