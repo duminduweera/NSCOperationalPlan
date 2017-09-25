@@ -212,8 +212,8 @@ namespace NSCOperationalPlan
             DataTable tb = db.GetDataTable(conn, query);
 
             frmprint.dataTable = tb;
-            frmprint.reportName = @"rptMonthlyProgress_forCouncil.rdlc";
-
+            //frmprint.reportName = @"rptMonthlyProgress_forCouncil.rdlc";
+            frmprint.reportName = @"Report1.rdlc";
             frmprint.Show();
 
         }

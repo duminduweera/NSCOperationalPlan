@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="OPGenericDataSet" targetNamespace="http://tempuri.org/OPGenericDataSet.xsd" xmlns:mstns="http://tempuri.org/OPGenericDataSet.xsd" xmlns="http://tempuri.org/OPGenericDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="OPGenericDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="OPGenericDataSet" msprop:Generator_UserDSName="OPGenericDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="KPMMonthlyProgress" msprop:Generator_TableClassName="KPMMonthlyProgressDataTable" msprop:Generator_TableVarName="tableKPMMonthlyProgress" msprop:Generator_TablePropName="KPMMonthlyProgress" msprop:Generator_RowDeletingName="KPMMonthlyProgressRowDeleting" msprop:Generator_RowChangingName="KPMMonthlyProgressRowChanging" msprop:Generator_RowEvHandlerName="KPMMonthlyProgressRowChangeEventHandler" msprop:Generator_RowDeletedName="KPMMonthlyProgressRowDeleted" msprop:Generator_UserTableName="KPMMonthlyProgress" msprop:Generator_RowChangedName="KPMMonthlyProgressRowChanged" msprop:Generator_RowEvArgName="KPMMonthlyProgressRowChangeEvent" msprop:Generator_RowClassName="KPMMonthlyProgressRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="director_id" msprop:Generator_ColumnVarNameInTable="columndirector_id" msprop:Generator_ColumnPropNameInRow="director_id" msprop:Generator_ColumnPropNameInTable="director_idColumn" msprop:Generator_UserColumnName="director_id" type="xs:string" minOccurs="0" />
+              <xs:element name="manager_id" msprop:Generator_ColumnVarNameInTable="columnmanager_id" msprop:Generator_ColumnPropNameInRow="manager_id" msprop:Generator_ColumnPropNameInTable="manager_idColumn" msprop:Generator_UserColumnName="manager_id" type="xs:string" minOccurs="0" />
+              <xs:element name="service_plan" msprop:Generator_ColumnVarNameInTable="columnservice_plan" msprop:Generator_ColumnPropNameInRow="service_plan" msprop:Generator_ColumnPropNameInTable="service_planColumn" msprop:Generator_UserColumnName="service_plan" type="xs:string" minOccurs="0" />
+              <xs:element name="action_id" msprop:Generator_ColumnVarNameInTable="columnaction_id" msprop:Generator_ColumnPropNameInRow="action_id" msprop:Generator_ColumnPropNameInTable="action_idColumn" msprop:Generator_UserColumnName="action_id" type="xs:string" minOccurs="0" />
+              <xs:element name="action_description" msprop:Generator_ColumnVarNameInTable="columnaction_description" msprop:Generator_ColumnPropNameInRow="action_description" msprop:Generator_ColumnPropNameInTable="action_descriptionColumn" msprop:Generator_UserColumnName="action_description" type="xs:string" minOccurs="0" />
+              <xs:element name="delivery_program_TargetDate" msprop:Generator_ColumnVarNameInTable="columndelivery_program_TargetDate" msprop:Generator_ColumnPropNameInRow="delivery_program_TargetDate" msprop:Generator_ColumnPropNameInTable="delivery_program_TargetDateColumn" msprop:Generator_UserColumnName="delivery_program_TargetDate" type="xs:string" minOccurs="0" />
+              <xs:element name="status_short" msprop:Generator_ColumnVarNameInTable="columnstatus_short" msprop:Generator_ColumnPropNameInRow="status_short" msprop:Generator_ColumnPropNameInTable="status_shortColumn" msprop:Generator_UserColumnName="status_short" type="xs:string" minOccurs="0" />
+              <xs:element name="progress_description" msprop:Generator_ColumnVarNameInTable="columnprogress_description" msprop:Generator_ColumnPropNameInRow="progress_description" msprop:Generator_ColumnPropNameInTable="progress_descriptionColumn" msprop:Generator_UserColumnName="progress_description" type="xs:string" minOccurs="0" />
+              <xs:element name="service_plan_id" msprop:Generator_ColumnVarNameInTable="columnservice_plan_id" msprop:Generator_ColumnPropNameInRow="service_plan_id" msprop:Generator_ColumnPropNameInTable="service_plan_idColumn" msprop:Generator_UserColumnName="service_plan_id" type="xs:string" minOccurs="0" />
+              <xs:element name="status_color" msprop:Generator_ColumnVarNameInTable="columnstatus_color" msprop:Generator_ColumnPropNameInRow="status_color" msprop:Generator_ColumnPropNameInTable="status_colorColumn" msprop:Generator_UserColumnName="status_color" type="xs:string" minOccurs="0" />
+              <xs:element name="progress_pecentage" msprop:Generator_ColumnVarNameInTable="columnprogress_pecentage" msprop:Generator_ColumnPropNameInRow="progress_pecentage" msprop:Generator_ColumnPropNameInTable="progress_pecentageColumn" msprop:Generator_UserColumnName="progress_pecentage" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

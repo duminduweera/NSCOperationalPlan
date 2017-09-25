@@ -307,13 +307,13 @@
     <Compile Include="Globals.cs" />
     <Compile Include="kpi.cs" />
     <Compile Include="MonthlyProgress.cs" />
-    <Compile Include="nsc_operation_plan_17_to_21DataSet.cs">
-      <DependentUpon>nsc_operation_plan_17_to_21DataSet.xsd</DependentUpon>
+    <Compile Include="OPGenericDataSet.cs">
+      <DependentUpon>OPGenericDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="nsc_operation_plan_17_to_21DataSet.Designer.cs">
+    <Compile Include="OPGenericDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>nsc_operation_plan_17_to_21DataSet.xsd</DependentUpon>
+      <DependentUpon>OPGenericDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -416,8 +416,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report1.rdlc" />
-    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report1.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Backup\gphActionByStatus.rdlc" />
     <EmbeddedResource Include="Reports\Backup\gphActionByTheme.rdlc" />
     <EmbeddedResource Include="Reports\Backup\gphBudgetSummary.rdlc" />
@@ -454,6 +455,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\gphBudgetSummaryDepartment.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Report1.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rpt1.rdlc">
@@ -538,16 +542,16 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <None Include="Imported Files\Stategy Measures.xlsx" />
-    <None Include="nsc_operation_plan_17_to_21DataSet.xsc">
-      <DependentUpon>nsc_operation_plan_17_to_21DataSet.xsd</DependentUpon>
+    <None Include="OPGenericDataSet.xsc">
+      <DependentUpon>OPGenericDataSet.xsd</DependentUpon>
     </None>
-    <None Include="nsc_operation_plan_17_to_21DataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>nsc_operation_plan_17_to_21DataSet.Designer.cs</LastGenOutput>
+    <None Include="OPGenericDataSet.xsd">
       <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OPGenericDataSet.Designer.cs</LastGenOutput>
     </None>
-    <None Include="nsc_operation_plan_17_to_21DataSet.xss">
-      <DependentUpon>nsc_operation_plan_17_to_21DataSet.xsd</DependentUpon>
+    <None Include="OPGenericDataSet.xss">
+      <DependentUpon>OPGenericDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
