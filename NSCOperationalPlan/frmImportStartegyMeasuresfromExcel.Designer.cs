@@ -47,6 +47,7 @@
             this.tsLoad = new System.Windows.Forms.ToolStripButton();
             this.tsSave = new System.Windows.Forms.ToolStripButton();
             this.dg1 = new System.Windows.Forms.DataGridView();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg1)).BeginInit();
@@ -59,7 +60,6 @@
             this.pb1.Size = new System.Drawing.Size(1387, 23);
             this.pb1.TabIndex = 67;
             this.pb1.Visible = false;
-            this.pb1.Click += new System.EventHandler(this.pb1_Click);
             // 
             // panel1
             // 
@@ -89,7 +89,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(196, 23);
             this.label11.TabIndex = 12;
-            this.label11.Text = "Information Services";
+            this.label11.Text = "SO1";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label12
@@ -100,7 +100,8 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(553, 23);
             this.label12.TabIndex = 11;
-            this.label12.Text = "1,400,000";
+            this.label12.Text = "Dedicated walking and cycling trails: Kilometres of dedicated walking and cycling" +
+    " trails.";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label13
@@ -111,9 +112,8 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(127, 23);
             this.label13.TabIndex = 10;
-            this.label13.Text = "1,400,000";
+            this.label13.Text = "1";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label15
             // 
@@ -123,7 +123,8 @@
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(438, 23);
             this.label15.TabIndex = 8;
-            this.label15.Text = "0300-9601-0000";
+            this.label15.Text = "1.1.1 Support and encourage health and wellbeing programs and services to improve" +
+    " resident lifestyles";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label8
@@ -177,7 +178,6 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Strategy ID and Description";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label5
             // 
@@ -239,8 +239,8 @@
             this.tsLoad.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsLoad.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsLoad.Name = "tsLoad";
-            this.tsLoad.Size = new System.Drawing.Size(36, 51);
-            this.tsLoad.Text = "New";
+            this.tsLoad.Size = new System.Drawing.Size(66, 51);
+            this.tsLoad.Text = "Load Excel";
             this.tsLoad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsLoad.Click += new System.EventHandler(this.tsLoad_Click);
             // 
@@ -262,6 +262,10 @@
             this.dg1.Name = "dg1";
             this.dg1.Size = new System.Drawing.Size(1387, 350);
             this.dg1.TabIndex = 68;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // frmImportStartegyMeasuresfromExcel
             // 
@@ -303,5 +307,6 @@
         private System.Windows.Forms.ToolStripButton tsSave;
         private System.Windows.Forms.DataGridView dg1;
         private System.Windows.Forms.ToolStripButton tsLoad;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
