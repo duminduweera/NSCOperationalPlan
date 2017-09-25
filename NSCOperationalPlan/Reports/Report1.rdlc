@@ -61,6 +61,7 @@
                       </Style>
                     </Textbox>
                     <ColSpan>6</ColSpan>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell />
@@ -667,7 +668,6 @@
                   <TablixMembers>
                     <TablixMember>
                       <FixedData>true</FixedData>
-                      <KeepWithGroup>After</KeepWithGroup>
                       <RepeatOnNewPage>true</RepeatOnNewPage>
                     </TablixMember>
                     <TablixMember>
@@ -697,7 +697,7 @@
     <Height>0.70866in</Height>
     <Style />
   </Body>
-  <Width>7.36868in</Width>
+  <Width>7.46243in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
