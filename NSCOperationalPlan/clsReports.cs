@@ -213,7 +213,7 @@ namespace NSCOperationalPlan
 
             frmprint.dataTable = tb;
             //frmprint.reportName = @"rptMonthlyProgress_forCouncil.rdlc";
-            frmprint.reportName = @"Report1.rdlc";
+            frmprint.reportName = @"rptMonthlyProgress_forCouncil.rdlc";
             frmprint.Show();
 
         }

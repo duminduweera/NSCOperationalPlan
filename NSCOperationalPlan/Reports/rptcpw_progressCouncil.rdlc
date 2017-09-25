@@ -587,7 +587,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!service_plan.Value</Value>
+                                  <Value>=Fields!service_plan.Value + " - 20" + left(First(Fields!cpw_year.Value, "DataSet1"),2) + "20" + right(First(Fields!cpw_year.Value, "DataSet1"),2) + " Capital Works Program"</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
                                     <FontSize>11pt</FontSize>
@@ -611,6 +611,7 @@
                           </Style>
                         </Textbox>
                         <ColSpan>6</ColSpan>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell />
@@ -2638,8 +2639,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Height>6.66229cm</Height>
-            <Width>18.95704cm</Width>
+            <Height>6.6623cm</Height>
+            <Width>18.95705cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2650,7 +2651,7 @@
         <Height>2.62295in</Height>
         <Style />
       </Body>
-      <Width>7.4634in</Width>
+      <Width>7.46341in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>

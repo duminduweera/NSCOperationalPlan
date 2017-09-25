@@ -307,6 +307,14 @@
     <Compile Include="Globals.cs" />
     <Compile Include="kpi.cs" />
     <Compile Include="MonthlyProgress.cs" />
+    <Compile Include="nsc_operation_plan_17_to_21DataSet1.cs">
+      <DependentUpon>nsc_operation_plan_17_to_21DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="nsc_operation_plan_17_to_21DataSet1.Designer.cs">
+      <DependentUpon>nsc_operation_plan_17_to_21DataSet1.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="OPGenericDataSet.cs">
       <DependentUpon>OPGenericDataSet.xsd</DependentUpon>
     </Compile>
@@ -457,7 +465,7 @@
     <EmbeddedResource Include="Reports\gphBudgetSummaryDepartment.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Report1.rdlc">
+    <EmbeddedResource Include="Reports\rptMonthlyProgress_forCouncil.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rpt1.rdlc">
@@ -526,9 +534,6 @@
     <EmbeddedResource Include="Reports\rptMonthlyProgress.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\rptMonthlyProgress_forCouncil.rdlc">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptProgress_Status.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -545,6 +550,16 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <None Include="Imported Files\Stategy Measures.xlsx" />
+    <None Include="nsc_operation_plan_17_to_21DataSet1.xsc">
+      <DependentUpon>nsc_operation_plan_17_to_21DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="nsc_operation_plan_17_to_21DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>nsc_operation_plan_17_to_21DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="nsc_operation_plan_17_to_21DataSet1.xss">
+      <DependentUpon>nsc_operation_plan_17_to_21DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="OPGenericDataSet.xsc">
       <DependentUpon>OPGenericDataSet.xsd</DependentUpon>
     </None>
