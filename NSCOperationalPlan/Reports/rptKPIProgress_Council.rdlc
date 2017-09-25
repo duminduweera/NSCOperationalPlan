@@ -351,7 +351,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -600,7 +599,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>0.07938cm</Size>
+                    <Size>3.33376cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox13">
                         <CanGrow>true</CanGrow>
@@ -639,7 +638,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>0.07938cm</Size>
+                        <Size>3.3073cm</Size>
                         <CellContents>
                           <Textbox Name="Textbox11">
                             <CanGrow>true</CanGrow>
@@ -678,7 +677,7 @@
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>0.07938cm</Size>
+                            <Size>5.37105cm</Size>
                             <CellContents>
                               <Textbox Name="Textbox9">
                                 <CanGrow>true</CanGrow>
@@ -724,7 +723,6 @@
                   <Visibility>
                     <Hidden>true</Hidden>
                   </Visibility>
-                  <KeepWithGroup>After</KeepWithGroup>
                 </TablixMember>
                 <TablixMember>
                   <Group Name="department">
@@ -738,7 +736,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>0.07938cm</Size>
+                    <Size>3.33376cm</Size>
                     <CellContents>
                       <Textbox Name="department">
                         <CanGrow>true</CanGrow>
@@ -788,7 +786,7 @@
                         </SortExpression>
                       </SortExpressions>
                       <TablixHeader>
-                        <Size>0.07938cm</Size>
+                        <Size>3.3073cm</Size>
                         <CellContents>
                           <Textbox Name="service_plan_id">
                             <CanGrow>true</CanGrow>
@@ -820,12 +818,13 @@
                               <PaddingBottom>2pt</PaddingBottom>
                             </Style>
                           </Textbox>
+                          <rd:Selected>true</rd:Selected>
                         </CellContents>
                       </TablixHeader>
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>0.07938cm</Size>
+                            <Size>5.37105cm</Size>
                             <CellContents>
                               <Textbox Name="Textbox6">
                                 <CanGrow>true</CanGrow>
@@ -859,7 +858,6 @@
                               </Textbox>
                             </CellContents>
                           </TablixHeader>
-                          <KeepWithGroup>After</KeepWithGroup>
                         </TablixMember>
                         <TablixMember>
                           <Group Name="kpm_id">
@@ -873,7 +871,7 @@
                             </SortExpression>
                           </SortExpressions>
                           <TablixHeader>
-                            <Size>0.07938cm</Size>
+                            <Size>5.37105cm</Size>
                             <CellContents>
                               <Textbox Name="kpm_id">
                                 <CanGrow>true</CanGrow>
@@ -911,12 +909,15 @@
                               <FixedData>true</FixedData>
                               <KeepWithGroup>After</KeepWithGroup>
                               <RepeatOnNewPage>true</RepeatOnNewPage>
+                              <KeepTogether>true</KeepTogether>
                             </TablixMember>
                             <TablixMember>
                               <Group Name="Details" />
                             </TablixMember>
                             <TablixMember>
-                              <KeepWithGroup>Before</KeepWithGroup>
+                              <FixedData>true</FixedData>
+                              <KeepWithGroup>After</KeepWithGroup>
+                              <RepeatOnNewPage>true</RepeatOnNewPage>
                             </TablixMember>
                           </TablixMembers>
                         </TablixMember>
@@ -928,7 +929,7 @@
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
             <Height>2.73542cm</Height>
-            <Width>18.77001cm</Width>
+            <Width>30.54397cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -939,7 +940,7 @@
         <Height>1.13238in</Height>
         <Style />
       </Body>
-      <Width>7.38977in</Width>
+      <Width>12.02518in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
