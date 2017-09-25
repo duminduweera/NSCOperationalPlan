@@ -587,7 +587,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!service_plan.Value + " - 20" + left(First(Fields!cpw_year.Value, "DataSet1"),2) + "20" + right(First(Fields!cpw_year.Value, "DataSet1"),2) + " Capital Works Program"</Value>
+                                  <Value>=Fields!service_plan.Value + " - 20" + left(First(Fields!cpw_year.Value, "DataSet1"),2) + "/20" + right(First(Fields!cpw_year.Value, "DataSet1"),2) + " Capital Works Program"</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
                                     <FontSize>11pt</FontSize>
