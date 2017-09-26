@@ -341,10 +341,10 @@
                           <rd:DefaultName>kpm_description</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>#e5e5e5</Color>
+                              <Color>DimGray</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>WhiteSmoke</BackgroundColor>
+                            <BackgroundColor>LightGrey</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -378,10 +378,10 @@
                           <rd:DefaultName>Textbox20</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>#e5e5e5</Color>
+                              <Color>DimGray</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>WhiteSmoke</BackgroundColor>
+                            <BackgroundColor>LightGrey</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -414,10 +414,10 @@
                           <rd:DefaultName>Textbox22</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>#e5e5e5</Color>
+                              <Color>DimGray</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>WhiteSmoke</BackgroundColor>
+                            <BackgroundColor>LightGrey</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -453,7 +453,7 @@
                           <rd:DefaultName>efficiency_description</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>#e5e5e5</Color>
+                              <Color>DimGray</Color>
                               <Style>Solid</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -488,7 +488,7 @@
                           <rd:DefaultName>kpi_prefix_short</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>#e5e5e5</Color>
+                              <Color>DimGray</Color>
                               <Style>Solid</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -523,7 +523,7 @@
                           <rd:DefaultName>kpi_progress</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>#e5e5e5</Color>
+                              <Color>DimGray</Color>
                               <Style>Solid</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -564,6 +564,10 @@
                               <Color>#e5e5e5</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <TopBorder>
+                              <Color>DimGray</Color>
+                              <Width>1pt</Width>
+                            </TopBorder>
                             <BottomBorder>
                               <Style>None</Style>
                             </BottomBorder>
@@ -927,7 +931,7 @@
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
             <Height>2.73542cm</Height>
-            <Width>18.77002cm</Width>
+            <Width>18.77cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -938,7 +942,7 @@
         <Height>1.13238in</Height>
         <Style />
       </Body>
-      <Width>7.38977in</Width>
+      <Width>7.42102in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
