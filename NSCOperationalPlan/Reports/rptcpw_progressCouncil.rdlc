@@ -304,7 +304,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.61792cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -532,7 +532,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.89104cm</Height>
+                  <Height>0.67938cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -580,14 +580,14 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="manager_subdept">
+                        <Textbox Name="service_plan1">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!manager_subdept.Value</Value>
+                                  <Value>=Fields!service_plan.Value + " - 20" + left(First(Fields!cpw_year.Value, "DataSet1"),2) + "/20" + right(First(Fields!cpw_year.Value, "DataSet1"),2) + " Capital Works Program"</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
                                     <FontSize>11pt</FontSize>
@@ -598,7 +598,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>manager_subdept</rd:DefaultName>
+                          <rd:DefaultName>service_plan1</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -611,6 +611,7 @@
                           </Style>
                         </Textbox>
                         <ColSpan>6</ColSpan>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell />
@@ -2297,7 +2298,7 @@
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value />
+                                    <Value>service plan</Value>
                                     <Style>
                                       <FontFamily>Tahoma</FontFamily>
                                       <Color>LightGrey</Color>
@@ -2432,12 +2433,15 @@
                           </Textbox>
                         </CellContents>
                       </TablixHeader>
+                      <Visibility>
+                        <Hidden>true</Hidden>
+                      </Visibility>
                       <KeepWithGroup>After</KeepWithGroup>
                     </TablixMember>
                     <TablixMember>
-                      <Group Name="cpw_manager_id">
+                      <Group Name="service_plan">
                         <GroupExpressions>
-                          <GroupExpression>=Fields!cpw_manager_id.Value</GroupExpression>
+                          <GroupExpression>=Fields!service_plan.Value</GroupExpression>
                         </GroupExpressions>
                         <PageBreak>
                           <BreakLocation>Between</BreakLocation>
@@ -2451,14 +2455,14 @@
                       <TablixHeader>
                         <Size>0.07938cm</Size>
                         <CellContents>
-                          <Textbox Name="cpw_manager_id">
+                          <Textbox Name="service_plan">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>=Fields!cpw_manager_id.Value</Value>
+                                    <Value>=Fields!service_plan.Value</Value>
                                     <Style>
                                       <FontFamily>Tahoma</FontFamily>
                                       <FontSize>9pt</FontSize>
@@ -2470,7 +2474,7 @@
                                 <Style />
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>cpw_manager_id</rd:DefaultName>
+                            <rd:DefaultName>service_plan</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Style>None</Style>
@@ -2486,21 +2490,26 @@
                       <TablixMembers>
                         <TablixMember>
                           <KeepWithGroup>After</KeepWithGroup>
+                          <RepeatOnNewPage>true</RepeatOnNewPage>
                         </TablixMember>
                         <TablixMember>
+                          <FixedData>true</FixedData>
                           <KeepWithGroup>After</KeepWithGroup>
+                          <RepeatOnNewPage>true</RepeatOnNewPage>
                         </TablixMember>
                         <TablixMember>
                           <Visibility>
                             <Hidden>true</Hidden>
                           </Visibility>
                           <KeepWithGroup>After</KeepWithGroup>
+                          <RepeatOnNewPage>true</RepeatOnNewPage>
                         </TablixMember>
                         <TablixMember>
                           <Group Name="Details" />
                         </TablixMember>
                         <TablixMember>
                           <KeepWithGroup>Before</KeepWithGroup>
+                          <RepeatOnNewPage>true</RepeatOnNewPage>
                         </TablixMember>
                       </TablixMembers>
                     </TablixMember>
@@ -2630,7 +2639,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Height>6.85604cm</Height>
+            <Height>6.6623cm</Height>
             <Width>18.95705cm</Width>
             <Style>
               <Border>
@@ -2639,7 +2648,7 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>2.75131in</Height>
+        <Height>2.62295in</Height>
         <Style />
       </Body>
       <Width>7.46341in</Width>
