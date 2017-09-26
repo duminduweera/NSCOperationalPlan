@@ -425,9 +425,6 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report1.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Backup\gphActionByStatus.rdlc" />
     <EmbeddedResource Include="Reports\Backup\gphActionByTheme.rdlc" />
     <EmbeddedResource Include="Reports\Backup\gphBudgetSummary.rdlc" />
@@ -605,6 +602,8 @@
     <Content Include="nsc.ico" />
     <Content Include="op.ico" />
     <Content Include="Reports\logo_only.png" />
+    <None Include="Resources\Measure_481.png" />
+    <None Include="Resources\Measure_48.png" />
     <None Include="Resources\login02_32.png" />
     <None Include="Resources\login01_32.png" />
     <None Include="Resources\restore_32.png" />

@@ -233,6 +233,26 @@ namespace NSCOperationalPlan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Measure_48 {
+            get {
+                object obj = ResourceManager.GetObject("Measure_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Measure_481 {
+            get {
+                object obj = ResourceManager.GetObject("Measure_481", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap nsclogo {
             get {
                 object obj = ResourceManager.GetObject("nsclogo", resourceCulture);
