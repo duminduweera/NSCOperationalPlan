@@ -1,5 +1,8 @@
-﻿using System;
+﻿using MyDLLs;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 
@@ -33,6 +36,22 @@ namespace NSCOperationalPlan
             {
                 _description = value;
             }
+        }
+
+        internal static DataTable getMeasures(String managerID,String year)
+        {
+            Database db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
+            String strsql = "SELECT * FROM view_strategy_measure WHERE manager_id='" + managerID + "' and year='" + year + "' ORDER BY theme_id,strategy_objective_id,rank;";
+            DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
+            return db.GetDataTable(conn, strsql);
+        }
+
+        internal static DataTable getAllMeasures(String year)
+        {
+            Database db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
+            String strsql = "SELECT * FROM view_strategy_measure WHERE year='" + year + "' ORDER BY theme_id,strategy_objective_id,rank;";
+            DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
+            return db.GetDataTable(conn, strsql);
         }
 
         public string HowMeasured

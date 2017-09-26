@@ -39,9 +39,10 @@
             this.tsbClear = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbPrint = new System.Windows.Forms.ToolStripButton();
-            this.dgvStraMeasures = new System.Windows.Forms.DataGridView();
+            this.dgv = new System.Windows.Forms.DataGridView();
+            this.chk2 = new System.Windows.Forms.CheckBox();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStraMeasures)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // chk1
@@ -50,10 +51,11 @@
             this.chk1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chk1.Location = new System.Drawing.Point(12, 72);
             this.chk1.Name = "chk1";
-            this.chk1.Size = new System.Drawing.Size(293, 21);
+            this.chk1.Size = new System.Drawing.Size(198, 21);
             this.chk1.TabIndex = 59;
-            this.chk1.Text = "Show all  Capital Works for the Directorate";
+            this.chk1.Text = "Show all for the Directorate";
             this.chk1.UseVisualStyleBackColor = true;
+            this.chk1.Visible = false;
             this.chk1.CheckedChanged += new System.EventHandler(this.chk1_CheckedChanged);
             // 
             // toolStrip1
@@ -142,25 +144,40 @@
             this.tsbPrint.Text = "Print";
             this.tsbPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // dgvStraMeasures
+            // dgv
             // 
-            this.dgvStraMeasures.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvStraMeasures.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStraMeasures.Location = new System.Drawing.Point(12, 99);
-            this.dgvStraMeasures.MultiSelect = false;
-            this.dgvStraMeasures.Name = "dgvStraMeasures";
-            this.dgvStraMeasures.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvStraMeasures.Size = new System.Drawing.Size(1449, 454);
-            this.dgvStraMeasures.TabIndex = 61;
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Location = new System.Drawing.Point(12, 99);
+            this.dgv.MultiSelect = false;
+            this.dgv.Name = "dgv";
+            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgv.Size = new System.Drawing.Size(1449, 454);
+            this.dgv.TabIndex = 61;
+            // 
+            // chk2
+            // 
+            this.chk2.AutoSize = true;
+            this.chk2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.chk2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk2.Location = new System.Drawing.Point(220, 72);
+            this.chk2.Name = "chk2";
+            this.chk2.Size = new System.Drawing.Size(199, 21);
+            this.chk2.TabIndex = 62;
+            this.chk2.Text = "Show all for all Directorates";
+            this.chk2.UseVisualStyleBackColor = true;
+            this.chk2.Visible = false;
+            this.chk2.CheckedChanged += new System.EventHandler(this.chk2_CheckedChanged);
             // 
             // frmStrategyMeasuresMonthly
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1473, 565);
-            this.Controls.Add(this.dgvStraMeasures);
+            this.Controls.Add(this.chk2);
+            this.Controls.Add(this.dgv);
             this.Controls.Add(this.chk1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmStrategyMeasuresMonthly";
@@ -168,7 +185,7 @@
             this.Load += new System.EventHandler(this.frmStrategyMeasuresMonthly_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStraMeasures)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,6 +202,7 @@
         private System.Windows.Forms.ToolStripButton tsbClear;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton tsbPrint;
-        private System.Windows.Forms.DataGridView dgvStraMeasures;
+        private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.CheckBox chk2;
     }
 }
