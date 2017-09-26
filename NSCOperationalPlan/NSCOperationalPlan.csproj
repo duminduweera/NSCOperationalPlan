@@ -325,6 +325,7 @@
     <Compile Include="ReportQueries.cs" />
     <Compile Include="CustomException.cs" />
     <Compile Include="Settings.cs" />
+    <Compile Include="StrategyMeasures.cs" />
     <EmbeddedResource Include="frmAction.resx">
       <DependentUpon>frmAction.cs</DependentUpon>
       <SubType>Designer</SubType>
