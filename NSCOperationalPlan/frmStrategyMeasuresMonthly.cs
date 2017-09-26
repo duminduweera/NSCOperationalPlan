@@ -31,7 +31,6 @@ namespace NSCOperationalPlan
                 chk2.Visible = true;
             #endif
         }
-
         private void ArrangeGrid()
         {
             Dictionary<string, int> coloumnDict = new Dictionary<string, int>();
@@ -55,7 +54,6 @@ namespace NSCOperationalPlan
                 dgv.Columns[i].DefaultCellStyle.ForeColor = Color.Black;
             }
         }
-
         private void chk1_CheckedChanged(object sender, EventArgs e)
         {
             if (chk1.Checked) {AddDatatoGrid(StrategyMeasures.getMeasures(OPGlobals.CurrentUser.DirectorID, OPGlobals.currentYear)); }
@@ -68,8 +66,7 @@ namespace NSCOperationalPlan
             else { AddDatatoGrid(StrategyMeasures.getMeasures(OPGlobals.CurrentUser.ManagerID, OPGlobals.currentYear)); }
         }
         private void AddDatatoGrid(DataTable tb)
-        {
-            
+        {  
             dgv.Rows.Clear();
             dgv.Refresh();
             try
@@ -91,7 +88,6 @@ namespace NSCOperationalPlan
             }
             dgv.CurrentCell = null;
         }
-
        
     }
 }
