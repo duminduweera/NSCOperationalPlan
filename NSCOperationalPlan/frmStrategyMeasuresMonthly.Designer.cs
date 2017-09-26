@@ -39,9 +39,9 @@
             this.tsbClear = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbPrint = new System.Windows.Forms.ToolStripButton();
-            this.dgv01 = new System.Windows.Forms.DataGridView();
+            this.dgvStraMeasures = new System.Windows.Forms.DataGridView();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv01)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStraMeasures)).BeginInit();
             this.SuspendLayout();
             // 
             // chk1
@@ -71,7 +71,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(1382, 54);
+            this.toolStrip1.Size = new System.Drawing.Size(1473, 54);
             this.toolStrip1.TabIndex = 58;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -142,32 +142,33 @@
             this.tsbPrint.Text = "Print";
             this.tsbPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // dgv01
+            // dgvStraMeasures
             // 
-            this.dgv01.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvStraMeasures.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv01.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv01.Location = new System.Drawing.Point(12, 99);
-            this.dgv01.MultiSelect = false;
-            this.dgv01.Name = "dgv01";
-            this.dgv01.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgv01.Size = new System.Drawing.Size(1358, 421);
-            this.dgv01.TabIndex = 61;
+            this.dgvStraMeasures.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStraMeasures.Location = new System.Drawing.Point(12, 99);
+            this.dgvStraMeasures.MultiSelect = false;
+            this.dgvStraMeasures.Name = "dgvStraMeasures";
+            this.dgvStraMeasures.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvStraMeasures.Size = new System.Drawing.Size(1449, 454);
+            this.dgvStraMeasures.TabIndex = 61;
             // 
-            // frmStrategyMeasure
+            // frmStrategyMeasuresMonthly
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1382, 532);
-            this.Controls.Add(this.dgv01);
+            this.ClientSize = new System.Drawing.Size(1473, 565);
+            this.Controls.Add(this.dgvStraMeasures);
             this.Controls.Add(this.chk1);
             this.Controls.Add(this.toolStrip1);
-            this.Name = "frmStrategyMeasure";
+            this.Name = "frmStrategyMeasuresMonthly";
             this.Text = "frmStrategyMeasure";
+            this.Load += new System.EventHandler(this.frmStrategyMeasuresMonthly_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv01)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStraMeasures)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,6 +185,6 @@
         private System.Windows.Forms.ToolStripButton tsbClear;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton tsbPrint;
-        private System.Windows.Forms.DataGridView dgv01;
+        private System.Windows.Forms.DataGridView dgvStraMeasures;
     }
 }
