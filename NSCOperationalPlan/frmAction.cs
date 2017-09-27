@@ -230,23 +230,7 @@ namespace NSCOperationalPlan
 
         }
 
-        //private void LoadDeliveryProgramOld()
-        //{
-        //    int year2;
-        //    string year;
-        //    year2 = 13;
-        //    for (int i = 0; i < 6; i++)
-        //    {
-        //        year = year2.ToString() + "/" + (year2 + 1).ToString();
-        //        ListViewItem lvi = new ListViewItem(year);
-        //        lvi.SubItems.Add("------");
-        //        lstDelivery.Items.Add(lvi);
-
-        //        year2 ++;
-        //    }
-        //    MyGridUtils.ListViewAlternateRowColor(lstDelivery, Color.LightGray, Color.Bisque);
-        //}
-
+       
         private void LoadDirectors()
         {
             DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
@@ -713,7 +697,10 @@ namespace NSCOperationalPlan
             cboDirector.SelectedValue = grdAction.CurrentRow.Cells[9].Value;   // lstAction.SelectedItems[0].SubItems[9].Text;
             cboManager.SelectedValue = grdAction.CurrentRow.Cells[7].Value;  // lstAction.SelectedItems[0].SubItems[7].Text;
             cboServicePlan.SelectedValue = grdAction.CurrentRow.Cells["spid"].Value;
-            cboSourceCouncilPlan.SelectedValue = grdAction.CurrentRow.Cells["CouncilPlanID"].Value;
+            if (!String.IsNullOrEmpty(grdAction.CurrentRow.Cells["CouncilPlanID"].Value.ToString()))
+            {
+                cboSourceCouncilPlan.SelectedValue = grdAction.CurrentRow.Cells["CouncilPlanID"].Value;
+            }
 
             txtActionID.Text = grdAction.CurrentRow.Cells[0].Value.ToString();
             txtRank.Text = grdAction.CurrentRow.Cells[1].Value.ToString();  // lstAction.SelectedItems[0].SubItems[1].Text;
