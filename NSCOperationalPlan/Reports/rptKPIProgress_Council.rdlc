@@ -473,7 +473,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!kpi_prefix_short.Value + " " + Format(Fields!kpi_estimate.Value,"#,###.##").ToString + " " + Fields!kpi_unit.Value</Value>
+                                  <Value>=Switch(Fields!kpi_unit.Value = "$",Fields!kpi_prefix_short.Value + "" + Fields!kpi_unit.Value + " " + Format(Fields!kpi_estimate.Value,"#,###.##").ToString , 1=1 ,Fields!kpi_prefix_short.Value + " " + Format(Fields!kpi_estimate.Value,"#,###.##").ToString + " " + Fields!kpi_unit.Value)</Value>
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
                                     <Color>#4d4d4d</Color>
@@ -497,6 +497,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -931,7 +932,7 @@
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
             <Height>2.73542cm</Height>
-            <Width>18.77cm</Width>
+            <Width>18.77002cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
