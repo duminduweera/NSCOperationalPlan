@@ -500,7 +500,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -512,7 +511,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(Code.CheckNullAndReturnAsString(Fields!kpi_progress.Value) &lt;&gt; -9999, Format(Code.CheckNullAndReturnAsString(Fields!kpi_progress.Value),"#,###.##") + " " + Fields!kpi_unit.Value, "-")</Value>
+                                  <Value>=IIF(Code.CheckNullAndReturnAsString(Fields!kpi_progress.Value) &lt;&gt; -9999, Format(Code.CheckNullAndReturnAsString(Fields!kpi_progress.Value),"#,##0.##") + " " + Fields!kpi_unit.Value, "-")</Value>
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
                                     <Color>#4d4d4d</Color>
