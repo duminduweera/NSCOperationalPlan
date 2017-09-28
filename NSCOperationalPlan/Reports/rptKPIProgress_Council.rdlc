@@ -476,7 +476,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Switch(Fields!kpi_unit.Value = "$",Fields!kpi_prefix_short.Value + "" + Fields!kpi_unit.Value + " " + Format(Fields!kpi_estimate.Value,"#,###.##").ToString , 1=1 ,Fields!kpi_prefix_short.Value + " " + Format(Fields!kpi_estimate.Value,"#,###.##").ToString + " " + Fields!kpi_unit.Value)</Value>
+                                  <Value>=Switch(Fields!kpi_unit.Value = "$",Fields!kpi_prefix_short.Value + "" + Fields!kpi_unit.Value + " " + Format(Fields!kpi_estimate.Value,"#,##0.##").ToString , 1=1 ,Fields!kpi_prefix_short.Value + " " + Format(Fields!kpi_estimate.Value,"#,##0.##").ToString + " " + Fields!kpi_unit.Value)</Value>
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
                                     <Color>#4d4d4d</Color>
