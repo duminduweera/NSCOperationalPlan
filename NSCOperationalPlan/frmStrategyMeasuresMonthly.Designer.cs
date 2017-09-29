@@ -73,7 +73,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(1473, 54);
+            this.toolStrip1.Size = new System.Drawing.Size(1895, 54);
             this.toolStrip1.TabIndex = 58;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -150,12 +150,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgv.Location = new System.Drawing.Point(12, 99);
             this.dgv.MultiSelect = false;
             this.dgv.Name = "dgv";
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgv.Size = new System.Drawing.Size(1449, 454);
+            this.dgv.Size = new System.Drawing.Size(1871, 468);
             this.dgv.TabIndex = 61;
+            this.dgv.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellEnter);
             // 
             // chk2
             // 
@@ -175,7 +177,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1473, 565);
+            this.ClientSize = new System.Drawing.Size(1895, 579);
             this.Controls.Add(this.chk2);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.chk1);
