@@ -34,26 +34,60 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOperationPlan));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuThemes = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuStrategyObjective = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuStrategies = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuActions = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuStatus = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuPI = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuCPW = new System.Windows.Forms.ToolStripMenuItem();
+            this.originalBudgetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MonthlyYTDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.QBRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.progressToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMonthlyProgress = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuMonthlyKPIProgress = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
+            this.capitalWorkMonthlyProgressToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRptTheme = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuRptStrategyObjective = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRptStrategy = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuRptAction = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRptStatus = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuRptProgress = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuRptPI = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
+            this.capitalWorkProgramToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.capitalWorkProgramToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator21 = new System.Windows.Forms.ToolStripSeparator();
+            this.monthlyProgressToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator23 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuRptCPWSummary = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
+            this.councilReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.testSubReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRptCouncilSource = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setCurrentMonthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuBackup = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRestore = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.loginAsADifferentUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logBackToPreviousUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.importCPWFromExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importSMeasuresFromExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,57 +99,23 @@
             this.statDepartment = new System.Windows.Forms.ToolStripStatusLabel();
             this.statDivision = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
             this.tsExit = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.tsTheme = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.tsStrategyObjective = new System.Windows.Forms.ToolStripButton();
             this.tsStrategy = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.tsAction = new System.Windows.Forms.ToolStripButton();
             this.tsStatus = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.tsMonthlyProgress = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
             this.tsMonthlyCPWProgress = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
             this.tsStrategyMeasure = new System.Windows.Forms.ToolStripButton();
             this.tsCPW = new System.Windows.Forms.ToolStripButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.mnuThemes = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuStrategyObjective = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuStrategies = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuActions = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuStatus = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuPI = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuCPW = new System.Windows.Forms.ToolStripMenuItem();
-            this.originalBudgetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MonthlyYTDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.QBRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuMonthlyProgress = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuMonthlyKPIProgress = new System.Windows.Forms.ToolStripMenuItem();
-            this.capitalWorkMonthlyProgressToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuRptTheme = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuRptStrategyObjective = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuRptStrategy = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuRptAction = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuRptStatus = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuRptProgress = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuRptPI = new System.Windows.Forms.ToolStripMenuItem();
-            this.capitalWorkProgramToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.capitalWorkProgramToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator21 = new System.Windows.Forms.ToolStripSeparator();
-            this.monthlyProgressToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator23 = new System.Windows.Forms.ToolStripSeparator();
-            this.mnuRptCPWSummary = new System.Windows.Forms.ToolStripMenuItem();
-            this.councilReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuRptCouncilSource = new System.Windows.Forms.ToolStripMenuItem();
-            this.setCurrentMonthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuBackup = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuRestore = new System.Windows.Forms.ToolStripMenuItem();
-            this.loginAsADifferentUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logBackToPreviousUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -158,30 +158,137 @@
             this.fileToolStripMenuItem.Text = "&Admin Functions";
             this.fileToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
             // 
+            // mnuThemes
+            // 
+            this.mnuThemes.Image = global::NSCOperationalPlan.Properties.Resources.theme_32;
+            this.mnuThemes.Name = "mnuThemes";
+            this.mnuThemes.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.T)));
+            this.mnuThemes.Size = new System.Drawing.Size(250, 22);
+            this.mnuThemes.Tag = "A01";
+            this.mnuThemes.Text = "&Themes";
+            this.mnuThemes.Click += new System.EventHandler(this.mnuThemes_Click);
+            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(247, 6);
+            // 
+            // mnuStrategyObjective
+            // 
+            this.mnuStrategyObjective.Image = global::NSCOperationalPlan.Properties.Resources.strategy_objective_32;
+            this.mnuStrategyObjective.Name = "mnuStrategyObjective";
+            this.mnuStrategyObjective.Size = new System.Drawing.Size(250, 22);
+            this.mnuStrategyObjective.Tag = "A02";
+            this.mnuStrategyObjective.Text = "Strategy Objective";
+            this.mnuStrategyObjective.Click += new System.EventHandler(this.mnuStrategyObjective_Click);
+            // 
+            // mnuStrategies
+            // 
+            this.mnuStrategies.Image = global::NSCOperationalPlan.Properties.Resources.strategy_32;
+            this.mnuStrategies.Name = "mnuStrategies";
+            this.mnuStrategies.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
+            this.mnuStrategies.Size = new System.Drawing.Size(250, 22);
+            this.mnuStrategies.Tag = "A03";
+            this.mnuStrategies.Text = "&Strategies";
+            this.mnuStrategies.Click += new System.EventHandler(this.mnuStrategies_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(247, 6);
             // 
+            // mnuActions
+            // 
+            this.mnuActions.Image = global::NSCOperationalPlan.Properties.Resources.action_32;
+            this.mnuActions.Name = "mnuActions";
+            this.mnuActions.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.A)));
+            this.mnuActions.Size = new System.Drawing.Size(250, 22);
+            this.mnuActions.Tag = "A04";
+            this.mnuActions.Text = "&Actions";
+            this.mnuActions.Click += new System.EventHandler(this.mnuActions_Click);
+            // 
+            // mnuStatus
+            // 
+            this.mnuStatus.Image = global::NSCOperationalPlan.Properties.Resources.status_32;
+            this.mnuStatus.Name = "mnuStatus";
+            this.mnuStatus.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.U)));
+            this.mnuStatus.Size = new System.Drawing.Size(250, 22);
+            this.mnuStatus.Tag = "A05";
+            this.mnuStatus.Text = "Stat&us";
+            this.mnuStatus.Click += new System.EventHandler(this.mnuStatus_Click);
+            // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(247, 6);
+            // 
+            // mnuPI
+            // 
+            this.mnuPI.Image = global::NSCOperationalPlan.Properties.Resources.performanceIndicator_32;
+            this.mnuPI.Name = "mnuPI";
+            this.mnuPI.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.I)));
+            this.mnuPI.Size = new System.Drawing.Size(250, 22);
+            this.mnuPI.Tag = "A06";
+            this.mnuPI.Text = "Key Performance Measures";
+            this.mnuPI.Click += new System.EventHandler(this.mnuPI_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(247, 6);
             // 
+            // mnuCPW
+            // 
+            this.mnuCPW.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.originalBudgetToolStripMenuItem,
+            this.MonthlyYTDToolStripMenuItem,
+            this.QBRToolStripMenuItem});
+            this.mnuCPW.Image = global::NSCOperationalPlan.Properties.Resources.cpw_32x32;
+            this.mnuCPW.Name = "mnuCPW";
+            this.mnuCPW.Size = new System.Drawing.Size(250, 22);
+            this.mnuCPW.Tag = "A07";
+            this.mnuCPW.Text = "Capital Work Program";
+            // 
+            // originalBudgetToolStripMenuItem
+            // 
+            this.originalBudgetToolStripMenuItem.Image = global::NSCOperationalPlan.Properties.Resources.cpw_32x32;
+            this.originalBudgetToolStripMenuItem.Name = "originalBudgetToolStripMenuItem";
+            this.originalBudgetToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.originalBudgetToolStripMenuItem.Tag = "A71";
+            this.originalBudgetToolStripMenuItem.Text = "Original Budget";
+            this.originalBudgetToolStripMenuItem.Click += new System.EventHandler(this.originalBudgetToolStripMenuItem_Click);
+            // 
+            // MonthlyYTDToolStripMenuItem
+            // 
+            this.MonthlyYTDToolStripMenuItem.Image = global::NSCOperationalPlan.Properties.Resources.cpw_monthly_32;
+            this.MonthlyYTDToolStripMenuItem.Name = "MonthlyYTDToolStripMenuItem";
+            this.MonthlyYTDToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.MonthlyYTDToolStripMenuItem.Tag = "A72";
+            this.MonthlyYTDToolStripMenuItem.Text = "Monthly YTD Actuals";
+            this.MonthlyYTDToolStripMenuItem.Click += new System.EventHandler(this.MonthlyYTDToolStripMenuItem_Click);
+            // 
+            // QBRToolStripMenuItem
+            // 
+            this.QBRToolStripMenuItem.Image = global::NSCOperationalPlan.Properties.Resources.quater_32;
+            this.QBRToolStripMenuItem.Name = "QBRToolStripMenuItem";
+            this.QBRToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.QBRToolStripMenuItem.Tag = "A73";
+            this.QBRToolStripMenuItem.Text = "Quarterly Budget Revise";
+            this.QBRToolStripMenuItem.Click += new System.EventHandler(this.QBRToolStripMenuItem_Click);
+            // 
             // toolStripSeparator17
             // 
             this.toolStripSeparator17.Name = "toolStripSeparator17";
             this.toolStripSeparator17.Size = new System.Drawing.Size(247, 6);
+            // 
+            // mnuExit
+            // 
+            this.mnuExit.Image = global::NSCOperationalPlan.Properties.Resources.exit_32;
+            this.mnuExit.Name = "mnuExit";
+            this.mnuExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.mnuExit.Size = new System.Drawing.Size(250, 22);
+            this.mnuExit.Text = "E&xit";
+            this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
             // progressToolStripMenuItem
             // 
@@ -196,15 +303,42 @@
             this.progressToolStripMenuItem.Tag = "B00";
             this.progressToolStripMenuItem.Text = "&Progress";
             // 
+            // mnuMonthlyProgress
+            // 
+            this.mnuMonthlyProgress.Image = global::NSCOperationalPlan.Properties.Resources.progress_32;
+            this.mnuMonthlyProgress.Name = "mnuMonthlyProgress";
+            this.mnuMonthlyProgress.Size = new System.Drawing.Size(271, 22);
+            this.mnuMonthlyProgress.Tag = "B01";
+            this.mnuMonthlyProgress.Text = "Monthly Action Update";
+            this.mnuMonthlyProgress.Click += new System.EventHandler(this.mnuMonthlyProgress_Click);
+            // 
             // toolStripSeparator15
             // 
             this.toolStripSeparator15.Name = "toolStripSeparator15";
             this.toolStripSeparator15.Size = new System.Drawing.Size(268, 6);
             // 
+            // mnuMonthlyKPIProgress
+            // 
+            this.mnuMonthlyKPIProgress.Image = global::NSCOperationalPlan.Properties.Resources.performanceIndicator_32;
+            this.mnuMonthlyKPIProgress.Name = "mnuMonthlyKPIProgress";
+            this.mnuMonthlyKPIProgress.Size = new System.Drawing.Size(271, 22);
+            this.mnuMonthlyKPIProgress.Tag = "B02";
+            this.mnuMonthlyKPIProgress.Text = "Monthly KPM Update";
+            this.mnuMonthlyKPIProgress.Click += new System.EventHandler(this.mnuMonthlyKPIProgress_Click);
+            // 
             // toolStripSeparator18
             // 
             this.toolStripSeparator18.Name = "toolStripSeparator18";
             this.toolStripSeparator18.Size = new System.Drawing.Size(268, 6);
+            // 
+            // capitalWorkMonthlyProgressToolStripMenuItem
+            // 
+            this.capitalWorkMonthlyProgressToolStripMenuItem.Image = global::NSCOperationalPlan.Properties.Resources.projects_32x32;
+            this.capitalWorkMonthlyProgressToolStripMenuItem.Name = "capitalWorkMonthlyProgressToolStripMenuItem";
+            this.capitalWorkMonthlyProgressToolStripMenuItem.Size = new System.Drawing.Size(271, 22);
+            this.capitalWorkMonthlyProgressToolStripMenuItem.Tag = "B03";
+            this.capitalWorkMonthlyProgressToolStripMenuItem.Text = "Monthly Capital Work Project Update";
+            this.capitalWorkMonthlyProgressToolStripMenuItem.Click += new System.EventHandler(this.capitalWorkMonthlyProgressToolStripMenuItem_Click);
             // 
             // testToolStripMenuItem
             // 
@@ -232,35 +366,155 @@
             this.testToolStripMenuItem.Tag = "C00";
             this.testToolStripMenuItem.Text = "&Reports";
             // 
+            // mnuRptTheme
+            // 
+            this.mnuRptTheme.Image = global::NSCOperationalPlan.Properties.Resources.theme_32;
+            this.mnuRptTheme.Name = "mnuRptTheme";
+            this.mnuRptTheme.Size = new System.Drawing.Size(241, 22);
+            this.mnuRptTheme.Tag = "C01";
+            this.mnuRptTheme.Text = "Themes";
+            this.mnuRptTheme.Click += new System.EventHandler(this.mnuRptTheme_Click);
+            // 
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
             this.toolStripSeparator10.Size = new System.Drawing.Size(238, 6);
+            // 
+            // mnuRptStrategyObjective
+            // 
+            this.mnuRptStrategyObjective.Image = global::NSCOperationalPlan.Properties.Resources.strategy_objective_32;
+            this.mnuRptStrategyObjective.Name = "mnuRptStrategyObjective";
+            this.mnuRptStrategyObjective.Size = new System.Drawing.Size(241, 22);
+            this.mnuRptStrategyObjective.Tag = "C02";
+            this.mnuRptStrategyObjective.Text = "Strategy Objective";
+            this.mnuRptStrategyObjective.Click += new System.EventHandler(this.mnuRptStrategyObjective_Click);
+            // 
+            // mnuRptStrategy
+            // 
+            this.mnuRptStrategy.Image = global::NSCOperationalPlan.Properties.Resources.strategy_32;
+            this.mnuRptStrategy.Name = "mnuRptStrategy";
+            this.mnuRptStrategy.Size = new System.Drawing.Size(241, 22);
+            this.mnuRptStrategy.Tag = "C03";
+            this.mnuRptStrategy.Text = "Strategies";
+            this.mnuRptStrategy.Click += new System.EventHandler(this.mnuRptStrategy_Click);
             // 
             // toolStripSeparator11
             // 
             this.toolStripSeparator11.Name = "toolStripSeparator11";
             this.toolStripSeparator11.Size = new System.Drawing.Size(238, 6);
             // 
+            // mnuRptAction
+            // 
+            this.mnuRptAction.Image = global::NSCOperationalPlan.Properties.Resources.action_32;
+            this.mnuRptAction.Name = "mnuRptAction";
+            this.mnuRptAction.Size = new System.Drawing.Size(241, 22);
+            this.mnuRptAction.Tag = "C04";
+            this.mnuRptAction.Text = "Actions";
+            this.mnuRptAction.Click += new System.EventHandler(this.mnuRptAction_Click);
+            // 
+            // mnuRptStatus
+            // 
+            this.mnuRptStatus.Image = global::NSCOperationalPlan.Properties.Resources.status_32;
+            this.mnuRptStatus.Name = "mnuRptStatus";
+            this.mnuRptStatus.Size = new System.Drawing.Size(241, 22);
+            this.mnuRptStatus.Tag = "C05";
+            this.mnuRptStatus.Text = "Status";
+            this.mnuRptStatus.Click += new System.EventHandler(this.mnuRptStatus_Click);
+            // 
             // toolStripSeparator12
             // 
             this.toolStripSeparator12.Name = "toolStripSeparator12";
             this.toolStripSeparator12.Size = new System.Drawing.Size(238, 6);
+            // 
+            // mnuRptProgress
+            // 
+            this.mnuRptProgress.Image = global::NSCOperationalPlan.Properties.Resources.progress_32;
+            this.mnuRptProgress.Name = "mnuRptProgress";
+            this.mnuRptProgress.Size = new System.Drawing.Size(241, 22);
+            this.mnuRptProgress.Tag = "C06";
+            this.mnuRptProgress.Text = "Operational Plan";
+            this.mnuRptProgress.Click += new System.EventHandler(this.mnuRptProgress_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(238, 6);
             // 
+            // mnuRptPI
+            // 
+            this.mnuRptPI.Image = global::NSCOperationalPlan.Properties.Resources.performanceIndicator_32;
+            this.mnuRptPI.Name = "mnuRptPI";
+            this.mnuRptPI.Size = new System.Drawing.Size(241, 22);
+            this.mnuRptPI.Tag = "C07";
+            this.mnuRptPI.Text = "Performance Indicators";
+            this.mnuRptPI.Click += new System.EventHandler(this.mnuRptPI_Click);
+            // 
             // toolStripSeparator16
             // 
             this.toolStripSeparator16.Name = "toolStripSeparator16";
             this.toolStripSeparator16.Size = new System.Drawing.Size(238, 6);
             // 
+            // capitalWorkProgramToolStripMenuItem1
+            // 
+            this.capitalWorkProgramToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.capitalWorkProgramToolStripMenuItem2,
+            this.toolStripSeparator21,
+            this.monthlyProgressToolStripMenuItem,
+            this.toolStripSeparator23,
+            this.mnuRptCPWSummary});
+            this.capitalWorkProgramToolStripMenuItem1.Image = global::NSCOperationalPlan.Properties.Resources.projects_32x32;
+            this.capitalWorkProgramToolStripMenuItem1.Name = "capitalWorkProgramToolStripMenuItem1";
+            this.capitalWorkProgramToolStripMenuItem1.Size = new System.Drawing.Size(241, 22);
+            this.capitalWorkProgramToolStripMenuItem1.Tag = "C08";
+            this.capitalWorkProgramToolStripMenuItem1.Text = "Capital Work";
+            // 
+            // capitalWorkProgramToolStripMenuItem2
+            // 
+            this.capitalWorkProgramToolStripMenuItem2.Name = "capitalWorkProgramToolStripMenuItem2";
+            this.capitalWorkProgramToolStripMenuItem2.Size = new System.Drawing.Size(196, 22);
+            this.capitalWorkProgramToolStripMenuItem2.Tag = "C71";
+            this.capitalWorkProgramToolStripMenuItem2.Text = "Monthly Progress";
+            this.capitalWorkProgramToolStripMenuItem2.Click += new System.EventHandler(this.capitalWorkProgramToolStripMenuItem2_Click);
+            // 
+            // toolStripSeparator21
+            // 
+            this.toolStripSeparator21.Name = "toolStripSeparator21";
+            this.toolStripSeparator21.Size = new System.Drawing.Size(193, 6);
+            // 
+            // monthlyProgressToolStripMenuItem
+            // 
+            this.monthlyProgressToolStripMenuItem.Name = "monthlyProgressToolStripMenuItem";
+            this.monthlyProgressToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.monthlyProgressToolStripMenuItem.Tag = "C72";
+            this.monthlyProgressToolStripMenuItem.Text = "Capital Work Program";
+            this.monthlyProgressToolStripMenuItem.Click += new System.EventHandler(this.monthlyProgressToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator23
+            // 
+            this.toolStripSeparator23.Name = "toolStripSeparator23";
+            this.toolStripSeparator23.Size = new System.Drawing.Size(193, 6);
+            // 
+            // mnuRptCPWSummary
+            // 
+            this.mnuRptCPWSummary.Name = "mnuRptCPWSummary";
+            this.mnuRptCPWSummary.Size = new System.Drawing.Size(196, 22);
+            this.mnuRptCPWSummary.Tag = "C73";
+            this.mnuRptCPWSummary.Text = "Capital Work Summary";
+            this.mnuRptCPWSummary.Click += new System.EventHandler(this.mnuRptCPWSummary_Click);
+            // 
             // toolStripSeparator13
             // 
             this.toolStripSeparator13.Name = "toolStripSeparator13";
             this.toolStripSeparator13.Size = new System.Drawing.Size(238, 6);
+            // 
+            // councilReportToolStripMenuItem
+            // 
+            this.councilReportToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("councilReportToolStripMenuItem.Image")));
+            this.councilReportToolStripMenuItem.Name = "councilReportToolStripMenuItem";
+            this.councilReportToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
+            this.councilReportToolStripMenuItem.Tag = "C09";
+            this.councilReportToolStripMenuItem.Text = "Service Plan - Monthly Progress";
+            this.councilReportToolStripMenuItem.Click += new System.EventHandler(this.councilReportToolStripMenuItem_Click);
             // 
             // toolStripSeparator14
             // 
@@ -276,6 +530,14 @@
             this.testSubReportToolStripMenuItem.Text = "Test Sub Report";
             this.testSubReportToolStripMenuItem.Visible = false;
             this.testSubReportToolStripMenuItem.Click += new System.EventHandler(this.testSubReportToolStripMenuItem_Click);
+            // 
+            // mnuRptCouncilSource
+            // 
+            this.mnuRptCouncilSource.Image = ((System.Drawing.Image)(resources.GetObject("mnuRptCouncilSource.Image")));
+            this.mnuRptCouncilSource.Name = "mnuRptCouncilSource";
+            this.mnuRptCouncilSource.Size = new System.Drawing.Size(241, 22);
+            this.mnuRptCouncilSource.Text = "Council Source Plan";
+            this.mnuRptCouncilSource.Click += new System.EventHandler(this.mnuRptCouncilSource_Click);
             // 
             // toolsToolStripMenuItem
             // 
@@ -295,15 +557,60 @@
             this.toolsToolStripMenuItem.Tag = "D00";
             this.toolsToolStripMenuItem.Text = "&Tools";
             // 
+            // setCurrentMonthToolStripMenuItem
+            // 
+            this.setCurrentMonthToolStripMenuItem.Image = global::NSCOperationalPlan.Properties.Resources.Calendar_32;
+            this.setCurrentMonthToolStripMenuItem.Name = "setCurrentMonthToolStripMenuItem";
+            this.setCurrentMonthToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.setCurrentMonthToolStripMenuItem.Tag = "D01";
+            this.setCurrentMonthToolStripMenuItem.Text = "Set Current Month";
+            this.setCurrentMonthToolStripMenuItem.Click += new System.EventHandler(this.setCurrentMonthToolStripMenuItem_Click);
+            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(224, 6);
             // 
+            // mnuBackup
+            // 
+            this.mnuBackup.Image = global::NSCOperationalPlan.Properties.Resources.backup_32;
+            this.mnuBackup.Name = "mnuBackup";
+            this.mnuBackup.Size = new System.Drawing.Size(227, 22);
+            this.mnuBackup.Tag = "D02";
+            this.mnuBackup.Text = "Backup Database";
+            this.mnuBackup.Click += new System.EventHandler(this.mnuBackup_Click);
+            // 
+            // mnuRestore
+            // 
+            this.mnuRestore.Image = global::NSCOperationalPlan.Properties.Resources.restore_32;
+            this.mnuRestore.Name = "mnuRestore";
+            this.mnuRestore.Size = new System.Drawing.Size(227, 22);
+            this.mnuRestore.Tag = "D03";
+            this.mnuRestore.Text = "Restore Database";
+            this.mnuRestore.Click += new System.EventHandler(this.mnuRestore_Click);
+            // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(224, 6);
+            // 
+            // loginAsADifferentUserToolStripMenuItem
+            // 
+            this.loginAsADifferentUserToolStripMenuItem.Image = global::NSCOperationalPlan.Properties.Resources.login01_32;
+            this.loginAsADifferentUserToolStripMenuItem.Name = "loginAsADifferentUserToolStripMenuItem";
+            this.loginAsADifferentUserToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.loginAsADifferentUserToolStripMenuItem.Tag = "D04";
+            this.loginAsADifferentUserToolStripMenuItem.Text = "Login as a Different User";
+            this.loginAsADifferentUserToolStripMenuItem.Click += new System.EventHandler(this.loginAsADifferentUserToolStripMenuItem_Click);
+            // 
+            // logBackToPreviousUserToolStripMenuItem
+            // 
+            this.logBackToPreviousUserToolStripMenuItem.Image = global::NSCOperationalPlan.Properties.Resources.login02_32;
+            this.logBackToPreviousUserToolStripMenuItem.Name = "logBackToPreviousUserToolStripMenuItem";
+            this.logBackToPreviousUserToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.logBackToPreviousUserToolStripMenuItem.Tag = "D05";
+            this.logBackToPreviousUserToolStripMenuItem.Text = "Log back to Previous User";
+            this.logBackToPreviousUserToolStripMenuItem.Click += new System.EventHandler(this.logBackToPreviousUserToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
@@ -433,39 +740,6 @@
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripSeparator8
-            // 
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 70);
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 70);
-            this.toolStripSeparator6.Visible = false;
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 70);
-            this.toolStripSeparator7.Visible = false;
-            // 
-            // toolStripSeparator9
-            // 
-            this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 70);
-            this.toolStripSeparator9.Visible = false;
-            // 
-            // toolStripSeparator19
-            // 
-            this.toolStripSeparator19.Name = "toolStripSeparator19";
-            this.toolStripSeparator19.Size = new System.Drawing.Size(6, 70);
-            // 
-            // toolStripSeparator22
-            // 
-            this.toolStripSeparator22.Name = "toolStripSeparator22";
-            this.toolStripSeparator22.Size = new System.Drawing.Size(6, 70);
-            // 
             // tsExit
             // 
             this.tsExit.Image = global::NSCOperationalPlan.Properties.Resources.Exit_48;
@@ -476,6 +750,11 @@
             this.tsExit.Text = "Exit";
             this.tsExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsExit.Click += new System.EventHandler(this.tsExit_Click_1);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 70);
             // 
             // tsTheme
             // 
@@ -489,6 +768,12 @@
             this.tsTheme.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsTheme.Visible = false;
             this.tsTheme.Click += new System.EventHandler(this.tsTheme_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 70);
+            this.toolStripSeparator6.Visible = false;
             // 
             // tsStrategyObjective
             // 
@@ -515,6 +800,12 @@
             this.tsStrategy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsStrategy.Visible = false;
             this.tsStrategy.Click += new System.EventHandler(this.tsStrategy_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 70);
+            this.toolStripSeparator7.Visible = false;
             // 
             // tsAction
             // 
@@ -543,6 +834,12 @@
             this.tsStatus.Visible = false;
             this.tsStatus.Click += new System.EventHandler(this.tsStatus_Click);
             // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 70);
+            this.toolStripSeparator9.Visible = false;
+            // 
             // tsMonthlyProgress
             // 
             this.tsMonthlyProgress.Image = global::NSCOperationalPlan.Properties.Resources.progress_48;
@@ -555,6 +852,11 @@
             this.tsMonthlyProgress.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsMonthlyProgress.ToolTipText = "Status";
             this.tsMonthlyProgress.Click += new System.EventHandler(this.tsMonthlyProgress_Click);
+            // 
+            // toolStripSeparator19
+            // 
+            this.toolStripSeparator19.Name = "toolStripSeparator19";
+            this.toolStripSeparator19.Size = new System.Drawing.Size(6, 70);
             // 
             // tsMonthlyCPWProgress
             // 
@@ -569,6 +871,11 @@
             this.tsMonthlyCPWProgress.ToolTipText = "Status";
             this.tsMonthlyCPWProgress.Click += new System.EventHandler(this.tsMonthlyCPWProgress_Click);
             // 
+            // toolStripSeparator22
+            // 
+            this.toolStripSeparator22.Name = "toolStripSeparator22";
+            this.toolStripSeparator22.Size = new System.Drawing.Size(6, 70);
+            // 
             // tsStrategyMeasure
             // 
             this.tsStrategyMeasure.Image = global::NSCOperationalPlan.Properties.Resources.Measure_481;
@@ -578,6 +885,7 @@
             this.tsStrategyMeasure.Size = new System.Drawing.Size(97, 67);
             this.tsStrategyMeasure.Tag = "B03";
             this.tsStrategyMeasure.Text = "Measure Update";
+            this.tsStrategyMeasure.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.tsStrategyMeasure.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsStrategyMeasure.ToolTipText = "Status";
             this.tsStrategyMeasure.Click += new System.EventHandler(this.tsStrategyMeasure_Click);
@@ -606,313 +914,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
-            // 
-            // mnuThemes
-            // 
-            this.mnuThemes.Image = global::NSCOperationalPlan.Properties.Resources.theme_32;
-            this.mnuThemes.Name = "mnuThemes";
-            this.mnuThemes.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.T)));
-            this.mnuThemes.Size = new System.Drawing.Size(250, 22);
-            this.mnuThemes.Tag = "A01";
-            this.mnuThemes.Text = "&Themes";
-            this.mnuThemes.Click += new System.EventHandler(this.mnuThemes_Click);
-            // 
-            // mnuStrategyObjective
-            // 
-            this.mnuStrategyObjective.Image = global::NSCOperationalPlan.Properties.Resources.strategy_objective_32;
-            this.mnuStrategyObjective.Name = "mnuStrategyObjective";
-            this.mnuStrategyObjective.Size = new System.Drawing.Size(250, 22);
-            this.mnuStrategyObjective.Tag = "A02";
-            this.mnuStrategyObjective.Text = "Strategy Objective";
-            this.mnuStrategyObjective.Click += new System.EventHandler(this.mnuStrategyObjective_Click);
-            // 
-            // mnuStrategies
-            // 
-            this.mnuStrategies.Image = global::NSCOperationalPlan.Properties.Resources.strategy_32;
-            this.mnuStrategies.Name = "mnuStrategies";
-            this.mnuStrategies.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
-            this.mnuStrategies.Size = new System.Drawing.Size(250, 22);
-            this.mnuStrategies.Tag = "A03";
-            this.mnuStrategies.Text = "&Strategies";
-            this.mnuStrategies.Click += new System.EventHandler(this.mnuStrategies_Click);
-            // 
-            // mnuActions
-            // 
-            this.mnuActions.Image = global::NSCOperationalPlan.Properties.Resources.action_32;
-            this.mnuActions.Name = "mnuActions";
-            this.mnuActions.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.A)));
-            this.mnuActions.Size = new System.Drawing.Size(250, 22);
-            this.mnuActions.Tag = "A04";
-            this.mnuActions.Text = "&Actions";
-            this.mnuActions.Click += new System.EventHandler(this.mnuActions_Click);
-            // 
-            // mnuStatus
-            // 
-            this.mnuStatus.Image = global::NSCOperationalPlan.Properties.Resources.status_32;
-            this.mnuStatus.Name = "mnuStatus";
-            this.mnuStatus.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.U)));
-            this.mnuStatus.Size = new System.Drawing.Size(250, 22);
-            this.mnuStatus.Tag = "A05";
-            this.mnuStatus.Text = "Stat&us";
-            this.mnuStatus.Click += new System.EventHandler(this.mnuStatus_Click);
-            // 
-            // mnuPI
-            // 
-            this.mnuPI.Image = global::NSCOperationalPlan.Properties.Resources.performanceIndicator_32;
-            this.mnuPI.Name = "mnuPI";
-            this.mnuPI.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.I)));
-            this.mnuPI.Size = new System.Drawing.Size(250, 22);
-            this.mnuPI.Tag = "A06";
-            this.mnuPI.Text = "Key Performance Measures";
-            this.mnuPI.Click += new System.EventHandler(this.mnuPI_Click);
-            // 
-            // mnuCPW
-            // 
-            this.mnuCPW.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.originalBudgetToolStripMenuItem,
-            this.MonthlyYTDToolStripMenuItem,
-            this.QBRToolStripMenuItem});
-            this.mnuCPW.Image = global::NSCOperationalPlan.Properties.Resources.cpw_32x32;
-            this.mnuCPW.Name = "mnuCPW";
-            this.mnuCPW.Size = new System.Drawing.Size(250, 22);
-            this.mnuCPW.Tag = "A07";
-            this.mnuCPW.Text = "Capital Work Program";
-            // 
-            // originalBudgetToolStripMenuItem
-            // 
-            this.originalBudgetToolStripMenuItem.Image = global::NSCOperationalPlan.Properties.Resources.cpw_32x32;
-            this.originalBudgetToolStripMenuItem.Name = "originalBudgetToolStripMenuItem";
-            this.originalBudgetToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.originalBudgetToolStripMenuItem.Tag = "A71";
-            this.originalBudgetToolStripMenuItem.Text = "Original Budget";
-            this.originalBudgetToolStripMenuItem.Click += new System.EventHandler(this.originalBudgetToolStripMenuItem_Click);
-            // 
-            // MonthlyYTDToolStripMenuItem
-            // 
-            this.MonthlyYTDToolStripMenuItem.Image = global::NSCOperationalPlan.Properties.Resources.cpw_monthly_32;
-            this.MonthlyYTDToolStripMenuItem.Name = "MonthlyYTDToolStripMenuItem";
-            this.MonthlyYTDToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.MonthlyYTDToolStripMenuItem.Tag = "A72";
-            this.MonthlyYTDToolStripMenuItem.Text = "Monthly YTD Actuals";
-            this.MonthlyYTDToolStripMenuItem.Click += new System.EventHandler(this.MonthlyYTDToolStripMenuItem_Click);
-            // 
-            // QBRToolStripMenuItem
-            // 
-            this.QBRToolStripMenuItem.Image = global::NSCOperationalPlan.Properties.Resources.quater_32;
-            this.QBRToolStripMenuItem.Name = "QBRToolStripMenuItem";
-            this.QBRToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.QBRToolStripMenuItem.Tag = "A73";
-            this.QBRToolStripMenuItem.Text = "Quarterly Budget Revise";
-            this.QBRToolStripMenuItem.Click += new System.EventHandler(this.QBRToolStripMenuItem_Click);
-            // 
-            // mnuExit
-            // 
-            this.mnuExit.Image = global::NSCOperationalPlan.Properties.Resources.exit_32;
-            this.mnuExit.Name = "mnuExit";
-            this.mnuExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.mnuExit.Size = new System.Drawing.Size(250, 22);
-            this.mnuExit.Text = "E&xit";
-            this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
-            // 
-            // mnuMonthlyProgress
-            // 
-            this.mnuMonthlyProgress.Image = global::NSCOperationalPlan.Properties.Resources.progress_32;
-            this.mnuMonthlyProgress.Name = "mnuMonthlyProgress";
-            this.mnuMonthlyProgress.Size = new System.Drawing.Size(271, 22);
-            this.mnuMonthlyProgress.Tag = "B01";
-            this.mnuMonthlyProgress.Text = "Monthly Action Update";
-            this.mnuMonthlyProgress.Click += new System.EventHandler(this.mnuMonthlyProgress_Click);
-            // 
-            // mnuMonthlyKPIProgress
-            // 
-            this.mnuMonthlyKPIProgress.Image = global::NSCOperationalPlan.Properties.Resources.performanceIndicator_32;
-            this.mnuMonthlyKPIProgress.Name = "mnuMonthlyKPIProgress";
-            this.mnuMonthlyKPIProgress.Size = new System.Drawing.Size(271, 22);
-            this.mnuMonthlyKPIProgress.Tag = "B02";
-            this.mnuMonthlyKPIProgress.Text = "Monthly KPM Update";
-            this.mnuMonthlyKPIProgress.Click += new System.EventHandler(this.mnuMonthlyKPIProgress_Click);
-            // 
-            // capitalWorkMonthlyProgressToolStripMenuItem
-            // 
-            this.capitalWorkMonthlyProgressToolStripMenuItem.Image = global::NSCOperationalPlan.Properties.Resources.projects_32x32;
-            this.capitalWorkMonthlyProgressToolStripMenuItem.Name = "capitalWorkMonthlyProgressToolStripMenuItem";
-            this.capitalWorkMonthlyProgressToolStripMenuItem.Size = new System.Drawing.Size(271, 22);
-            this.capitalWorkMonthlyProgressToolStripMenuItem.Tag = "B03";
-            this.capitalWorkMonthlyProgressToolStripMenuItem.Text = "Monthly Capital Work Project Update";
-            this.capitalWorkMonthlyProgressToolStripMenuItem.Click += new System.EventHandler(this.capitalWorkMonthlyProgressToolStripMenuItem_Click);
-            // 
-            // mnuRptTheme
-            // 
-            this.mnuRptTheme.Image = global::NSCOperationalPlan.Properties.Resources.theme_32;
-            this.mnuRptTheme.Name = "mnuRptTheme";
-            this.mnuRptTheme.Size = new System.Drawing.Size(241, 22);
-            this.mnuRptTheme.Tag = "C01";
-            this.mnuRptTheme.Text = "Themes";
-            this.mnuRptTheme.Click += new System.EventHandler(this.mnuRptTheme_Click);
-            // 
-            // mnuRptStrategyObjective
-            // 
-            this.mnuRptStrategyObjective.Image = global::NSCOperationalPlan.Properties.Resources.strategy_objective_32;
-            this.mnuRptStrategyObjective.Name = "mnuRptStrategyObjective";
-            this.mnuRptStrategyObjective.Size = new System.Drawing.Size(241, 22);
-            this.mnuRptStrategyObjective.Tag = "C02";
-            this.mnuRptStrategyObjective.Text = "Strategy Objective";
-            this.mnuRptStrategyObjective.Click += new System.EventHandler(this.mnuRptStrategyObjective_Click);
-            // 
-            // mnuRptStrategy
-            // 
-            this.mnuRptStrategy.Image = global::NSCOperationalPlan.Properties.Resources.strategy_32;
-            this.mnuRptStrategy.Name = "mnuRptStrategy";
-            this.mnuRptStrategy.Size = new System.Drawing.Size(241, 22);
-            this.mnuRptStrategy.Tag = "C03";
-            this.mnuRptStrategy.Text = "Strategies";
-            this.mnuRptStrategy.Click += new System.EventHandler(this.mnuRptStrategy_Click);
-            // 
-            // mnuRptAction
-            // 
-            this.mnuRptAction.Image = global::NSCOperationalPlan.Properties.Resources.action_32;
-            this.mnuRptAction.Name = "mnuRptAction";
-            this.mnuRptAction.Size = new System.Drawing.Size(241, 22);
-            this.mnuRptAction.Tag = "C04";
-            this.mnuRptAction.Text = "Actions";
-            this.mnuRptAction.Click += new System.EventHandler(this.mnuRptAction_Click);
-            // 
-            // mnuRptStatus
-            // 
-            this.mnuRptStatus.Image = global::NSCOperationalPlan.Properties.Resources.status_32;
-            this.mnuRptStatus.Name = "mnuRptStatus";
-            this.mnuRptStatus.Size = new System.Drawing.Size(241, 22);
-            this.mnuRptStatus.Tag = "C05";
-            this.mnuRptStatus.Text = "Status";
-            this.mnuRptStatus.Click += new System.EventHandler(this.mnuRptStatus_Click);
-            // 
-            // mnuRptProgress
-            // 
-            this.mnuRptProgress.Image = global::NSCOperationalPlan.Properties.Resources.progress_32;
-            this.mnuRptProgress.Name = "mnuRptProgress";
-            this.mnuRptProgress.Size = new System.Drawing.Size(241, 22);
-            this.mnuRptProgress.Tag = "C06";
-            this.mnuRptProgress.Text = "Operational Plan";
-            this.mnuRptProgress.Click += new System.EventHandler(this.mnuRptProgress_Click);
-            // 
-            // mnuRptPI
-            // 
-            this.mnuRptPI.Image = global::NSCOperationalPlan.Properties.Resources.performanceIndicator_32;
-            this.mnuRptPI.Name = "mnuRptPI";
-            this.mnuRptPI.Size = new System.Drawing.Size(241, 22);
-            this.mnuRptPI.Tag = "C07";
-            this.mnuRptPI.Text = "Performance Indicators";
-            this.mnuRptPI.Click += new System.EventHandler(this.mnuRptPI_Click);
-            // 
-            // capitalWorkProgramToolStripMenuItem1
-            // 
-            this.capitalWorkProgramToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.capitalWorkProgramToolStripMenuItem2,
-            this.toolStripSeparator21,
-            this.monthlyProgressToolStripMenuItem,
-            this.toolStripSeparator23,
-            this.mnuRptCPWSummary});
-            this.capitalWorkProgramToolStripMenuItem1.Image = global::NSCOperationalPlan.Properties.Resources.projects_32x32;
-            this.capitalWorkProgramToolStripMenuItem1.Name = "capitalWorkProgramToolStripMenuItem1";
-            this.capitalWorkProgramToolStripMenuItem1.Size = new System.Drawing.Size(241, 22);
-            this.capitalWorkProgramToolStripMenuItem1.Tag = "C08";
-            this.capitalWorkProgramToolStripMenuItem1.Text = "Capital Work";
-            // 
-            // capitalWorkProgramToolStripMenuItem2
-            // 
-            this.capitalWorkProgramToolStripMenuItem2.Name = "capitalWorkProgramToolStripMenuItem2";
-            this.capitalWorkProgramToolStripMenuItem2.Size = new System.Drawing.Size(196, 22);
-            this.capitalWorkProgramToolStripMenuItem2.Tag = "C71";
-            this.capitalWorkProgramToolStripMenuItem2.Text = "Monthly Progress";
-            this.capitalWorkProgramToolStripMenuItem2.Click += new System.EventHandler(this.capitalWorkProgramToolStripMenuItem2_Click);
-            // 
-            // toolStripSeparator21
-            // 
-            this.toolStripSeparator21.Name = "toolStripSeparator21";
-            this.toolStripSeparator21.Size = new System.Drawing.Size(193, 6);
-            // 
-            // monthlyProgressToolStripMenuItem
-            // 
-            this.monthlyProgressToolStripMenuItem.Name = "monthlyProgressToolStripMenuItem";
-            this.monthlyProgressToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.monthlyProgressToolStripMenuItem.Tag = "C72";
-            this.monthlyProgressToolStripMenuItem.Text = "Capital Work Program";
-            this.monthlyProgressToolStripMenuItem.Click += new System.EventHandler(this.monthlyProgressToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator23
-            // 
-            this.toolStripSeparator23.Name = "toolStripSeparator23";
-            this.toolStripSeparator23.Size = new System.Drawing.Size(193, 6);
-            // 
-            // mnuRptCPWSummary
-            // 
-            this.mnuRptCPWSummary.Name = "mnuRptCPWSummary";
-            this.mnuRptCPWSummary.Size = new System.Drawing.Size(196, 22);
-            this.mnuRptCPWSummary.Tag = "C73";
-            this.mnuRptCPWSummary.Text = "Capital Work Summary";
-            this.mnuRptCPWSummary.Click += new System.EventHandler(this.mnuRptCPWSummary_Click);
-            // 
-            // councilReportToolStripMenuItem
-            // 
-            this.councilReportToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("councilReportToolStripMenuItem.Image")));
-            this.councilReportToolStripMenuItem.Name = "councilReportToolStripMenuItem";
-            this.councilReportToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
-            this.councilReportToolStripMenuItem.Tag = "C09";
-            this.councilReportToolStripMenuItem.Text = "Service Plan - Monthly Progress";
-            this.councilReportToolStripMenuItem.Click += new System.EventHandler(this.councilReportToolStripMenuItem_Click);
-            // 
-            // mnuRptCouncilSource
-            // 
-            this.mnuRptCouncilSource.Image = ((System.Drawing.Image)(resources.GetObject("mnuRptCouncilSource.Image")));
-            this.mnuRptCouncilSource.Name = "mnuRptCouncilSource";
-            this.mnuRptCouncilSource.Size = new System.Drawing.Size(241, 22);
-            this.mnuRptCouncilSource.Text = "Council Source Plan";
-            this.mnuRptCouncilSource.Click += new System.EventHandler(this.mnuRptCouncilSource_Click);
-            // 
-            // setCurrentMonthToolStripMenuItem
-            // 
-            this.setCurrentMonthToolStripMenuItem.Image = global::NSCOperationalPlan.Properties.Resources.Calendar_32;
-            this.setCurrentMonthToolStripMenuItem.Name = "setCurrentMonthToolStripMenuItem";
-            this.setCurrentMonthToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
-            this.setCurrentMonthToolStripMenuItem.Tag = "D01";
-            this.setCurrentMonthToolStripMenuItem.Text = "Set Current Month";
-            this.setCurrentMonthToolStripMenuItem.Click += new System.EventHandler(this.setCurrentMonthToolStripMenuItem_Click);
-            // 
-            // mnuBackup
-            // 
-            this.mnuBackup.Image = global::NSCOperationalPlan.Properties.Resources.backup_32;
-            this.mnuBackup.Name = "mnuBackup";
-            this.mnuBackup.Size = new System.Drawing.Size(227, 22);
-            this.mnuBackup.Tag = "D02";
-            this.mnuBackup.Text = "Backup Database";
-            this.mnuBackup.Click += new System.EventHandler(this.mnuBackup_Click);
-            // 
-            // mnuRestore
-            // 
-            this.mnuRestore.Image = global::NSCOperationalPlan.Properties.Resources.restore_32;
-            this.mnuRestore.Name = "mnuRestore";
-            this.mnuRestore.Size = new System.Drawing.Size(227, 22);
-            this.mnuRestore.Tag = "D03";
-            this.mnuRestore.Text = "Restore Database";
-            this.mnuRestore.Click += new System.EventHandler(this.mnuRestore_Click);
-            // 
-            // loginAsADifferentUserToolStripMenuItem
-            // 
-            this.loginAsADifferentUserToolStripMenuItem.Image = global::NSCOperationalPlan.Properties.Resources.login01_32;
-            this.loginAsADifferentUserToolStripMenuItem.Name = "loginAsADifferentUserToolStripMenuItem";
-            this.loginAsADifferentUserToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
-            this.loginAsADifferentUserToolStripMenuItem.Tag = "D04";
-            this.loginAsADifferentUserToolStripMenuItem.Text = "Login as a Different User";
-            this.loginAsADifferentUserToolStripMenuItem.Click += new System.EventHandler(this.loginAsADifferentUserToolStripMenuItem_Click);
-            // 
-            // logBackToPreviousUserToolStripMenuItem
-            // 
-            this.logBackToPreviousUserToolStripMenuItem.Image = global::NSCOperationalPlan.Properties.Resources.login02_32;
-            this.logBackToPreviousUserToolStripMenuItem.Name = "logBackToPreviousUserToolStripMenuItem";
-            this.logBackToPreviousUserToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
-            this.logBackToPreviousUserToolStripMenuItem.Tag = "D05";
-            this.logBackToPreviousUserToolStripMenuItem.Text = "Log back to Previous User";
-            this.logBackToPreviousUserToolStripMenuItem.Click += new System.EventHandler(this.logBackToPreviousUserToolStripMenuItem_Click);
             // 
             // frmOperationPlan
             // 
