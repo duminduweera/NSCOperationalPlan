@@ -511,7 +511,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(Code.CheckNullAndReturnAsString(Fields!kpi_progress.Value) &lt;&gt; -9999, Format(Code.CheckNullAndReturnAsString(Fields!kpi_progress.Value),"#,##0.##") + " " + Fields!kpi_unit.Value, "-")</Value>
+                                  <Value>=IIF(Code.CheckNullAndReturnAsString(Fields!kpi_progress.Value) &lt;&gt; -9999, Switch(Fields!kpi_unit.Value = "$",Fields!kpi_prefix_short.Value + "" + Fields!kpi_unit.Value + " " + Format(Fields!kpi_progress.Value,"#,##0.##").ToString , 1=1 ,Fields!kpi_prefix_short.Value + " " + Format(Fields!kpi_progress.Value,"#,##0.##").ToString + " " + Fields!kpi_unit.Value), "-")</Value>
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
                                     <Color>#4d4d4d</Color>
@@ -535,6 +535,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
