@@ -116,6 +116,7 @@
             this.tsStrategyMeasure = new System.Windows.Forms.ToolStripButton();
             this.tsCPW = new System.Windows.Forms.ToolStripButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.subReportingTestingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -360,7 +361,8 @@
             this.councilReportToolStripMenuItem,
             this.toolStripSeparator14,
             this.testSubReportToolStripMenuItem,
-            this.mnuRptCouncilSource});
+            this.mnuRptCouncilSource,
+            this.subReportingTestingToolStripMenuItem});
             this.testToolStripMenuItem.Name = "testToolStripMenuItem";
             this.testToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.testToolStripMenuItem.Tag = "C00";
@@ -553,7 +555,7 @@
             this.importCPWFromExcelToolStripMenuItem,
             this.importSMeasuresFromExcelToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.toolsToolStripMenuItem.Tag = "D00";
             this.toolsToolStripMenuItem.Text = "&Tools";
             // 
@@ -915,6 +917,13 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
+            // subReportingTestingToolStripMenuItem
+            // 
+            this.subReportingTestingToolStripMenuItem.Name = "subReportingTestingToolStripMenuItem";
+            this.subReportingTestingToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
+            this.subReportingTestingToolStripMenuItem.Text = "SubReportingTesting";
+            this.subReportingTestingToolStripMenuItem.Click += new System.EventHandler(this.subReportingTestingToolStripMenuItem_Click);
+            // 
             // frmOperationPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1032,6 +1041,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuRptCouncilSource;
         private System.Windows.Forms.ToolStripButton tsStrategyMeasure;
         private System.Windows.Forms.ToolStripMenuItem importSMeasuresFromExcelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem subReportingTestingToolStripMenuItem;
     }
 }
 
