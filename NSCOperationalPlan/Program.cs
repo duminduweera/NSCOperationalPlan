@@ -76,6 +76,7 @@ namespace NSCOperationalPlan
                 System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.AppStarting;
 
                 OPGlobals.dbProvider = "MySql.Data.MySqlClient";
+                OPGlobals.db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
                 //OPGlobals.connString = "SERVER = nscutil; DATABASE = nsc_operation_plan_17_to_21; UID = sudinthap; PASSWORD = NSCv90cisc0;";
                 OPGlobals.connString = "SERVER = nscutil; DATABASE = nsc_operation_plan_17_to_21; UID = opuser; PASSWORD = NSC@2390;";
 

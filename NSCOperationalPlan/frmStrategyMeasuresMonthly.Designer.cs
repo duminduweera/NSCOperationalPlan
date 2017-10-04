@@ -101,6 +101,7 @@
             this.tsbSave.Size = new System.Drawing.Size(36, 51);
             this.tsbSave.Text = "Save";
             this.tsbSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbSave.Click += new System.EventHandler(this.tsbSave_Click);
             // 
             // toolStripSeparator3
             // 

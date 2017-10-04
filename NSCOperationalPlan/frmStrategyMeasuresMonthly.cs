@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyDLLs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,12 +23,12 @@ namespace NSCOperationalPlan
         {
             setUserRights();
             ArrangeGrid();
-           BindDropDownToDataGrid();
+            BindDropDownToDataGrid();
 
 
             AddDatatoGrid(StrategyMeasures.getMeasuresforManagers(OPGlobals.CurrentUser.ManagerID, OPGlobals.currentYear));
 
-    }
+        }
         private void setUserRights()
         {
 #if DEBUG
@@ -37,17 +38,19 @@ namespace NSCOperationalPlan
 
 #endif
 
-            hiddenRows = new int[]{6,7,8};
-          
+            hiddenRows = new int[] { 6, 7, 8 };
+
             readonlyrows = new int[] { 0, 1, 2, 3, 4, 5 };
-            if (OPGlobals.CurrentUser.Permission == UserRights.Director) {
+            if (OPGlobals.CurrentUser.Permission == UserRights.Director)
+            {
                 chk1.Visible = true;
                 readonlyrows = new int[] { 0, 1, 2, 3, 4 };
             }
-            if (OPGlobals.CurrentUser.Permission == UserRights.GM) {
-                chk2.Visible = true;                
+            if (OPGlobals.CurrentUser.Permission == UserRights.GM)
+            {
+                chk2.Visible = true;
             }
-           
+
         }
         private void ArrangeGrid()
         {
@@ -78,7 +81,7 @@ namespace NSCOperationalPlan
             cmbManager.ValueMember = "id";
             cmbManager.DisplayMember = "manager_description";
             dgv.Columns.Insert(5, cmbManager);
-            dgv.Columns[5].MinimumWidth=250;
+            dgv.Columns[5].MinimumWidth = 250;
             cmbManager.FlatStyle = FlatStyle.Flat;
             cmbManager.DisplayStyle = DataGridViewComboBoxDisplayStyle.ComboBox;
             foreach (int i in readonlyrows)
@@ -91,10 +94,14 @@ namespace NSCOperationalPlan
 
         private void chk1_CheckedChanged(object sender, EventArgs e)
         {
-            if (chk1.Checked) {
-                AddDatatoGrid(StrategyMeasures.getMeasuresforDirectors(OPGlobals.CurrentUser.DirectorID, OPGlobals.currentYear)); }
-            else {
-                AddDatatoGrid(StrategyMeasures.getMeasuresforManagers(OPGlobals.CurrentUser.ManagerID, OPGlobals.currentYear)); }
+            if (chk1.Checked)
+            {
+                AddDatatoGrid(StrategyMeasures.getMeasuresforDirectors(OPGlobals.CurrentUser.DirectorID, OPGlobals.currentYear));
+            }
+            else
+            {
+                AddDatatoGrid(StrategyMeasures.getMeasuresforManagers(OPGlobals.CurrentUser.ManagerID, OPGlobals.currentYear));
+            }
 
         }
         private void chk2_CheckedChanged(object sender, EventArgs e)
@@ -103,7 +110,7 @@ namespace NSCOperationalPlan
             else { AddDatatoGrid(StrategyMeasures.getMeasuresforManagers(OPGlobals.CurrentUser.ManagerID, OPGlobals.currentYear)); }
         }
         private void AddDatatoGrid(DataTable tb)
-        {  
+        {
             dgv.Rows.Clear();
             dgv.Refresh();
             try
@@ -143,6 +150,56 @@ namespace NSCOperationalPlan
                 datagridview.BeginEdit(true);
                 ((ComboBox)datagridview.EditingControl).DroppedDown = true;
             }
+        }
+
+        private void tsbSave_Click(object sender, EventArgs e)
+        {
+            if (dgv.Rows.Count > 0) {
+                DbConnection conn = OPGlobals.db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
+                if (conn.State == ConnectionState.Closed) { conn.Open(); }
+                using (DbTransaction trans = conn.BeginTransaction())
+                {
+                    try
+                    {
+                        //if (SaveDataToDatabase(dgv, conn, trans) == false) {  }
+                        trans.Commit();
+                        MessageBox.Show("Strategy Measures have been saved/updated successfully", "OP MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        AddDatatoGrid(StrategyMeasures.getMeasuresforManagers(OPGlobals.CurrentUser.ManagerID, OPGlobals.currentYear));
+                    }
+                    catch (Exception ex)
+                    {
+                        trans.Rollback();
+                        MessageBox.Show("Data NOT Saved ..." + Environment.NewLine + ex.Message.ToString(), "OP ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                conn.Close();
+            }
+            
+            //RefreshGridView();
+        }
+
+        private void SaveDataToDatabase(DataGridView dgv, DbConnection conn, DbTransaction trans)
+        {
+            for (int i = 0; i < dgv.RowCount; i++)
+            {
+                if (MyGridUtils.IsColumnDataChanged(dgv.Rows[i],
+                       new List<String>() { "Responsible Manager", "Progress" },
+                       new List<String>() { "ResponsibleManagerOriginal", "ProgressOriginal" }))
+                {
+                    StrategyMeasures tempMeasure = new StrategyMeasures();
+                    tempMeasure.MeasureCode = dgv.Rows[i].Cells["Measure"].Value.ToString().Split(' ')[0];
+                    tempMeasure.Strategy_id = dgv.Rows[i].Cells["Strategy"].Value.ToString().Split(' ')[0];
+                    tempMeasure.Year = OPGlobals.currentYear;
+
+                }
+                else
+                {
+
+                    continue;
+                }
+            }
+
+          
         }
     }
 }

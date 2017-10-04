@@ -22,7 +22,6 @@ namespace NSCOperationalPlan
 
         private void tsLoad_Click(object sender, EventArgs e)
         {            
-            int size = -1;
             DialogResult result = openFileDialog1.ShowDialog(); // Show the dialog.
             if (result == DialogResult.OK) // Test result.
             {
