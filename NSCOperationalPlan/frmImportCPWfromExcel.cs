@@ -29,7 +29,7 @@ namespace NSCOperationalPlan
             if (result == DialogResult.OK) // Test result.
             {
                 string filePath = openFileDialog1.FileName;
-                HashSet<string> CPWNotinDataBase = CapitalWork.getCPWNotinOP("D:\\Downloads\\CPW.xlsx");
+                //HashSet<string> CPWNotinDataBase = CapitalWork.getCPWNotinOP("D:\\Downloads\\CPW.xlsx");
                 ArrangeGrid();
                 ReadFromExcel(filePath);
             }
@@ -104,8 +104,6 @@ namespace NSCOperationalPlan
                     int original = int.Parse(xlRange.Cells[i, 3].Value2.ToString());
                     int revised = int.Parse(xlRange.Cells[i, 4].Value2.ToString());
                     pb1.Value += 1;
-
-                    if (original !=0 && original != revised) {
                         Dictionary<string, string> userDetails = new Dictionary<string, string>();
                         val = xlRange.Cells[i, 1].Value2.ToString();
                         userDetails = GetManagerID(xlRange.Cells[i, 6].Value2.ToString());
@@ -121,12 +119,7 @@ namespace NSCOperationalPlan
                             userDetails["DirectorID"],
                             userDetails["ManagerID"],
                              xlRange.Cells[i, 7].Value2.ToString(),
-                        });
-                        
-                    }
-                    else {
-                        continue;
-                    }                                     
+                        });                                   
                 }
             }
             catch (Exception ex) {
@@ -186,9 +179,10 @@ namespace NSCOperationalPlan
         
         private void tsbSave_Click(object sender, EventArgs e)
         {
-            for(int dr=0; dr < dg1.RowCount; dr++)
+            int startIndex = CapitalWork.getNextCPWIndexStatic();
+            for (int dr=0; dr < dg1.RowCount; dr++)
             {
-                CapitalWork cpw = new CapitalWork(dr+CapitalWork.getNextCPWIndexStatic());
+                CapitalWork cpw = new CapitalWork(dr+ startIndex);
                 cpw.CapitalWorkJobCostNumber = dg1.Rows[dr].Cells["JCNo"].Value.ToString();
                 cpw.Description = dg1.Rows[dr].Cells["Description"].Value.ToString();
 
@@ -213,13 +207,10 @@ namespace NSCOperationalPlan
                 {
                     try
                     {
-                        if (cpw.OriginalBudget == 0)
-                        {
                             bool saveresult = cpw.InsertCWP(db, conn, trans);
                             if (saveresult) {
                                 cpw.InsertCWPQBR(db, conn, trans);
                                 cpw.InsertCWPYTD(db, conn, trans);
-                            } else { throw new Exception("Something went worng!!!"); }
                         }
                        
 
@@ -229,7 +220,7 @@ namespace NSCOperationalPlan
                     catch (Exception ex)
                     {
                         trans.Rollback();
-                        MessageBox.Show("Data NOT Saved ..." + Environment.NewLine + ex.Message.ToString(), "OP ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Data NOT Saved ..."+cpw.Description.ToString() + Environment.NewLine + ex.Message.ToString(), "OP ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
