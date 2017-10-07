@@ -135,6 +135,7 @@
     <Compile Include="cCapitalWork.cs" />
     <Compile Include="clsReports.cs" />
     <Compile Include="clsUser.cs" />
+    <Compile Include="dbjoin.cs" />
     <Compile Include="frmAction.cs">
       <SubType>Form</SubType>
     </Compile>

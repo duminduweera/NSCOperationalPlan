@@ -48,7 +48,12 @@ namespace NSCOperationalPlan
             ReportDataSource reportDataSource = new ReportDataSource();
             reportDataSource.Name = "DataSet1";
             reportDataSource.Value = this.dtb;
+            ReportDataSource reportDataSource2 = new ReportDataSource();
+            reportDataSource2.Name = "DataSet2";
+            reportDataSource2.Value = this.dtb2;
+
             reportViewer1.LocalReport.DataSources.Add(reportDataSource);
+            reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
 
             //foreach (DataTable dt in dtbsub)
             //{
@@ -57,7 +62,7 @@ namespace NSCOperationalPlan
             //    reportDataSource.Value = dt;
             //    reportViewer1.LocalReport.DataSources.Add(reportDataSource);
             //}
-             
+
             //reportViewer1.LocalReport.DataSources.Add(reportDataSource);
             this.reportViewer1.LocalReport.ReportPath = OPGlobals.reportParth + this.reportname;
 

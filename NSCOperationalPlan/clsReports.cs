@@ -112,11 +112,13 @@ namespace NSCOperationalPlan
             Database db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
             DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
 
-            DataTable tb1 = db.GetDataTable(conn, query1);    
-            frmprint.dataTable = tb1;
-
+            DataTable tb1 = db.GetDataTable(conn, query1);              
             DataTable tb2 = db.GetDataTable(conn, query2);
+
+            frmprint.dataTable = tb1;
             frmprint.dataTable2 = tb2;
+
+           
 
             frmprint.reportName = @"rptMonthlyProgressActions.rdlc";
             frmprint.Show();

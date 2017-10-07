@@ -1491,6 +1491,8 @@ namespace NSCOperationalPlan {
             
             private global::System.Data.DataColumn columnkpi_estimate_year;
             
+            private global::System.Data.DataColumn columnkpm_id;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public EverythingDataTable() {
@@ -1646,6 +1648,14 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn kpm_idColumn {
+                get {
+                    return this.columnkpm_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1681,7 +1691,23 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EverythingRow AddEverythingRow(string director_id, string manager_id, string service_plan, string action_id, string action_description, string delivery_program_TargetDate, string status_short, string progress_description, string service_plan_id, string status_color, string progress_pecentage, string department, string efficiency_description, string kpm_description, string kpi_estimate_year) {
+            public EverythingRow AddEverythingRow(
+                        string director_id, 
+                        string manager_id, 
+                        string service_plan, 
+                        string action_id, 
+                        string action_description, 
+                        string delivery_program_TargetDate, 
+                        string status_short, 
+                        string progress_description, 
+                        string service_plan_id, 
+                        string status_color, 
+                        string progress_pecentage, 
+                        string department, 
+                        string efficiency_description, 
+                        string kpm_description, 
+                        string kpi_estimate_year, 
+                        string kpm_id) {
                 EverythingRow rowEverythingRow = ((EverythingRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         director_id,
@@ -1698,7 +1724,8 @@ namespace NSCOperationalPlan {
                         department,
                         efficiency_description,
                         kpm_description,
-                        kpi_estimate_year};
+                        kpi_estimate_year,
+                        kpm_id};
                 rowEverythingRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowEverythingRow);
                 return rowEverythingRow;
@@ -1736,6 +1763,7 @@ namespace NSCOperationalPlan {
                 this.columnefficiency_description = base.Columns["efficiency_description"];
                 this.columnkpm_description = base.Columns["kpm_description"];
                 this.columnkpi_estimate_year = base.Columns["kpi_estimate_year"];
+                this.columnkpm_id = base.Columns["kpm_id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1771,6 +1799,8 @@ namespace NSCOperationalPlan {
                 base.Columns.Add(this.columnkpm_description);
                 this.columnkpi_estimate_year = new global::System.Data.DataColumn("kpi_estimate_year", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnkpi_estimate_year);
+                this.columnkpm_id = new global::System.Data.DataColumn("kpm_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkpm_id);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2959,6 +2989,22 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string kpm_id {
+                get {
+                    try {
+                        return ((string)(this[this.tableEverything.kpm_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'kpm_id\' in table \'Everything\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEverything.kpm_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Isdirector_idNull() {
                 return this.IsNull(this.tableEverything.director_idColumn);
             }
@@ -3135,6 +3181,18 @@ namespace NSCOperationalPlan {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setkpi_estimate_yearNull() {
                 this[this.tableEverything.kpi_estimate_yearColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iskpm_idNull() {
+                return this.IsNull(this.tableEverything.kpm_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setkpm_idNull() {
+                this[this.tableEverything.kpm_idColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -79,7 +79,6 @@ namespace NSCOperationalPlan
                 OPGlobals.db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
                 //OPGlobals.connString = "SERVER = nscutil; DATABASE = nsc_operation_plan_17_to_21; UID = sudinthap; PASSWORD = NSCv90cisc0;";
                 OPGlobals.connString = "SERVER = nscutil; DATABASE = nsc_operation_plan_17_to_21; UID = opuser; PASSWORD = NSC@2390;";
-
                 string exeFolder = Path.GetDirectoryName(Application.ExecutablePath);
                 OPGlobals.reportParth = Path.Combine(exeFolder, @"Reports\");
 
@@ -88,6 +87,7 @@ namespace NSCOperationalPlan
                 {
                     //NSCUtils.ADUser u = new NSCUtils.ADUser("farrego");
                     //NSCUtils.ADUser u = new NSCUtils.ADUser("masonli");
+                    //mccleti
                     NSCUtils.ADUser u = new ADUser();
                     if (string.IsNullOrEmpty(u.UserName))
                     {
@@ -134,20 +134,16 @@ namespace NSCOperationalPlan
 
                 //string exeFolder = Path.GetDirectoryName(Application.ExecutablePath);
                 
-                OPGlobals.reportParth = Path.Combine(exeFolder, @"Reports\");
-                
+                OPGlobals.reportParth = Path.Combine(exeFolder, @"Reports\");                
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 frmOperationPlan frmMDI = new frmOperationPlan();
                 Application.Run(frmMDI);
-
-
             }
             catch (Exception ex)
             {
                 CloseApplication(ex.Message, false);
             }
-
         }
 
         private static void setCapitalWorksEnabled(clsUser aduser)
