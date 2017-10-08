@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using MySql.Data.MySqlClient;
 using System.Text.RegularExpressions;
+using MyDLLs;
 
 namespace NSCOperationalPlan
 {
@@ -31,6 +32,11 @@ namespace NSCOperationalPlan
         public static int i = 0;
 
         public static bool CapitalWorksEnabled = false;
+
+        public static Database db;
+
+
+
 
         public static int GetPreviousMonth(int cmonth, string cyear)
         {

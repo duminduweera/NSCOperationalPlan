@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace NSCOperationalPlan
@@ -400,7 +401,83 @@ namespace NSCOperationalPlan
                 if (tb.Rows.Count > 0) { return int.Parse(tb.Rows[0][0].ToString()) + 1; } else { return 1; }
             }
         }
+        public static int getNextCPWIndexStatic()
+        {
+            Database db1 = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
+            using (DbConnection conn = db1.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString))
+            {
+                string strsql = "SELECT capital_works_id FROM capital_works ORDER BY capital_works_id DESC LIMIT 1;";
+                DataTable tb = db1.GetDataTable(conn, strsql);
+                if (tb.Rows.Count > 0) { return int.Parse(tb.Rows[0][0].ToString()) + 1; } else { return 1; }
+            }
+        }
+        public static HashSet<string> getCPWNotinOP(string filePathtoExcelwithJobNos) {
+            HashSet<string> cpwJobNos = new HashSet<string>();
+            HashSet<String> CPWDatabase = getCPWJobNumbersFromDatabase();
+            HashSet<String> CPWExcel = getCPWJobNumbersfromExcel(filePathtoExcelwithJobNos);
+            return new HashSet<String>(CPWExcel.Except(CPWDatabase));
+        }
+        private static HashSet<string> getCPWJobNumbersfromExcel(string filePath)
+        {
+            HashSet<string> temp = new HashSet<string>();
+            HashSet<string> duplicates = new HashSet<string>();
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(filePath);
+            Microsoft.Office.Interop.Excel.Worksheet xlWorksheet = xlWorkbook.Sheets[1]; // assume it is the first sheet
+            Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange; // get the entire used range
+            int rowCount = xlRange.Rows.Count;
+            int colCount = xlRange.Columns.Count;
 
+            //iterate over the rows and columns and print to the console as it appears in the file
+            //excel is not zero based!!         
+
+            for (int i = 2; i <= rowCount; i++)
+            {
+                try
+                {
+                    if (!temp.Add(xlRange.Cells[i, 1].Value2.ToString().Trim()))
+                    {
+                        duplicates.Add(xlRange.Cells[i, 1].Value2.ToString().Trim());
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    continue;
+                }
+            }
+
+            //release com objects to fully kill excel process from running in the background
+            Marshal.ReleaseComObject(xlRange);
+            Marshal.ReleaseComObject(xlWorksheet);
+            //close and release
+            xlWorkbook.Close();
+            Marshal.ReleaseComObject(xlWorkbook);
+            //quit and release
+            xlApp.Quit();
+            Marshal.ReleaseComObject(xlApp);
+
+            return temp;
+        }
+        private static HashSet<string> getCPWJobNumbersFromDatabase()
+        {
+            HashSet<string> temp = new HashSet<string>();
+            DbConnection conn = OPGlobals.db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
+            DataTable tb = OPGlobals.db.GetDataTable(conn, "SELECT capital_works_jobno FROM nsc_operation_plan_17_to_21.capital_works;");
+            foreach (DataRow row in tb.Rows)
+            {
+                try
+                {
+                    temp.Add(row["capital_works_jobno"].ToString());
+                }
+                catch (Exception ex)
+                {
+                    continue;
+                }
+            }
+            return temp;
+        }
+    
         public static DataTable GetTableCapitalWorksDepartmentSummary(string cpw_year, int cpw_month)
         {
             Database db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);

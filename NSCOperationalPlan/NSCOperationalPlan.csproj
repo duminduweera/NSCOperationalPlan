@@ -99,8 +99,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Referenced Assemblies\MyDBFactory.dll</HintPath>
     </Reference>
-    <Reference Include="MyGridUtils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="MyGridUtils">
       <HintPath>..\Referenced Assemblies\MyGridUtils.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
@@ -136,6 +135,7 @@
     <Compile Include="cCapitalWork.cs" />
     <Compile Include="clsReports.cs" />
     <Compile Include="clsUser.cs" />
+    <Compile Include="dbjoin.cs" />
     <Compile Include="frmAction.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -461,6 +461,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\gphBudgetSummaryDepartment.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptMonthlyProgressKPM.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptMonthlyProgressActions.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptMonthlyProgress_forCouncil.rdlc">

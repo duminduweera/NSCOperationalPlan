@@ -96,20 +96,31 @@ namespace NSCOperationalPlan
             frmPrint frmprint = new frmPrint();
             Database db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
             DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
-            DataTable tb = db.GetDataTable(conn, query);
-            //tb.sor
-            //DataTable dtCloned = tb.Clone();
-            //dtCloned.Columns[1].DataType = typeof(Int32);
-            //foreach (DataRow row in tb.Rows)
-            //{
-            //    dtCloned.ImportRow(row);
-            //}
-
+            DataTable tb = db.GetDataTable(conn, query);           
             tb.DefaultView.Sort = "action_rank" + " " + "asc";
             tb = tb.DefaultView.ToTable();
 
             frmprint.dataTable = tb;
                         frmprint.reportName = @"rptCouncilSourcePlan.rdlc";
+            frmprint.Show();
+
+        }
+
+        public static void PrintSubReport(string query1,string query2)
+        {
+            frmPrint frmprint = new frmPrint();
+            Database db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
+            DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
+
+            DataTable tb1 = db.GetDataTable(conn, query1);              
+            DataTable tb2 = db.GetDataTable(conn, query2);
+
+            frmprint.dataTable = tb1;
+            frmprint.dataTable2 = tb2;
+
+           
+
+            frmprint.reportName = @"rptMonthlyProgressActions.rdlc";
             frmprint.Show();
 
         }
