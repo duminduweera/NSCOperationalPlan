@@ -42,14 +42,19 @@ namespace NSCOperationalPlan
 
             ArrangeGrid();
             LoadTableFromDatabase();
-            if(OPGlobals.CurrentUser.Permission == UserRights.Administrator || OPGlobals.CurrentUser.Permission == UserRights.Director || OPGlobals.CurrentUser.Permission == UserRights.Finance)
+
+            if (OPGlobals.CurrentUser.Permission == UserRights.Administrator || OPGlobals.CurrentUser.Permission == UserRights.GM || OPGlobals.CurrentUser.Permission == UserRights.Finance)
             {
                 chk1.Enabled = true;
-                //chk2.Enabled = true;
+                chk2.Enabled = true;
+            } else if (OPGlobals.CurrentUser.Permission == UserRights.Director)
+            {
+                chk1.Enabled = true;
+                chk2.Enabled = false;
             } else
             {
                 chk1.Enabled = false;
-                //chk2.Enabled = false;
+                chk2.Enabled = false;
             }
         }
 

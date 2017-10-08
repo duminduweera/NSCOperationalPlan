@@ -174,7 +174,6 @@
             this.chk2.TabIndex = 57;
             this.chk2.Text = "Show all  Capital Works ";
             this.chk2.UseVisualStyleBackColor = true;
-            this.chk2.Visible = false;
             this.chk2.CheckedChanged += new System.EventHandler(this.chk2_CheckedChanged);
             // 
             // frmCPWMonthly
