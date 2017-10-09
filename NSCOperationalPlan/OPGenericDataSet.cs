@@ -4,6 +4,10 @@
 
     partial class OPGenericDataSet
     {
+        partial class ServicePlanDataTable
+        {
+        }
+
         partial class DataTable11DataTable
         {
         }
