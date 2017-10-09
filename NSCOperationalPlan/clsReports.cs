@@ -106,24 +106,7 @@ namespace NSCOperationalPlan
 
         }
 
-        public static void PrintSubReport(string query1,string query2)
-        {
-            frmPrint frmprint = new frmPrint();
-            Database db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
-            DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
-
-            DataTable tb1 = db.GetDataTable(conn, query1);              
-            DataTable tb2 = db.GetDataTable(conn, query2);
-
-            frmprint.dataTable = tb1;
-            frmprint.dataTable2 = tb2;
-
-           
-
-            frmprint.reportName = @"rptMonthlyProgressActions.rdlc";
-            frmprint.Show();
-
-        }
+      
         public static void PrintAction(string query)
         {
             frmPrint frmprint = new frmPrint();
@@ -445,6 +428,28 @@ namespace NSCOperationalPlan
 
             frmprint.Show();
 
+        }
+
+        internal static void PrintSubReport(string servicePlanSql, string actionSql, string kpmSql, string cwpSql)
+        {
+            frmPrint frmprint = new frmPrint();
+            Database db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
+            DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
+
+            DataTable dtServicePlan = db.GetDataTable(conn, servicePlanSql);
+            DataTable dtAction = db.GetDataTable(conn, actionSql);
+            DataTable dtKPM = db.GetDataTable(conn, kpmSql);
+            DataTable dtCWP = db.GetDataTable(conn, cwpSql);
+
+            frmprint.dataTable = dtServicePlan;
+            frmprint.dataTable2 = dtAction;
+            frmprint.dataTable3 = dtKPM;
+            frmprint.dataTable4 = dtCWP;
+
+
+
+            frmprint.reportName = @"rptCouncilReport.rdlc";
+            frmprint.Show();
         }
 
         public static void PrintKPIMonthlyProgress(string query)

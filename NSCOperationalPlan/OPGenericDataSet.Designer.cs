@@ -32,6 +32,10 @@ namespace NSCOperationalPlan {
         
         private EverythingDataTable tableEverything;
         
+        private ServicePlanDataTable tableServicePlan;
+        
+        private CWPMonthlyProgressDataTable tableCWPMonthlyProgress;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -71,6 +75,12 @@ namespace NSCOperationalPlan {
                 }
                 if ((ds.Tables["Everything"] != null)) {
                     base.Tables.Add(new EverythingDataTable(ds.Tables["Everything"]));
+                }
+                if ((ds.Tables["ServicePlan"] != null)) {
+                    base.Tables.Add(new ServicePlanDataTable(ds.Tables["ServicePlan"]));
+                }
+                if ((ds.Tables["CWPMonthlyProgress"] != null)) {
+                    base.Tables.Add(new CWPMonthlyProgressDataTable(ds.Tables["CWPMonthlyProgress"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -127,6 +137,26 @@ namespace NSCOperationalPlan {
         public EverythingDataTable Everything {
             get {
                 return this.tableEverything;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ServicePlanDataTable ServicePlan {
+            get {
+                return this.tableServicePlan;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public CWPMonthlyProgressDataTable CWPMonthlyProgress {
+            get {
+                return this.tableCWPMonthlyProgress;
             }
         }
         
@@ -209,6 +239,12 @@ namespace NSCOperationalPlan {
                 if ((ds.Tables["Everything"] != null)) {
                     base.Tables.Add(new EverythingDataTable(ds.Tables["Everything"]));
                 }
+                if ((ds.Tables["ServicePlan"] != null)) {
+                    base.Tables.Add(new ServicePlanDataTable(ds.Tables["ServicePlan"]));
+                }
+                if ((ds.Tables["CWPMonthlyProgress"] != null)) {
+                    base.Tables.Add(new CWPMonthlyProgressDataTable(ds.Tables["CWPMonthlyProgress"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -266,6 +302,18 @@ namespace NSCOperationalPlan {
                     this.tableEverything.InitVars();
                 }
             }
+            this.tableServicePlan = ((ServicePlanDataTable)(base.Tables["ServicePlan"]));
+            if ((initTable == true)) {
+                if ((this.tableServicePlan != null)) {
+                    this.tableServicePlan.InitVars();
+                }
+            }
+            this.tableCWPMonthlyProgress = ((CWPMonthlyProgressDataTable)(base.Tables["CWPMonthlyProgress"]));
+            if ((initTable == true)) {
+                if ((this.tableCWPMonthlyProgress != null)) {
+                    this.tableCWPMonthlyProgress.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -284,6 +332,10 @@ namespace NSCOperationalPlan {
             base.Tables.Add(this.tableDataTable11);
             this.tableEverything = new EverythingDataTable();
             base.Tables.Add(this.tableEverything);
+            this.tableServicePlan = new ServicePlanDataTable();
+            base.Tables.Add(this.tableServicePlan);
+            this.tableCWPMonthlyProgress = new CWPMonthlyProgressDataTable();
+            base.Tables.Add(this.tableCWPMonthlyProgress);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -307,6 +359,18 @@ namespace NSCOperationalPlan {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeEverything() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeServicePlan() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeCWPMonthlyProgress() {
             return false;
         }
         
@@ -377,6 +441,12 @@ namespace NSCOperationalPlan {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void EverythingRowChangeEventHandler(object sender, EverythingRowChangeEvent e);
         
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void ServicePlanRowChangeEventHandler(object sender, ServicePlanRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void CWPMonthlyProgressRowChangeEventHandler(object sender, CWPMonthlyProgressRowChangeEvent e);
+        
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
@@ -384,27 +454,57 @@ namespace NSCOperationalPlan {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class KPMMonthlyProgressDataTable : global::System.Data.TypedTableBase<KPMMonthlyProgressRow> {
             
-            private global::System.Data.DataColumn columndirector_id;
+            private global::System.Data.DataColumn columnkpi_id;
+            
+            private global::System.Data.DataColumn columnkpm_id;
+            
+            private global::System.Data.DataColumn columnkpm_description;
             
             private global::System.Data.DataColumn columnmanager_id;
             
-            private global::System.Data.DataColumn columnservice_plan;
+            private global::System.Data.DataColumn columnmanager_name;
             
-            private global::System.Data.DataColumn columnaction_id;
+            private global::System.Data.DataColumn columnmanager_description;
             
-            private global::System.Data.DataColumn columnaction_description;
+            private global::System.Data.DataColumn columndirector_description;
             
-            private global::System.Data.DataColumn columndelivery_program_TargetDate;
+            private global::System.Data.DataColumn columndirector_name;
             
-            private global::System.Data.DataColumn columnstatus_short;
+            private global::System.Data.DataColumn columndirector_id;
             
-            private global::System.Data.DataColumn columnprogress_description;
+            private global::System.Data.DataColumn columndepartment;
+            
+            private global::System.Data.DataColumn columnsub_department;
+            
+            private global::System.Data.DataColumn columnefficiency_description;
+            
+            private global::System.Data.DataColumn columnkpi_prefix_id;
+            
+            private global::System.Data.DataColumn columnkpi_estimate_year;
+            
+            private global::System.Data.DataColumn columnkpi_prefix;
+            
+            private global::System.Data.DataColumn columnkpi_prefix_short;
+            
+            private global::System.Data.DataColumn columnkpi_estimate;
+            
+            private global::System.Data.DataColumn columnunit_id;
+            
+            private global::System.Data.DataColumn columnkpi_unit;
+            
+            private global::System.Data.DataColumn columnkpi_unit_short;
             
             private global::System.Data.DataColumn columnservice_plan_id;
             
-            private global::System.Data.DataColumn columnstatus_color;
+            private global::System.Data.DataColumn columnservice_plan;
             
-            private global::System.Data.DataColumn columnprogress_pecentage;
+            private global::System.Data.DataColumn columnkpi_year;
+            
+            private global::System.Data.DataColumn columnkpi_month;
+            
+            private global::System.Data.DataColumn columnkpi_progress;
+            
+            private global::System.Data.DataColumn columnkpi_remark;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -441,9 +541,25 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn director_idColumn {
+            public global::System.Data.DataColumn kpi_idColumn {
                 get {
-                    return this.columndirector_id;
+                    return this.columnkpi_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn kpm_idColumn {
+                get {
+                    return this.columnkpm_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn kpm_descriptionColumn {
+                get {
+                    return this.columnkpm_description;
                 }
             }
             
@@ -457,49 +573,129 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn service_planColumn {
+            public global::System.Data.DataColumn manager_nameColumn {
                 get {
-                    return this.columnservice_plan;
+                    return this.columnmanager_name;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn action_idColumn {
+            public global::System.Data.DataColumn manager_descriptionColumn {
                 get {
-                    return this.columnaction_id;
+                    return this.columnmanager_description;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn action_descriptionColumn {
+            public global::System.Data.DataColumn director_descriptionColumn {
                 get {
-                    return this.columnaction_description;
+                    return this.columndirector_description;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn delivery_program_TargetDateColumn {
+            public global::System.Data.DataColumn director_nameColumn {
                 get {
-                    return this.columndelivery_program_TargetDate;
+                    return this.columndirector_name;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn status_shortColumn {
+            public global::System.Data.DataColumn director_idColumn {
                 get {
-                    return this.columnstatus_short;
+                    return this.columndirector_id;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn progress_descriptionColumn {
+            public global::System.Data.DataColumn departmentColumn {
                 get {
-                    return this.columnprogress_description;
+                    return this.columndepartment;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn sub_departmentColumn {
+                get {
+                    return this.columnsub_department;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn efficiency_descriptionColumn {
+                get {
+                    return this.columnefficiency_description;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn kpi_prefix_idColumn {
+                get {
+                    return this.columnkpi_prefix_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn kpi_estimate_yearColumn {
+                get {
+                    return this.columnkpi_estimate_year;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn kpi_prefixColumn {
+                get {
+                    return this.columnkpi_prefix;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn kpi_prefix_shortColumn {
+                get {
+                    return this.columnkpi_prefix_short;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn kpi_estimateColumn {
+                get {
+                    return this.columnkpi_estimate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn unit_idColumn {
+                get {
+                    return this.columnunit_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn kpi_unitColumn {
+                get {
+                    return this.columnkpi_unit;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn kpi_unit_shortColumn {
+                get {
+                    return this.columnkpi_unit_short;
                 }
             }
             
@@ -513,17 +709,41 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn status_colorColumn {
+            public global::System.Data.DataColumn service_planColumn {
                 get {
-                    return this.columnstatus_color;
+                    return this.columnservice_plan;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn progress_pecentageColumn {
+            public global::System.Data.DataColumn kpi_yearColumn {
                 get {
-                    return this.columnprogress_pecentage;
+                    return this.columnkpi_year;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn kpi_monthColumn {
+                get {
+                    return this.columnkpi_month;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn kpi_progressColumn {
+                get {
+                    return this.columnkpi_progress;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn kpi_remarkColumn {
+                get {
+                    return this.columnkpi_remark;
                 }
             }
             
@@ -564,20 +784,61 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public KPMMonthlyProgressRow AddKPMMonthlyProgressRow(string director_id, string manager_id, string service_plan, string action_id, string action_description, string delivery_program_TargetDate, string status_short, string progress_description, string service_plan_id, string status_color, string progress_pecentage) {
+            public KPMMonthlyProgressRow AddKPMMonthlyProgressRow(
+                        string kpi_id, 
+                        string kpm_id, 
+                        string kpm_description, 
+                        string manager_id, 
+                        string manager_name, 
+                        string manager_description, 
+                        string director_description, 
+                        string director_name, 
+                        string director_id, 
+                        string department, 
+                        string sub_department, 
+                        string efficiency_description, 
+                        string kpi_prefix_id, 
+                        string kpi_estimate_year, 
+                        string kpi_prefix, 
+                        string kpi_prefix_short, 
+                        string kpi_estimate, 
+                        string unit_id, 
+                        string kpi_unit, 
+                        string kpi_unit_short, 
+                        string service_plan_id, 
+                        string service_plan, 
+                        string kpi_year, 
+                        string kpi_month, 
+                        string kpi_progress, 
+                        string kpi_remark) {
                 KPMMonthlyProgressRow rowKPMMonthlyProgressRow = ((KPMMonthlyProgressRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        director_id,
+                        kpi_id,
+                        kpm_id,
+                        kpm_description,
                         manager_id,
-                        service_plan,
-                        action_id,
-                        action_description,
-                        delivery_program_TargetDate,
-                        status_short,
-                        progress_description,
+                        manager_name,
+                        manager_description,
+                        director_description,
+                        director_name,
+                        director_id,
+                        department,
+                        sub_department,
+                        efficiency_description,
+                        kpi_prefix_id,
+                        kpi_estimate_year,
+                        kpi_prefix,
+                        kpi_prefix_short,
+                        kpi_estimate,
+                        unit_id,
+                        kpi_unit,
+                        kpi_unit_short,
                         service_plan_id,
-                        status_color,
-                        progress_pecentage};
+                        service_plan,
+                        kpi_year,
+                        kpi_month,
+                        kpi_progress,
+                        kpi_remark};
                 rowKPMMonthlyProgressRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowKPMMonthlyProgressRow);
                 return rowKPMMonthlyProgressRow;
@@ -600,44 +861,89 @@ namespace NSCOperationalPlan {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columndirector_id = base.Columns["director_id"];
+                this.columnkpi_id = base.Columns["kpi_id"];
+                this.columnkpm_id = base.Columns["kpm_id"];
+                this.columnkpm_description = base.Columns["kpm_description"];
                 this.columnmanager_id = base.Columns["manager_id"];
-                this.columnservice_plan = base.Columns["service_plan"];
-                this.columnaction_id = base.Columns["action_id"];
-                this.columnaction_description = base.Columns["action_description"];
-                this.columndelivery_program_TargetDate = base.Columns["delivery_program_TargetDate"];
-                this.columnstatus_short = base.Columns["status_short"];
-                this.columnprogress_description = base.Columns["progress_description"];
+                this.columnmanager_name = base.Columns["manager_name"];
+                this.columnmanager_description = base.Columns["manager_description"];
+                this.columndirector_description = base.Columns["director_description"];
+                this.columndirector_name = base.Columns["director_name"];
+                this.columndirector_id = base.Columns["director_id"];
+                this.columndepartment = base.Columns["department"];
+                this.columnsub_department = base.Columns["sub_department"];
+                this.columnefficiency_description = base.Columns["efficiency_description"];
+                this.columnkpi_prefix_id = base.Columns["kpi_prefix_id"];
+                this.columnkpi_estimate_year = base.Columns["kpi_estimate_year"];
+                this.columnkpi_prefix = base.Columns["kpi_prefix"];
+                this.columnkpi_prefix_short = base.Columns["kpi_prefix_short"];
+                this.columnkpi_estimate = base.Columns["kpi_estimate"];
+                this.columnunit_id = base.Columns["unit_id"];
+                this.columnkpi_unit = base.Columns["kpi_unit"];
+                this.columnkpi_unit_short = base.Columns["kpi_unit_short"];
                 this.columnservice_plan_id = base.Columns["service_plan_id"];
-                this.columnstatus_color = base.Columns["status_color"];
-                this.columnprogress_pecentage = base.Columns["progress_pecentage"];
+                this.columnservice_plan = base.Columns["service_plan"];
+                this.columnkpi_year = base.Columns["kpi_year"];
+                this.columnkpi_month = base.Columns["kpi_month"];
+                this.columnkpi_progress = base.Columns["kpi_progress"];
+                this.columnkpi_remark = base.Columns["kpi_remark"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columndirector_id = new global::System.Data.DataColumn("director_id", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndirector_id);
+                this.columnkpi_id = new global::System.Data.DataColumn("kpi_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkpi_id);
+                this.columnkpm_id = new global::System.Data.DataColumn("kpm_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkpm_id);
+                this.columnkpm_description = new global::System.Data.DataColumn("kpm_description", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkpm_description);
                 this.columnmanager_id = new global::System.Data.DataColumn("manager_id", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmanager_id);
-                this.columnservice_plan = new global::System.Data.DataColumn("service_plan", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnservice_plan);
-                this.columnaction_id = new global::System.Data.DataColumn("action_id", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnaction_id);
-                this.columnaction_description = new global::System.Data.DataColumn("action_description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnaction_description);
-                this.columndelivery_program_TargetDate = new global::System.Data.DataColumn("delivery_program_TargetDate", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndelivery_program_TargetDate);
-                this.columnstatus_short = new global::System.Data.DataColumn("status_short", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnstatus_short);
-                this.columnprogress_description = new global::System.Data.DataColumn("progress_description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnprogress_description);
+                this.columnmanager_name = new global::System.Data.DataColumn("manager_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmanager_name);
+                this.columnmanager_description = new global::System.Data.DataColumn("manager_description", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmanager_description);
+                this.columndirector_description = new global::System.Data.DataColumn("director_description", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndirector_description);
+                this.columndirector_name = new global::System.Data.DataColumn("director_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndirector_name);
+                this.columndirector_id = new global::System.Data.DataColumn("director_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndirector_id);
+                this.columndepartment = new global::System.Data.DataColumn("department", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndepartment);
+                this.columnsub_department = new global::System.Data.DataColumn("sub_department", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsub_department);
+                this.columnefficiency_description = new global::System.Data.DataColumn("efficiency_description", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnefficiency_description);
+                this.columnkpi_prefix_id = new global::System.Data.DataColumn("kpi_prefix_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkpi_prefix_id);
+                this.columnkpi_estimate_year = new global::System.Data.DataColumn("kpi_estimate_year", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkpi_estimate_year);
+                this.columnkpi_prefix = new global::System.Data.DataColumn("kpi_prefix", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkpi_prefix);
+                this.columnkpi_prefix_short = new global::System.Data.DataColumn("kpi_prefix_short", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkpi_prefix_short);
+                this.columnkpi_estimate = new global::System.Data.DataColumn("kpi_estimate", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkpi_estimate);
+                this.columnunit_id = new global::System.Data.DataColumn("unit_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnunit_id);
+                this.columnkpi_unit = new global::System.Data.DataColumn("kpi_unit", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkpi_unit);
+                this.columnkpi_unit_short = new global::System.Data.DataColumn("kpi_unit_short", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkpi_unit_short);
                 this.columnservice_plan_id = new global::System.Data.DataColumn("service_plan_id", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnservice_plan_id);
-                this.columnstatus_color = new global::System.Data.DataColumn("status_color", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnstatus_color);
-                this.columnprogress_pecentage = new global::System.Data.DataColumn("progress_pecentage", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnprogress_pecentage);
+                this.columnservice_plan = new global::System.Data.DataColumn("service_plan", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnservice_plan);
+                this.columnkpi_year = new global::System.Data.DataColumn("kpi_year", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkpi_year);
+                this.columnkpi_month = new global::System.Data.DataColumn("kpi_month", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkpi_month);
+                this.columnkpi_progress = new global::System.Data.DataColumn("kpi_progress", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkpi_progress);
+                this.columnkpi_remark = new global::System.Data.DataColumn("kpi_remark", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkpi_remark);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1928,6 +2234,887 @@ namespace NSCOperationalPlan {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ServicePlanDataTable : global::System.Data.TypedTableBase<ServicePlanRow> {
+            
+            private global::System.Data.DataColumn columnservice_plan;
+            
+            private global::System.Data.DataColumn columnservice_plan_id;
+            
+            private global::System.Data.DataColumn columnaction;
+            
+            private global::System.Data.DataColumn columnkpm;
+            
+            private global::System.Data.DataColumn columncwp;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ServicePlanDataTable() {
+                this.TableName = "ServicePlan";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal ServicePlanDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected ServicePlanDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn service_planColumn {
+                get {
+                    return this.columnservice_plan;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn service_plan_idColumn {
+                get {
+                    return this.columnservice_plan_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn actionColumn {
+                get {
+                    return this.columnaction;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn kpmColumn {
+                get {
+                    return this.columnkpm;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cwpColumn {
+                get {
+                    return this.columncwp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ServicePlanRow this[int index] {
+                get {
+                    return ((ServicePlanRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ServicePlanRowChangeEventHandler ServicePlanRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ServicePlanRowChangeEventHandler ServicePlanRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ServicePlanRowChangeEventHandler ServicePlanRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ServicePlanRowChangeEventHandler ServicePlanRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddServicePlanRow(ServicePlanRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ServicePlanRow AddServicePlanRow(string service_plan, string service_plan_id, string action, string kpm, string cwp) {
+                ServicePlanRow rowServicePlanRow = ((ServicePlanRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        service_plan,
+                        service_plan_id,
+                        action,
+                        kpm,
+                        cwp};
+                rowServicePlanRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowServicePlanRow);
+                return rowServicePlanRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ServicePlanDataTable cln = ((ServicePlanDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ServicePlanDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnservice_plan = base.Columns["service_plan"];
+                this.columnservice_plan_id = base.Columns["service_plan_id"];
+                this.columnaction = base.Columns["action"];
+                this.columnkpm = base.Columns["kpm"];
+                this.columncwp = base.Columns["cwp"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnservice_plan = new global::System.Data.DataColumn("service_plan", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnservice_plan);
+                this.columnservice_plan_id = new global::System.Data.DataColumn("service_plan_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnservice_plan_id);
+                this.columnaction = new global::System.Data.DataColumn("action", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnaction);
+                this.columnkpm = new global::System.Data.DataColumn("kpm", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkpm);
+                this.columncwp = new global::System.Data.DataColumn("cwp", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncwp);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ServicePlanRow NewServicePlanRow() {
+                return ((ServicePlanRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ServicePlanRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ServicePlanRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ServicePlanRowChanged != null)) {
+                    this.ServicePlanRowChanged(this, new ServicePlanRowChangeEvent(((ServicePlanRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ServicePlanRowChanging != null)) {
+                    this.ServicePlanRowChanging(this, new ServicePlanRowChangeEvent(((ServicePlanRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ServicePlanRowDeleted != null)) {
+                    this.ServicePlanRowDeleted(this, new ServicePlanRowChangeEvent(((ServicePlanRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ServicePlanRowDeleting != null)) {
+                    this.ServicePlanRowDeleting(this, new ServicePlanRowChangeEvent(((ServicePlanRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveServicePlanRow(ServicePlanRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                OPGenericDataSet ds = new OPGenericDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ServicePlanDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class CWPMonthlyProgressDataTable : global::System.Data.TypedTableBase<CWPMonthlyProgressRow> {
+            
+            private global::System.Data.DataColumn columncpw_id;
+            
+            private global::System.Data.DataColumn columncpw_manager_id;
+            
+            private global::System.Data.DataColumn columnmanager_description;
+            
+            private global::System.Data.DataColumn columnmanager_dept;
+            
+            private global::System.Data.DataColumn columnmanager_subdept;
+            
+            private global::System.Data.DataColumn columndirector_id;
+            
+            private global::System.Data.DataColumn columndirector_description;
+            
+            private global::System.Data.DataColumn columncpw_service_plan_id;
+            
+            private global::System.Data.DataColumn columnservice_plan;
+            
+            private global::System.Data.DataColumn columncpw_stg_obj_id;
+            
+            private global::System.Data.DataColumn columnstrategy_objective;
+            
+            private global::System.Data.DataColumn columntheme_id;
+            
+            private global::System.Data.DataColumn columntheme_short;
+            
+            private global::System.Data.DataColumn columntheme_color;
+            
+            private global::System.Data.DataColumn columncpw_description;
+            
+            private global::System.Data.DataColumn columncpw_original_budget;
+            
+            private global::System.Data.DataColumn columncpw_revised_budget;
+            
+            private global::System.Data.DataColumn columncpw_year;
+            
+            private global::System.Data.DataColumn columncpw_month;
+            
+            private global::System.Data.DataColumn columncpw_ytod;
+            
+            private global::System.Data.DataColumn columncpw_projected;
+            
+            private global::System.Data.DataColumn columncpw_percentage;
+            
+            private global::System.Data.DataColumn columncpw_remark;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CWPMonthlyProgressDataTable() {
+                this.TableName = "CWPMonthlyProgress";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal CWPMonthlyProgressDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected CWPMonthlyProgressDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cpw_idColumn {
+                get {
+                    return this.columncpw_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cpw_manager_idColumn {
+                get {
+                    return this.columncpw_manager_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn manager_descriptionColumn {
+                get {
+                    return this.columnmanager_description;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn manager_deptColumn {
+                get {
+                    return this.columnmanager_dept;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn manager_subdeptColumn {
+                get {
+                    return this.columnmanager_subdept;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn director_idColumn {
+                get {
+                    return this.columndirector_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn director_descriptionColumn {
+                get {
+                    return this.columndirector_description;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cpw_service_plan_idColumn {
+                get {
+                    return this.columncpw_service_plan_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn service_planColumn {
+                get {
+                    return this.columnservice_plan;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cpw_stg_obj_idColumn {
+                get {
+                    return this.columncpw_stg_obj_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn strategy_objectiveColumn {
+                get {
+                    return this.columnstrategy_objective;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn theme_idColumn {
+                get {
+                    return this.columntheme_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn theme_shortColumn {
+                get {
+                    return this.columntheme_short;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn theme_colorColumn {
+                get {
+                    return this.columntheme_color;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cpw_descriptionColumn {
+                get {
+                    return this.columncpw_description;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cpw_original_budgetColumn {
+                get {
+                    return this.columncpw_original_budget;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cpw_revised_budgetColumn {
+                get {
+                    return this.columncpw_revised_budget;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cpw_yearColumn {
+                get {
+                    return this.columncpw_year;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cpw_monthColumn {
+                get {
+                    return this.columncpw_month;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cpw_ytodColumn {
+                get {
+                    return this.columncpw_ytod;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cpw_projectedColumn {
+                get {
+                    return this.columncpw_projected;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cpw_percentageColumn {
+                get {
+                    return this.columncpw_percentage;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cpw_remarkColumn {
+                get {
+                    return this.columncpw_remark;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CWPMonthlyProgressRow this[int index] {
+                get {
+                    return ((CWPMonthlyProgressRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event CWPMonthlyProgressRowChangeEventHandler CWPMonthlyProgressRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event CWPMonthlyProgressRowChangeEventHandler CWPMonthlyProgressRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event CWPMonthlyProgressRowChangeEventHandler CWPMonthlyProgressRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event CWPMonthlyProgressRowChangeEventHandler CWPMonthlyProgressRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddCWPMonthlyProgressRow(CWPMonthlyProgressRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CWPMonthlyProgressRow AddCWPMonthlyProgressRow(
+                        string cpw_id, 
+                        string cpw_manager_id, 
+                        string manager_description, 
+                        string manager_dept, 
+                        string manager_subdept, 
+                        string director_id, 
+                        string director_description, 
+                        string cpw_service_plan_id, 
+                        string service_plan, 
+                        string cpw_stg_obj_id, 
+                        string strategy_objective, 
+                        string theme_id, 
+                        string theme_short, 
+                        string theme_color, 
+                        string cpw_description, 
+                        string cpw_original_budget, 
+                        string cpw_revised_budget, 
+                        string cpw_year, 
+                        string cpw_month, 
+                        string cpw_ytod, 
+                        string cpw_projected, 
+                        string cpw_percentage, 
+                        string cpw_remark) {
+                CWPMonthlyProgressRow rowCWPMonthlyProgressRow = ((CWPMonthlyProgressRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        cpw_id,
+                        cpw_manager_id,
+                        manager_description,
+                        manager_dept,
+                        manager_subdept,
+                        director_id,
+                        director_description,
+                        cpw_service_plan_id,
+                        service_plan,
+                        cpw_stg_obj_id,
+                        strategy_objective,
+                        theme_id,
+                        theme_short,
+                        theme_color,
+                        cpw_description,
+                        cpw_original_budget,
+                        cpw_revised_budget,
+                        cpw_year,
+                        cpw_month,
+                        cpw_ytod,
+                        cpw_projected,
+                        cpw_percentage,
+                        cpw_remark};
+                rowCWPMonthlyProgressRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowCWPMonthlyProgressRow);
+                return rowCWPMonthlyProgressRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                CWPMonthlyProgressDataTable cln = ((CWPMonthlyProgressDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new CWPMonthlyProgressDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columncpw_id = base.Columns["cpw_id"];
+                this.columncpw_manager_id = base.Columns["cpw_manager_id"];
+                this.columnmanager_description = base.Columns["manager_description"];
+                this.columnmanager_dept = base.Columns["manager_dept"];
+                this.columnmanager_subdept = base.Columns["manager_subdept"];
+                this.columndirector_id = base.Columns["director_id"];
+                this.columndirector_description = base.Columns["director_description"];
+                this.columncpw_service_plan_id = base.Columns["cpw_service_plan_id"];
+                this.columnservice_plan = base.Columns["service_plan"];
+                this.columncpw_stg_obj_id = base.Columns["cpw_stg_obj_id"];
+                this.columnstrategy_objective = base.Columns["strategy_objective"];
+                this.columntheme_id = base.Columns["theme_id"];
+                this.columntheme_short = base.Columns["theme_short"];
+                this.columntheme_color = base.Columns["theme_color"];
+                this.columncpw_description = base.Columns["cpw_description"];
+                this.columncpw_original_budget = base.Columns["cpw_original_budget"];
+                this.columncpw_revised_budget = base.Columns["cpw_revised_budget"];
+                this.columncpw_year = base.Columns["cpw_year"];
+                this.columncpw_month = base.Columns["cpw_month"];
+                this.columncpw_ytod = base.Columns["cpw_ytod"];
+                this.columncpw_projected = base.Columns["cpw_projected"];
+                this.columncpw_percentage = base.Columns["cpw_percentage"];
+                this.columncpw_remark = base.Columns["cpw_remark"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columncpw_id = new global::System.Data.DataColumn("cpw_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncpw_id);
+                this.columncpw_manager_id = new global::System.Data.DataColumn("cpw_manager_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncpw_manager_id);
+                this.columnmanager_description = new global::System.Data.DataColumn("manager_description", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmanager_description);
+                this.columnmanager_dept = new global::System.Data.DataColumn("manager_dept", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmanager_dept);
+                this.columnmanager_subdept = new global::System.Data.DataColumn("manager_subdept", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmanager_subdept);
+                this.columndirector_id = new global::System.Data.DataColumn("director_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndirector_id);
+                this.columndirector_description = new global::System.Data.DataColumn("director_description", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndirector_description);
+                this.columncpw_service_plan_id = new global::System.Data.DataColumn("cpw_service_plan_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncpw_service_plan_id);
+                this.columnservice_plan = new global::System.Data.DataColumn("service_plan", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnservice_plan);
+                this.columncpw_stg_obj_id = new global::System.Data.DataColumn("cpw_stg_obj_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncpw_stg_obj_id);
+                this.columnstrategy_objective = new global::System.Data.DataColumn("strategy_objective", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrategy_objective);
+                this.columntheme_id = new global::System.Data.DataColumn("theme_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntheme_id);
+                this.columntheme_short = new global::System.Data.DataColumn("theme_short", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntheme_short);
+                this.columntheme_color = new global::System.Data.DataColumn("theme_color", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntheme_color);
+                this.columncpw_description = new global::System.Data.DataColumn("cpw_description", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncpw_description);
+                this.columncpw_original_budget = new global::System.Data.DataColumn("cpw_original_budget", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncpw_original_budget);
+                this.columncpw_revised_budget = new global::System.Data.DataColumn("cpw_revised_budget", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncpw_revised_budget);
+                this.columncpw_year = new global::System.Data.DataColumn("cpw_year", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncpw_year);
+                this.columncpw_month = new global::System.Data.DataColumn("cpw_month", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncpw_month);
+                this.columncpw_ytod = new global::System.Data.DataColumn("cpw_ytod", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncpw_ytod);
+                this.columncpw_projected = new global::System.Data.DataColumn("cpw_projected", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncpw_projected);
+                this.columncpw_percentage = new global::System.Data.DataColumn("cpw_percentage", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncpw_percentage);
+                this.columncpw_remark = new global::System.Data.DataColumn("cpw_remark", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncpw_remark);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CWPMonthlyProgressRow NewCWPMonthlyProgressRow() {
+                return ((CWPMonthlyProgressRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new CWPMonthlyProgressRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(CWPMonthlyProgressRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.CWPMonthlyProgressRowChanged != null)) {
+                    this.CWPMonthlyProgressRowChanged(this, new CWPMonthlyProgressRowChangeEvent(((CWPMonthlyProgressRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.CWPMonthlyProgressRowChanging != null)) {
+                    this.CWPMonthlyProgressRowChanging(this, new CWPMonthlyProgressRowChangeEvent(((CWPMonthlyProgressRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.CWPMonthlyProgressRowDeleted != null)) {
+                    this.CWPMonthlyProgressRowDeleted(this, new CWPMonthlyProgressRowChangeEvent(((CWPMonthlyProgressRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.CWPMonthlyProgressRowDeleting != null)) {
+                    this.CWPMonthlyProgressRowDeleting(this, new CWPMonthlyProgressRowChangeEvent(((CWPMonthlyProgressRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveCWPMonthlyProgressRow(CWPMonthlyProgressRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                OPGenericDataSet ds = new OPGenericDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "CWPMonthlyProgressDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class KPMMonthlyProgressRow : global::System.Data.DataRow {
@@ -1943,17 +3130,49 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string director_id {
+            public string kpi_id {
                 get {
                     try {
-                        return ((string)(this[this.tableKPMMonthlyProgress.director_idColumn]));
+                        return ((string)(this[this.tableKPMMonthlyProgress.kpi_idColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'director_id\' in table \'KPMMonthlyProgress\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'kpi_id\' in table \'KPMMonthlyProgress\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableKPMMonthlyProgress.director_idColumn] = value;
+                    this[this.tableKPMMonthlyProgress.kpi_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string kpm_id {
+                get {
+                    try {
+                        return ((string)(this[this.tableKPMMonthlyProgress.kpm_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'kpm_id\' in table \'KPMMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableKPMMonthlyProgress.kpm_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string kpm_description {
+                get {
+                    try {
+                        return ((string)(this[this.tableKPMMonthlyProgress.kpm_descriptionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'kpm_description\' in table \'KPMMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableKPMMonthlyProgress.kpm_descriptionColumn] = value;
                 }
             }
             
@@ -1975,100 +3194,261 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string service_plan {
+            public string manager_name {
                 get {
                     try {
-                        return ((string)(this[this.tableKPMMonthlyProgress.service_planColumn]));
+                        return ((string)(this[this.tableKPMMonthlyProgress.manager_nameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'service_plan\' in table \'KPMMonthlyProgress\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'manager_name\' in table \'KPMMonthlyProgress\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableKPMMonthlyProgress.service_planColumn] = value;
+                    this[this.tableKPMMonthlyProgress.manager_nameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string action_id {
+            public string manager_description {
                 get {
                     try {
-                        return ((string)(this[this.tableKPMMonthlyProgress.action_idColumn]));
+                        return ((string)(this[this.tableKPMMonthlyProgress.manager_descriptionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'action_id\' in table \'KPMMonthlyProgress\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'manager_description\' in table \'KPMMonthlyProgress\' is DBNul" +
+                                "l.", e);
                     }
                 }
                 set {
-                    this[this.tableKPMMonthlyProgress.action_idColumn] = value;
+                    this[this.tableKPMMonthlyProgress.manager_descriptionColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string action_description {
+            public string director_description {
                 get {
                     try {
-                        return ((string)(this[this.tableKPMMonthlyProgress.action_descriptionColumn]));
+                        return ((string)(this[this.tableKPMMonthlyProgress.director_descriptionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'action_description\' in table \'KPMMonthlyProgress\' is DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this.tableKPMMonthlyProgress.action_descriptionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string delivery_program_TargetDate {
-                get {
-                    try {
-                        return ((string)(this[this.tableKPMMonthlyProgress.delivery_program_TargetDateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'delivery_program_TargetDate\' in table \'KPMMonthlyProgress\' " +
-                                "is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableKPMMonthlyProgress.delivery_program_TargetDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string status_short {
-                get {
-                    try {
-                        return ((string)(this[this.tableKPMMonthlyProgress.status_shortColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'status_short\' in table \'KPMMonthlyProgress\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableKPMMonthlyProgress.status_shortColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string progress_description {
-                get {
-                    try {
-                        return ((string)(this[this.tableKPMMonthlyProgress.progress_descriptionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'progress_description\' in table \'KPMMonthlyProgress\' is DBNu" +
+                        throw new global::System.Data.StrongTypingException("The value for column \'director_description\' in table \'KPMMonthlyProgress\' is DBNu" +
                                 "ll.", e);
                     }
                 }
                 set {
-                    this[this.tableKPMMonthlyProgress.progress_descriptionColumn] = value;
+                    this[this.tableKPMMonthlyProgress.director_descriptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string director_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableKPMMonthlyProgress.director_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'director_name\' in table \'KPMMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableKPMMonthlyProgress.director_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string director_id {
+                get {
+                    try {
+                        return ((string)(this[this.tableKPMMonthlyProgress.director_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'director_id\' in table \'KPMMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableKPMMonthlyProgress.director_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string department {
+                get {
+                    try {
+                        return ((string)(this[this.tableKPMMonthlyProgress.departmentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'department\' in table \'KPMMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableKPMMonthlyProgress.departmentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string sub_department {
+                get {
+                    try {
+                        return ((string)(this[this.tableKPMMonthlyProgress.sub_departmentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'sub_department\' in table \'KPMMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableKPMMonthlyProgress.sub_departmentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string efficiency_description {
+                get {
+                    try {
+                        return ((string)(this[this.tableKPMMonthlyProgress.efficiency_descriptionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'efficiency_description\' in table \'KPMMonthlyProgress\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableKPMMonthlyProgress.efficiency_descriptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string kpi_prefix_id {
+                get {
+                    try {
+                        return ((string)(this[this.tableKPMMonthlyProgress.kpi_prefix_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'kpi_prefix_id\' in table \'KPMMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableKPMMonthlyProgress.kpi_prefix_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string kpi_estimate_year {
+                get {
+                    try {
+                        return ((string)(this[this.tableKPMMonthlyProgress.kpi_estimate_yearColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'kpi_estimate_year\' in table \'KPMMonthlyProgress\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableKPMMonthlyProgress.kpi_estimate_yearColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string kpi_prefix {
+                get {
+                    try {
+                        return ((string)(this[this.tableKPMMonthlyProgress.kpi_prefixColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'kpi_prefix\' in table \'KPMMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableKPMMonthlyProgress.kpi_prefixColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string kpi_prefix_short {
+                get {
+                    try {
+                        return ((string)(this[this.tableKPMMonthlyProgress.kpi_prefix_shortColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'kpi_prefix_short\' in table \'KPMMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableKPMMonthlyProgress.kpi_prefix_shortColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string kpi_estimate {
+                get {
+                    try {
+                        return ((string)(this[this.tableKPMMonthlyProgress.kpi_estimateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'kpi_estimate\' in table \'KPMMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableKPMMonthlyProgress.kpi_estimateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string unit_id {
+                get {
+                    try {
+                        return ((string)(this[this.tableKPMMonthlyProgress.unit_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'unit_id\' in table \'KPMMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableKPMMonthlyProgress.unit_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string kpi_unit {
+                get {
+                    try {
+                        return ((string)(this[this.tableKPMMonthlyProgress.kpi_unitColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'kpi_unit\' in table \'KPMMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableKPMMonthlyProgress.kpi_unitColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string kpi_unit_short {
+                get {
+                    try {
+                        return ((string)(this[this.tableKPMMonthlyProgress.kpi_unit_shortColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'kpi_unit_short\' in table \'KPMMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableKPMMonthlyProgress.kpi_unit_shortColumn] = value;
                 }
             }
             
@@ -2090,47 +3470,118 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string status_color {
+            public string service_plan {
                 get {
                     try {
-                        return ((string)(this[this.tableKPMMonthlyProgress.status_colorColumn]));
+                        return ((string)(this[this.tableKPMMonthlyProgress.service_planColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'status_color\' in table \'KPMMonthlyProgress\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'service_plan\' in table \'KPMMonthlyProgress\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableKPMMonthlyProgress.status_colorColumn] = value;
+                    this[this.tableKPMMonthlyProgress.service_planColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string progress_pecentage {
+            public string kpi_year {
                 get {
                     try {
-                        return ((string)(this[this.tableKPMMonthlyProgress.progress_pecentageColumn]));
+                        return ((string)(this[this.tableKPMMonthlyProgress.kpi_yearColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'progress_pecentage\' in table \'KPMMonthlyProgress\' is DBNull" +
-                                ".", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'kpi_year\' in table \'KPMMonthlyProgress\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableKPMMonthlyProgress.progress_pecentageColumn] = value;
+                    this[this.tableKPMMonthlyProgress.kpi_yearColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isdirector_idNull() {
-                return this.IsNull(this.tableKPMMonthlyProgress.director_idColumn);
+            public string kpi_month {
+                get {
+                    try {
+                        return ((string)(this[this.tableKPMMonthlyProgress.kpi_monthColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'kpi_month\' in table \'KPMMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableKPMMonthlyProgress.kpi_monthColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setdirector_idNull() {
-                this[this.tableKPMMonthlyProgress.director_idColumn] = global::System.Convert.DBNull;
+            public string kpi_progress {
+                get {
+                    try {
+                        return ((string)(this[this.tableKPMMonthlyProgress.kpi_progressColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'kpi_progress\' in table \'KPMMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableKPMMonthlyProgress.kpi_progressColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string kpi_remark {
+                get {
+                    try {
+                        return ((string)(this[this.tableKPMMonthlyProgress.kpi_remarkColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'kpi_remark\' in table \'KPMMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableKPMMonthlyProgress.kpi_remarkColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iskpi_idNull() {
+                return this.IsNull(this.tableKPMMonthlyProgress.kpi_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setkpi_idNull() {
+                this[this.tableKPMMonthlyProgress.kpi_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iskpm_idNull() {
+                return this.IsNull(this.tableKPMMonthlyProgress.kpm_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setkpm_idNull() {
+                this[this.tableKPMMonthlyProgress.kpm_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iskpm_descriptionNull() {
+                return this.IsNull(this.tableKPMMonthlyProgress.kpm_descriptionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setkpm_descriptionNull() {
+                this[this.tableKPMMonthlyProgress.kpm_descriptionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2147,74 +3598,194 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isservice_planNull() {
-                return this.IsNull(this.tableKPMMonthlyProgress.service_planColumn);
+            public bool Ismanager_nameNull() {
+                return this.IsNull(this.tableKPMMonthlyProgress.manager_nameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setservice_planNull() {
-                this[this.tableKPMMonthlyProgress.service_planColumn] = global::System.Convert.DBNull;
+            public void Setmanager_nameNull() {
+                this[this.tableKPMMonthlyProgress.manager_nameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isaction_idNull() {
-                return this.IsNull(this.tableKPMMonthlyProgress.action_idColumn);
+            public bool Ismanager_descriptionNull() {
+                return this.IsNull(this.tableKPMMonthlyProgress.manager_descriptionColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setaction_idNull() {
-                this[this.tableKPMMonthlyProgress.action_idColumn] = global::System.Convert.DBNull;
+            public void Setmanager_descriptionNull() {
+                this[this.tableKPMMonthlyProgress.manager_descriptionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isaction_descriptionNull() {
-                return this.IsNull(this.tableKPMMonthlyProgress.action_descriptionColumn);
+            public bool Isdirector_descriptionNull() {
+                return this.IsNull(this.tableKPMMonthlyProgress.director_descriptionColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setaction_descriptionNull() {
-                this[this.tableKPMMonthlyProgress.action_descriptionColumn] = global::System.Convert.DBNull;
+            public void Setdirector_descriptionNull() {
+                this[this.tableKPMMonthlyProgress.director_descriptionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isdelivery_program_TargetDateNull() {
-                return this.IsNull(this.tableKPMMonthlyProgress.delivery_program_TargetDateColumn);
+            public bool Isdirector_nameNull() {
+                return this.IsNull(this.tableKPMMonthlyProgress.director_nameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setdelivery_program_TargetDateNull() {
-                this[this.tableKPMMonthlyProgress.delivery_program_TargetDateColumn] = global::System.Convert.DBNull;
+            public void Setdirector_nameNull() {
+                this[this.tableKPMMonthlyProgress.director_nameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isstatus_shortNull() {
-                return this.IsNull(this.tableKPMMonthlyProgress.status_shortColumn);
+            public bool Isdirector_idNull() {
+                return this.IsNull(this.tableKPMMonthlyProgress.director_idColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setstatus_shortNull() {
-                this[this.tableKPMMonthlyProgress.status_shortColumn] = global::System.Convert.DBNull;
+            public void Setdirector_idNull() {
+                this[this.tableKPMMonthlyProgress.director_idColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isprogress_descriptionNull() {
-                return this.IsNull(this.tableKPMMonthlyProgress.progress_descriptionColumn);
+            public bool IsdepartmentNull() {
+                return this.IsNull(this.tableKPMMonthlyProgress.departmentColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setprogress_descriptionNull() {
-                this[this.tableKPMMonthlyProgress.progress_descriptionColumn] = global::System.Convert.DBNull;
+            public void SetdepartmentNull() {
+                this[this.tableKPMMonthlyProgress.departmentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Issub_departmentNull() {
+                return this.IsNull(this.tableKPMMonthlyProgress.sub_departmentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setsub_departmentNull() {
+                this[this.tableKPMMonthlyProgress.sub_departmentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isefficiency_descriptionNull() {
+                return this.IsNull(this.tableKPMMonthlyProgress.efficiency_descriptionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setefficiency_descriptionNull() {
+                this[this.tableKPMMonthlyProgress.efficiency_descriptionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iskpi_prefix_idNull() {
+                return this.IsNull(this.tableKPMMonthlyProgress.kpi_prefix_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setkpi_prefix_idNull() {
+                this[this.tableKPMMonthlyProgress.kpi_prefix_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iskpi_estimate_yearNull() {
+                return this.IsNull(this.tableKPMMonthlyProgress.kpi_estimate_yearColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setkpi_estimate_yearNull() {
+                this[this.tableKPMMonthlyProgress.kpi_estimate_yearColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iskpi_prefixNull() {
+                return this.IsNull(this.tableKPMMonthlyProgress.kpi_prefixColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setkpi_prefixNull() {
+                this[this.tableKPMMonthlyProgress.kpi_prefixColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iskpi_prefix_shortNull() {
+                return this.IsNull(this.tableKPMMonthlyProgress.kpi_prefix_shortColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setkpi_prefix_shortNull() {
+                this[this.tableKPMMonthlyProgress.kpi_prefix_shortColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iskpi_estimateNull() {
+                return this.IsNull(this.tableKPMMonthlyProgress.kpi_estimateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setkpi_estimateNull() {
+                this[this.tableKPMMonthlyProgress.kpi_estimateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isunit_idNull() {
+                return this.IsNull(this.tableKPMMonthlyProgress.unit_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setunit_idNull() {
+                this[this.tableKPMMonthlyProgress.unit_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iskpi_unitNull() {
+                return this.IsNull(this.tableKPMMonthlyProgress.kpi_unitColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setkpi_unitNull() {
+                this[this.tableKPMMonthlyProgress.kpi_unitColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iskpi_unit_shortNull() {
+                return this.IsNull(this.tableKPMMonthlyProgress.kpi_unit_shortColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setkpi_unit_shortNull() {
+                this[this.tableKPMMonthlyProgress.kpi_unit_shortColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2231,26 +3802,62 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isstatus_colorNull() {
-                return this.IsNull(this.tableKPMMonthlyProgress.status_colorColumn);
+            public bool Isservice_planNull() {
+                return this.IsNull(this.tableKPMMonthlyProgress.service_planColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setstatus_colorNull() {
-                this[this.tableKPMMonthlyProgress.status_colorColumn] = global::System.Convert.DBNull;
+            public void Setservice_planNull() {
+                this[this.tableKPMMonthlyProgress.service_planColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isprogress_pecentageNull() {
-                return this.IsNull(this.tableKPMMonthlyProgress.progress_pecentageColumn);
+            public bool Iskpi_yearNull() {
+                return this.IsNull(this.tableKPMMonthlyProgress.kpi_yearColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setprogress_pecentageNull() {
-                this[this.tableKPMMonthlyProgress.progress_pecentageColumn] = global::System.Convert.DBNull;
+            public void Setkpi_yearNull() {
+                this[this.tableKPMMonthlyProgress.kpi_yearColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iskpi_monthNull() {
+                return this.IsNull(this.tableKPMMonthlyProgress.kpi_monthColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setkpi_monthNull() {
+                this[this.tableKPMMonthlyProgress.kpi_monthColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iskpi_progressNull() {
+                return this.IsNull(this.tableKPMMonthlyProgress.kpi_progressColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setkpi_progressNull() {
+                this[this.tableKPMMonthlyProgress.kpi_progressColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iskpi_remarkNull() {
+                return this.IsNull(this.tableKPMMonthlyProgress.kpi_remarkColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setkpi_remarkNull() {
+                this[this.tableKPMMonthlyProgress.kpi_remarkColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3197,6 +4804,826 @@ namespace NSCOperationalPlan {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ServicePlanRow : global::System.Data.DataRow {
+            
+            private ServicePlanDataTable tableServicePlan;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal ServicePlanRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableServicePlan = ((ServicePlanDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string service_plan {
+                get {
+                    try {
+                        return ((string)(this[this.tableServicePlan.service_planColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'service_plan\' in table \'ServicePlan\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableServicePlan.service_planColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string service_plan_id {
+                get {
+                    try {
+                        return ((string)(this[this.tableServicePlan.service_plan_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'service_plan_id\' in table \'ServicePlan\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableServicePlan.service_plan_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string action {
+                get {
+                    try {
+                        return ((string)(this[this.tableServicePlan.actionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'action\' in table \'ServicePlan\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableServicePlan.actionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string kpm {
+                get {
+                    try {
+                        return ((string)(this[this.tableServicePlan.kpmColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'kpm\' in table \'ServicePlan\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableServicePlan.kpmColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cwp {
+                get {
+                    try {
+                        return ((string)(this[this.tableServicePlan.cwpColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cwp\' in table \'ServicePlan\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableServicePlan.cwpColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isservice_planNull() {
+                return this.IsNull(this.tableServicePlan.service_planColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setservice_planNull() {
+                this[this.tableServicePlan.service_planColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isservice_plan_idNull() {
+                return this.IsNull(this.tableServicePlan.service_plan_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setservice_plan_idNull() {
+                this[this.tableServicePlan.service_plan_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsactionNull() {
+                return this.IsNull(this.tableServicePlan.actionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetactionNull() {
+                this[this.tableServicePlan.actionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IskpmNull() {
+                return this.IsNull(this.tableServicePlan.kpmColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetkpmNull() {
+                this[this.tableServicePlan.kpmColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IscwpNull() {
+                return this.IsNull(this.tableServicePlan.cwpColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetcwpNull() {
+                this[this.tableServicePlan.cwpColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class CWPMonthlyProgressRow : global::System.Data.DataRow {
+            
+            private CWPMonthlyProgressDataTable tableCWPMonthlyProgress;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal CWPMonthlyProgressRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableCWPMonthlyProgress = ((CWPMonthlyProgressDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cpw_id {
+                get {
+                    try {
+                        return ((string)(this[this.tableCWPMonthlyProgress.cpw_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cpw_id\' in table \'CWPMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCWPMonthlyProgress.cpw_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cpw_manager_id {
+                get {
+                    try {
+                        return ((string)(this[this.tableCWPMonthlyProgress.cpw_manager_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cpw_manager_id\' in table \'CWPMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCWPMonthlyProgress.cpw_manager_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string manager_description {
+                get {
+                    try {
+                        return ((string)(this[this.tableCWPMonthlyProgress.manager_descriptionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'manager_description\' in table \'CWPMonthlyProgress\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableCWPMonthlyProgress.manager_descriptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string manager_dept {
+                get {
+                    try {
+                        return ((string)(this[this.tableCWPMonthlyProgress.manager_deptColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'manager_dept\' in table \'CWPMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCWPMonthlyProgress.manager_deptColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string manager_subdept {
+                get {
+                    try {
+                        return ((string)(this[this.tableCWPMonthlyProgress.manager_subdeptColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'manager_subdept\' in table \'CWPMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCWPMonthlyProgress.manager_subdeptColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string director_id {
+                get {
+                    try {
+                        return ((string)(this[this.tableCWPMonthlyProgress.director_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'director_id\' in table \'CWPMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCWPMonthlyProgress.director_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string director_description {
+                get {
+                    try {
+                        return ((string)(this[this.tableCWPMonthlyProgress.director_descriptionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'director_description\' in table \'CWPMonthlyProgress\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableCWPMonthlyProgress.director_descriptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cpw_service_plan_id {
+                get {
+                    try {
+                        return ((string)(this[this.tableCWPMonthlyProgress.cpw_service_plan_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cpw_service_plan_id\' in table \'CWPMonthlyProgress\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableCWPMonthlyProgress.cpw_service_plan_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string service_plan {
+                get {
+                    try {
+                        return ((string)(this[this.tableCWPMonthlyProgress.service_planColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'service_plan\' in table \'CWPMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCWPMonthlyProgress.service_planColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cpw_stg_obj_id {
+                get {
+                    try {
+                        return ((string)(this[this.tableCWPMonthlyProgress.cpw_stg_obj_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cpw_stg_obj_id\' in table \'CWPMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCWPMonthlyProgress.cpw_stg_obj_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string strategy_objective {
+                get {
+                    try {
+                        return ((string)(this[this.tableCWPMonthlyProgress.strategy_objectiveColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strategy_objective\' in table \'CWPMonthlyProgress\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableCWPMonthlyProgress.strategy_objectiveColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string theme_id {
+                get {
+                    try {
+                        return ((string)(this[this.tableCWPMonthlyProgress.theme_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'theme_id\' in table \'CWPMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCWPMonthlyProgress.theme_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string theme_short {
+                get {
+                    try {
+                        return ((string)(this[this.tableCWPMonthlyProgress.theme_shortColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'theme_short\' in table \'CWPMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCWPMonthlyProgress.theme_shortColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string theme_color {
+                get {
+                    try {
+                        return ((string)(this[this.tableCWPMonthlyProgress.theme_colorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'theme_color\' in table \'CWPMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCWPMonthlyProgress.theme_colorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cpw_description {
+                get {
+                    try {
+                        return ((string)(this[this.tableCWPMonthlyProgress.cpw_descriptionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cpw_description\' in table \'CWPMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCWPMonthlyProgress.cpw_descriptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cpw_original_budget {
+                get {
+                    try {
+                        return ((string)(this[this.tableCWPMonthlyProgress.cpw_original_budgetColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cpw_original_budget\' in table \'CWPMonthlyProgress\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableCWPMonthlyProgress.cpw_original_budgetColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cpw_revised_budget {
+                get {
+                    try {
+                        return ((string)(this[this.tableCWPMonthlyProgress.cpw_revised_budgetColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cpw_revised_budget\' in table \'CWPMonthlyProgress\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableCWPMonthlyProgress.cpw_revised_budgetColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cpw_year {
+                get {
+                    try {
+                        return ((string)(this[this.tableCWPMonthlyProgress.cpw_yearColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cpw_year\' in table \'CWPMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCWPMonthlyProgress.cpw_yearColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cpw_month {
+                get {
+                    try {
+                        return ((string)(this[this.tableCWPMonthlyProgress.cpw_monthColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cpw_month\' in table \'CWPMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCWPMonthlyProgress.cpw_monthColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cpw_ytod {
+                get {
+                    try {
+                        return ((string)(this[this.tableCWPMonthlyProgress.cpw_ytodColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cpw_ytod\' in table \'CWPMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCWPMonthlyProgress.cpw_ytodColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cpw_projected {
+                get {
+                    try {
+                        return ((string)(this[this.tableCWPMonthlyProgress.cpw_projectedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cpw_projected\' in table \'CWPMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCWPMonthlyProgress.cpw_projectedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cpw_percentage {
+                get {
+                    try {
+                        return ((string)(this[this.tableCWPMonthlyProgress.cpw_percentageColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cpw_percentage\' in table \'CWPMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCWPMonthlyProgress.cpw_percentageColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cpw_remark {
+                get {
+                    try {
+                        return ((string)(this[this.tableCWPMonthlyProgress.cpw_remarkColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cpw_remark\' in table \'CWPMonthlyProgress\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCWPMonthlyProgress.cpw_remarkColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscpw_idNull() {
+                return this.IsNull(this.tableCWPMonthlyProgress.cpw_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcpw_idNull() {
+                this[this.tableCWPMonthlyProgress.cpw_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscpw_manager_idNull() {
+                return this.IsNull(this.tableCWPMonthlyProgress.cpw_manager_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcpw_manager_idNull() {
+                this[this.tableCWPMonthlyProgress.cpw_manager_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ismanager_descriptionNull() {
+                return this.IsNull(this.tableCWPMonthlyProgress.manager_descriptionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setmanager_descriptionNull() {
+                this[this.tableCWPMonthlyProgress.manager_descriptionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ismanager_deptNull() {
+                return this.IsNull(this.tableCWPMonthlyProgress.manager_deptColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setmanager_deptNull() {
+                this[this.tableCWPMonthlyProgress.manager_deptColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ismanager_subdeptNull() {
+                return this.IsNull(this.tableCWPMonthlyProgress.manager_subdeptColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setmanager_subdeptNull() {
+                this[this.tableCWPMonthlyProgress.manager_subdeptColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isdirector_idNull() {
+                return this.IsNull(this.tableCWPMonthlyProgress.director_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setdirector_idNull() {
+                this[this.tableCWPMonthlyProgress.director_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isdirector_descriptionNull() {
+                return this.IsNull(this.tableCWPMonthlyProgress.director_descriptionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setdirector_descriptionNull() {
+                this[this.tableCWPMonthlyProgress.director_descriptionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscpw_service_plan_idNull() {
+                return this.IsNull(this.tableCWPMonthlyProgress.cpw_service_plan_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcpw_service_plan_idNull() {
+                this[this.tableCWPMonthlyProgress.cpw_service_plan_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isservice_planNull() {
+                return this.IsNull(this.tableCWPMonthlyProgress.service_planColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setservice_planNull() {
+                this[this.tableCWPMonthlyProgress.service_planColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscpw_stg_obj_idNull() {
+                return this.IsNull(this.tableCWPMonthlyProgress.cpw_stg_obj_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcpw_stg_obj_idNull() {
+                this[this.tableCWPMonthlyProgress.cpw_stg_obj_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isstrategy_objectiveNull() {
+                return this.IsNull(this.tableCWPMonthlyProgress.strategy_objectiveColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setstrategy_objectiveNull() {
+                this[this.tableCWPMonthlyProgress.strategy_objectiveColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istheme_idNull() {
+                return this.IsNull(this.tableCWPMonthlyProgress.theme_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settheme_idNull() {
+                this[this.tableCWPMonthlyProgress.theme_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istheme_shortNull() {
+                return this.IsNull(this.tableCWPMonthlyProgress.theme_shortColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settheme_shortNull() {
+                this[this.tableCWPMonthlyProgress.theme_shortColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istheme_colorNull() {
+                return this.IsNull(this.tableCWPMonthlyProgress.theme_colorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settheme_colorNull() {
+                this[this.tableCWPMonthlyProgress.theme_colorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscpw_descriptionNull() {
+                return this.IsNull(this.tableCWPMonthlyProgress.cpw_descriptionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcpw_descriptionNull() {
+                this[this.tableCWPMonthlyProgress.cpw_descriptionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscpw_original_budgetNull() {
+                return this.IsNull(this.tableCWPMonthlyProgress.cpw_original_budgetColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcpw_original_budgetNull() {
+                this[this.tableCWPMonthlyProgress.cpw_original_budgetColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscpw_revised_budgetNull() {
+                return this.IsNull(this.tableCWPMonthlyProgress.cpw_revised_budgetColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcpw_revised_budgetNull() {
+                this[this.tableCWPMonthlyProgress.cpw_revised_budgetColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscpw_yearNull() {
+                return this.IsNull(this.tableCWPMonthlyProgress.cpw_yearColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcpw_yearNull() {
+                this[this.tableCWPMonthlyProgress.cpw_yearColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscpw_monthNull() {
+                return this.IsNull(this.tableCWPMonthlyProgress.cpw_monthColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcpw_monthNull() {
+                this[this.tableCWPMonthlyProgress.cpw_monthColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscpw_ytodNull() {
+                return this.IsNull(this.tableCWPMonthlyProgress.cpw_ytodColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcpw_ytodNull() {
+                this[this.tableCWPMonthlyProgress.cpw_ytodColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscpw_projectedNull() {
+                return this.IsNull(this.tableCWPMonthlyProgress.cpw_projectedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcpw_projectedNull() {
+                this[this.tableCWPMonthlyProgress.cpw_projectedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscpw_percentageNull() {
+                return this.IsNull(this.tableCWPMonthlyProgress.cpw_percentageColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcpw_percentageNull() {
+                this[this.tableCWPMonthlyProgress.cpw_percentageColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscpw_remarkNull() {
+                return this.IsNull(this.tableCWPMonthlyProgress.cpw_remarkColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcpw_remarkNull() {
+                this[this.tableCWPMonthlyProgress.cpw_remarkColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -3318,6 +5745,74 @@ namespace NSCOperationalPlan {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public EverythingRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class ServicePlanRowChangeEvent : global::System.EventArgs {
+            
+            private ServicePlanRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ServicePlanRowChangeEvent(ServicePlanRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ServicePlanRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class CWPMonthlyProgressRowChangeEvent : global::System.EventArgs {
+            
+            private CWPMonthlyProgressRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CWPMonthlyProgressRowChangeEvent(CWPMonthlyProgressRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CWPMonthlyProgressRow Row {
                 get {
                     return this.eventRow;
                 }
