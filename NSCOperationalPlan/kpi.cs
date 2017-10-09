@@ -311,7 +311,7 @@ namespace NSCOperationalPlan
         {
             string strsql = "";
             strsql = GetMonthlyKPIProgressQuery(opYear, opMonth);
-            if (!string.IsNullOrEmpty(serviceID) && serviceID != "-0-")
+            if (!string.IsNullOrEmpty(serviceID) && serviceID != "000")
             {
                 strsql += " WHERE service_plan_id ='" + serviceID + "'";
             }

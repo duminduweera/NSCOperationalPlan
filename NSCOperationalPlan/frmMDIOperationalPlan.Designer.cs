@@ -104,17 +104,17 @@
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.tsMonthlyProgress = new System.Windows.Forms.ToolStripButton();
             this.tsMonthlyCPWProgress = new System.Windows.Forms.ToolStripButton();
-            this.tsStrategyMeasure = new System.Windows.Forms.ToolStripButton();
             this.tsCPW = new System.Windows.Forms.ToolStripButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.tsStrategyMeasure = new System.Windows.Forms.ToolStripButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.toolStrip2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -127,7 +127,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(845, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(990, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -651,9 +651,9 @@
             this.statMonth,
             this.statDepartment,
             this.statDivision});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 526);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 611);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(845, 24);
+            this.statusStrip1.Size = new System.Drawing.Size(990, 24);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -730,7 +730,7 @@
             this.tsStrategyMeasure});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(845, 70);
+            this.toolStrip1.Size = new System.Drawing.Size(990, 70);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -776,6 +776,24 @@
             this.tsMonthlyCPWProgress.ToolTipText = "Status";
             this.tsMonthlyCPWProgress.Click += new System.EventHandler(this.tsMonthlyCPWProgress_Click);
             // 
+            // tsCPW
+            // 
+            this.tsCPW.Image = global::NSCOperationalPlan.Properties.Resources.projects_48x48;
+            this.tsCPW.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsCPW.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsCPW.Name = "tsCPW";
+            this.tsCPW.Size = new System.Drawing.Size(78, 67);
+            this.tsCPW.Tag = "B03";
+            this.tsCPW.Text = "CWP Update";
+            this.tsCPW.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsCPW.ToolTipText = "Status";
+            this.tsCPW.Click += new System.EventHandler(this.tsCPW_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 70);
+            // 
             // tsStrategyMeasure
             // 
             this.tsStrategyMeasure.Image = global::NSCOperationalPlan.Properties.Resources.Measure_481;
@@ -790,60 +808,45 @@
             this.tsStrategyMeasure.ToolTipText = "Status";
             this.tsStrategyMeasure.Click += new System.EventHandler(this.tsStrategyMeasure_Click);
             // 
-            // tsCPW
-            // 
-            this.tsCPW.Image = global::NSCOperationalPlan.Properties.Resources.projects_48x48;
-            this.tsCPW.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsCPW.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsCPW.Name = "tsCPW";
-            this.tsCPW.Size = new System.Drawing.Size(78, 67);
-            this.tsCPW.Tag = "B03";
-            this.tsCPW.Text = "CWP Update";
-            this.tsCPW.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsCPW.ToolTipText = "Status";
-            this.tsCPW.Click += new System.EventHandler(this.tsCPW_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::NSCOperationalPlan.Properties.Resources.logo_only;
-            this.pictureBox1.Location = new System.Drawing.Point(656, 445);
+            this.pictureBox1.Location = new System.Drawing.Point(801, 530);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(177, 67);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // toolStripSeparator6
+            // panel1
             // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 70);
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(63, 95);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(254, 29);
+            this.panel1.TabIndex = 10;
             // 
-            // toolStrip2
+            // label1
             // 
-            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 94);
-            this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(845, 28);
-            this.toolStrip2.TabIndex = 8;
-            this.toolStrip2.Text = "toolStrip2";
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(259, 25);
-            this.toolStripLabel1.Text = "                     Operational Plan";
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(234, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Operational Plan";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmOperationPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(845, 550);
-            this.Controls.Add(this.toolStrip2);
+            this.ClientSize = new System.Drawing.Size(990, 635);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.statusStrip1);
@@ -864,8 +867,7 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.toolStrip2.ResumeLayout(false);
-            this.toolStrip2.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -949,8 +951,8 @@
         private System.Windows.Forms.ToolStripMenuItem importSMeasuresFromExcelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem subReportingTestingToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.ToolStrip toolStrip2;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
     }
 }
 

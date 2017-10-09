@@ -189,7 +189,7 @@ namespace NSCOperationalPlan
         public static string GetQueryMonthlyProgress(string serviceID, string opYear, int opMonth)
         {
             string strsql = GetQueryMonthlyProgress(opYear, opMonth);
-            if (serviceID != "-0-")
+            if (serviceID != "000")
             {
                 strsql += " WHERE service_plan_id='" + serviceID + "'";
             }

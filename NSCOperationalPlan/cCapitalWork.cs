@@ -699,7 +699,7 @@ namespace NSCOperationalPlan
 
             string strsql = GetSQLCapitalWorksMonthlyProgress(cpw_year, cpw_month);
 
-            if (!string.IsNullOrEmpty(serviceID) && serviceID != "-0-")
+            if (!string.IsNullOrEmpty(serviceID) && serviceID != "000")
             {
                 strsql = strsql + " WHERE A.cpw_service_plann_id = '" + serviceID + "'";
             }

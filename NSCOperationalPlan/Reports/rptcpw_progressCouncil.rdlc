@@ -1122,6 +1122,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -1945,7 +1946,6 @@
                         </TablixMember>
                         <TablixMember>
                           <KeepWithGroup>Before</KeepWithGroup>
-                          <RepeatOnNewPage>true</RepeatOnNewPage>
                         </TablixMember>
                       </TablixMembers>
                     </TablixMember>
@@ -2100,7 +2100,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>0.50271cm</Height>
+          <Height>0.23813cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <Style>

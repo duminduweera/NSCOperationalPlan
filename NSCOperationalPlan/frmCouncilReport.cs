@@ -141,45 +141,16 @@ namespace NSCOperationalPlan
                     //case "MonthlyProgress":
                     case "1":
                         PrintActionsByMonth();
-                        //if (cboDirector.SelectedValue.ToString() != "-0-")  // && cboManager.SelectedValue.ToString() != "-0-")
-                        //{
-                        //    //strsql = ReportQueries.QMonthlyProgress(cboOPYear.Text, (int)m, false, cboDirector.SelectedValue.ToString(), cboManager.SelectedValue.ToString());
-                        //    strsql = MonthlyProgress.GetQueryMonthlyProgress(cboOPYear.Text, (int)m, cboDirector.SelectedValue.ToString(), cboManager.SelectedValue.ToString());
-                        //}
-                        //else
-                        //{
-                        //    //strsql = ReportQueries.QMonthlyProgress(cboOPYear.Text, (int)m, true);
-                        //    strsql = MonthlyProgress.GetQueryMonthlyProgress(cboOPYear.Text, (int)m);
-                        //}
-                        //clsReports.PrintMonthlyProgressForCouncil(strsql);
                         break;
                     //case "Capital Work":
                     case "2":
                         PrintCWPByMonth();
-                        //if (cboDirector.SelectedValue.ToString() != "-0-")  // && cboManager.SelectedValue.ToString() != "-0-")
-                        //{
-                        //    clsReports.PrintCapitalWorksCounil(cboOPYear.Text, (int)m, cboDirector.SelectedValue.ToString(), cboManager.SelectedValue.ToString());
-                        //}
-                        //else
-                        //{
-                        //    clsReports.PrintCapitalWorksCounil(cboOPYear.Text, (int)m);
-                        //}
-
                         break;
                     //case "KPI":
                     case "3":
                         PrintKPMByMonth();
-                        //if (cboDirector.SelectedValue.ToString() != "-0-")  // && cboManager.SelectedValue.ToString() != "-0-")
-                        //{
-                        //    clsReports.PrintKPIProgressCouncil(cboOPYear.Text, (int)m, cboDirector.SelectedValue.ToString(), cboManager.SelectedValue.ToString());
-                        //}
-                        //else
-                        //{
-                        //    clsReports.PrintKPIProgressCouncil(cboOPYear.Text, (int)m);
-                        //}
                         break;
                 }
-
             }
         }
 
