@@ -186,6 +186,15 @@ namespace NSCOperationalPlan
             }
             return strsql;
         }
+        public static string GetQueryMonthlyProgress(string serviceID, string opYear, int opMonth)
+        {
+            string strsql = GetQueryMonthlyProgress(opYear, opMonth);
+            if (serviceID != "000")
+            {
+                strsql += " WHERE service_plan_id='" + serviceID + "'";
+            }
+            return strsql;
+        }
         public static string GetQueryMonthlyProgress(string opYear, int opMonth, string opDirector, string opManager)
         {
             string strsql = GetQueryMonthlyProgress(opYear, opMonth);

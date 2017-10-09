@@ -55,8 +55,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.chk1 = new System.Windows.Forms.CheckBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.cboServicePlan = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -77,7 +85,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(536, 54);
+            this.toolStrip1.Size = new System.Drawing.Size(574, 54);
             this.toolStrip1.TabIndex = 55;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -187,7 +195,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(0, 57);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(536, 119);
+            this.panel1.Size = new System.Drawing.Size(574, 108);
             this.panel1.TabIndex = 61;
             // 
             // label5
@@ -196,7 +204,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.Location = new System.Drawing.Point(22, 39);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(502, 69);
+            this.label5.Size = new System.Drawing.Size(540, 69);
             this.label5.TabIndex = 1;
             this.label5.Text = "Select Operation Plan Year and/or Month and/or Directorate and/or Respinsible Man" +
     "ager to Filter your Report";
@@ -209,7 +217,7 @@
             this.label4.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label4.Location = new System.Drawing.Point(3, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(530, 28);
+            this.label4.Size = new System.Drawing.Size(568, 28);
             this.label4.TabIndex = 0;
             this.label4.Text = "Monthly Reports";
             // 
@@ -222,9 +230,9 @@
             "Action Completed by Theme",
             "Action Completed by Status",
             "Action Completed By Strategy"});
-            this.cboReportType.Location = new System.Drawing.Point(194, 182);
+            this.cboReportType.Location = new System.Drawing.Point(194, 191);
             this.cboReportType.Name = "cboReportType";
-            this.cboReportType.Size = new System.Drawing.Size(251, 24);
+            this.cboReportType.Size = new System.Drawing.Size(327, 24);
             this.cboReportType.TabIndex = 72;
             this.cboReportType.SelectedIndexChanged += new System.EventHandler(this.cboReportType_SelectedIndexChanged);
             // 
@@ -232,7 +240,7 @@
             // 
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label6.Location = new System.Drawing.Point(45, 182);
+            this.label6.Location = new System.Drawing.Point(45, 191);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(142, 23);
             this.label6.TabIndex = 71;
@@ -244,7 +252,7 @@
             this.cboManager.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboManager.FormattingEnabled = true;
-            this.cboManager.Location = new System.Drawing.Point(194, 311);
+            this.cboManager.Location = new System.Drawing.Point(163, 60);
             this.cboManager.Name = "cboManager";
             this.cboManager.Size = new System.Drawing.Size(251, 24);
             this.cboManager.TabIndex = 67;
@@ -253,9 +261,9 @@
             // 
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label7.Location = new System.Drawing.Point(32, 311);
+            this.label7.Location = new System.Drawing.Point(4, 60);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(156, 23);
+            this.label7.Size = new System.Drawing.Size(153, 23);
             this.label7.TabIndex = 63;
             this.label7.Text = "Responsible Manager :";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -267,7 +275,7 @@
             this.cboOPYear.FormattingEnabled = true;
             this.cboOPYear.Location = new System.Drawing.Point(194, 221);
             this.cboOPYear.Name = "cboOPYear";
-            this.cboOPYear.Size = new System.Drawing.Size(251, 24);
+            this.cboOPYear.Size = new System.Drawing.Size(327, 24);
             this.cboOPYear.TabIndex = 68;
             // 
             // cboOPMonth
@@ -277,7 +285,7 @@
             this.cboOPMonth.FormattingEnabled = true;
             this.cboOPMonth.Location = new System.Drawing.Point(194, 251);
             this.cboOPMonth.Name = "cboOPMonth";
-            this.cboOPMonth.Size = new System.Drawing.Size(251, 24);
+            this.cboOPMonth.Size = new System.Drawing.Size(327, 24);
             this.cboOPMonth.TabIndex = 69;
             // 
             // cboDirector
@@ -285,7 +293,7 @@
             this.cboDirector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDirector.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboDirector.FormattingEnabled = true;
-            this.cboDirector.Location = new System.Drawing.Point(194, 281);
+            this.cboDirector.Location = new System.Drawing.Point(163, 30);
             this.cboDirector.Name = "cboDirector";
             this.cboDirector.Size = new System.Drawing.Size(251, 24);
             this.cboDirector.TabIndex = 70;
@@ -317,9 +325,9 @@
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Location = new System.Drawing.Point(45, 279);
+            this.label1.Location = new System.Drawing.Point(7, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 23);
+            this.label1.Size = new System.Drawing.Size(150, 23);
             this.label1.TabIndex = 66;
             this.label1.Text = "Responsible Director :";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -327,7 +335,7 @@
             // chk1
             // 
             this.chk1.AutoSize = true;
-            this.chk1.Location = new System.Drawing.Point(194, 346);
+            this.chk1.Location = new System.Drawing.Point(25, 231);
             this.chk1.Name = "chk1";
             this.chk1.Size = new System.Drawing.Size(80, 17);
             this.chk1.TabIndex = 73;
@@ -335,22 +343,83 @@
             this.chk1.UseVisualStyleBackColor = true;
             this.chk1.Visible = false;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(49, 281);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(476, 143);
+            this.tabControl1.TabIndex = 74;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPage1.Controls.Add(this.cboDirector);
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.label7);
+            this.tabPage1.Controls.Add(this.cboManager);
+            this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage1.ForeColor = System.Drawing.Color.Maroon;
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(468, 114);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "By Org. Structure";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPage2.Controls.Add(this.cboServicePlan);
+            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage2.ForeColor = System.Drawing.Color.Maroon;
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(468, 114);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "By Service Plan";
+            // 
+            // cboServicePlan
+            // 
+            this.cboServicePlan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboServicePlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboServicePlan.FormattingEnabled = true;
+            this.cboServicePlan.Location = new System.Drawing.Point(154, 45);
+            this.cboServicePlan.Name = "cboServicePlan";
+            this.cboServicePlan.Size = new System.Drawing.Size(251, 24);
+            this.cboServicePlan.TabIndex = 72;
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label8.Location = new System.Drawing.Point(6, 45);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(142, 23);
+            this.label8.TabIndex = 71;
+            this.label8.Text = "Service Plan :";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // frmCouncilReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(536, 375);
+            this.ClientSize = new System.Drawing.Size(574, 434);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.chk1);
             this.Controls.Add(this.cboReportType);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.cboManager);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.cboOPYear);
             this.Controls.Add(this.cboOPMonth);
-            this.Controls.Add(this.cboDirector);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmCouncilReport";
@@ -359,6 +428,9 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -392,5 +464,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox chk1;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ComboBox cboServicePlan;
+        private System.Windows.Forms.Label label8;
     }
 }

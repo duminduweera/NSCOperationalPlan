@@ -28,9 +28,9 @@ namespace NSCOperationalPlan
         {
             Dictionary<string, string> t = new Dictionary<string, string>()
             {
-                {"1", "Monthly Progress" },
-                {"2", "Capital Work" },
-                {"3", "Performance Indeces" }
+                {"1", "Actions by Month" },
+                {"2", "Capital Work by Month" },
+                {"3", "Key Performance Measures by Month" }
             };
 
             cboReportType.DataSource = new BindingSource(t, null);
@@ -82,6 +82,15 @@ namespace NSCOperationalPlan
             cboOPMonth.Text = Enum.GetName(typeof(Months), OPGlobals.currentMonth);
 
         }
+        private void LoadServicePlan()
+        {
+            DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
+            DataTable tb = db.GetDataTable(conn, @"SELECT * FROM service_plan;");
+
+            cboServicePlan.DataSource = tb;
+            cboServicePlan.DisplayMember = "service_plan";
+            cboServicePlan.ValueMember = "id";
+        }
 
         private void frmCouncilReport_Load(object sender, EventArgs e)
         {
@@ -89,6 +98,7 @@ namespace NSCOperationalPlan
             LoadDirectors();
             LoadYears();
             LoadMonths();
+            LoadServicePlan();
         }
 
         private void cboDirector_SelectedIndexChanged(object sender, EventArgs e)
@@ -119,9 +129,8 @@ namespace NSCOperationalPlan
         {
             string strsql = "";
             Months m = (Months)Enum.Parse(typeof(Months), cboOPMonth.SelectedValue.ToString());
-          
 
-            if(chk1.Checked == true)
+            if (chk1.Checked == true)
             {
                 clsReports.TestSubReport(cboOPYear.Text, (int)m, cboDirector.SelectedValue.ToString(), cboManager.SelectedValue.ToString());
             }
@@ -131,44 +140,79 @@ namespace NSCOperationalPlan
                 {
                     //case "MonthlyProgress":
                     case "1":
-                        if (cboDirector.SelectedValue.ToString() != "-0-")  // && cboManager.SelectedValue.ToString() != "-0-")
-                        {
-                            //strsql = ReportQueries.QMonthlyProgress(cboOPYear.Text, (int)m, false, cboDirector.SelectedValue.ToString(), cboManager.SelectedValue.ToString());
-                            strsql = MonthlyProgress.GetQueryMonthlyProgress(cboOPYear.Text, (int)m, cboDirector.SelectedValue.ToString(), cboManager.SelectedValue.ToString());
-                        }
-                        else
-                        {
-                            //strsql = ReportQueries.QMonthlyProgress(cboOPYear.Text, (int)m, true);
-                            strsql = MonthlyProgress.GetQueryMonthlyProgress(cboOPYear.Text, (int)m);
-                        }
-                        clsReports.PrintMonthlyProgressForCouncil(strsql);
+                        PrintActionsByMonth();
                         break;
                     //case "Capital Work":
                     case "2":
-                        if (cboDirector.SelectedValue.ToString() != "-0-")  // && cboManager.SelectedValue.ToString() != "-0-")
-                        {
-                            clsReports.PrintCapitalWorksCounil(cboOPYear.Text, (int)m, cboDirector.SelectedValue.ToString(), cboManager.SelectedValue.ToString());
-                        }
-                        else
-                        {
-                            clsReports.PrintCapitalWorksCounil(cboOPYear.Text, (int)m);
-                        }
-
+                        PrintCWPByMonth();
                         break;
                     //case "KPI":
                     case "3":
-                        if (cboDirector.SelectedValue.ToString() != "-0-")  // && cboManager.SelectedValue.ToString() != "-0-")
-                        {
-                            clsReports.PrintKPIProgressCouncil(cboOPYear.Text, (int)m, cboDirector.SelectedValue.ToString(), cboManager.SelectedValue.ToString());
-                        }
-                        else
-                        {
-                            clsReports.PrintKPIProgressCouncil(cboOPYear.Text, (int)m);
-                        }
+                        PrintKPMByMonth();
                         break;
                 }
-
             }
         }
+
+        private void PrintActionsByMonth()
+        {
+            string strsql = "";
+            Months m = (Months)Enum.Parse(typeof(Months), cboOPMonth.SelectedValue.ToString());
+            if(tabControl1.SelectedIndex == 0)
+            {
+                if (cboDirector.SelectedValue.ToString() != "-0-")  // && cboManager.SelectedValue.ToString() != "-0-")
+                {
+                    strsql = MonthlyProgress.GetQueryMonthlyProgress(cboOPYear.Text, (int)m, cboDirector.SelectedValue.ToString(), cboManager.SelectedValue.ToString());
+                }
+                else
+                {
+                    strsql = MonthlyProgress.GetQueryMonthlyProgress(cboOPYear.Text, (int)m);
+                }
+            } else
+            {
+                strsql = MonthlyProgress.GetQueryMonthlyProgress(cboServicePlan.SelectedValue.ToString(), cboOPYear.Text, (int)m);
+            }
+            clsReports.PrintMonthlyProgressForCouncil(strsql);
+        }
+        private void PrintCWPByMonth()
+        {
+            //string strsql = "";
+            Months m = (Months)Enum.Parse(typeof(Months), cboOPMonth.SelectedValue.ToString());
+            if (tabControl1.SelectedIndex == 0)
+            {
+                if (cboDirector.SelectedValue.ToString() != "-0-")  // && cboManager.SelectedValue.ToString() != "-0-")
+                {
+                    clsReports.PrintCapitalWorksCounil(cboOPYear.Text, (int)m, cboDirector.SelectedValue.ToString(), cboManager.SelectedValue.ToString());
+                }
+                else
+                {
+                    clsReports.PrintCapitalWorksCounil(cboOPYear.Text, (int)m);
+                }
+            } else
+            {
+                clsReports.PrintCapitalWorksCounil(cboOPYear.Text, (int)m, cboServicePlan.SelectedValue.ToString());
+            }
+        }
+        private void PrintKPMByMonth()
+        {
+            //string strsql = "";
+            Months m = (Months)Enum.Parse(typeof(Months), cboOPMonth.SelectedValue.ToString());
+            if (tabControl1.SelectedIndex == 0)
+            {
+                if (cboDirector.SelectedValue.ToString() != "-0-")  // && cboManager.SelectedValue.ToString() != "-0-")
+                {
+                    clsReports.PrintKPIProgressCouncil(cboOPYear.Text, (int)m, cboDirector.SelectedValue.ToString(), cboManager.SelectedValue.ToString());
+                }
+                else
+                {
+                    clsReports.PrintKPIProgressCouncil(cboOPYear.Text, (int)m);
+                }
+
+            } else
+            {
+                clsReports.PrintKPIProgressCouncil(cboServicePlan.SelectedValue.ToString(), cboOPYear.Text, (int)m);
+            }
+        }
+
     }
 }

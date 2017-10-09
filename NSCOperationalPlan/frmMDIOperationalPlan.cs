@@ -262,31 +262,6 @@ namespace NSCOperationalPlan
             mnuExit_Click(sender, e);
         }
 
-        private void tsTheme_Click(object sender, EventArgs e)
-        {
-            mnuThemes_Click(sender, e);
-        }
-
-        private void tsStrategyObjective_Click(object sender, EventArgs e)
-        {
-            mnuStrategyObjective_Click(sender, e);
-        }
-
-        private void tsStrategy_Click(object sender, EventArgs e)
-        {
-            mnuStrategies_Click(sender, e);
-        }
-
-        private void tsAction_Click(object sender, EventArgs e)
-        {
-            mnuActions_Click(sender, e);
-        }
-
-        private void tsStatus_Click(object sender, EventArgs e)
-        {
-            mnuStatus_Click(sender, e);
-        }
-
         private void tsMonthlyProgress_Click(object sender, EventArgs e)
         {
             mnuMonthlyProgress_Click(sender, e);

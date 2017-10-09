@@ -297,7 +297,6 @@ namespace NSCOperationalPlan
             + " From kpi_progress Where kpi_progress.kpi_year = '" + opYear + "' And kpi_progress.kpi_month = " + opMonth + ") B On A.kpi_id = B.kpi_id" ;
             return strsql;
         }
-
         public static string GetMonthlyKPIProgressQuery(string opYear, int opMonth, string opManager)
         {
             string strsql = "";
@@ -308,7 +307,16 @@ namespace NSCOperationalPlan
             }
             return strsql;
         }
-
+        public static string GetMonthlyKPIProgressQuery(string serviceID, string opYear, int opMonth)
+        {
+            string strsql = "";
+            strsql = GetMonthlyKPIProgressQuery(opYear, opMonth);
+            if (!string.IsNullOrEmpty(serviceID) && serviceID != "000")
+            {
+                strsql += " WHERE service_plan_id ='" + serviceID + "'";
+            }
+            return strsql;
+        }
         public static string GetMonthlyKPIProgressQuery(string opYear, int opMonth, string opDirector, string opManager)
         {
             string strsql = "";
