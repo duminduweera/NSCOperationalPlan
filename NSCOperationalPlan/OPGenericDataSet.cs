@@ -4,6 +4,10 @@
 
     partial class OPGenericDataSet
     {
+        partial class CWPMonthlyProgressDataTable
+        {
+        }
+
         partial class ServicePlanDataTable
         {
         }

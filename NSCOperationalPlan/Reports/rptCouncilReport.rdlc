@@ -11,7 +11,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.73229cm</Height>
+              <Height>0.99687cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -73,7 +73,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>1cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -107,7 +107,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.65292cm</Height>
+              <Height>0.94396cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -167,7 +167,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>1cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -196,6 +196,66 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.86458cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox3">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!service_plan.Value + " - Capital Works Program"</Value>
+                              <Style>
+                                <FontFamily>Calibri</FontFamily>
+                                <FontSize>14pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox3</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.6cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Subreport Name="subreportCWP">
+                      <ReportName>subreportCWP</ReportName>
+                      <Parameters>
+                        <Parameter Name="service_plan_id">
+                          <Value>=Fields!service_plan_id.Value</Value>
+                        </Parameter>
+                      </Parameters>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </Subreport>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -289,12 +349,22 @@
                     <Hidden>=IIF(Fields!kpm.Value Is Nothing,True,False)</Hidden>
                   </Visibility>
                 </TablixMember>
+                <TablixMember>
+                  <Visibility>
+                    <Hidden>=IIF(Fields!cwp.Value Is Nothing,True,False)</Hidden>
+                  </Visibility>
+                </TablixMember>
+                <TablixMember>
+                  <Visibility>
+                    <Hidden>=IIF(Fields!cwp.Value Is Nothing,True,False)</Hidden>
+                  </Visibility>
+                </TablixMember>
               </TablixMembers>
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Height>3.78521cm</Height>
+        <Height>6.60542cm</Height>
         <Width>16.41708cm</Width>
         <Style>
           <Border>
@@ -303,7 +373,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>1.49024in</Height>
+    <Height>2.60056in</Height>
     <Style />
   </Body>
   <Width>6.46342in</Width>

@@ -2557,7 +2557,7 @@ namespace NSCOperationalPlan {
             
             private global::System.Data.DataColumn columndirector_description;
             
-            private global::System.Data.DataColumn columncpw_service_plan_id;
+            private global::System.Data.DataColumn columncpw_service_plann_id;
             
             private global::System.Data.DataColumn columnservice_plan;
             
@@ -2680,9 +2680,9 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn cpw_service_plan_idColumn {
+            public global::System.Data.DataColumn cpw_service_plann_idColumn {
                 get {
-                    return this.columncpw_service_plan_id;
+                    return this.columncpw_service_plann_id;
                 }
             }
             
@@ -2851,7 +2851,7 @@ namespace NSCOperationalPlan {
                         string manager_subdept, 
                         string director_id, 
                         string director_description, 
-                        string cpw_service_plan_id, 
+                        string cpw_service_plann_id, 
                         string service_plan, 
                         string cpw_stg_obj_id, 
                         string strategy_objective, 
@@ -2876,7 +2876,7 @@ namespace NSCOperationalPlan {
                         manager_subdept,
                         director_id,
                         director_description,
-                        cpw_service_plan_id,
+                        cpw_service_plann_id,
                         service_plan,
                         cpw_stg_obj_id,
                         strategy_objective,
@@ -2921,7 +2921,7 @@ namespace NSCOperationalPlan {
                 this.columnmanager_subdept = base.Columns["manager_subdept"];
                 this.columndirector_id = base.Columns["director_id"];
                 this.columndirector_description = base.Columns["director_description"];
-                this.columncpw_service_plan_id = base.Columns["cpw_service_plan_id"];
+                this.columncpw_service_plann_id = base.Columns["cpw_service_plann_id"];
                 this.columnservice_plan = base.Columns["service_plan"];
                 this.columncpw_stg_obj_id = base.Columns["cpw_stg_obj_id"];
                 this.columnstrategy_objective = base.Columns["strategy_objective"];
@@ -2956,8 +2956,8 @@ namespace NSCOperationalPlan {
                 base.Columns.Add(this.columndirector_id);
                 this.columndirector_description = new global::System.Data.DataColumn("director_description", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndirector_description);
-                this.columncpw_service_plan_id = new global::System.Data.DataColumn("cpw_service_plan_id", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncpw_service_plan_id);
+                this.columncpw_service_plann_id = new global::System.Data.DataColumn("cpw_service_plann_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncpw_service_plann_id);
                 this.columnservice_plan = new global::System.Data.DataColumn("service_plan", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnservice_plan);
                 this.columncpw_stg_obj_id = new global::System.Data.DataColumn("cpw_stg_obj_id", typeof(string), null, global::System.Data.MappingType.Element);
@@ -5088,18 +5088,18 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string cpw_service_plan_id {
+            public string cpw_service_plann_id {
                 get {
                     try {
-                        return ((string)(this[this.tableCWPMonthlyProgress.cpw_service_plan_idColumn]));
+                        return ((string)(this[this.tableCWPMonthlyProgress.cpw_service_plann_idColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'cpw_service_plan_id\' in table \'CWPMonthlyProgress\' is DBNul" +
-                                "l.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'cpw_service_plann_id\' in table \'CWPMonthlyProgress\' is DBNu" +
+                                "ll.", e);
                     }
                 }
                 set {
-                    this[this.tableCWPMonthlyProgress.cpw_service_plan_idColumn] = value;
+                    this[this.tableCWPMonthlyProgress.cpw_service_plann_idColumn] = value;
                 }
             }
             
@@ -5432,14 +5432,14 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Iscpw_service_plan_idNull() {
-                return this.IsNull(this.tableCWPMonthlyProgress.cpw_service_plan_idColumn);
+            public bool Iscpw_service_plann_idNull() {
+                return this.IsNull(this.tableCWPMonthlyProgress.cpw_service_plann_idColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setcpw_service_plan_idNull() {
-                this[this.tableCWPMonthlyProgress.cpw_service_plan_idColumn] = global::System.Convert.DBNull;
+            public void Setcpw_service_plann_idNull() {
+                this[this.tableCWPMonthlyProgress.cpw_service_plann_idColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
