@@ -80,6 +80,7 @@
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.testSubReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRptCouncilSource = new System.Windows.Forms.ToolStripMenuItem();
+            this.subReportingTestingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setCurrentMonthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -101,26 +102,19 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsExit = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsTheme = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsStrategyObjective = new System.Windows.Forms.ToolStripButton();
-            this.tsStrategy = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsAction = new System.Windows.Forms.ToolStripButton();
-            this.tsStatus = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.tsMonthlyProgress = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
             this.tsMonthlyCPWProgress = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
             this.tsStrategyMeasure = new System.Windows.Forms.ToolStripButton();
             this.tsCPW = new System.Windows.Forms.ToolStripButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.subReportingTestingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -541,6 +535,13 @@
             this.mnuRptCouncilSource.Text = "Council Source Plan";
             this.mnuRptCouncilSource.Click += new System.EventHandler(this.mnuRptCouncilSource_Click);
             // 
+            // subReportingTestingToolStripMenuItem
+            // 
+            this.subReportingTestingToolStripMenuItem.Name = "subReportingTestingToolStripMenuItem";
+            this.subReportingTestingToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
+            this.subReportingTestingToolStripMenuItem.Text = "SubReportingTesting";
+            this.subReportingTestingToolStripMenuItem.Click += new System.EventHandler(this.subReportingTestingToolStripMenuItem_Click);
+            // 
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -555,7 +556,7 @@
             this.importCPWFromExcelToolStripMenuItem,
             this.importSMeasuresFromExcelToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.toolsToolStripMenuItem.Tag = "D00";
             this.toolsToolStripMenuItem.Text = "&Tools";
             // 
@@ -722,20 +723,11 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsExit,
             this.toolStripSeparator8,
-            this.tsTheme,
-            this.toolStripSeparator6,
-            this.tsStrategyObjective,
-            this.tsStrategy,
-            this.toolStripSeparator7,
-            this.tsAction,
-            this.tsStatus,
-            this.toolStripSeparator9,
             this.tsMonthlyProgress,
-            this.toolStripSeparator19,
             this.tsMonthlyCPWProgress,
-            this.toolStripSeparator22,
-            this.tsStrategyMeasure,
-            this.tsCPW});
+            this.tsCPW,
+            this.toolStripSeparator6,
+            this.tsStrategyMeasure});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(845, 70);
@@ -758,90 +750,6 @@
             this.toolStripSeparator8.Name = "toolStripSeparator8";
             this.toolStripSeparator8.Size = new System.Drawing.Size(6, 70);
             // 
-            // tsTheme
-            // 
-            this.tsTheme.Image = global::NSCOperationalPlan.Properties.Resources.theme_48;
-            this.tsTheme.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsTheme.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsTheme.Name = "tsTheme";
-            this.tsTheme.Size = new System.Drawing.Size(52, 67);
-            this.tsTheme.Tag = "A01";
-            this.tsTheme.Text = "Theme";
-            this.tsTheme.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsTheme.Visible = false;
-            this.tsTheme.Click += new System.EventHandler(this.tsTheme_Click);
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 70);
-            this.toolStripSeparator6.Visible = false;
-            // 
-            // tsStrategyObjective
-            // 
-            this.tsStrategyObjective.Image = global::NSCOperationalPlan.Properties.Resources.strategy_Objective_48;
-            this.tsStrategyObjective.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsStrategyObjective.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsStrategyObjective.Name = "tsStrategyObjective";
-            this.tsStrategyObjective.Size = new System.Drawing.Size(61, 67);
-            this.tsStrategyObjective.Tag = "A02";
-            this.tsStrategyObjective.Text = "Objective";
-            this.tsStrategyObjective.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsStrategyObjective.Visible = false;
-            this.tsStrategyObjective.Click += new System.EventHandler(this.tsStrategyObjective_Click);
-            // 
-            // tsStrategy
-            // 
-            this.tsStrategy.Image = global::NSCOperationalPlan.Properties.Resources.strategy_48;
-            this.tsStrategy.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsStrategy.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsStrategy.Name = "tsStrategy";
-            this.tsStrategy.Size = new System.Drawing.Size(54, 67);
-            this.tsStrategy.Tag = "A03";
-            this.tsStrategy.Text = "Strategy";
-            this.tsStrategy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsStrategy.Visible = false;
-            this.tsStrategy.Click += new System.EventHandler(this.tsStrategy_Click);
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 70);
-            this.toolStripSeparator7.Visible = false;
-            // 
-            // tsAction
-            // 
-            this.tsAction.Image = global::NSCOperationalPlan.Properties.Resources.action_48;
-            this.tsAction.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsAction.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsAction.Name = "tsAction";
-            this.tsAction.Size = new System.Drawing.Size(52, 67);
-            this.tsAction.Tag = "A04";
-            this.tsAction.Text = "Action";
-            this.tsAction.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsAction.Visible = false;
-            this.tsAction.Click += new System.EventHandler(this.tsAction_Click);
-            // 
-            // tsStatus
-            // 
-            this.tsStatus.Image = global::NSCOperationalPlan.Properties.Resources.status_48;
-            this.tsStatus.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsStatus.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsStatus.Name = "tsStatus";
-            this.tsStatus.Size = new System.Drawing.Size(52, 67);
-            this.tsStatus.Tag = "A05";
-            this.tsStatus.Text = "Status";
-            this.tsStatus.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsStatus.ToolTipText = "Status";
-            this.tsStatus.Visible = false;
-            this.tsStatus.Click += new System.EventHandler(this.tsStatus_Click);
-            // 
-            // toolStripSeparator9
-            // 
-            this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 70);
-            this.toolStripSeparator9.Visible = false;
-            // 
             // tsMonthlyProgress
             // 
             this.tsMonthlyProgress.Image = global::NSCOperationalPlan.Properties.Resources.progress_48;
@@ -855,11 +763,6 @@
             this.tsMonthlyProgress.ToolTipText = "Status";
             this.tsMonthlyProgress.Click += new System.EventHandler(this.tsMonthlyProgress_Click);
             // 
-            // toolStripSeparator19
-            // 
-            this.toolStripSeparator19.Name = "toolStripSeparator19";
-            this.toolStripSeparator19.Size = new System.Drawing.Size(6, 70);
-            // 
             // tsMonthlyCPWProgress
             // 
             this.tsMonthlyCPWProgress.Image = global::NSCOperationalPlan.Properties.Resources.performanceIndicator_48;
@@ -872,11 +775,6 @@
             this.tsMonthlyCPWProgress.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsMonthlyCPWProgress.ToolTipText = "Status";
             this.tsMonthlyCPWProgress.Click += new System.EventHandler(this.tsMonthlyCPWProgress_Click);
-            // 
-            // toolStripSeparator22
-            // 
-            this.toolStripSeparator22.Name = "toolStripSeparator22";
-            this.toolStripSeparator22.Size = new System.Drawing.Size(6, 70);
             // 
             // tsStrategyMeasure
             // 
@@ -917,12 +815,27 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // subReportingTestingToolStripMenuItem
+            // toolStripSeparator6
             // 
-            this.subReportingTestingToolStripMenuItem.Name = "subReportingTestingToolStripMenuItem";
-            this.subReportingTestingToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
-            this.subReportingTestingToolStripMenuItem.Text = "SubReportingTesting";
-            this.subReportingTestingToolStripMenuItem.Click += new System.EventHandler(this.subReportingTestingToolStripMenuItem_Click);
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 70);
+            // 
+            // toolStrip2
+            // 
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel1});
+            this.toolStrip2.Location = new System.Drawing.Point(0, 94);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(845, 28);
+            this.toolStrip2.TabIndex = 8;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(259, 25);
+            this.toolStripLabel1.Text = "                     Operational Plan";
             // 
             // frmOperationPlan
             // 
@@ -930,6 +843,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(845, 550);
+            this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.statusStrip1);
@@ -950,6 +864,8 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -992,16 +908,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton tsTheme;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.ToolStripButton tsStrategyObjective;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
-        private System.Windows.Forms.ToolStripButton tsStrategy;
         private System.Windows.Forms.ToolStripButton tsExit;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
-        private System.Windows.Forms.ToolStripButton tsAction;
-        private System.Windows.Forms.ToolStripButton tsStatus;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
         private System.Windows.Forms.ToolStripButton tsMonthlyProgress;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
         private System.Windows.Forms.ToolStripMenuItem mnuRptStrategyObjective;
@@ -1019,7 +927,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator17;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator18;
         private System.Windows.Forms.ToolStripMenuItem capitalWorkMonthlyProgressToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator19;
         private System.Windows.Forms.ToolStripButton tsMonthlyCPWProgress;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator16;
         private System.Windows.Forms.ToolStripMenuItem capitalWorkProgramToolStripMenuItem1;
@@ -1027,7 +934,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator21;
         private System.Windows.Forms.ToolStripMenuItem monthlyProgressToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuRptCPWSummary;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator22;
         private System.Windows.Forms.ToolStripButton tsCPW;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator23;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
@@ -1042,6 +948,9 @@
         private System.Windows.Forms.ToolStripButton tsStrategyMeasure;
         private System.Windows.Forms.ToolStripMenuItem importSMeasuresFromExcelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem subReportingTestingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
     }
 }
 

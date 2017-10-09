@@ -426,6 +426,16 @@ namespace NSCOperationalPlan
             frmprint.Show();
 
         }
+        public static void PrintCapitalWorksCounil(string cpw_year, int cpw_month, string serviceID)
+        {
+            frmPrint frmprint = new frmPrint();
+
+            frmprint.dataTable = CapitalWork.GetTableCapitalWorksMonthlyProgress(cpw_year, cpw_month, serviceID);
+            frmprint.reportName = @"rptcpw_progressCouncil.rdlc";
+
+            frmprint.Show();
+
+        }
         public static void PrintCapitalWorksCounil(string cpw_year, int cpw_month, string directorId, string managerId)
         {
             frmPrint frmprint = new frmPrint();
@@ -522,6 +532,11 @@ namespace NSCOperationalPlan
         public static void PrintKPIProgressCouncil(string opYear, int opMonth, string managerId)
         {
             string strsql = KeyPerformanceIndex.GetMonthlyKPIProgressQuery(opYear, opMonth, managerId);
+            PrintKPIProgressReportCouncil(strsql);
+        }
+        public static void PrintKPIProgressCouncil(string serviceID, string opYear, int opMonth)
+        {
+            string strsql = KeyPerformanceIndex.GetMonthlyKPIProgressQuery(serviceID, opYear, opMonth);
             PrintKPIProgressReportCouncil(strsql);
         }
         public static void PrintKPIProgressCouncil(string opYear, int opMonth, string directorID, string managerId)

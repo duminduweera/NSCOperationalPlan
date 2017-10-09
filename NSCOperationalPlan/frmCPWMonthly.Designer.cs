@@ -60,9 +60,8 @@
             this.tsbPrint});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(2824, 71);
+            this.toolStrip1.Size = new System.Drawing.Size(1406, 54);
             this.toolStrip1.TabIndex = 18;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -72,7 +71,7 @@
             this.tsbClose.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsbClose.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbClose.Name = "tsbClose";
-            this.tsbClose.Size = new System.Drawing.Size(77, 68);
+            this.tsbClose.Size = new System.Drawing.Size(40, 51);
             this.tsbClose.Text = "Close";
             this.tsbClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbClose.Click += new System.EventHandler(this.tsbClose_Click);
@@ -80,7 +79,7 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 71);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 54);
             // 
             // tsbSave
             // 
@@ -88,7 +87,7 @@
             this.tsbSave.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsbSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbSave.Name = "tsbSave";
-            this.tsbSave.Size = new System.Drawing.Size(69, 68);
+            this.tsbSave.Size = new System.Drawing.Size(36, 51);
             this.tsbSave.Text = "Save";
             this.tsbSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbSave.Click += new System.EventHandler(this.tsbSave_Click);
@@ -96,7 +95,7 @@
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 71);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 54);
             // 
             // tsbPrevious
             // 
@@ -104,7 +103,7 @@
             this.tsbPrevious.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsbPrevious.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbPrevious.Name = "tsbPrevious";
-            this.tsbPrevious.Size = new System.Drawing.Size(109, 68);
+            this.tsbPrevious.Size = new System.Drawing.Size(56, 51);
             this.tsbPrevious.Text = "Previous";
             this.tsbPrevious.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbPrevious.ToolTipText = "Load Data From Previous Month";
@@ -116,7 +115,7 @@
             this.tsbClear.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsbClear.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbClear.Name = "tsbClear";
-            this.tsbClear.Size = new System.Drawing.Size(73, 68);
+            this.tsbClear.Size = new System.Drawing.Size(38, 51);
             this.tsbClear.Text = "Clear";
             this.tsbClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbClear.ToolTipText = "Clear All data on the Grid";
@@ -125,7 +124,7 @@
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 71);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 54);
             // 
             // tsbPrint
             // 
@@ -133,7 +132,7 @@
             this.tsbPrint.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsbPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbPrint.Name = "tsbPrint";
-            this.tsbPrint.Size = new System.Drawing.Size(68, 68);
+            this.tsbPrint.Size = new System.Drawing.Size(36, 51);
             this.tsbPrint.Text = "Print";
             this.tsbPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbPrint.Click += new System.EventHandler(this.tsbPrint_Click);
@@ -144,12 +143,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv01.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv01.Location = new System.Drawing.Point(24, 187);
-            this.dgv01.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dgv01.Location = new System.Drawing.Point(12, 90);
             this.dgv01.MultiSelect = false;
             this.dgv01.Name = "dgv01";
             this.dgv01.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgv01.Size = new System.Drawing.Size(2776, 1056);
+            this.dgv01.Size = new System.Drawing.Size(1382, 565);
             this.dgv01.TabIndex = 56;
             this.dgv01.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv01_CellClick);
             this.dgv01.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv01_CellEndEdit);
@@ -159,24 +157,21 @@
             // 
             this.chk1.AutoSize = true;
             this.chk1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk1.Location = new System.Drawing.Point(24, 122);
-            this.chk1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.chk1.Location = new System.Drawing.Point(12, 63);
             this.chk1.Name = "chk1";
-            this.chk1.Size = new System.Drawing.Size(373, 35);
+            this.chk1.Size = new System.Drawing.Size(198, 21);
             this.chk1.TabIndex = 57;
             this.chk1.Text = "Show all for the Directorate";
             this.chk1.UseVisualStyleBackColor = true;
-            this.chk1.Visible = false;
             this.chk1.CheckedChanged += new System.EventHandler(this.chk1_CheckedChanged);
             // 
             // chk2
             // 
             this.chk2.AutoSize = true;
             this.chk2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk2.Location = new System.Drawing.Point(24, 140);
-            this.chk2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.chk2.Location = new System.Drawing.Point(251, 63);
             this.chk2.Name = "chk2";
-            this.chk2.Size = new System.Drawing.Size(376, 35);
+            this.chk2.Size = new System.Drawing.Size(199, 21);
             this.chk2.TabIndex = 57;
             this.chk2.Text = "Show all for all Directorates";
             this.chk2.UseVisualStyleBackColor = true;
@@ -184,14 +179,13 @@
             // 
             // frmCPWMonthly
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2824, 1265);
+            this.ClientSize = new System.Drawing.Size(1406, 667);
             this.Controls.Add(this.chk2);
             this.Controls.Add(this.chk1);
             this.Controls.Add(this.dgv01);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "frmCPWMonthly";
             this.Text = "Capital Work - Monthly Progress";
             this.Load += new System.EventHandler(this.frmCPWMonthly_Load);

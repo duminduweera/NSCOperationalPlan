@@ -391,6 +391,40 @@ namespace NSCOperationalPlan
             return result;
         }
 
+        public bool DeleteCWP(Database db, DbConnection con, DbTransaction trans, string cpwID)
+        {
+            bool result = false;
+            Dictionary<string, dynamic> strdct = new Dictionary<string, dynamic>();
+            string query = "";
+            strdct.Add("CPW_ID", cpwID);
+            try
+            {
+                //--- Delete From Mail Table
+                query = @"DELETE FROM capital_works WHERE capital_works_id = @CPW_ID;";
+                db.InsertUpdateDeleteRecord(con, trans, query, strdct);
+
+                //--- Delete From Monthly Progress Table
+                query = @"DELETE FROM capital_works_monthly_progress WHERE capital_works_id = @CPW_ID;";
+                db.InsertUpdateDeleteRecord(con, trans, query, strdct);
+
+                //--- Delete From Monthly QBR Table
+                query = @"DELETE FROM capital_works_qbr WHERE capital_works_id = @CPW_ID;";
+                db.InsertUpdateDeleteRecord(con, trans, query, strdct);
+
+                //--- Delete From YTD Table
+                query = @"DELETE FROM capital_works_ytd WHERE capital_works_id = @CPW_ID;";
+                db.InsertUpdateDeleteRecord(con, trans, query, strdct);
+
+                result = true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message + Environment.NewLine + "Data NOT Saved, Please Contact IT");
+            }
+
+            return result;
+        }
+
         public int getNextCPWIndex()
         {
             Database db1 = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
@@ -635,17 +669,6 @@ namespace NSCOperationalPlan
             string strsql = "";
             int qtr = OPGlobals.GetQuarter(cpw_month);
 
-            //strsql = "Select A.*, " + OPGlobals.GetQuarter(cpw_month) + " As cpw_quarter,"
-            //    + cpw_month + " As cpw_month, C.capital_works_ytd As cpw_ytod, D.capital_works_projected As cpw_projected,"
-            //    + " D.capital_works_percentage As cpw_percentage, D.capital_works_remark As cpw_remark"
-            //    + " From view_cpw A Left Join (Select capital_works_ytd.* From capital_works_ytd"
-            //    + " Where capital_works_ytd.capital_works_month = " + cpw_month
-            //    + " And capital_works_ytd.capital_works_year = '" + cpw_year + " ') C On A.cpw_id = C.capital_works_id And A.cpw_year = C.capital_works_year Left Join"
-            //    + " (Select capital_works_monthly_progress.* From capital_works_monthly_progress"
-            //    + " Where capital_works_monthly_progress.capital_works_month = " + cpw_month
-            //    + " And capital_works_monthly_progress.capital_works_year = '" + cpw_year + "') D"
-            //    + " On A.cpw_id = D.capital_works_id And A.cpw_year = D.capital_works_year";
-
             strsql = "Select A.*, " + cpw_month + " As cpw_month, C.capital_works_ytd As cpw_ytod, D.capital_works_projected As cpw_projected,"
                 + " D.capital_works_percentage As cpw_percentage, D.capital_works_remark As cpw_remark"
                 + " From view_cpw_qbr A Left Join (Select capital_works_ytd.* From capital_works_ytd"
@@ -658,22 +681,6 @@ namespace NSCOperationalPlan
 
             return strsql;
         }
-        //public static string GetSQLCapitalWorksMonthlyProgress(string cpw_year, int cpw_month, string directorId, string managerId)
-        //{
-        //    string strsql = "";
-        //    strsql = "Select A.*, " + OPGlobals.GetQuarter(cpw_month) + " As cpw_quarter,"
-        //        + cpw_month + " As cpw_month, C.capital_works_ytd As cpw_ytod, D.capital_works_projected As cpw_projected,"
-        //        + " D.capital_works_percentage As cpw_percentage, D.capital_works_remark As cpw_remark"
-        //        + " From view_cpw A Left Join (Select capital_works_ytd.* From capital_works_ytd"
-        //        + " Where capital_works_ytd.capital_works_month = " + cpw_month
-        //        + " And capital_works_ytd.capital_works_year = '" + cpw_year + " ') C On A.cpw_id = C.capital_works_id And A.cpw_year = C.capital_works_year Left Join"
-        //        + " (Select capital_works_monthly_progress.* From capital_works_monthly_progress"
-        //        + " Where capital_works_monthly_progress.capital_works_month = " + cpw_month
-        //        + " And capital_works_monthly_progress.capital_works_year = '" + cpw_year + "') D"
-        //        + " On A.cpw_id = D.capital_works_id And A.cpw_year = D.capital_works_year";
-
-        //    return strsql;
-        //}
         
         public static DataTable GetTableCapitalWorksMonthlyProgress(string cpw_year, int cpw_month)
         {
@@ -682,6 +689,21 @@ namespace NSCOperationalPlan
 
             string strsql = GetSQLCapitalWorksMonthlyProgress(cpw_year, cpw_month) 
                 + " ORDER BY A.director_id, A.cpw_manager_id, A.cpw_id;";
+            DataTable tb = db.GetDataTable(conn, strsql);
+            return tb;
+        }
+        public static DataTable GetTableCapitalWorksMonthlyProgress(string cpw_year, int cpw_month, string serviceID)
+        {
+            Database db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
+            DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
+
+            string strsql = GetSQLCapitalWorksMonthlyProgress(cpw_year, cpw_month);
+
+            if (!string.IsNullOrEmpty(serviceID) && serviceID != "-0-")
+            {
+                strsql = strsql + " WHERE A.cpw_service_plann_id = '" + serviceID + "'";
+            }
+            strsql = strsql + " ORDER BY A.cpw_service_plann_id;";
             DataTable tb = db.GetDataTable(conn, strsql);
             return tb;
         }
