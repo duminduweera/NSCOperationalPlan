@@ -11,17 +11,18 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>1.02473cm</Height>
+              <Height>0.07938cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="service_plan1">
+                    <Textbox Name="Textbox1">
                       <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!service_plan.Value + " - Actions"</Value>
+                              <Value />
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                                 <FontSize>14pt</FontSize>
@@ -34,7 +35,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>service_plan1</rd:DefaultName>
+                      <rd:DefaultName>Textbox1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -51,7 +52,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.25186cm</Height>
+              <Height>0.93015cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -74,79 +75,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.1784cm</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox10">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value />
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox10</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-              </TablixCells>
-            </TablixRow>
-            <TablixRow>
-              <Height>0.94396cm</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox6">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!service_plan.Value + " - Key Performance Measures"</Value>
-                              <Style>
-                                <FontFamily>calibri</FontFamily>
-                                <FontSize>14pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox6</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-              </TablixCells>
-            </TablixRow>
-            <TablixRow>
-              <Height>0.30757cm</Height>
+              <Height>0.89846cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -168,80 +97,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.20625cm</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox13">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value />
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox13</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-              </TablixCells>
-            </TablixRow>
-            <TablixRow>
-              <Height>0.86458cm</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox3">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!service_plan.Value + " - Capital Works Program"</Value>
-                              <Style>
-                                <FontFamily>Calibri</FontFamily>
-                                <FontSize>14pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox3</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                    <rd:Selected>true</rd:Selected>
-                  </CellContents>
-                </TablixCell>
-              </TablixCells>
-            </TablixRow>
-            <TablixRow>
-              <Height>0.30757cm</Height>
+              <Height>0.8632cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -258,40 +114,6 @@
                         </Border>
                       </Style>
                     </Subreport>
-                  </CellContents>
-                </TablixCell>
-              </TablixCells>
-            </TablixRow>
-            <TablixRow>
-              <Height>0.19232cm</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox7">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value />
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox7</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -316,7 +138,7 @@
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!service_plan_id.Value</Value>
+                  <Value>=Fields!service_plan.Value</Value>
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
@@ -357,12 +179,7 @@
                 <TablixMember>
                   <FixedData>true</FixedData>
                   <Visibility>
-                    <Hidden>=IIF(Fields!action.Value Is Nothing,True,False)</Hidden>
-                  </Visibility>
-                </TablixMember>
-                <TablixMember>
-                  <Visibility>
-                    <Hidden>=IIF(Fields!action.Value Is Nothing,True,False)</Hidden>
+                    <Hidden>true</Hidden>
                   </Visibility>
                 </TablixMember>
                 <TablixMember>
@@ -373,26 +190,6 @@
                 <TablixMember>
                   <Visibility>
                     <Hidden>=IIF(Fields!kpm.Value Is Nothing,True,False)</Hidden>
-                  </Visibility>
-                </TablixMember>
-                <TablixMember>
-                  <Visibility>
-                    <Hidden>=IIF(Fields!kpm.Value Is Nothing,True,False)</Hidden>
-                  </Visibility>
-                </TablixMember>
-                <TablixMember>
-                  <Visibility>
-                    <Hidden>=IIF(Fields!kpm.Value Is Nothing,True,False)</Hidden>
-                  </Visibility>
-                </TablixMember>
-                <TablixMember>
-                  <Visibility>
-                    <Hidden>=IIF(Fields!cwp.Value Is Nothing,True,False)</Hidden>
-                  </Visibility>
-                </TablixMember>
-                <TablixMember>
-                  <Visibility>
-                    <Hidden>=IIF(Fields!cwp.Value Is Nothing,True,False)</Hidden>
                   </Visibility>
                 </TablixMember>
                 <TablixMember>
@@ -405,8 +202,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Height>4.27724cm</Height>
-        <Width>18.60337cm</Width>
+        <Height>2.77118cm</Height>
+        <Width>18.60338cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -414,7 +211,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>1.7004in</Height>
+    <Height>1.09102in</Height>
     <Style />
   </Body>
   <Width>7.32416in</Width>
