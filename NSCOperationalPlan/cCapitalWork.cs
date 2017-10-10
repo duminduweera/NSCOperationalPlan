@@ -681,7 +681,18 @@ namespace NSCOperationalPlan
 
             return strsql;
         }
-        
+        public static string GetSQLCapitalWorksMonthlyProgress(string servicePlanID, string cpw_year, int cpw_month)
+        {
+            string strsql = GetSQLCapitalWorksMonthlyProgress(cpw_year, cpw_month);
+            strsql = strsql + " WHERE cpw_service_plann_id != '000'";
+
+            if (!string.IsNullOrEmpty(servicePlanID) && servicePlanID != "000")
+            {
+                strsql = strsql + " AND cpw_service_plann_id = '" + servicePlanID + "'";
+            }
+            return strsql;
+        }
+
         public static DataTable GetTableCapitalWorksMonthlyProgress(string cpw_year, int cpw_month)
         {
             Database db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);

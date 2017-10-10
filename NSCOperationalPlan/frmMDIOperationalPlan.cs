@@ -481,8 +481,6 @@ namespace NSCOperationalPlan
 
             string cwpSql = "Select A.*, 9 As cpw_month, C.capital_works_ytd As cpw_ytod, D.capital_works_projected As cpw_projected, D.capital_works_percentage As cpw_percentage, D.capital_works_remark As cpw_remark From view_cpw_qbr A Left Join (Select capital_works_ytd.* From capital_works_ytd Where capital_works_ytd.capital_works_month = 9 And capital_works_ytd.capital_works_year = '17/18 ') C On A.cpw_id = C.capital_works_id And A.cpw_year = C.capital_works_year Left Join (Select capital_works_monthly_progress.* From capital_works_monthly_progress Where capital_works_monthly_progress.capital_works_month = 9 And capital_works_monthly_progress.capital_works_year = '17/18') D On A.cpw_id = D.capital_works_id And A.cpw_year = D.capital_works_year ORDER BY A.director_id, A.cpw_manager_id, A.cpw_id;";
             clsReports.PrintSubReport(servicePlanSql, actionSql, kpmSql, cwpSql);
-
-
             
         }
     }

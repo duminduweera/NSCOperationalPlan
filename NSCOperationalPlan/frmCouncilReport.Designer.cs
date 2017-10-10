@@ -204,7 +204,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.Location = new System.Drawing.Point(22, 39);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(540, 69);
+            this.label5.Size = new System.Drawing.Size(540, 58);
             this.label5.TabIndex = 1;
             this.label5.Text = "Select Operation Plan Year and/or Month and/or Directorate and/or Respinsible Man" +
     "ager to Filter your Report";

@@ -30,7 +30,8 @@ namespace NSCOperationalPlan
             {
                 {"1", "Actions by Month" },
                 {"2", "Capital Work by Month" },
-                {"3", "Key Performance Measures by Month" }
+                {"3", "Key Performance Measures by Month" },
+                {"4", "Sub Reporting" }
             };
 
             cboReportType.DataSource = new BindingSource(t, null);
@@ -150,6 +151,10 @@ namespace NSCOperationalPlan
                     case "3":
                         PrintKPMByMonth();
                         break;
+                    //case "SUB REPORT":
+                    case "4":
+                        PrintSubReportyMonth();
+                        break;
                 }
             }
         }
@@ -214,5 +219,54 @@ namespace NSCOperationalPlan
             }
         }
 
+        private void PrintSubReportyMonth()
+        {
+            Months m = (Months)Enum.Parse(typeof(Months), cboOPMonth.SelectedValue.ToString());
+            //string month = OPGlobals.currentMonth.ToString();
+            string year = cboOPYear.Text;
+
+            string servicePlanSql = GetServicePlanForSubReporting(year, (int)m);
+
+                //"Select A.id As service_plan_id, A.service_plan, B.actions As action, C.kpm As kpm, D.cwp As cwp From service_plan A"
+                //+ " Left Join(Select action.service_plan_id, COUNT(*) As actions From action Group By action.service_plan_id) B"
+                //+ " On B.service_plan_id = A.id Left Join (Select kpi.service_plan_id, COUNT(*) As kpm From kpi Group By kpi.service_plan_id) C"
+                //+ " On C.service_plan_id = A.id Left Join (Select capital_works.capital_works_service_plann_id As service_plan_id, COUNT(*) As cwp From capital_works Group By capital_works.capital_works_service_plann_id) D"
+                //+ " On D.service_plan_id = A.id where service_plan != '-NONE-';";
+
+            string actionSql = "", kpmSql="", cwpSql="";
+
+            actionSql = MonthlyProgress.GetQueryMonthlyProgress(cboServicePlan.SelectedValue.ToString(), cboOPYear.Text, (int)m);
+            cwpSql = CapitalWork.GetSQLCapitalWorksMonthlyProgress(cboServicePlan.SelectedValue.ToString(), cboOPYear.Text, (int)m);
+            kpmSql = KeyPerformanceIndex.GetMonthlyKPIProgressQuery(cboServicePlan.SelectedValue.ToString(), cboOPYear.Text, (int)m);
+
+            clsReports.PrintSubReport(servicePlanSql, actionSql, kpmSql, cwpSql);
+        }
+
+        private string GetServicePlanForSubReporting(string year, int month)
+        {
+            string servicePlanSql = "";
+
+            servicePlanSql = "Select A.id As service_plan_id, A.service_plan, B.action, C.kpm As kpm, D.cwp As cwp From service_plan A Left Join"
+                + " (Select action.service_plan_id, Count(*) As action From action Left Join progress On progress.action_id = action.id"
+                + " Where progress.progress_year = '" + year + "' And progress.progress_month = " + month + " Group By action.service_plan_id) B On B.service_plan_id = A.id Left Join"
+                + " (Select kpi.service_plan_id, COUNT(*) As kpm From kpi Left Join kpi_progress On kpi.id = kpi_progress.kpi_id"
+                + " Where kpi_progress.kpi_year = '" + year + "' And kpi_progress.kpi_month = " + month + " Group By kpi.service_plan_id) C On C.service_plan_id = A.id Left Join"
+                + " (Select capital_works.capital_works_service_plann_id As service_plan_id, COUNT(*) As cwp From capital_works Left Join capital_works_monthly_progress On capital_works.capital_works_id = capital_works_monthly_progress.capital_works_id"
+                + " Where capital_works_monthly_progress.capital_works_year = '" + year + "' And capital_works_monthly_progress.capital_works_month = " + month + " Group By capital_works.capital_works_service_plann_id) D"
+                + " On D.service_plan_id = A.id Left Join manager_view E On A.service_plan_manager_id = E.manager_id;"; 
+
+            return servicePlanSql;
+        }
+        private string GetServicePlanForSubReporting(string year, int month, string servicePlanID )
+        {
+            string servicePlanSql = GetServicePlanForSubReporting(year, month);
+            servicePlanSql = servicePlanSql + " WHERE service_plan_id != '000'";
+
+            if (!string.IsNullOrEmpty(servicePlanID) && servicePlanID != "000")
+            {
+                servicePlanSql = servicePlanSql + " AND service_plan_id = '" + servicePlanID + "'";
+            }
+            return servicePlanSql;
+        }
     }
 }
