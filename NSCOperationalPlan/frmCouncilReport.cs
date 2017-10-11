@@ -119,6 +119,15 @@ namespace NSCOperationalPlan
 
         private void cboReportType_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cboReportType.SelectedValue.ToString() == "4")
+            {
+                tabControl1.SelectedTab = tabPage2;
+                ((Control)tabControl1.TabPages[0]).Enabled = false;
+            } else
+            {
+                tabControl1.SelectedTab = tabPage1;
+                ((Control)tabControl1.TabPages[0]).Enabled = true;
+            }
         }
 
         private void tsbClose_Click(object sender, EventArgs e)
@@ -225,7 +234,7 @@ namespace NSCOperationalPlan
             //string month = OPGlobals.currentMonth.ToString();
             string year = cboOPYear.Text;
 
-            string servicePlanSql = GetServicePlanForSubReporting(year, (int)m);
+            string servicePlanSql = GetServicePlanForSubReporting(year, (int)m, cboServicePlan.SelectedValue.ToString());
 
                 //"Select A.id As service_plan_id, A.service_plan, B.actions As action, C.kpm As kpm, D.cwp As cwp From service_plan A"
                 //+ " Left Join(Select action.service_plan_id, COUNT(*) As actions From action Group By action.service_plan_id) B"
@@ -253,18 +262,18 @@ namespace NSCOperationalPlan
                 + " Where kpi_progress.kpi_year = '" + year + "' And kpi_progress.kpi_month = " + month + " Group By kpi.service_plan_id) C On C.service_plan_id = A.id Left Join"
                 + " (Select capital_works.capital_works_service_plann_id As service_plan_id, COUNT(*) As cwp From capital_works Left Join capital_works_monthly_progress On capital_works.capital_works_id = capital_works_monthly_progress.capital_works_id"
                 + " Where capital_works_monthly_progress.capital_works_year = '" + year + "' And capital_works_monthly_progress.capital_works_month = " + month + " Group By capital_works.capital_works_service_plann_id) D"
-                + " On D.service_plan_id = A.id Left Join manager_view E On A.service_plan_manager_id = E.manager_id;"; 
+                + " On D.service_plan_id = A.id Left Join manager_view E On A.service_plan_manager_id = E.manager_id"; 
 
             return servicePlanSql;
         }
         private string GetServicePlanForSubReporting(string year, int month, string servicePlanID )
         {
             string servicePlanSql = GetServicePlanForSubReporting(year, month);
-            servicePlanSql = servicePlanSql + " WHERE service_plan_id != '000'";
+            servicePlanSql = servicePlanSql + " WHERE id != '000'";
 
             if (!string.IsNullOrEmpty(servicePlanID) && servicePlanID != "000")
             {
-                servicePlanSql = servicePlanSql + " AND service_plan_id = '" + servicePlanID + "'";
+                servicePlanSql = servicePlanSql + " AND id = '" + servicePlanID + "'";
             }
             return servicePlanSql;
         }

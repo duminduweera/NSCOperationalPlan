@@ -78,9 +78,7 @@
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.councilReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
-            this.testSubReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRptCouncilSource = new System.Windows.Forms.ToolStripMenuItem();
-            this.subReportingTestingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setCurrentMonthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -354,9 +352,7 @@
             this.toolStripSeparator13,
             this.councilReportToolStripMenuItem,
             this.toolStripSeparator14,
-            this.testSubReportToolStripMenuItem,
-            this.mnuRptCouncilSource,
-            this.subReportingTestingToolStripMenuItem});
+            this.mnuRptCouncilSource});
             this.testToolStripMenuItem.Name = "testToolStripMenuItem";
             this.testToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.testToolStripMenuItem.Tag = "C00";
@@ -518,15 +514,6 @@
             this.toolStripSeparator14.Size = new System.Drawing.Size(238, 6);
             this.toolStripSeparator14.Visible = false;
             // 
-            // testSubReportToolStripMenuItem
-            // 
-            this.testSubReportToolStripMenuItem.Name = "testSubReportToolStripMenuItem";
-            this.testSubReportToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
-            this.testSubReportToolStripMenuItem.Tag = "C10";
-            this.testSubReportToolStripMenuItem.Text = "Test Sub Report";
-            this.testSubReportToolStripMenuItem.Visible = false;
-            this.testSubReportToolStripMenuItem.Click += new System.EventHandler(this.testSubReportToolStripMenuItem_Click);
-            // 
             // mnuRptCouncilSource
             // 
             this.mnuRptCouncilSource.Image = ((System.Drawing.Image)(resources.GetObject("mnuRptCouncilSource.Image")));
@@ -534,13 +521,6 @@
             this.mnuRptCouncilSource.Size = new System.Drawing.Size(241, 22);
             this.mnuRptCouncilSource.Text = "Council Source Plan";
             this.mnuRptCouncilSource.Click += new System.EventHandler(this.mnuRptCouncilSource_Click);
-            // 
-            // subReportingTestingToolStripMenuItem
-            // 
-            this.subReportingTestingToolStripMenuItem.Name = "subReportingTestingToolStripMenuItem";
-            this.subReportingTestingToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
-            this.subReportingTestingToolStripMenuItem.Text = "SubReportingTesting";
-            this.subReportingTestingToolStripMenuItem.Click += new System.EventHandler(this.subReportingTestingToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
             // 
@@ -941,7 +921,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
         private System.Windows.Forms.ToolStripMenuItem councilReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
-        private System.Windows.Forms.ToolStripMenuItem testSubReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel statDepartment;
         private System.Windows.Forms.ToolStripStatusLabel statDivision;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
@@ -949,7 +928,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuRptCouncilSource;
         private System.Windows.Forms.ToolStripButton tsStrategyMeasure;
         private System.Windows.Forms.ToolStripMenuItem importSMeasuresFromExcelToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem subReportingTestingToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
