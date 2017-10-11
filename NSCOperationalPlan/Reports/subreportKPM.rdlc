@@ -140,7 +140,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>13.94283cm</Width>
+                  <Width>12.40825cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.97564cm</Width>
@@ -639,7 +639,7 @@
             </TablixRowHierarchy>
             <DataSetName>DataSetKPM</DataSetName>
             <Height>2.5cm</Height>
-            <Width>18.9741cm</Width>
+            <Width>17.43953cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -650,7 +650,7 @@
         <Height>0.98425in</Height>
         <Style />
       </Body>
-      <Width>7.47012in</Width>
+      <Width>6.86596in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>

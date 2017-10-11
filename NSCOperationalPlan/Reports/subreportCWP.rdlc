@@ -135,22 +135,22 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>4.8596cm</Width>
+                  <Width>4.50241cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.02376cm</Width>
+                  <Width>2.52647cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.70626cm</Width>
+                  <Width>1.56074cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.86501cm</Width>
+                  <Width>1.91793cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.99729cm</Width>
+                  <Width>2.10312cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>6.45863cm</Width>
+                  <Width>4.50071cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -416,7 +416,21 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>%  Completed</Value>
+                                  <Value>%</Value>
+                                  <Style>
+                                    <FontFamily>calibri</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Completed</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
                                     <FontWeight>Bold</FontWeight>
@@ -1141,7 +1155,7 @@
             </TablixRowHierarchy>
             <DataSetName>DataSetCWP</DataSetName>
             <Height>3.09575cm</Height>
-            <Width>18.98993cm</Width>
+            <Width>17.19076cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1152,7 +1166,7 @@
         <Height>1.2188in</Height>
         <Style />
       </Body>
-      <Width>7.47635in</Width>
+      <Width>6.76802in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
