@@ -448,7 +448,8 @@ namespace NSCOperationalPlan
 
 
 
-            frmprint.reportName = @"rptCouncilReport.rdlc";
+            //frmprint.reportName = @"rptCouncilReport.rdlc";
+            frmprint.reportName = @"Report1.rdlc";
             frmprint.Show();
         }
 

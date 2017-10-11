@@ -106,13 +106,12 @@
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.tsStrategyMeasure = new System.Windows.Forms.ToolStripButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -710,7 +709,7 @@
             this.tsStrategyMeasure});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(990, 70);
+            this.toolStrip1.Size = new System.Drawing.Size(990, 93);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -720,27 +719,29 @@
             this.tsExit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsExit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsExit.Name = "tsExit";
-            this.tsExit.Size = new System.Drawing.Size(52, 67);
+            this.tsExit.Size = new System.Drawing.Size(52, 90);
             this.tsExit.Text = "Exit";
+            this.tsExit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.tsExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsExit.Click += new System.EventHandler(this.tsExit_Click_1);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 70);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 93);
             // 
             // tsMonthlyProgress
             // 
             this.tsMonthlyProgress.Image = global::NSCOperationalPlan.Properties.Resources.progress_48;
             this.tsMonthlyProgress.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsMonthlyProgress.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsMonthlyProgress.Margin = new System.Windows.Forms.Padding(0, 1, 0, 25);
             this.tsMonthlyProgress.Name = "tsMonthlyProgress";
             this.tsMonthlyProgress.Size = new System.Drawing.Size(87, 67);
             this.tsMonthlyProgress.Tag = "B01";
             this.tsMonthlyProgress.Text = "Action Update";
             this.tsMonthlyProgress.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsMonthlyProgress.ToolTipText = "Status";
+            this.tsMonthlyProgress.ToolTipText = "Operational Plan";
             this.tsMonthlyProgress.Click += new System.EventHandler(this.tsMonthlyProgress_Click);
             // 
             // tsMonthlyCPWProgress
@@ -748,12 +749,13 @@
             this.tsMonthlyCPWProgress.Image = global::NSCOperationalPlan.Properties.Resources.performanceIndicator_48;
             this.tsMonthlyCPWProgress.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsMonthlyCPWProgress.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsMonthlyCPWProgress.Margin = new System.Windows.Forms.Padding(0, 1, 0, 25);
             this.tsMonthlyCPWProgress.Name = "tsMonthlyCPWProgress";
             this.tsMonthlyCPWProgress.Size = new System.Drawing.Size(77, 67);
             this.tsMonthlyCPWProgress.Tag = "B02";
             this.tsMonthlyCPWProgress.Text = "KPM Update";
             this.tsMonthlyCPWProgress.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsMonthlyCPWProgress.ToolTipText = "Status";
+            this.tsMonthlyCPWProgress.ToolTipText = "Operational Plan";
             this.tsMonthlyCPWProgress.Click += new System.EventHandler(this.tsMonthlyCPWProgress_Click);
             // 
             // tsCPW
@@ -761,24 +763,26 @@
             this.tsCPW.Image = global::NSCOperationalPlan.Properties.Resources.projects_48x48;
             this.tsCPW.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsCPW.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsCPW.Margin = new System.Windows.Forms.Padding(0, 1, 0, 25);
             this.tsCPW.Name = "tsCPW";
             this.tsCPW.Size = new System.Drawing.Size(78, 67);
             this.tsCPW.Tag = "B03";
             this.tsCPW.Text = "CWP Update";
             this.tsCPW.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsCPW.ToolTipText = "Status";
+            this.tsCPW.ToolTipText = "Operational Plan";
             this.tsCPW.Click += new System.EventHandler(this.tsCPW_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 70);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 93);
             // 
             // tsStrategyMeasure
             // 
             this.tsStrategyMeasure.Image = global::NSCOperationalPlan.Properties.Resources.Measure_481;
             this.tsStrategyMeasure.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsStrategyMeasure.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsStrategyMeasure.Margin = new System.Windows.Forms.Padding(0, 1, 0, 25);
             this.tsStrategyMeasure.Name = "tsStrategyMeasure";
             this.tsStrategyMeasure.Size = new System.Drawing.Size(97, 67);
             this.tsStrategyMeasure.Tag = "B03";
@@ -800,25 +804,27 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // panel1
-            // 
-            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(63, 95);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(254, 29);
-            this.panel1.TabIndex = 10;
-            // 
             // label1
             // 
+            this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 4);
+            this.label1.Location = new System.Drawing.Point(66, 92);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(234, 25);
-            this.label1.TabIndex = 0;
+            this.label1.Size = new System.Drawing.Size(246, 25);
+            this.label1.TabIndex = 12;
             this.label1.Text = "Operational Plan";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(314, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 25);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "DP";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmOperationPlan
             // 
@@ -826,7 +832,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(990, 635);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.statusStrip1);
@@ -847,7 +854,6 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -929,8 +935,8 @@
         private System.Windows.Forms.ToolStripButton tsStrategyMeasure;
         private System.Windows.Forms.ToolStripMenuItem importSMeasuresFromExcelToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

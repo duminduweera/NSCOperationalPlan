@@ -11,7 +11,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.07938cm</Height>
+              <Height>0.92605cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -186,6 +186,8 @@
                   <Visibility>
                     <Hidden>=IIF(Fields!action.Value Is Nothing,True,False)</Hidden>
                   </Visibility>
+                  <HideIfNoRows>true</HideIfNoRows>
+                  <RepeatOnNewPage>true</RepeatOnNewPage>
                 </TablixMember>
                 <TablixMember>
                   <Visibility>
@@ -202,7 +204,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Height>2.77118cm</Height>
+        <Height>3.61786cm</Height>
         <Width>18.60338cm</Width>
         <Style>
           <Border>
@@ -211,10 +213,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>1.09102in</Height>
+    <Height>4.57019in</Height>
     <Style />
   </Body>
-  <Width>7.32416in</Width>
+  <Width>7.58458in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

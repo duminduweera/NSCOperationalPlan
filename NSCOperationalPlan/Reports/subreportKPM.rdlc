@@ -140,10 +140,10 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>12.76459cm</Width>
+                  <Width>13.94283cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.08208cm</Width>
+                  <Width>1.97564cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2.89688cm</Width>
@@ -435,6 +435,9 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox26</rd:DefaultName>
+                          <Visibility>
+                            <Hidden>=Fields!kpm_id.Value = "003"</Hidden>
+                          </Visibility>
                           <Style>
                             <Border>
                               <Color>#e5e5e5</Color>
@@ -442,7 +445,6 @@
                             </Border>
                             <TopBorder>
                               <Color>DimGray</Color>
-                              <Width>1pt</Width>
                             </TopBorder>
                             <BottomBorder>
                               <Style>None</Style>
@@ -453,46 +455,6 @@
                             <RightBorder>
                               <Style>None</Style>
                             </RightBorder>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                        <ColSpan>3</ColSpan>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell />
-                    <TablixCell />
-                  </TablixCells>
-                </TablixRow>
-                <TablixRow>
-                  <Height>0.7cm</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox9">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily>Tahoma</FontFamily>
-                                    <Color>#4d4d4d</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox9</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -664,92 +626,20 @@
                           <Group Name="Details" />
                         </TablixMember>
                         <TablixMember>
+                          <Visibility>
+                            <Hidden>=Fields!kpm_id.Value="003"</Hidden>
+                          </Visibility>
                           <KeepWithGroup>Before</KeepWithGroup>
                         </TablixMember>
                       </TablixMembers>
                     </TablixMember>
                   </TablixMembers>
                 </TablixMember>
-                <TablixMember>
-                  <TablixHeader>
-                    <Size>0.07938cm</Size>
-                    <CellContents>
-                      <Textbox Name="Textbox7">
-                        <CanGrow>true</CanGrow>
-                        <KeepTogether>true</KeepTogether>
-                        <Paragraphs>
-                          <Paragraph>
-                            <TextRuns>
-                              <TextRun>
-                                <Value />
-                                <Style>
-                                  <FontFamily>Calibri</FontFamily>
-                                  <FontWeight>Bold</FontWeight>
-                                  <Color>#4c68a2</Color>
-                                </Style>
-                              </TextRun>
-                            </TextRuns>
-                            <Style />
-                          </Paragraph>
-                        </Paragraphs>
-                        <rd:DefaultName>Textbox7</rd:DefaultName>
-                        <Style>
-                          <Border>
-                            <Style>None</Style>
-                          </Border>
-                          <PaddingLeft>2pt</PaddingLeft>
-                          <PaddingRight>2pt</PaddingRight>
-                          <PaddingTop>2pt</PaddingTop>
-                          <PaddingBottom>2pt</PaddingBottom>
-                        </Style>
-                      </Textbox>
-                    </CellContents>
-                  </TablixHeader>
-                  <TablixMembers>
-                    <TablixMember>
-                      <TablixHeader>
-                        <Size>0.07938cm</Size>
-                        <CellContents>
-                          <Textbox Name="Textbox8">
-                            <CanGrow>true</CanGrow>
-                            <KeepTogether>true</KeepTogether>
-                            <Paragraphs>
-                              <Paragraph>
-                                <TextRuns>
-                                  <TextRun>
-                                    <Value />
-                                    <Style>
-                                      <FontFamily>Calibri</FontFamily>
-                                      <FontWeight>Bold</FontWeight>
-                                      <Color>#4c68a2</Color>
-                                    </Style>
-                                  </TextRun>
-                                </TextRuns>
-                                <Style />
-                              </Paragraph>
-                            </Paragraphs>
-                            <rd:DefaultName>Textbox8</rd:DefaultName>
-                            <Style>
-                              <Border>
-                                <Style>None</Style>
-                              </Border>
-                              <PaddingLeft>2pt</PaddingLeft>
-                              <PaddingRight>2pt</PaddingRight>
-                              <PaddingTop>2pt</PaddingTop>
-                              <PaddingBottom>2pt</PaddingBottom>
-                            </Style>
-                          </Textbox>
-                        </CellContents>
-                      </TablixHeader>
-                    </TablixMember>
-                  </TablixMembers>
-                  <KeepWithGroup>Before</KeepWithGroup>
-                </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSetKPM</DataSetName>
-            <Height>3.2cm</Height>
-            <Width>18.9023cm</Width>
+            <Height>2.5cm</Height>
+            <Width>18.9741cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -757,10 +647,10 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>1.25984in</Height>
+        <Height>0.98425in</Height>
         <Style />
       </Body>
-      <Width>7.44185in</Width>
+      <Width>7.47012in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
