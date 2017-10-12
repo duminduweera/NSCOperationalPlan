@@ -8,7 +8,7 @@
   <Shapes>
     <Shape ID="DesignTable:KPMMonthlyProgress" ZOrder="4" X="31" Y="204" Height="523" Width="192" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="519" />
     <Shape ID="DesignTable:DataTable1" ZOrder="2" X="542" Y="34" Height="181" Width="160" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="177" />
-    <Shape ID="DesignTable:ServicePlan" ZOrder="3" X="0" Y="0" Height="90" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="86" />
+    <Shape ID="DesignTable:ServicePlan" ZOrder="3" X="924" Y="497" Height="501" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="497" />
     <Shape ID="DesignTable:CWPMonthlyProgress" ZOrder="1" X="382" Y="143" Height="255" Width="193" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="252" />
   </Shapes>
   <Connectors />

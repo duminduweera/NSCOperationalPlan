@@ -1364,6 +1364,8 @@ namespace NSCOperationalPlan {
             
             private global::System.Data.DataColumn columnservice_plan_manager_id;
             
+            private global::System.Data.DataColumn columnservice_plan_director_id;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ServicePlanDataTable() {
@@ -1447,6 +1449,14 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn service_plan_director_idColumn {
+                get {
+                    return this.columnservice_plan_director_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1482,7 +1492,7 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ServicePlanRow AddServicePlanRow(string service_plan, string service_plan_id, string action, string kpm, string cwp, string service_plan_manager_id) {
+            public ServicePlanRow AddServicePlanRow(string service_plan, string service_plan_id, string action, string kpm, string cwp, string service_plan_manager_id, string service_plan_director_id) {
                 ServicePlanRow rowServicePlanRow = ((ServicePlanRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         service_plan,
@@ -1490,7 +1500,8 @@ namespace NSCOperationalPlan {
                         action,
                         kpm,
                         cwp,
-                        service_plan_manager_id};
+                        service_plan_manager_id,
+                        service_plan_director_id};
                 rowServicePlanRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowServicePlanRow);
                 return rowServicePlanRow;
@@ -1519,6 +1530,7 @@ namespace NSCOperationalPlan {
                 this.columnkpm = base.Columns["kpm"];
                 this.columncwp = base.Columns["cwp"];
                 this.columnservice_plan_manager_id = base.Columns["service_plan_manager_id"];
+                this.columnservice_plan_director_id = base.Columns["service_plan_director_id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1536,6 +1548,8 @@ namespace NSCOperationalPlan {
                 base.Columns.Add(this.columncwp);
                 this.columnservice_plan_manager_id = new global::System.Data.DataColumn("service_plan_manager_id", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnservice_plan_manager_id);
+                this.columnservice_plan_director_id = new global::System.Data.DataColumn("service_plan_director_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnservice_plan_director_id);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3338,6 +3352,23 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string service_plan_director_id {
+                get {
+                    try {
+                        return ((string)(this[this.tableServicePlan.service_plan_director_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'service_plan_director_id\' in table \'ServicePlan\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableServicePlan.service_plan_director_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Isservice_planNull() {
                 return this.IsNull(this.tableServicePlan.service_planColumn);
             }
@@ -3406,6 +3437,18 @@ namespace NSCOperationalPlan {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setservice_plan_manager_idNull() {
                 this[this.tableServicePlan.service_plan_manager_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isservice_plan_director_idNull() {
+                return this.IsNull(this.tableServicePlan.service_plan_director_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setservice_plan_director_idNull() {
+                this[this.tableServicePlan.service_plan_director_idColumn] = global::System.Convert.DBNull;
             }
         }
         
