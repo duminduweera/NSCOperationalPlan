@@ -39,8 +39,9 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbPrint = new System.Windows.Forms.ToolStripButton();
             this.dgv01 = new System.Windows.Forms.DataGridView();
-            this.chk1 = new System.Windows.Forms.CheckBox();
-            this.chk2 = new System.Windows.Forms.CheckBox();
+            this.opt2 = new System.Windows.Forms.RadioButton();
+            this.opt0 = new System.Windows.Forms.RadioButton();
+            this.opt1 = new System.Windows.Forms.RadioButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv01)).BeginInit();
             this.SuspendLayout();
@@ -143,47 +144,63 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv01.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv01.Location = new System.Drawing.Point(12, 90);
+            this.dgv01.Location = new System.Drawing.Point(12, 144);
             this.dgv01.MultiSelect = false;
             this.dgv01.Name = "dgv01";
             this.dgv01.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgv01.Size = new System.Drawing.Size(1382, 565);
+            this.dgv01.Size = new System.Drawing.Size(1382, 511);
             this.dgv01.TabIndex = 56;
             this.dgv01.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv01_CellClick);
             this.dgv01.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv01_CellEndEdit);
             this.dgv01.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv01_CellLeave);
             // 
-            // chk1
+            // opt2
             // 
-            this.chk1.AutoSize = true;
-            this.chk1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk1.Location = new System.Drawing.Point(12, 63);
-            this.chk1.Name = "chk1";
-            this.chk1.Size = new System.Drawing.Size(198, 21);
-            this.chk1.TabIndex = 57;
-            this.chk1.Text = "Show all for the Directorate";
-            this.chk1.UseVisualStyleBackColor = true;
-            this.chk1.CheckedChanged += new System.EventHandler(this.chk1_CheckedChanged);
+            this.opt2.AutoSize = true;
+            this.opt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.opt2.Location = new System.Drawing.Point(41, 117);
+            this.opt2.Name = "opt2";
+            this.opt2.Size = new System.Drawing.Size(248, 21);
+            this.opt2.TabIndex = 109;
+            this.opt2.TabStop = true;
+            this.opt2.Text = "Show all Actions for all Directorates";
+            this.opt2.UseVisualStyleBackColor = true;
+            this.opt2.CheckedChanged += new System.EventHandler(this.opt2_CheckedChanged);
             // 
-            // chk2
+            // opt0
             // 
-            this.chk2.AutoSize = true;
-            this.chk2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk2.Location = new System.Drawing.Point(251, 63);
-            this.chk2.Name = "chk2";
-            this.chk2.Size = new System.Drawing.Size(199, 21);
-            this.chk2.TabIndex = 57;
-            this.chk2.Text = "Show all for all Directorates";
-            this.chk2.UseVisualStyleBackColor = true;
-            this.chk2.CheckedChanged += new System.EventHandler(this.chk2_CheckedChanged);
+            this.opt0.AutoSize = true;
+            this.opt0.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.opt0.Location = new System.Drawing.Point(41, 64);
+            this.opt0.Name = "opt0";
+            this.opt0.Size = new System.Drawing.Size(152, 21);
+            this.opt0.TabIndex = 110;
+            this.opt0.TabStop = true;
+            this.opt0.Text = "My Department only";
+            this.opt0.UseVisualStyleBackColor = true;
+            this.opt0.CheckedChanged += new System.EventHandler(this.opt0_CheckedChanged);
+            // 
+            // opt1
+            // 
+            this.opt1.AutoSize = true;
+            this.opt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.opt1.Location = new System.Drawing.Point(41, 90);
+            this.opt1.Name = "opt1";
+            this.opt1.Size = new System.Drawing.Size(60, 21);
+            this.opt1.TabIndex = 111;
+            this.opt1.TabStop = true;
+            this.opt1.Text = "Show";
+            this.opt1.UseVisualStyleBackColor = true;
+            this.opt1.CheckedChanged += new System.EventHandler(this.opt1_CheckedChanged);
             // 
             // frmCPWMonthly
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1406, 667);
-            this.Controls.Add(this.chk2);
-            this.Controls.Add(this.chk1);
+            this.Controls.Add(this.opt2);
+            this.Controls.Add(this.opt0);
+            this.Controls.Add(this.opt1);
             this.Controls.Add(this.dgv01);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmCPWMonthly";
@@ -208,8 +225,9 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton tsbPrint;
         private System.Windows.Forms.DataGridView dgv01;
-        private System.Windows.Forms.CheckBox chk1;
-        private System.Windows.Forms.CheckBox chk2;
         private System.Windows.Forms.ToolStripButton tsbClear;
+        private System.Windows.Forms.RadioButton opt2;
+        private System.Windows.Forms.RadioButton opt0;
+        private System.Windows.Forms.RadioButton opt1;
     }
 }

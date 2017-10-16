@@ -519,9 +519,9 @@ namespace NSCOperationalPlan
             string strsql = KeyPerformanceIndex.GetMonthlyKPIProgressQuery(opYear, opMonth);
             PrintKPIProgressReport(strsql);
         }
-        public static void PrintKPIProgress(string opYear, int opMonth, string managerId)
+        public static void PrintKPIProgress(string opYear, int opMonth, string directorID)
         {
-            string strsql = KeyPerformanceIndex.GetMonthlyKPIProgressQuery(opYear, opMonth, managerId);
+            string strsql = KeyPerformanceIndex.GetMonthlyKPIProgressQuery(opYear, opMonth, directorID);
             PrintKPIProgressReport(strsql);
         }
         public static void PrintKPIProgress(string opYear, int opMonth, string directorID, string managerId)
@@ -535,9 +535,9 @@ namespace NSCOperationalPlan
             string strsql = KeyPerformanceIndex.GetMonthlyKPIProgressQuery(opYear, opMonth);
             PrintKPIProgressReportCouncil(strsql);
         }
-        public static void PrintKPIProgressCouncil(string opYear, int opMonth, string managerId)
+        public static void PrintKPIProgressCouncil(string opYear, int opMonth, string directorID)
         {
-            string strsql = KeyPerformanceIndex.GetMonthlyKPIProgressQuery(opYear, opMonth, managerId);
+            string strsql = KeyPerformanceIndex.GetMonthlyKPIProgressQuery(opYear, opMonth, directorID);
             PrintKPIProgressReportCouncil(strsql);
         }
         public static void PrintKPIProgressCouncil(string serviceID, string opYear, int opMonth)
@@ -557,9 +557,9 @@ namespace NSCOperationalPlan
             string strsql = KeyPerformanceIndex.GetMonthlyKPIProgressQuery(opYear, opMonth);
             PrintKPIProgressReportFull(strsql);
         }
-        public static void PrintKPIProgressFull(string opYear, int opMonth, string managerId)
+        public static void PrintKPIProgressFull(string opYear, int opMonth, string directorID)
         {
-            string strsql = KeyPerformanceIndex.GetMonthlyKPIProgressQuery(opYear, opMonth, managerId);
+            string strsql = KeyPerformanceIndex.GetMonthlyKPIProgressQuery(opYear, opMonth, directorID);
             PrintKPIProgressReportFull(strsql);
         }
         public static void PrintKPIProgressFull(string opYear, int opMonth, string directorID, string managerId)

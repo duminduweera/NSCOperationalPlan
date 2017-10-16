@@ -36,28 +36,41 @@ namespace NSCOperationalPlan
         }
         private void frmCPWMonthly_Load(object sender, EventArgs e)
         {
-            //this.Width = Screen.FromControl(this).Bounds.Width;
-            this.Height = Screen.FromControl(this).Bounds.Height - 200;
-
-
+            ArrangeScreen();
             ArrangeGrid();
-            LoadTableFromDatabase();
 
-            if (OPGlobals.CurrentUser.Permission == UserRights.Administrator || OPGlobals.CurrentUser.Permission == UserRights.GM || OPGlobals.CurrentUser.Permission == UserRights.Finance)
-            {
-                chk1.Enabled = true;
-                chk2.Enabled = true;
-            } else if (OPGlobals.CurrentUser.Permission == UserRights.Director)
-            {
-                chk1.Enabled = true;
-                chk2.Enabled = false;
-            } else
-            {
-                chk1.Enabled = false;
-                chk2.Enabled = false;
-            }
+            opt0.Checked = true;
+            
         }
 
+        /// <summary>
+        /// Arrange Screen with User Permision
+        /// </summary>
+        private void ArrangeScreen()
+        {
+
+            this.Width = Screen.FromControl(this).Bounds.Width;
+            this.Height = Screen.FromControl(this).Bounds.Height - 200;
+
+            opt1.Text = "Show all Actions in " + OPGlobals.CurrentUser.Department;
+
+            if (OPGlobals.CurrentUser.Permission == UserRights.Administrator || OPGlobals.CurrentUser.Permission == UserRights.GM)
+            {
+                opt1.Enabled = true;
+                opt2.Enabled = true;
+            }
+            else if (OPGlobals.CurrentUser.Permission == UserRights.Director)
+            {
+                opt1.Enabled = true;
+                opt2.Enabled = false;
+
+            }
+            else
+            {
+                opt1.Enabled = false;
+                opt2.Enabled = false;
+            }
+        }
         private void ArrangeGrid()
         {
             Dictionary<string, int> dct = new Dictionary<string, int>();
@@ -116,22 +129,18 @@ namespace NSCOperationalPlan
             {
                 string strsql;
                 strsql = CapitalWork.GetSQLCapitalWorksMonthlyProgress(OPGlobals.currentYear, OPGlobals.currentMonth);
-
                 strsql += " WHERE A.cpw_quarter = " + OPGlobals.GetQuarter(OPGlobals.currentMonth);
 
-                if (chk2.Checked)
+                if (opt0.Checked)
                 {
-                    strsql += " Order by A.director_id, A.cpw_manager_id, A.cpw_id;";
+                    strsql += " AND cpw_manager_id ='" + OPGlobals.CurrentUser.ManagerID + "'";
                 }
-                else if (chk1.Checked)
+                else if (opt1.Checked)
                 {
-                    strsql += " AND director_id ='" + OPGlobals.CurrentUser.DirectorID + "'"
-                        + " Order by A.director_id, A.cpw_manager_id, A.cpw_id;";
-                } else
-                {
-                    strsql += " AND cpw_manager_id ='" + OPGlobals.CurrentUser.ManagerID + "'"
-                    + " Order by A.director_id, A.cpw_manager_id, A.cpw_id;";
+                    strsql += " AND director_id ='" + OPGlobals.CurrentUser.DirectorID + "'";
                 }
+
+                strsql += " Order by A.director_id, A.cpw_manager_id, A.cpw_id;";
 
                 double projected = 0;
                 double revised = 0;
@@ -250,9 +259,7 @@ namespace NSCOperationalPlan
 
         private void tsbSave_Click(object sender, EventArgs e)
         {
-
             SaveCapitalWorkMonthlyProgress();
-
         }
         private bool SaveCapitalWorkMonthlyProgress()
         {
@@ -349,9 +356,10 @@ namespace NSCOperationalPlan
                 LoadTableFromDatabase();
             }
         }
+
         private void ChangeSaveButtonStatus()
         {
-            if(chk1.Checked || chk2.Checked) { tsbSave.Enabled = false; } else { tsbSave.Enabled = true; }
+            //if(chk1.Checked || chk2.Checked) { tsbSave.Enabled = false; } else { tsbSave.Enabled = true; }
         }
 
         private void tsbPrevious_Click(object sender, EventArgs e)
@@ -371,6 +379,27 @@ namespace NSCOperationalPlan
                 dgv01.Rows[i].Cells["Comment"].Value = "";
             }
 
+        }
+
+        private void OptionCheckedChanged(object sender, EventArgs e)
+        {
+            string msg = "If you have changed any of the row values, this action will clear all, Do you want to Continue?";
+            if (MessageBox.Show(msg, "OPERATION PLAN", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                LoadTableFromDatabase();
+            }
+        }
+        private void opt0_CheckedChanged(object sender, EventArgs e)
+        {
+            if (opt0.Checked) { LoadTableFromDatabase(); }
+        }
+        private void opt1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (opt1.Checked) { OptionCheckedChanged(this, e); }
+        }
+        private void opt2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (opt2.Checked) { OptionCheckedChanged(this, e); }
         }
     }
 }

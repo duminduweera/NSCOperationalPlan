@@ -84,24 +84,54 @@ namespace NSCOperationalPlan
 
         private void frmMonthlyProgress_Load(object sender, EventArgs e)
         {
-            if (OPGlobals.CurrentUser.Permission == UserRights.Director || OPGlobals.CurrentUser.Permission == UserRights.Administrator || OPGlobals.CurrentUser.Permission== UserRights.Editor) { chk1.Enabled = true; } else { chk1.Enabled = false; }
-            this.Width = Screen.FromControl(this).Bounds.Width;
-            this.Height = Screen.FromControl(this).Bounds.Height-200;
+            ArrangeScreen();
 
             ArrangeDataGridView();
             ClearData();
 
+
             BindDropDownToDataGrid();
-            FillGrid();
+            opt0.Checked = true;
             dgv01.CurrentCell = null;
+        }
+
+        /// <summary>
+        /// Arrange Screen with User Permision
+        /// </summary>
+        private void ArrangeScreen()
+        {
+
+            this.Width = Screen.FromControl(this).Bounds.Width;
+            this.Height = Screen.FromControl(this).Bounds.Height - 200;
+
+            opt1.Text = "Show all Actions in " + OPGlobals.CurrentUser.Department;
+
+            if (OPGlobals.CurrentUser.Permission == UserRights.Administrator || OPGlobals.CurrentUser.Permission == UserRights.GM )
+            {
+                opt1.Enabled = true;
+                opt2.Enabled = true;
+            }
+            else if (OPGlobals.CurrentUser.Permission == UserRights.Director)
+            {
+                opt1.Enabled = true;
+                opt2.Enabled = false;
+
+            }
+            else
+            {
+                opt1.Enabled = false;
+                opt2.Enabled = false;
+            }
         }
 
         private void FillGrid()
         {
 
-            //string strsql = ReportQueries.QMonthlyProgress(OPGlobals.currentYear, OPGlobals.currentMonth, chk1.Checked, OPGlobals.CurrentUser.DirectorID, OPGlobals.CurrentUser.ManagerID);
             string strsql;
-            if (chk1.Checked)
+            if (opt2.Checked)
+            {
+                strsql = MonthlyProgress.GetQueryMonthlyProgress(OPGlobals.currentYear, OPGlobals.currentMonth);
+            } else if (opt1.Checked)
             {
                 strsql = MonthlyProgress.GetQueryMonthlyProgress(OPGlobals.currentYear, OPGlobals.currentMonth, OPGlobals.CurrentUser.DirectorID);
             } else
@@ -109,7 +139,6 @@ namespace NSCOperationalPlan
                 strsql = MonthlyProgress.GetQueryMonthlyProgress(OPGlobals.currentYear, OPGlobals.currentMonth, OPGlobals.CurrentUser.DirectorID, OPGlobals.CurrentUser.ManagerID);
             }
             
-
             DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
             DataTable tb = db.GetDataTable(conn, strsql);
 
@@ -254,7 +283,6 @@ namespace NSCOperationalPlan
             SaveOPMonthlyProgress();
             
         } 
-
         private void SaveOPMonthlyProgress()
         {
             DataTable tb;
@@ -316,56 +344,6 @@ namespace NSCOperationalPlan
             MessageBox.Show(msg, "OPERATION PLAN", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
-
-        //private bool SaveData()
-        //{
-        //    bool retVal = false;
-
-        //    Double percentageComplete;
-        //    MonthlyProgress progress;
-        //    String mActionID;
-        //    int mActionStatus;
-
-        //    try
-        //    {
-        //        for (int i = 0; i <= dgv01.Rows.Count - 1; i++)
-        //        {
-        //            if (!IsRowDataChanged(dgv01.Rows[i])) { continue; }
-
-        //            mActionID = dgv01.Rows[i].Cells["Action_id"].Value.ToString();
-
-        //            progress = new MonthlyProgress(mActionID, OPGlobals.currentYear, OPGlobals.currentMonth);
-
-        //            try
-        //            { mActionStatus = int.Parse(dgv01.Rows[i].Cells["Status"].Value.ToString()); }
-        //            catch (Exception eex) { mActionStatus = 0; }
-
-        //            try
-        //            { percentageComplete = Double.Parse(dgv01.Rows[i].Cells["Progress"].Value.ToString(), NumberStyles.Currency); }
-        //            catch (Exception eex) { percentageComplete = 0; }
-
-        //            if (percentageComplete > 100) { percentageComplete = 100; }
-        //            if (percentageComplete < 0) { percentageComplete = 0; }
-
-        //            progress.PercentageCompleted = percentageComplete;
-        //            progress.Description = dgv01.Rows[i].Cells["Remarks"].Value.ToString();
-        //            progress.ActionStatus = mActionStatus;
-
-
-        //            progress.UpdateMonthlyProgress(db);
-
-        //        }
-        //        retVal = true;
-        //        MessageBox.Show("Monthly Progress has been saved/updated successfully", "OP MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message.ToString(), "OP MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //    }
-
-        //    return retVal;
-        //}
         private void UpdateDataGrid()
         {
             for (int i = 0; i <= dgv01.Rows.Count - 1; i++)
@@ -378,10 +356,6 @@ namespace NSCOperationalPlan
         }
 
         private void txtPercentage_Validating(object sender, CancelEventArgs e)
-        {
-        }
-
-        private void chkAll_CheckedChanged(object sender, EventArgs e)
         {
         }
 
@@ -469,15 +443,6 @@ namespace NSCOperationalPlan
             ClearData();
         }
 
-        private void chk1_CheckedChanged(object sender, EventArgs e)
-        {
-            string msg = "If you have changed any of the row values, this action will clear all, Do you want to Continue?";
-            if (MessageBox.Show(msg, "OPERATION PLAN", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-            {
-                FillGrid();
-            }
-        }
-
         private void dgv01_Leave(object sender, EventArgs e)
         {
             //if (!MyGridUtils.IsColumnDataChanged(dgv01, new List<string>() { "Status", "Progress", "Remarks" }, new List<string>() { "BStatus", "BProgress", "BRemarks" }))
@@ -487,6 +452,27 @@ namespace NSCOperationalPlan
             //        SaveData();
             //    }
             //}
+        }
+
+        private void opt0_CheckedChanged(object sender, EventArgs e)
+        {
+            if (opt0.Checked) { FillGrid(); }
+        }
+        private void opt1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (opt1.Checked) { OptionCheckedChanged(sender, e); }
+        }
+        private void opt2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (opt2.Checked) { OptionCheckedChanged(sender, e); }
+        }
+        private void OptionCheckedChanged(object sender, EventArgs e)
+        {
+            string msg = "If you have changed any of the row values, this action will clear all, Do you want to Continue?";
+            if (MessageBox.Show(msg, "OPERATION PLAN", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                FillGrid();
+            }
         }
     }
 }

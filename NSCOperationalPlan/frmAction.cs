@@ -229,8 +229,7 @@ namespace NSCOperationalPlan
 
 
         }
-
-       
+     
         private void LoadDirectors()
         {
             DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
@@ -789,9 +788,6 @@ namespace NSCOperationalPlan
 
             FillStrategyObjectiveList();
 
-            //FillListView();
-            //FillActionList();
-
             ArrangeGrid();
             //FillGrid();
 
@@ -800,7 +796,10 @@ namespace NSCOperationalPlan
             LoadServicePlan();
             LoadSourceCouncilPlan();
             LoadDirectors();
+            //ArrangeScreen();
         }
+
+        //private void ArrangeScreen() { }
 
         private void grdAction_DoubleClick(object sender, EventArgs e)
         {

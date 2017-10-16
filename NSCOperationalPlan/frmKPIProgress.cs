@@ -28,15 +28,15 @@ namespace NSCOperationalPlan
         {
             Dictionary<string, int> dct = new Dictionary<string, int>();
 
-            dct.Add("#", 25);               //0                
+            dct.Add("#", 50);               //0                
             dct.Add("kpi_id", 0);               //1
-            dct.Add("Description", 500);    //2
+            dct.Add("Description", 550);    //2
             dct.Add("Prefix", 50);         //3
             dct.Add("Est.", 60);           //4
             dct.Add("Unit", 50);            //5
             dct.Add("ManagerID", 0);        //6
             dct.Add("Progress", 80);        //7
-            dct.Add("Remarks", 400);        //8
+            dct.Add("Remarks", 600);        //8
             dct.Add("kpm_id", 0);              //9
             dct.Add("BProgress", 0);        //7
             dct.Add("BRemarks", 0);        //8
@@ -79,16 +79,27 @@ namespace NSCOperationalPlan
         private void LoadFromDatabase(DataGridView dgv, string kpitype)
         {
             DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
-            DataTable tb;
-            //DataTable tb = KeyPerformanceIndex.GetKPIwithProgressTable(db, conn, OPGlobals.CurrentUser.ManagerID, OPGlobals.currentYear, OPGlobals.currentMonth, kpitype);
-            if (chk1.Checked)
-            {
-                tb = KeyPerformanceIndex.GetKPIwithProgressTable(db, conn, OPGlobals.CurrentUser.DirectorID, OPGlobals.currentYear, OPGlobals.currentMonth, kpitype);
-            } else
-            {
-                tb = KeyPerformanceIndex.GetKPIwithProgressTable(db, conn, OPGlobals.CurrentUser.ManagerID, OPGlobals.currentYear, OPGlobals.currentMonth, kpitype);
-            }
+            //DataTable tb;
+            string strsql;
 
+            if (opt2.Checked)
+            {
+                strsql = KeyPerformanceIndex.GetQueryKPIwithProgress(OPGlobals.currentYear, OPGlobals.currentMonth, kpitype);
+                //tb = KeyPerformanceIndex.GetKPIwithProgressTable(db, conn, OPGlobals.currentYear, OPGlobals.currentMonth, kpitype);
+            }
+            else if (opt1.Checked)
+            {
+                strsql = KeyPerformanceIndex.GetQueryKPIwithProgress(OPGlobals.currentYear, OPGlobals.currentMonth, kpitype, OPGlobals.CurrentUser.DirectorID);
+                //tb = KeyPerformanceIndex.GetKPIwithProgressTable(db, conn, OPGlobals.CurrentUser.DirectorID, OPGlobals.currentYear, OPGlobals.currentMonth, kpitype);
+            }
+            else
+            {
+                strsql = KeyPerformanceIndex.GetQueryKPIwithProgress(OPGlobals.currentYear, OPGlobals.currentMonth, kpitype, OPGlobals.CurrentUser.DirectorID, OPGlobals.CurrentUser.ManagerID);
+                //tb = KeyPerformanceIndex.GetKPIwithProgressTable(db, conn, OPGlobals.CurrentUser.ManagerID, OPGlobals.currentYear, OPGlobals.currentMonth, kpitype);
+            }
+            //strsql += " AND A.kpm_id = '" + kpitype + "'";
+
+            DataTable tb = db.GetDataTable(conn, strsql);
             dgv.Rows.Clear();
             dgv.Refresh();
             try
@@ -175,9 +186,35 @@ namespace NSCOperationalPlan
         private void frmKPIProgress_Load(object sender, EventArgs e)
         {
             ArrangeGrids();
-            LoadKPIFromDatabase();
-            //dgv03.CurrentCell = null;
+            //LoadKPIFromDatabase();
+            ArrangeScreen();
+            opt0.Checked = true;
+        }
 
+        private void ArrangeScreen()
+        {
+
+            //this.Width = Screen.FromControl(this).Bounds.Width;
+            this.Height = Screen.FromControl(this).Bounds.Height - 200;
+
+            opt1.Text = "Show all Actions in " + OPGlobals.CurrentUser.Department;
+
+            if (OPGlobals.CurrentUser.Permission == UserRights.Administrator || OPGlobals.CurrentUser.Permission == UserRights.GM)
+            {
+                opt1.Enabled = true;
+                opt2.Enabled = true;
+            }
+            else if (OPGlobals.CurrentUser.Permission == UserRights.Director)
+            {
+                opt1.Enabled = true;
+                opt2.Enabled = false;
+
+            }
+            else
+            {
+                opt1.Enabled = false;
+                opt2.Enabled = false;
+            }
         }
 
         private void dgv01_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -307,16 +344,25 @@ namespace NSCOperationalPlan
             }
         }
 
-        private void chk1_CheckedChanged(object sender, EventArgs e)
+        private void OptionCheckedChanged(object sender, EventArgs e)
         {
             string msg = "If you have changed any of the row values, this action will clear all, Do you want to Continue?";
             if (MessageBox.Show(msg, "OPERATION PLAN", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 LoadKPIFromDatabase();
             }
-
-
-           
+        }
+        private void opt0_CheckedChanged(object sender, EventArgs e)
+        {
+            if (opt0.Checked) { LoadKPIFromDatabase(); }
+        }
+        private void opt1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (opt1.Checked) { OptionCheckedChanged(this, e); }
+        }
+        private void opt2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (opt2.Checked) { OptionCheckedChanged(this, e); }
         }
 
     }
