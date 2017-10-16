@@ -75,7 +75,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>1cm</Height>
+              <Height>0.6cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -131,7 +131,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>1cm</Height>
+              <Height>0.6cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -339,7 +339,7 @@
                     </TablixMember>
                     <TablixMember>
                       <Visibility>
-                        <Hidden>=IIF(Fields!action.Value Is Nothing or Fields!kpm.Value Is Nothing, True, False)</Hidden>
+                        <Hidden>=IIF(Fields!action.Value Is Nothing or Fields!kpm.Value Is Nothing or Fields!service_plan_id.Value="012", True, False)</Hidden>
                       </Visibility>
                       <RepeatOnNewPage>true</RepeatOnNewPage>
                     </TablixMember>
@@ -370,7 +370,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Height>5.71786cm</Height>
+        <Height>4.91786cm</Height>
         <Width>15.05797cm</Width>
         <Style>
           <Border>
@@ -379,7 +379,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2.25113in</Height>
+    <Height>1.93617in</Height>
     <Style />
   </Body>
   <Width>5.92833in</Width>
