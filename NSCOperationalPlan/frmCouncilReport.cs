@@ -255,7 +255,7 @@ namespace NSCOperationalPlan
         {
             string servicePlanSql = "";
 
-            servicePlanSql = "Select A.id As service_plan_id, A.service_plan, B.action, C.kpm As kpm, D.cwp As cwp,E.manager_id AS service_plan_manager_id, E.director_id AS service_plan_director_id From service_plan A Left Join"
+            servicePlanSql = "Select A.id As service_plan_id, A.service_plan_manager_id, A.service_plan, B.action, C.kpm As kpm, D.cwp As cwp From service_plan A Left Join"
                 + " (Select action.service_plan_id, Count(*) As action From action Left Join progress On progress.action_id = action.id"
                 + " Where progress.progress_year = '" + year + "' And progress.progress_month = " + month + " Group By action.service_plan_id) B On B.service_plan_id = A.id Left Join"
                 + " (Select kpi.service_plan_id, COUNT(*) As kpm From kpi Left Join kpi_progress On kpi.id = kpi_progress.kpi_id"

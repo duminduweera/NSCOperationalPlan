@@ -98,6 +98,7 @@
                         <Border>
                           <Style>None</Style>
                         </Border>
+                        <BackgroundColor>Black</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -154,6 +155,7 @@
                         <Border>
                           <Style>None</Style>
                         </Border>
+                        <BackgroundColor>Brown</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -210,6 +212,7 @@
                         <Border>
                           <Style>None</Style>
                         </Border>
+                        <BackgroundColor>DarkOliveGreen</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
