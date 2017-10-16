@@ -44,7 +44,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.chk1 = new System.Windows.Forms.CheckBox();
+            this.opt2 = new System.Windows.Forms.RadioButton();
+            this.opt0 = new System.Windows.Forms.RadioButton();
+            this.opt1 = new System.Windows.Forms.RadioButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv02)).BeginInit();
@@ -66,7 +68,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(1220, 54);
+            this.toolStrip1.Size = new System.Drawing.Size(1506, 54);
             this.toolStrip1.TabIndex = 16;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -144,37 +146,33 @@
             // 
             // dgv01
             // 
-            this.dgv01.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgv01.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv01.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv01.Location = new System.Drawing.Point(12, 125);
             this.dgv01.MultiSelect = false;
             this.dgv01.Name = "dgv01";
             this.dgv01.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgv01.Size = new System.Drawing.Size(1196, 225);
+            this.dgv01.Size = new System.Drawing.Size(1482, 267);
             this.dgv01.TabIndex = 18;
             // 
             // dgv02
             // 
-            this.dgv02.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv02.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv02.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv02.Location = new System.Drawing.Point(11, 379);
+            this.dgv02.Location = new System.Drawing.Point(11, 421);
             this.dgv02.Name = "dgv02";
-            this.dgv02.Size = new System.Drawing.Size(1197, 226);
+            this.dgv02.Size = new System.Drawing.Size(1483, 268);
             this.dgv02.TabIndex = 19;
             // 
             // dgv03
             // 
-            this.dgv03.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgv03.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv03.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv03.Location = new System.Drawing.Point(11, 634);
+            this.dgv03.Location = new System.Drawing.Point(11, 718);
             this.dgv03.Name = "dgv03";
-            this.dgv03.Size = new System.Drawing.Size(1197, 224);
+            this.dgv03.Size = new System.Drawing.Size(1483, 224);
             this.dgv03.TabIndex = 20;
             this.dgv03.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv03_CellClick);
             // 
@@ -194,7 +192,7 @@
             this.label2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(11, 356);
+            this.label2.Location = new System.Drawing.Point(11, 395);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(260, 23);
             this.label2.TabIndex = 22;
@@ -205,30 +203,59 @@
             this.label3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(12, 611);
+            this.label3.Location = new System.Drawing.Point(12, 692);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(259, 23);
             this.label3.TabIndex = 23;
             this.label3.Text = "Workload Measures";
             // 
-            // chk1
+            // opt2
             // 
-            this.chk1.AutoSize = true;
-            this.chk1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk1.Location = new System.Drawing.Point(383, 75);
-            this.chk1.Name = "chk1";
-            this.chk1.Size = new System.Drawing.Size(248, 21);
-            this.chk1.TabIndex = 107;
-            this.chk1.Text = "Show all Actions for the Directorate";
-            this.chk1.UseVisualStyleBackColor = true;
-            this.chk1.CheckedChanged += new System.EventHandler(this.chk1_CheckedChanged);
+            this.opt2.AutoSize = true;
+            this.opt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.opt2.Location = new System.Drawing.Point(379, 98);
+            this.opt2.Name = "opt2";
+            this.opt2.Size = new System.Drawing.Size(248, 21);
+            this.opt2.TabIndex = 109;
+            this.opt2.TabStop = true;
+            this.opt2.Text = "Show all Actions for all Directorates";
+            this.opt2.UseVisualStyleBackColor = true;
+            this.opt2.CheckedChanged += new System.EventHandler(this.opt2_CheckedChanged);
+            // 
+            // opt0
+            // 
+            this.opt0.AutoSize = true;
+            this.opt0.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.opt0.Location = new System.Drawing.Point(379, 55);
+            this.opt0.Name = "opt0";
+            this.opt0.Size = new System.Drawing.Size(152, 21);
+            this.opt0.TabIndex = 110;
+            this.opt0.TabStop = true;
+            this.opt0.Text = "My Department only";
+            this.opt0.UseVisualStyleBackColor = true;
+            this.opt0.CheckedChanged += new System.EventHandler(this.opt0_CheckedChanged);
+            // 
+            // opt1
+            // 
+            this.opt1.AutoSize = true;
+            this.opt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.opt1.Location = new System.Drawing.Point(379, 78);
+            this.opt1.Name = "opt1";
+            this.opt1.Size = new System.Drawing.Size(60, 21);
+            this.opt1.TabIndex = 111;
+            this.opt1.TabStop = true;
+            this.opt1.Text = "Show";
+            this.opt1.UseVisualStyleBackColor = true;
+            this.opt1.CheckedChanged += new System.EventHandler(this.opt1_CheckedChanged);
             // 
             // frmKPIProgress
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1220, 870);
-            this.Controls.Add(this.chk1);
+            this.ClientSize = new System.Drawing.Size(1506, 954);
+            this.Controls.Add(this.opt2);
+            this.Controls.Add(this.opt0);
+            this.Controls.Add(this.opt1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -266,6 +293,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ToolStripButton tsbPreviousMonth;
         private System.Windows.Forms.ToolStripButton tsbClear;
-        private System.Windows.Forms.CheckBox chk1;
+        private System.Windows.Forms.RadioButton opt2;
+        private System.Windows.Forms.RadioButton opt0;
+        private System.Windows.Forms.RadioButton opt1;
     }
 }

@@ -270,17 +270,45 @@ namespace NSCOperationalPlan
                 + " WHERE manager_id='" + manID + "' and kpi_estimate_year='" + kpiyear + "' and kpm_id='" + kpm + "' ORDER BY kpm_id,kpi_id;";
             return db.GetDataTable(con, strsql);
         }
+
+        public static string GetQueryKPIwithProgress(string kpiyear, int kpimonth, string kpm)
+        {
+            //string strsql = "SELECT A.kpi_id, A.kpm_id, A.kpm_description, A.manager_id, A.director_id, A.manager_name, A.manager_description,"
+            //    + " A.director_name, A.director_description, A.efficiency_description, A.kpi_prefix_id, A.kpi_prefix, A.kpi_prefix_short,"
+            //    + " A.kpi_estimate, A.unit_id, A.kpi_unit, A.kpi_unit_short, A.kpi_estimate_year, B.kpi_progress, B.kpi_remark, B.kpi_month, B.kpi_year"
+            //    + " FROM view_kpi A Left Join"
+            //    + "(Select kpi_progress.kpi_id, kpi_progress.kpi_year, kpi_progress.kpi_month, kpi_progress.kpi_progress, kpi_progress.kpi_remark"
+            //    + " FROM kpi_progress WHERE kpi_progress.kpi_year = '" + kpiyear + "' AND kpi_progress.kpi_month =" + kpimonth + ") B "
+            //    + " On A.kpi_id = B.kpi_id"
+            //    + " WHERE A.kpi_estimate_year = '" + kpiyear + "' and A.kpm_id = '" + kpm + "'";
+            string strsql = GetMonthlyKPIProgressQuery(kpiyear, kpimonth);
+            strsql += " AND A.kpm_id = '" + kpm + "'";
+            return strsql;
+
+        }
+        public static string GetQueryKPIwithProgress(string kpiyear, int kpimonth, string kpm, string directorID)
+        {
+            string strsql = GetMonthlyKPIProgressQuery(kpiyear, kpimonth, directorID);
+            strsql += " AND A.kpm_id = '" + kpm + "'";
+            return strsql;
+
+        }
+        public static string GetQueryKPIwithProgress(string kpiyear, int kpimonth, string kpm, string directorID, string managerID)
+        {
+            string strsql = GetMonthlyKPIProgressQuery(kpiyear, kpimonth, directorID, managerID);
+            strsql += " AND A.kpm_id = '" + kpm + "'";
+            return strsql;
+
+        }
+
+        public static DataTable GetKPIwithProgressTable(Database db, DbConnection con, string kpiyear, int kpimonth, string kpm)
+        {
+            string strsql = GetQueryKPIwithProgress(kpiyear, kpimonth, kpm) + " ORDER BY kpm_id,kpi_id;";
+            return db.GetDataTable(con, strsql);
+        }
         public static DataTable GetKPIwithProgressTable(Database db, DbConnection con, string manID, string kpiyear, int kpimonth, string kpm)
         {
-            string strsql = "SELECT A.kpi_id, A.kpm_id, A.kpm_description, A.manager_id, A.director_id, A.manager_name, A.manager_description,"
-                + " A.director_name, A.director_description, A.efficiency_description, A.kpi_prefix_id, A.kpi_prefix, A.kpi_prefix_short,"
-                + " A.kpi_estimate, A.unit_id, A.kpi_unit, A.kpi_unit_short, A.kpi_estimate_year, B.kpi_progress, B.kpi_remark, B.kpi_month, B.kpi_year"
-                + " FROM view_kpi A Left Join"
-                + "(Select kpi_progress.kpi_id, kpi_progress.kpi_year, kpi_progress.kpi_month, kpi_progress.kpi_progress, kpi_progress.kpi_remark"
-                + " FROM kpi_progress WHERE kpi_progress.kpi_year = '" + kpiyear + "' AND kpi_progress.kpi_month =" + kpimonth + ") B "
-                + " On A.kpi_id = B.kpi_id"
-                + " WHERE (A.manager_id = '" + manID + "' or A.director_id ='" + manID + "') and A.kpi_estimate_year = '" + kpiyear + "' and A.kpm_id = '" + kpm + "' ORDER BY kpm_id,kpi_id; ";
-
+            string strsql = GetQueryKPIwithProgress(kpiyear, kpimonth, kpm) + " AND (A.manager_id = '" + manID + "' or A.director_id ='" + manID + "') ORDER BY kpm_id,kpi_id;";
             return db.GetDataTable(con, strsql);
         }
 
@@ -297,13 +325,13 @@ namespace NSCOperationalPlan
             + " From kpi_progress Where kpi_progress.kpi_year = '" + opYear + "' And kpi_progress.kpi_month = " + opMonth + ") B On A.kpi_id = B.kpi_id" ;
             return strsql;
         }
-        public static string GetMonthlyKPIProgressQuery(string opYear, int opMonth, string opManager)
+        public static string GetMonthlyKPIProgressQuery(string opYear, int opMonth, string opDirector)
         {
             string strsql = "";
             strsql = GetMonthlyKPIProgressQuery(opYear, opMonth);
-            if (!string.IsNullOrEmpty(opManager)  && opManager != "-0-")
+            if (!string.IsNullOrEmpty(opDirector)  && opDirector != "-0-")
             {
-                strsql += " WHERE manager_id='" + opManager + "'";
+                strsql += " WHERE director_id='" + opDirector + "'";
             }
             return strsql;
         }

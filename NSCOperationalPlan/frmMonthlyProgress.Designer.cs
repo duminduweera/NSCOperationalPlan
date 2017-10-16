@@ -41,7 +41,9 @@
             this.tsbPrint = new System.Windows.Forms.ToolStripButton();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.dgv01 = new System.Windows.Forms.DataGridView();
-            this.chk1 = new System.Windows.Forms.CheckBox();
+            this.opt1 = new System.Windows.Forms.RadioButton();
+            this.opt2 = new System.Windows.Forms.RadioButton();
+            this.opt0 = new System.Windows.Forms.RadioButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv01)).BeginInit();
             this.SuspendLayout();
@@ -149,25 +151,52 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv01.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv01.Location = new System.Drawing.Point(21, 107);
+            this.dgv01.Location = new System.Drawing.Point(21, 155);
             this.dgv01.Name = "dgv01";
-            this.dgv01.Size = new System.Drawing.Size(1383, 584);
+            this.dgv01.Size = new System.Drawing.Size(1383, 536);
             this.dgv01.TabIndex = 104;
             this.dgv01.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv01_CellEnter);
             this.dgv01.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv01_EditingControlShowing);
             this.dgv01.Leave += new System.EventHandler(this.dgv01_Leave);
             // 
-            // chk1
+            // opt1
             // 
-            this.chk1.AutoSize = true;
-            this.chk1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk1.Location = new System.Drawing.Point(21, 71);
-            this.chk1.Name = "chk1";
-            this.chk1.Size = new System.Drawing.Size(248, 21);
-            this.chk1.TabIndex = 106;
-            this.chk1.Text = "Show all Actions for the Directorate";
-            this.chk1.UseVisualStyleBackColor = true;
-            this.chk1.CheckedChanged += new System.EventHandler(this.chk1_CheckedChanged);
+            this.opt1.AutoSize = true;
+            this.opt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.opt1.Location = new System.Drawing.Point(41, 94);
+            this.opt1.Name = "opt1";
+            this.opt1.Size = new System.Drawing.Size(60, 21);
+            this.opt1.TabIndex = 108;
+            this.opt1.TabStop = true;
+            this.opt1.Text = "Show";
+            this.opt1.UseVisualStyleBackColor = true;
+            this.opt1.CheckedChanged += new System.EventHandler(this.opt1_CheckedChanged);
+            // 
+            // opt2
+            // 
+            this.opt2.AutoSize = true;
+            this.opt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.opt2.Location = new System.Drawing.Point(41, 121);
+            this.opt2.Name = "opt2";
+            this.opt2.Size = new System.Drawing.Size(248, 21);
+            this.opt2.TabIndex = 108;
+            this.opt2.TabStop = true;
+            this.opt2.Text = "Show all Actions for all Directorates";
+            this.opt2.UseVisualStyleBackColor = true;
+            this.opt2.CheckedChanged += new System.EventHandler(this.opt2_CheckedChanged);
+            // 
+            // opt0
+            // 
+            this.opt0.AutoSize = true;
+            this.opt0.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.opt0.Location = new System.Drawing.Point(41, 68);
+            this.opt0.Name = "opt0";
+            this.opt0.Size = new System.Drawing.Size(152, 21);
+            this.opt0.TabIndex = 108;
+            this.opt0.TabStop = true;
+            this.opt0.Text = "My Department only";
+            this.opt0.UseVisualStyleBackColor = true;
+            this.opt0.CheckedChanged += new System.EventHandler(this.opt0_CheckedChanged);
             // 
             // frmMonthlyProgress
             // 
@@ -175,7 +204,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1422, 706);
-            this.Controls.Add(this.chk1);
+            this.Controls.Add(this.opt2);
+            this.Controls.Add(this.opt0);
+            this.Controls.Add(this.opt1);
             this.Controls.Add(this.dgv01);
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -204,6 +235,8 @@
         private System.Windows.Forms.DataGridView dgv01;
         private System.Windows.Forms.ToolStripButton tsbClear;
         private System.Windows.Forms.ToolStripButton tsbPreviousMonth;
-        private System.Windows.Forms.CheckBox chk1;
+        private System.Windows.Forms.RadioButton opt1;
+        private System.Windows.Forms.RadioButton opt2;
+        private System.Windows.Forms.RadioButton opt0;
     }
 }
