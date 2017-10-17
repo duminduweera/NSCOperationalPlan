@@ -561,5 +561,28 @@ namespace NSCOperationalPlan
 
         }
 
+        private void tsbDelete_Click(object sender, EventArgs e)
+        {
+            DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
+            if (conn.State == ConnectionState.Closed) { conn.Open(); }
+            using (DbTransaction trans = conn.BeginTransaction())
+            {
+                try
+                {
+                    
+                    KeyPerformanceIndex kpm = new KeyPerformanceIndex();
+                    kpm.DeleteKPM(db, conn, trans, "Change this to KPMID");
+                    trans.Commit();
+                    MessageBox.Show("KPM has been DELETED successfully", "OP MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    trans.Rollback();
+                    MessageBox.Show("Data NOT DELETED ..." + Environment.NewLine + ex.Message.ToString(), "OP ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            conn.Close();
+        }
+    }
     }
 }

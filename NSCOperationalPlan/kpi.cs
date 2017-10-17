@@ -419,5 +419,39 @@ namespace NSCOperationalPlan
 
             if (count > 0) { return true; } else { return false; }
         }
+
+        internal bool DeleteKPM(Database db, DbConnection con, DbTransaction trans, string kpmID)
+        {
+            bool result = false;
+            Dictionary<string, dynamic> strdct = new Dictionary<string, dynamic>();
+            string query = "";
+            strdct.Add("KPM_ID", kpmID);
+            try
+            {
+                ////--- Delete From Mail Table
+                //query = @"DELETE FROM capital_works WHERE capital_works_id = @CPW_ID;";
+                //db.InsertUpdateDeleteRecord(con, trans, query, strdct);
+
+                ////--- Delete From Monthly Progress Table
+                //query = @"DELETE FROM capital_works_monthly_progress WHERE capital_works_id = @CPW_ID;";
+                //db.InsertUpdateDeleteRecord(con, trans, query, strdct);
+
+                ////--- Delete From Monthly QBR Table
+                //query = @"DELETE FROM capital_works_qbr WHERE capital_works_id = @CPW_ID;";
+                //db.InsertUpdateDeleteRecord(con, trans, query, strdct);
+
+                ////--- Delete From YTD Table
+                //query = @"DELETE FROM capital_works_ytd WHERE capital_works_id = @CPW_ID;";
+                //db.InsertUpdateDeleteRecord(con, trans, query, strdct);
+
+                result = true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message + Environment.NewLine + "Data NOT Saved, Please Contact IT");
+            }
+
+            return result;
+        }
     }
 }
