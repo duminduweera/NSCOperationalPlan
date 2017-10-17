@@ -601,7 +601,7 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>=Fields!service_plan_id.Value</Value>
+                            <Value />
                             <Style>
                               <FontFamily>Tahoma</FontFamily>
                               <FontWeight>Bold</FontWeight>
@@ -733,7 +733,7 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>=Fields!action_id.Value</Value>
+                                <Value />
                                 <Style>
                                   <FontFamily>Tahoma</FontFamily>
                                   <FontWeight>Bold</FontWeight>
@@ -769,7 +769,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Height>2.12063cm</Height>
-        <Width>17.43688cm</Width>
+        <Width>17.43687cm</Width>
         <Style>
           <Border>
             <Style>None</Style>

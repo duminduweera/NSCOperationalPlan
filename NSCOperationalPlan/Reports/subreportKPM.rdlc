@@ -408,7 +408,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -510,7 +509,7 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>=Fields!service_plan_id.Value</Value>
+                                <Value />
                                 <Style>
                                   <FontFamily>Calibri</FontFamily>
                                   <FontWeight>Bold</FontWeight>
@@ -593,7 +592,7 @@
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>=Fields!kpm_id.Value</Value>
+                                    <Value />
                                     <Style>
                                       <FontFamily>Calibri</FontFamily>
                                       <FontWeight>Bold</FontWeight>
@@ -640,7 +639,7 @@
             </TablixRowHierarchy>
             <DataSetName>DataSetKPM</DataSetName>
             <Height>2.5cm</Height>
-            <Width>17.43953cm</Width>
+            <Width>17.43952cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -651,7 +650,7 @@
         <Height>0.98425in</Height>
         <Style />
       </Body>
-      <Width>6.86596in</Width>
+      <Width>6.86595in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
