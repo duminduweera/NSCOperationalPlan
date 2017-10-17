@@ -250,7 +250,7 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>=Fields!service_plan.Value</Value>
+                            <Value />
                             <Style>
                               <FontFamily>Tahoma</FontFamily>
                               <FontWeight>Bold</FontWeight>
@@ -299,7 +299,7 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>=Fields!service_plan_id.Value</Value>
+                                <Value />
                                 <Style>
                                   <FontFamily>Tahoma</FontFamily>
                                   <FontWeight>Bold</FontWeight>
@@ -339,7 +339,7 @@
                     </TablixMember>
                     <TablixMember>
                       <Visibility>
-                        <Hidden>=IIF(Fields!action.Value Is Nothing or Fields!kpm.Value Is Nothing or Fields!service_plan_id.Value="012", True, False)</Hidden>
+                        <Hidden>=IIF(Fields!action.Value Is Nothing or Fields!kpm.Value Is Nothing, True, False)</Hidden>
                       </Visibility>
                       <RepeatOnNewPage>true</RepeatOnNewPage>
                     </TablixMember>
@@ -350,7 +350,7 @@
                     </TablixMember>
                     <TablixMember>
                       <Visibility>
-                        <Hidden>=IIF(Fields!kpm.Value Is Nothing or Fields!cwp.Value is nothing or Fields!service_plan_id.Value="020",True,False)</Hidden>
+                        <Hidden>=IIF(Fields!kpm.Value Is Nothing or Fields!cwp.Value is nothing,True,False)</Hidden>
                       </Visibility>
                     </TablixMember>
                     <TablixMember>
@@ -371,7 +371,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Height>4.91786cm</Height>
-        <Width>15.05797cm</Width>
+        <Width>15.05796cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
