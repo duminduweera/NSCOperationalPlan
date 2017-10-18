@@ -643,21 +643,102 @@ namespace NSCOperationalPlan
             return result;
         }
 
+        private void tsbDelete_Click(object sender, EventArgs e)
+        {
+            string msg;
+
+            DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
+            if (conn.State == ConnectionState.Closed) { conn.Open(); }
+
+            using (DbTransaction trans = conn.BeginTransaction())
+            {
+                try
+                {
+                    DeleteFromActionMonthly(conn, trans, txtActionID.Text);
+                    DeleteFromActionDeliveryProgram(conn, trans, txtActionID.Text);
+                    DeleteFromAction(conn, trans, txtActionID.Text);
+
+                    trans.Commit();
+                    msg = "Action has been deleted successfully";
+                }
+                catch (Exception ex)
+                {
+                    trans.Rollback();
+                    msg = ex.Message.ToString();
+                }
+            }
+            conn.Close();
+            FillGrid();
+            tsbNew_Click(sender, e);
+
+            MessageBox.Show(msg, "OP ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        private bool DeleteFromActionMonthly(DbConnection con, DbTransaction trans, string actionID)
+        {
+            bool result = false;
+            Dictionary<string, dynamic> strdct = new Dictionary<string, dynamic>();
+            strdct.Add("ActionID", actionID);
+
+            string query = @"DELETE FROM progress WHERE action_id = @ActionID";
+            try
+            {
+                db.InsertUpdateDeleteRecord(con, trans, query, strdct);
+                result = true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Data cannot be Deleted from Monthly Action" + Environment.NewLine + ex.Message);
+            }
+            return result;
+        }
+        private bool DeleteFromActionDeliveryProgram(DbConnection con, DbTransaction trans, string actionID)
+        {
+            bool result = false;
+            Dictionary<string, dynamic> strdct = new Dictionary<string, dynamic>();
+            strdct.Add("ActionID", actionID);
+
+            string query = @"DELETE FROM delivery_program WHERE action_id = @ActionID";
+            try
+            {
+                db.InsertUpdateDeleteRecord(con, trans, query, strdct);
+                result = true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Data cannot be Deleted from Delivery Program" + Environment.NewLine + ex.Message);
+            }
+            return result;
+        }
+        private bool DeleteFromAction(DbConnection con, DbTransaction trans, string actionID)
+        {
+            bool result = false;
+            Dictionary<string, dynamic> strdct = new Dictionary<string, dynamic>();
+            strdct.Add("ActionID", actionID);
+
+            string query = @"DELETE FROM action WHERE id = @ActionID";
+            try
+            {
+                db.InsertUpdateDeleteRecord(con, trans, query, strdct);
+                result = true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Data cannot be Deleted from Action" + Environment.NewLine + ex.Message);
+            }
+            return result;
+        }
+
         private void tsbNew_Click(object sender, EventArgs e)
         {
             newflag = true;
 
-            //lstStrategy.Enabled = true;
-            //lstAction.Enabled = true;
-
             tsbNew.Enabled = false;
             tsbEdit.Enabled = true;
+            tsbDelete.Enabled = false;
+
             lstStrategy.Enabled = true;
             ClearDataEntry();
-            
-            //LoadDeliveryProgram();
-            //LoadServicePlan();
-            //LoadDirectors();
+           
         }
 
         private void ClearDataEntry()
@@ -760,12 +841,14 @@ namespace NSCOperationalPlan
             LoadDataFromList();
 
             lstStrategy.Enabled = false;
-            //lstStrategy.BackColor = Color.Red;
-            //lstAction.Enabled = false;
-            
 
             tsbNew.Enabled = true;
             tsbEdit.Enabled = false;
+
+            if (OPGlobals.CurrentUser.Permission == UserRights.Administrator)
+            {
+                tsbDelete.Enabled = true;
+            }
         }
 
         private void tsbPrint_Click(object sender, EventArgs e)
@@ -865,5 +948,7 @@ namespace NSCOperationalPlan
         {
 
         }
+
+       
     }
 }

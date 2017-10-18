@@ -507,7 +507,6 @@
             this.txtKPIID.Name = "txtKPIID";
             this.txtKPIID.Size = new System.Drawing.Size(135, 23);
             this.txtKPIID.TabIndex = 60;
-            this.txtKPIID.Visible = false;
             // 
             // frmKPI
             // 

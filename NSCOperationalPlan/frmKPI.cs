@@ -86,7 +86,7 @@ namespace NSCOperationalPlan
                     }
                     MyGridUtils.ColorDataGrid(dgv);
                     dgv.CurrentCell = null;
-                    ClearScreenData();
+                    ClearScreenData("NEW");
                 }
                 catch (Exception ex)
                 {
@@ -181,6 +181,8 @@ namespace NSCOperationalPlan
             tabkpi.SelectedTab = tab02;
             tabkpi.SelectedTab = tab01;
 
+            ClearScreenData("NEW");
+
             //mSelectedKPIForEdit.Clear();
 
         }
@@ -231,7 +233,7 @@ namespace NSCOperationalPlan
             RefreshGridView();
         }
 
-        private void ClearScreenData()
+        private void ClearScreenData(string flag)
         {
             txtKPIID.Text = "";
             cboServicePlan.SelectedIndex = 0;
@@ -239,6 +241,27 @@ namespace NSCOperationalPlan
             cboEffiPrefix.SelectedIndex = 0;
             txtEffiValue.Text = "";
             cboEffiUnits.SelectedIndex = 0;
+
+            if (flag == "NEW")
+            {
+                tsbEdit.Enabled = false;
+                tsbNew.Enabled = true;
+
+                if (OPGlobals.CurrentUser.Permission == UserRights.Administrator)
+                {
+                    tsbDelete.Enabled = false;
+                }
+            } else
+            {
+                tsbEdit.Enabled = true;
+                tsbNew.Enabled = false;
+
+                if (OPGlobals.CurrentUser.Permission == UserRights.Administrator)
+                {
+                    tsbDelete.Enabled = true;
+                }
+
+            }
         }
 
         private void RefreshGridView()
@@ -513,7 +536,7 @@ namespace NSCOperationalPlan
                     //AddToGrd03();
                     break;
             }
-            ClearScreenData();
+            ClearScreenData("NEW");
         }
 
         private void tabkpi_DrawItem(object sender, DrawItemEventArgs e)
@@ -542,17 +565,17 @@ namespace NSCOperationalPlan
 
         private void dgv01_DoubleClick(object sender, EventArgs e)
         {
-            ClearScreenData();
+            ClearScreenData("EDIT");
             LoadDataFromTable(dgv01.SelectedRows[0], "001");
         }
         private void dgv02_DoubleClick(object sender, EventArgs e)
         {
-            ClearScreenData();
+            ClearScreenData("EDIT");
             LoadDataFromTable(dgv02.SelectedRows[0], "002");
         }
         private void dgv03_DoubleClick(object sender, EventArgs e)
         {
-            ClearScreenData();
+            ClearScreenData("EDIT");
             LoadDataFromTable(dgv03.SelectedRows[0], "003");
         }
 
@@ -560,29 +583,30 @@ namespace NSCOperationalPlan
         {
 
         }
-
         private void tsbDelete_Click(object sender, EventArgs e)
         {
-            DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
-            if (conn.State == ConnectionState.Closed) { conn.Open(); }
-            using (DbTransaction trans = conn.BeginTransaction())
+            string msg;
+            try
             {
-                try
+                if (MessageBox.Show("THIS WILL DLETE KPI ID =" + txtKPIID.Text + Environment.NewLine + " DO YOU WANT TO CONTINUE", "OPERATION PLAN", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
-                    
                     KeyPerformanceIndex kpm = new KeyPerformanceIndex();
-                    kpm.DeleteKPM(db, conn, trans, "Change this to KPMID");
-                    trans.Commit();
-                    MessageBox.Show("KPM has been DELETED successfully", "OP MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
+                    kpm.DeleteKPM(txtKPIID.Text);
+                    msg = "KPM has been DELETED successfully";
+                    btnEffiAdd_Click(this, e);
+                } else
                 {
-                    trans.Rollback();
-                    MessageBox.Show("Data NOT DELETED ..." + Environment.NewLine + ex.Message.ToString(), "OP ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    msg = "Operation has beed cancelled by the user";
                 }
             }
-            conn.Close();
+            catch (Exception ex)
+            {
+                msg = "Data NOT DELETED ..." + Environment.NewLine + ex.Message.ToString();
+            }
+            MessageBox.Show(msg, "OP MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        
     }
-    }
+    
 }

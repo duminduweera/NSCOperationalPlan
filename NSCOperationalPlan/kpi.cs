@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Common;
-using System.Linq;
-using System.Text;
 using MyDLLs;
 using System.Data;
 
@@ -24,6 +22,7 @@ namespace NSCOperationalPlan
         private string  _monthlyRemark;
         private string  _service_plan_id;
 
+        #region --- Class Members
         public int KPIID
         {
             get { return _kpiID; }
@@ -90,6 +89,7 @@ namespace NSCOperationalPlan
             get { return _monthlyRemark; }
             set { _monthlyRemark = value; }
         }
+        #endregion
 
         public KeyPerformanceIndex() { }
 
@@ -258,6 +258,40 @@ namespace NSCOperationalPlan
             return true;
         }
 
+        internal bool DeleteKPM(string kpmID)
+        {
+            bool result = false;
+            Dictionary<string, dynamic> strdct = new Dictionary<string, dynamic>();
+            string query = "";
+            strdct.Add("KPM_ID", kpmID);
+
+            Database db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
+            DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
+            if (conn.State == ConnectionState.Closed) { conn.Open(); }
+            using (DbTransaction trans = conn.BeginTransaction())
+            {
+                try
+                {
+                    ////--- Delete From Monthly Table
+                    query = @"DELETE FROM kpi_progress WHERE kpi_id = @KPM_ID;";
+                    db.InsertUpdateDeleteRecord(conn, trans, query, strdct);
+
+                    ////--- Delete From KPI Table
+                    query = @"DELETE FROM kpi WHERE id = @KPM_ID;";
+                    db.InsertUpdateDeleteRecord(conn, trans, query, strdct);
+
+                    trans.Commit();
+                    result = true;
+                }
+                catch (Exception ex)
+                {
+                    trans.Rollback();
+                    throw new Exception("Data NOT DELETED, Please Contact IT" + ex.Message + Environment.NewLine);
+                }
+            }
+            return result;
+        }
+
         public static DataTable GetKPITable(Database db, DbConnection con, string manID, string kpiyear)
         {
             string strsql = "SELECT * FROM view_kpi"
@@ -419,39 +453,6 @@ namespace NSCOperationalPlan
 
             if (count > 0) { return true; } else { return false; }
         }
-
-        internal bool DeleteKPM(Database db, DbConnection con, DbTransaction trans, string kpmID)
-        {
-            bool result = false;
-            Dictionary<string, dynamic> strdct = new Dictionary<string, dynamic>();
-            string query = "";
-            strdct.Add("KPM_ID", kpmID);
-            try
-            {
-                ////--- Delete From Mail Table
-                //query = @"DELETE FROM capital_works WHERE capital_works_id = @CPW_ID;";
-                //db.InsertUpdateDeleteRecord(con, trans, query, strdct);
-
-                ////--- Delete From Monthly Progress Table
-                //query = @"DELETE FROM capital_works_monthly_progress WHERE capital_works_id = @CPW_ID;";
-                //db.InsertUpdateDeleteRecord(con, trans, query, strdct);
-
-                ////--- Delete From Monthly QBR Table
-                //query = @"DELETE FROM capital_works_qbr WHERE capital_works_id = @CPW_ID;";
-                //db.InsertUpdateDeleteRecord(con, trans, query, strdct);
-
-                ////--- Delete From YTD Table
-                //query = @"DELETE FROM capital_works_ytd WHERE capital_works_id = @CPW_ID;";
-                //db.InsertUpdateDeleteRecord(con, trans, query, strdct);
-
-                result = true;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message + Environment.NewLine + "Data NOT Saved, Please Contact IT");
-            }
-
-            return result;
-        }
+        
     }
 }
