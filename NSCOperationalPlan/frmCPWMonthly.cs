@@ -129,15 +129,15 @@ namespace NSCOperationalPlan
             {
                 string strsql;
                 strsql = CapitalWork.GetSQLCapitalWorksMonthlyProgress(OPGlobals.currentYear, OPGlobals.currentMonth);
-                strsql += " WHERE A.cpw_quarter = " + OPGlobals.GetQuarter(OPGlobals.currentMonth);
+                //strsql += " WHERE A.cpw_quarter = " + OPGlobals.GetQuarter(OPGlobals.currentMonth);
 
                 if (opt0.Checked)
                 {
-                    strsql += " AND cpw_manager_id ='" + OPGlobals.CurrentUser.ManagerID + "'";
+                    strsql += " WHERE cpw_manager_id ='" + OPGlobals.CurrentUser.ManagerID + "'";
                 }
                 else if (opt1.Checked)
                 {
-                    strsql += " AND director_id ='" + OPGlobals.CurrentUser.DirectorID + "'";
+                    strsql += " WHERE director_id ='" + OPGlobals.CurrentUser.DirectorID + "'";
                 }
 
                 strsql += " Order by A.director_id, A.cpw_manager_id, A.cpw_id;";
