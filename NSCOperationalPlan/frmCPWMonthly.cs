@@ -54,7 +54,8 @@ namespace NSCOperationalPlan
 
             opt1.Text = "Show all Actions in " + OPGlobals.CurrentUser.Department;
 
-            if (OPGlobals.CurrentUser.Permission == UserRights.Administrator || OPGlobals.CurrentUser.Permission == UserRights.GM || OPGlobals.CurrentUser.Permission == UserRights.Editor)
+            if (OPGlobals.CurrentUser.Permission == UserRights.Administrator || OPGlobals.CurrentUser.Permission == UserRights.GM 
+                || OPGlobals.CurrentUser.Permission == UserRights.Editor || OPGlobals.CurrentUser.UserID.Equals("mccleti"))
             {
                 opt1.Enabled = true;
                 opt2.Enabled = true;
