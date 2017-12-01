@@ -133,6 +133,7 @@
   <ItemGroup>
     <Compile Include="batchCopyProgress.cs" />
     <Compile Include="cCapitalWork.cs" />
+    <Compile Include="clsAction.cs" />
     <Compile Include="clsReports.cs" />
     <Compile Include="clsUser.cs" />
     <Compile Include="dbjoin.cs" />
@@ -632,6 +633,7 @@
     <Content Include="nsc.ico" />
     <Content Include="op.ico" />
     <Content Include="Reports\logo_only.png" />
+    <None Include="Resources\returns_32.png" />
     <None Include="Resources\Measure_481.png" />
     <None Include="Resources\Measure_48.png" />
     <None Include="Resources\login02_32.png" />

@@ -149,6 +149,29 @@ namespace NSCOperationalPlan
 
             return result;
         }
+        public bool ChangeManagerKPI(Database db, DbConnection con, DbTransaction trans, string managerTo)
+        {
+            bool result = false;
+
+            Dictionary<string, dynamic> strdct = new Dictionary<string, dynamic>();
+            strdct.Add("KPI_ID", this._kpiID);
+            strdct.Add("ManagerFrom", this._managerID);
+            strdct.Add("ManagerTo", managerTo);
+
+            string query = "UPDATE kpi SET manager_id = @ManagerTo WHERE id = @KPI_ID AND manager_id = @ManagerFrom";
+
+            try
+            {
+                db.InsertUpdateDeleteRecord(con, trans, query, strdct);
+                result = true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message + Environment.NewLine + "Data NOT Saved, Please Contact IT");
+            }
+
+            return result;
+        }
 
         public bool InsertKPIEstimate(Database db, DbConnection con, DbTransaction trans)
         {
