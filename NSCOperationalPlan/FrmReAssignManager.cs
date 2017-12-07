@@ -383,8 +383,6 @@ namespace NSCOperationalPlan
                         }
                     }
                     #endregion
-
-
                     trans.Commit();
                     msg = "Responsible Manager has been changed successfully";
                 }

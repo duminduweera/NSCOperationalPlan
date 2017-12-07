@@ -276,10 +276,10 @@ namespace NSCOperationalPlan
                     //user.DisableMenuOptions = new List<string> { };
                     break;
                 case UserRights.GM:
-                    temp = new List<string> { "A07" };
+                    temp = new List<string> { "A07", "008" };
                     break;
                 case UserRights.Editor:
-                    temp = new List<string> { "A07" };
+                    temp = new List<string> { "A07", "008" };
                     //user.DisableMenuOptions = default_usermenu.Concat(temp).ToList();
                     break;
                 case UserRights.Director:

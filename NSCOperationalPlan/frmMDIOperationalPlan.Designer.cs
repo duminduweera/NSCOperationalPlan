@@ -282,6 +282,7 @@
             this.reAssignManagerToolStripMenuItem.Image = global::NSCOperationalPlan.Properties.Resources.returns_32;
             this.reAssignManagerToolStripMenuItem.Name = "reAssignManagerToolStripMenuItem";
             this.reAssignManagerToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
+            this.reAssignManagerToolStripMenuItem.Tag = "A08";
             this.reAssignManagerToolStripMenuItem.Text = "Re-Assign Manager";
             this.reAssignManagerToolStripMenuItem.Click += new System.EventHandler(this.reAssignManagerToolStripMenuItem_Click);
             // 

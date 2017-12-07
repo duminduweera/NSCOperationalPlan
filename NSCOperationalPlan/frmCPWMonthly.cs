@@ -38,10 +38,51 @@ namespace NSCOperationalPlan
         {
             ArrangeScreen();
             ArrangeGrid();
-
             opt0.Checked = true;
-            
+            if(OPGlobals.CurrentUser.Permission == UserRights.Administrator)
+            {
+                groupBox1.Visible = true;
+                LoadDirectors();
+            }
         }
+
+        #region --- Select the Manager (ONLY FOR ADMINISTRATOR FUNCTION)--- 
+        private void LoadDirectors()
+        {
+            DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
+            DataTable tb = db.GetDataTable(conn, @"SELECT * FROM director_view;");
+
+            //----- Insert a new Row in 0 possition ---
+            DataRow dr = tb.NewRow();
+            dr["director_id"] = "-0-";
+            dr["director_description"] = "-NONE-";
+            tb.Rows.InsertAt(dr, 0);
+
+            cboDirector.DataSource = tb;
+            cboDirector.DisplayMember = "director_description";
+            cboDirector.ValueMember = "director_id";
+        }
+        private void LoadManagers()
+        {
+            DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
+
+            DataRowView row = (DataRowView)cboDirector.SelectedItem;
+            string strsql = "SELECT * FROM view_directors_plus_managers WHERE director_id = '" + row["director_id"].ToString() + "';";
+            DataTable tb = db.GetDataTable(conn, @strsql);
+
+            cboManager.DataSource = tb;
+            cboManager.DisplayMember = "manager_description";
+            cboManager.ValueMember = "manager_id";
+        }
+        private void cboDirector_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadManagers();
+        }
+        private void cboManager_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadTableFromDatabase();
+        }
+        #endregion
 
         /// <summary>
         /// Arrange Screen with User Permision
@@ -131,13 +172,22 @@ namespace NSCOperationalPlan
                 strsql = CapitalWork.GetSQLCapitalWorksMonthlyProgress(OPGlobals.currentYear, OPGlobals.currentMonth);
                 //strsql += " WHERE A.cpw_quarter = " + OPGlobals.GetQuarter(OPGlobals.currentMonth);
 
-                if (opt0.Checked)
+                DataRowView dr1 = (DataRowView)cboDirector.SelectedItem;
+                DataRowView dr2 = (DataRowView)cboManager.SelectedItem;
+
+                if(dr2 != null)
                 {
-                    strsql += " WHERE cpw_manager_id ='" + OPGlobals.CurrentUser.ManagerID + "'";
-                }
-                else if (opt1.Checked)
+                    strsql += " WHERE cpw_manager_id ='" + dr2["manager_id"].ToString() + "'";
+                } else
                 {
-                    strsql += " WHERE director_id ='" + OPGlobals.CurrentUser.DirectorID + "'";
+                    if (opt0.Checked)
+                    {
+                        strsql += " WHERE cpw_manager_id ='" + OPGlobals.CurrentUser.ManagerID + "'";
+                    }
+                    else if (opt1.Checked)
+                    {
+                        strsql += " WHERE director_id ='" + OPGlobals.CurrentUser.DirectorID + "'";
+                    }
                 }
 
                 strsql += " Order by A.director_id, A.cpw_manager_id, A.cpw_id;";
@@ -401,5 +451,6 @@ namespace NSCOperationalPlan
         {
             if (opt2.Checked) { OptionCheckedChanged(this, e); }
         }
+
     }
 }
