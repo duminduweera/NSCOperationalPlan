@@ -23,6 +23,18 @@ namespace NSCOperationalPlan
             InitializeComponent();
             dgv = new List<DataGridView>() { dgv01, dgv02, dgv03 };
         }
+        private void frmKPIProgress_Load(object sender, EventArgs e)
+        {
+            ArrangeGrids();
+            //LoadKPIFromDatabase();
+            ArrangeScreen();
+            opt0.Checked = true;
+            if (OPGlobals.CurrentUser.Permission == UserRights.Administrator || OPGlobals.CurrentUser.Permission == UserRights.GM)
+            {
+                groupBox1.Visible = true;
+                LoadDirectors();
+            }
+        }
 
         private void ArrangeGrids()
         {
@@ -238,19 +250,6 @@ namespace NSCOperationalPlan
             }
 
             this.Dispose();
-        }
-
-        private void frmKPIProgress_Load(object sender, EventArgs e)
-        {
-            ArrangeGrids();
-            //LoadKPIFromDatabase();
-            ArrangeScreen();
-            opt0.Checked = true;
-            if (OPGlobals.CurrentUser.Permission == UserRights.Administrator)
-            {
-                groupBox1.Visible = true;
-                LoadDirectors();
-            }
         }
 
         private void ArrangeScreen()

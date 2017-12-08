@@ -93,7 +93,7 @@ namespace NSCOperationalPlan
             opt0.Checked = true;
             dgv01.CurrentCell = null;
 
-            if (OPGlobals.CurrentUser.Permission == UserRights.Administrator)
+            if (OPGlobals.CurrentUser.Permission == UserRights.Administrator || OPGlobals.CurrentUser.Permission == UserRights.GM)
             {
                 LoadDirectors();
                 groupBox1.Visible = true;

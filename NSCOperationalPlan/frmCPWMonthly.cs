@@ -39,7 +39,7 @@ namespace NSCOperationalPlan
             ArrangeScreen();
             ArrangeGrid();
             opt0.Checked = true;
-            if(OPGlobals.CurrentUser.Permission == UserRights.Administrator)
+            if(OPGlobals.CurrentUser.Permission == UserRights.Administrator || OPGlobals.CurrentUser.Permission == UserRights.GM)
             {
                 groupBox1.Visible = true;
                 LoadDirectors();

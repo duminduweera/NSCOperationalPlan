@@ -15,19 +15,44 @@ namespace NSCOperationalPlan
 {
     public partial class frmOperationPlan : Form
     {
+        private static frmOperationPlan Instance;
         frmDashBoard2 frmdashboard = new frmDashBoard2();
         int frmtop = 0;
         int frmleft = 0;
 
-        public frmOperationPlan()
+        public static frmOperationPlan getInstance()
         {
-         
+            if(Instance == null)
+            {
+                Instance = new frmOperationPlan();
+            }
+            return Instance;
+        }
+
+        private frmOperationPlan()
+        {
+            Instance = this;
             InitializeComponent();
             
             frmtop = this.menuStrip1.Bottom + this.menuStrip1.Height+ toolStrip1.Height;
            
 
             //OpenFrmMonthlyProgressNEW(new object(),new EventArgs());
+        }
+        private void frmOperationPlan_Load(object sender, EventArgs e)
+        {
+            ArrangeMenu();
+
+            //RefreshForm();
+
+            frmdashboard.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            frmdashboard.MdiParent = this;
+
+            frmdashboard.Show();
+            System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Default;
+            tsCPW.Enabled = OPGlobals.CapitalWorksEnabled;
+            capitalWorkMonthlyProgressToolStripMenuItem.Enabled = OPGlobals.CapitalWorksEnabled;
+
         }
 
         private void mnuExit_Click(object sender, EventArgs e)
@@ -52,22 +77,6 @@ namespace NSCOperationalPlan
         private void tsExit_Click(object sender, EventArgs e)
         {
             mnuExit_Click(sender, e);
-        }
-
-        private void frmOperationPlan_Load(object sender, EventArgs e)
-        {
-            ArrangeMenu();
-
-            RefreshForm();
-
-            frmdashboard.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            frmdashboard.MdiParent = this;
-
-            frmdashboard.Show();
-            System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Default;
-            tsCPW.Enabled = OPGlobals.CapitalWorksEnabled;
-            capitalWorkMonthlyProgressToolStripMenuItem.Enabled= OPGlobals.CapitalWorksEnabled;
-
         }
 
         private void mnuThemes_Click(object sender, EventArgs e)
@@ -148,9 +157,10 @@ namespace NSCOperationalPlan
             frmstrategyobjective.ShowDialog();       // .Show();
         }
 
-        private void ArrangeMenu()
+        public void ArrangeMenu()
         {
             DisableAllMenuOptions();
+            RefreshForm();
         }
         private void DisableAllMenuOptions()
         {
@@ -332,9 +342,14 @@ namespace NSCOperationalPlan
             }
             else
             {
-                OPGlobals.CurrentUser = OPGlobals.PreviousUser;
-                OPGlobals.PreviousUser = null;
-                frmOperationPlan_Activated(this, e);
+                string msg = "This will revert current user back to the previous User, Do you want to Continue?";
+                if (MessageBox.Show(msg, "OPERATION PLAN", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                {
+                    OPGlobals.CurrentUser = OPGlobals.PreviousUser;
+                    OPGlobals.PreviousUser = null;
+                    ArrangeMenu();
+                    MessageBox.Show("Welcome Back " + OPGlobals.CurrentUser.UserName, "Operation Plan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 

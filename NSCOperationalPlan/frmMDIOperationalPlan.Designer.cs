@@ -629,6 +629,7 @@
             // 
             this.importSMeasuresFromExcelToolStripMenuItem.Name = "importSMeasuresFromExcelToolStripMenuItem";
             this.importSMeasuresFromExcelToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.importSMeasuresFromExcelToolStripMenuItem.Tag = "D07";
             this.importSMeasuresFromExcelToolStripMenuItem.Text = "Import SMeasures from Excel";
             this.importSMeasuresFromExcelToolStripMenuItem.Click += new System.EventHandler(this.importSMeasuresFromExcelToolStripMenuItem_Click);
             // 
