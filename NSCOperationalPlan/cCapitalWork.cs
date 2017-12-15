@@ -663,7 +663,7 @@ namespace NSCOperationalPlan
             int qtr = OPGlobals.GetQuarter(cpw_month);
 
             strsql = "Select A.*, " + cpw_month + " As cpw_month, C.capital_works_ytd As cpw_ytod, D.capital_works_projected As cpw_projected,"
-                + " D.capital_works_percentage As cpw_percentage, D.capital_works_remark As cpw_remark"
+                + " if(D.capital_works_percentage>0, D.capital_works_percentage,0) As cpw_percentage, D.capital_works_remark As cpw_remark"
                 + " From view_cpw_qbr A Left Join (Select capital_works_ytd.* From capital_works_ytd"
                 + " Where capital_works_ytd.capital_works_month = " + cpw_month
                 + " And capital_works_ytd.capital_works_year = '" + cpw_year + " ') C On A.cpw_id = C.capital_works_id And A.cpw_year = C.capital_works_year Left Join"

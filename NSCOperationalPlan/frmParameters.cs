@@ -80,6 +80,7 @@ namespace NSCOperationalPlan
         private void tsbSave_Click(object sender, EventArgs e)
         {
 
+
             Dictionary<string, dynamic> strdct = new Dictionary<string, dynamic>();
 
             strdct.Add("ID", txtID.Text);
@@ -99,6 +100,8 @@ namespace NSCOperationalPlan
                     MessageBox.Show("Delivery Year and Month Already Exist, Please try with different Year/Month", "OP PLAN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+
+
                 if (conn.State == ConnectionState.Closed) { conn.Open(); }
                 using (DbTransaction trans = conn.BeginTransaction())
                 {
@@ -128,6 +131,16 @@ namespace NSCOperationalPlan
             }
 
         }
+
+        //private bool InsertActions()
+        //{
+        //    bool retVal=false;
+        //    string strsql = MonthlyProgress.GetQueryMonthlyProgress(OPGlobals.currentYear, OPGlobals.currentMonth);
+        //    DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
+        //    DataTable tb = db.GetDataTable(conn, strsql);
+
+        //    return retVal;
+        //}
 
         private bool InsertParams(DbConnection con, DbTransaction trans, Dictionary<string, dynamic> strdct)
         {

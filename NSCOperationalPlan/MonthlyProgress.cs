@@ -168,7 +168,7 @@ namespace NSCOperationalPlan
                 + " A.director_description, A.department, A.delivery_program_id, A.delivery_program_year, A.delivery_program_TargetDate,"
                 + " A.service_plan_id, A.service_plan,"
                 + " B.progress_id, B.status_id, B.progress_description, B.progress_pecentage, B.status_short, B.status_color,"
-                + " B.progress_year, B.progress_month, '" + opmonth + "' as delivery_program_month"
+                + " '" + opYear + "' as progress_year, " + opMonth + " as progress_month, '" + opmonth + "' as delivery_program_month"
                 + " from (Select * From view_action_by_year Where view_action_by_year.delivery_program_year = '" + opYear + "') A Left Join"
                 + " (Select progress.id As progress_id, progress.progress_description, progress.progress_pecentage, status.id As status_id,"
                 + " status.status_short, status.status_color, progress.action_id, progress.progress_year, progress.progress_month"

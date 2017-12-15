@@ -501,6 +501,7 @@
             // txtKPIID
             // 
             this.txtKPIID.BackColor = System.Drawing.Color.White;
+            this.txtKPIID.Enabled = false;
             this.txtKPIID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKPIID.ForeColor = System.Drawing.Color.Blue;
             this.txtKPIID.Location = new System.Drawing.Point(1102, 103);
