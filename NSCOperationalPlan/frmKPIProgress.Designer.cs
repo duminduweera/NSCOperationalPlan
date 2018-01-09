@@ -47,10 +47,16 @@
             this.opt2 = new System.Windows.Forms.RadioButton();
             this.opt0 = new System.Windows.Forms.RadioButton();
             this.opt1 = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboManager = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cboDirector = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv03)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -146,8 +152,7 @@
             // 
             // dgv01
             // 
-            this.dgv01.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv01.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv01.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv01.Location = new System.Drawing.Point(12, 125);
             this.dgv01.MultiSelect = false;
@@ -167,8 +172,7 @@
             // 
             // dgv03
             // 
-            this.dgv03.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv03.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv03.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv03.Location = new System.Drawing.Point(11, 718);
             this.dgv03.Name = "dgv03";
@@ -178,7 +182,8 @@
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.BackColor = System.Drawing.Color.OliveDrab;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(12, 102);
@@ -189,10 +194,11 @@
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.BackColor = System.Drawing.Color.SteelBlue;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(11, 395);
+            this.label2.Location = new System.Drawing.Point(11, 398);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(260, 23);
             this.label2.TabIndex = 22;
@@ -200,10 +206,11 @@
             // 
             // label3
             // 
-            this.label3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.BackColor = System.Drawing.Color.Sienna;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(12, 692);
+            this.label3.Location = new System.Drawing.Point(12, 695);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(259, 23);
             this.label3.TabIndex = 23;
@@ -248,11 +255,69 @@
             this.opt1.UseVisualStyleBackColor = true;
             this.opt1.CheckedChanged += new System.EventHandler(this.opt1_CheckedChanged);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cboManager);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.cboDirector);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Location = new System.Drawing.Point(725, 55);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(521, 70);
+            this.groupBox1.TabIndex = 118;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Visible = false;
+            // 
+            // cboManager
+            // 
+            this.cboManager.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboManager.FormattingEnabled = true;
+            this.cboManager.Location = new System.Drawing.Point(181, 42);
+            this.cboManager.Name = "cboManager";
+            this.cboManager.Size = new System.Drawing.Size(316, 24);
+            this.cboManager.TabIndex = 117;
+            this.cboManager.SelectedIndexChanged += new System.EventHandler(this.cboManager_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label7.Location = new System.Drawing.Point(19, 39);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(156, 23);
+            this.label7.TabIndex = 118;
+            this.label7.Text = "Responsible Manager :";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cboDirector
+            // 
+            this.cboDirector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDirector.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboDirector.FormattingEnabled = true;
+            this.cboDirector.Location = new System.Drawing.Point(181, 13);
+            this.cboDirector.Name = "cboDirector";
+            this.cboDirector.Size = new System.Drawing.Size(316, 24);
+            this.cboDirector.TabIndex = 116;
+            this.cboDirector.SelectedIndexChanged += new System.EventHandler(this.cboDirector_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label4.Location = new System.Drawing.Point(32, 11);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(142, 23);
+            this.label4.TabIndex = 119;
+            this.label4.Text = "Responsible Director :";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // frmKPIProgress
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1506, 954);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.opt2);
             this.Controls.Add(this.opt0);
             this.Controls.Add(this.opt1);
@@ -271,6 +336,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv01)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv02)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv03)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,5 +362,10 @@
         private System.Windows.Forms.RadioButton opt2;
         private System.Windows.Forms.RadioButton opt0;
         private System.Windows.Forms.RadioButton opt1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox cboManager;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cboDirector;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -49,6 +49,8 @@
             this.MonthlyYTDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.QBRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
+            this.reAssignManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.progressToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMonthlyProgress = new System.Windows.Forms.ToolStripMenuItem();
@@ -105,9 +107,9 @@
             this.tsCPW = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.tsStrategyMeasure = new System.Windows.Forms.ToolStripButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -143,6 +145,8 @@
             this.toolStripSeparator1,
             this.mnuCPW,
             this.toolStripSeparator17,
+            this.reAssignManagerToolStripMenuItem,
+            this.toolStripSeparator7,
             this.mnuExit});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
@@ -272,6 +276,20 @@
             // 
             this.toolStripSeparator17.Name = "toolStripSeparator17";
             this.toolStripSeparator17.Size = new System.Drawing.Size(247, 6);
+            // 
+            // reAssignManagerToolStripMenuItem
+            // 
+            this.reAssignManagerToolStripMenuItem.Image = global::NSCOperationalPlan.Properties.Resources.returns_32;
+            this.reAssignManagerToolStripMenuItem.Name = "reAssignManagerToolStripMenuItem";
+            this.reAssignManagerToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
+            this.reAssignManagerToolStripMenuItem.Tag = "A08";
+            this.reAssignManagerToolStripMenuItem.Text = "Re-Assign Manager";
+            this.reAssignManagerToolStripMenuItem.Click += new System.EventHandler(this.reAssignManagerToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(247, 6);
             // 
             // mnuExit
             // 
@@ -611,6 +629,7 @@
             // 
             this.importSMeasuresFromExcelToolStripMenuItem.Name = "importSMeasuresFromExcelToolStripMenuItem";
             this.importSMeasuresFromExcelToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.importSMeasuresFromExcelToolStripMenuItem.Tag = "D07";
             this.importSMeasuresFromExcelToolStripMenuItem.Text = "Import SMeasures from Excel";
             this.importSMeasuresFromExcelToolStripMenuItem.Click += new System.EventHandler(this.importSMeasuresFromExcelToolStripMenuItem_Click);
             // 
@@ -792,18 +811,6 @@
             this.tsStrategyMeasure.ToolTipText = "Status";
             this.tsStrategyMeasure.Click += new System.EventHandler(this.tsStrategyMeasure_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::NSCOperationalPlan.Properties.Resources.logo_only;
-            this.pictureBox1.Location = new System.Drawing.Point(801, 530);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(177, 67);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -825,6 +832,18 @@
             this.label2.TabIndex = 13;
             this.label2.Text = "DP";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::NSCOperationalPlan.Properties.Resources.logo_only;
+            this.pictureBox1.Location = new System.Drawing.Point(801, 530);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(177, 67);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // frmOperationPlan
             // 
@@ -937,6 +956,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripMenuItem reAssignManagerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
     }
 }
 

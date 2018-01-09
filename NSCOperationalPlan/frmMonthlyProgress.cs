@@ -81,7 +81,6 @@ namespace NSCOperationalPlan
             dgv01.SelectionMode = DataGridViewSelectionMode.CellSelect;
 
         }
-
         private void frmMonthlyProgress_Load(object sender, EventArgs e)
         {
             ArrangeScreen();
@@ -93,7 +92,55 @@ namespace NSCOperationalPlan
             BindDropDownToDataGrid();
             opt0.Checked = true;
             dgv01.CurrentCell = null;
+
+            if (OPGlobals.CurrentUser.Permission == UserRights.Administrator || OPGlobals.CurrentUser.Permission == UserRights.GM)
+            {
+                LoadDirectors();
+                groupBox1.Visible = true;
+            }
         }
+
+        #region --- Select the Manager (ONLY FOR ADMINISTRATOR FUNCTION)--- 
+        private void LoadDirectors()
+        {
+            DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
+            DataTable tb = db.GetDataTable(conn, @"SELECT * FROM director_view;");
+
+            //----- Insert a new Row in 0 possition ---
+            DataRow dr = tb.NewRow();
+            dr["director_id"] = "-0-";
+            dr["director_description"] = "-NONE-";
+            tb.Rows.InsertAt(dr, 0);
+
+            cboDirector.DataSource = tb;
+            cboDirector.DisplayMember = "director_description";
+            cboDirector.ValueMember = "director_id";
+        }
+        private void LoadManagers()
+        {
+            DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
+
+            DataRowView row = (DataRowView)cboDirector.SelectedItem;
+            string strsql = "SELECT * FROM view_directors_plus_managers WHERE director_id = '" + row["director_id"].ToString() + "';";
+            DataTable tb = db.GetDataTable(conn, @strsql);
+
+            cboManager.DataSource = tb;
+            cboManager.DisplayMember = "manager_description";
+            cboManager.ValueMember = "manager_id";
+        }
+        private void cboDirector_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadManagers();
+        }
+        private void cboManager_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FillGrid();
+        }
+        //-----------cboDirector_SelectedIndexChanged
+        //LoadManagers();
+        //-----------Manager SelectedIndexChanged---
+        //FillGrid();
+        #endregion
 
         /// <summary>
         /// Arrange Screen with User Permision
@@ -123,22 +170,35 @@ namespace NSCOperationalPlan
                 opt2.Enabled = false;
             }
         }
-
         private void FillGrid()
         {
 
             string strsql;
-            if (opt2.Checked)
+
+            DataRowView dr1 = (DataRowView)cboDirector.SelectedItem;
+            DataRowView dr2 = (DataRowView)cboManager.SelectedItem;
+
+            if (dr2 != null)
             {
-                strsql = MonthlyProgress.GetQueryMonthlyProgress(OPGlobals.currentYear, OPGlobals.currentMonth);
-            } else if (opt1.Checked)
-            {
-                strsql = MonthlyProgress.GetQueryMonthlyProgress(OPGlobals.currentYear, OPGlobals.currentMonth, OPGlobals.CurrentUser.DirectorID);
-            } else
-            {
-                strsql = MonthlyProgress.GetQueryMonthlyProgress(OPGlobals.currentYear, OPGlobals.currentMonth, OPGlobals.CurrentUser.DirectorID, OPGlobals.CurrentUser.ManagerID);
+                strsql = MonthlyProgress.GetQueryMonthlyProgress(OPGlobals.currentYear, OPGlobals.currentMonth, dr1["director_id"].ToString(), dr2["manager_id"].ToString());
             }
-            
+            else
+            {
+                if (opt2.Checked)
+                {
+                    strsql = MonthlyProgress.GetQueryMonthlyProgress(OPGlobals.currentYear, OPGlobals.currentMonth);
+                }
+                else if (opt1.Checked)
+                {
+                    strsql = MonthlyProgress.GetQueryMonthlyProgress(OPGlobals.currentYear, OPGlobals.currentMonth, OPGlobals.CurrentUser.DirectorID);
+                }
+                else
+                {
+                    strsql = MonthlyProgress.GetQueryMonthlyProgress(OPGlobals.currentYear, OPGlobals.currentMonth, OPGlobals.CurrentUser.DirectorID, OPGlobals.CurrentUser.ManagerID);
+                }
+            }
+
+
             DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
             DataTable tb = db.GetDataTable(conn, strsql);
 
@@ -474,5 +534,7 @@ namespace NSCOperationalPlan
                 FillGrid();
             }
         }
+
+        
     }
 }

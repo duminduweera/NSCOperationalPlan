@@ -28,6 +28,7 @@ namespace NSCOperationalPlan
         private double  _cpwCompletedPercentage;
         private string  _cpwComment;
 
+        #region --- Getters & Setters ---
         public int CapitalWorkID
         {
             get { return _cpwID;}
@@ -111,6 +112,7 @@ namespace NSCOperationalPlan
             get { return _cpwComment; }
             set { _cpwComment = value; }
         }
+        #endregion
 
         public CapitalWork() { }
         public CapitalWork(int id) { this._cpwID = id; }
@@ -198,6 +200,28 @@ namespace NSCOperationalPlan
                 + " capital_works_stg_obj_id = @StrategyObjID, capital_works_description = @Description,"
                 + " capital_works_original_budget = @Budget"
                 + " WHERE capital_works_id = " + this._cpwID + ";";
+            try
+            {
+                db.InsertUpdateDeleteRecord(con, trans, query, strdct);
+                result = true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message + Environment.NewLine + "Data NOT Saved, Please Contact IT");
+            }
+
+            return result;
+        }
+        public bool ChangeManagerCWP(Database db, DbConnection con, DbTransaction trans, string managerTo)
+        {
+            bool result = false;
+            Dictionary<string, dynamic> strdct = new Dictionary<string, dynamic>();
+
+            strdct.Add("CPW_ID", this._cpwID);
+            strdct.Add("ManagerFrom", this._cpwManagerID);
+            strdct.Add("ManagerTo", managerTo);
+
+            string query = @"UPDATE capital_works SET capital_works_manager_id = @ManagerTo WHERE capital_works_id = @CPW_ID AND capital_works_manager_id=@ManagerFrom";
             try
             {
                 db.InsertUpdateDeleteRecord(con, trans, query, strdct);
@@ -516,15 +540,6 @@ namespace NSCOperationalPlan
         {
             Database db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
 
-            //string strsql = "Select A.manager_dept, A.manager_subdept as manager_description, A.cpw_year,"
-            //    + cpw_month + " As capital_works_month,"
-            //    + " Sum(A.cpw_original_budget) As sum_cpw_org, Sum(B.capital_works_ytd) As sum_cpw_ytod From"
-            //    + " (Select capital_works_ytd.* From capital_works_ytd Where"
-            //    + " capital_works_ytd.capital_works_month = " + cpw_month + " And"
-            //    + " capital_works_ytd.capital_works_year = '" + cpw_year + "') B Right Join"
-            //    + " view_cpw A On A.cpw_id = B.capital_works_id And A.cpw_year = B.capital_works_year"
-            //    + " Group By A.manager_dept, A.manager_subdept, A.cpw_year;";
-
             string strsql = "Select A.manager_dept, A.manager_subdept As manager_description, A.cpw_year,"
                 + cpw_month + " As cpw_month, Sum(A.cpw_original_budget)As sum_cpw_org,"
                 + " Sum(B.capital_works_ytd) As sum_cpw_ytod, Sum(C.capital_works_revised_budget) as sum_cpw_revised From"
@@ -544,16 +559,6 @@ namespace NSCOperationalPlan
         public static DataTable GetTableCapitalWorksDepartmentSummary(string cpw_year, int cpw_month, string directorate)
         {
             Database db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
-
-            //string strsql = "Select A.manager_dept, A.manager_subdept as manager_description, A.cpw_year,"
-            //                + cpw_month + " As capital_works_month,"
-            //                + " Sum(A.cpw_original_budget) As sum_cpw_org, Sum(B.capital_works_ytd)As sum_cpw_ytod From"
-            //                + " (Select capital_works_ytd.* From capital_works_ytd Where"
-            //                + " capital_works_ytd.capital_works_month = " + cpw_month + " And"
-            //                + " capital_works_ytd.capital_works_year = '" + cpw_year + "') B Right Join"
-            //                + " view_cpw A On A.cpw_id = B.capital_works_id And A.cpw_year = B.capital_works_year"
-            //                 + " WHERE A.director_id ='" + directorate + "'"
-            //                + " Group By A.manager_dept, A.manager_subdept, A.cpw_year;";
 
             string strsql = "Select A.manager_dept, A.manager_subdept, A.cpw_year," + cpw_month + " As cpw_month,"
                 + " Count(A.manager_subdept)As noofrecs, Sum(A.cpw_original_budget) As sum_cpw_org, Sum(C.capital_works_revised_budget) As sum_cpw_revised,"
@@ -579,18 +584,6 @@ namespace NSCOperationalPlan
         public static DataTable GetTableCapitalWorksServiceSummary(string cpw_year, int cpw_month)
         {
             Database db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
-
-            //string strsql = "SELECT A.service_plan, A.cpw_year, " + cpw_month + " As cpw_month,"
-            //    + " COUNT(A.service_plan) AS noofrecs,"
-            //    + " Sum(A.cpw_original_budget) As sum_cpw_org, Sum(C.capital_works_revised_budget) As sum_cpw_revised,"
-            //    + " sum(B.capital_works_ytd) as sum_cpw_ytod From view_cpw A Left Join"
-            //    + " (Select capital_works_ytd.* From capital_works_ytd Where"
-            //    + " capital_works_ytd.capital_works_month = " + cpw_month + " And"
-            //    + " capital_works_ytd.capital_works_year = '" + cpw_year + "') B On A.cpw_id = B.capital_works_id And A.cpw_year = B.capital_works_year Left Join"
-            //    + " (Select capital_works_id, capital_works_year, capital_works_quarter, capital_works_revised_budget"
-            //    + " From capital_works_qbr Where capital_works_qbr.capital_works_quarter = " + OPGlobals.GetQuarter(cpw_month) + ") C"
-            //    + " On A.cpw_id = C.capital_works_id And A.cpw_year = C.capital_works_year"
-            //    + " Group By A.service_plan, A.cpw_year, cpw_month;";
 
             string strsql = "Select A.service_plan, A.cpw_year, " + cpw_month + " As cpw_month, Count(A.manager_subdept)As noofrecs,"
                 + " Sum(A.cpw_original_budget) As sum_cpw_org, Sum(C.capital_works_revised_budget) As sum_cpw_revised,"
@@ -670,7 +663,7 @@ namespace NSCOperationalPlan
             int qtr = OPGlobals.GetQuarter(cpw_month);
 
             strsql = "Select A.*, " + cpw_month + " As cpw_month, C.capital_works_ytd As cpw_ytod, D.capital_works_projected As cpw_projected,"
-                + " D.capital_works_percentage As cpw_percentage, D.capital_works_remark As cpw_remark"
+                + " if(D.capital_works_percentage>0, D.capital_works_percentage,0) As cpw_percentage, D.capital_works_remark As cpw_remark"
                 + " From view_cpw_qbr A Left Join (Select capital_works_ytd.* From capital_works_ytd"
                 + " Where capital_works_ytd.capital_works_month = " + cpw_month
                 + " And capital_works_ytd.capital_works_year = '" + cpw_year + " ') C On A.cpw_id = C.capital_works_id And A.cpw_year = C.capital_works_year Left Join"

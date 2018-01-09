@@ -86,7 +86,7 @@ namespace NSCOperationalPlan
                 if (AD_INTERGRATE)
                 {
                     //NSCUtils.ADUser u = new NSCUtils.ADUser("farrego");
-                    //NSCUtils.ADUser u = new NSCUtils.ADUser("revelmg");
+                    //NSCUtils.ADUser u = new NSCUtils.ADUser("birchbr");
                     //mccleti
                     NSCUtils.ADUser u = new ADUser();
                     if (string.IsNullOrEmpty(u.UserName))
@@ -137,7 +137,8 @@ namespace NSCOperationalPlan
                 OPGlobals.reportParth = Path.Combine(exeFolder, @"Reports\");                
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                frmOperationPlan frmMDI = new frmOperationPlan();
+                //frmOperationPlan frmMDI = new frmOperationPlan();
+                frmOperationPlan frmMDI = frmOperationPlan.getInstance();
                 Application.Run(frmMDI);
             }
             catch (Exception ex)
@@ -215,11 +216,10 @@ namespace NSCOperationalPlan
 
 #endif
 
-
-                if (usertype == "P")
-                {
-                    OPGlobals.PreviousUser = OPGlobals.CurrentUser;
-                }
+                //if (usertype == "P")
+                //{
+                //    OPGlobals.PreviousUser = OPGlobals.CurrentUser;
+                //}
 
                 OPGlobals.CurrentUser = user;
                 result = true;
@@ -268,7 +268,7 @@ namespace NSCOperationalPlan
         private static void SetMenus(clsUser user)
         {
 
-            List<string> default_usermenu = new List<string> { "D01", "D02", "D03","D06" };  //Disable Options
+            List<string> default_usermenu = new List<string> { "D01", "D02", "D03", "D06", "D07" };  //Disable Options
             List<string> temp = new List<string> { }; 
             switch (user.Permission)
             {
@@ -276,26 +276,26 @@ namespace NSCOperationalPlan
                     //user.DisableMenuOptions = new List<string> { };
                     break;
                 case UserRights.GM:
-                    temp = new List<string> { "A07" };
+                    temp = new List<string> { "A07", "A08" };
                     break;
                 case UserRights.Editor:
-                    temp = new List<string> { "A07" };
+                    temp = new List<string> { "A07", "A08" };
                     //user.DisableMenuOptions = default_usermenu.Concat(temp).ToList();
                     break;
                 case UserRights.Director:
-                    temp = new List<string> { "A01", "A02", "A03", "A04", "A05", "A06", "A07" };
+                    temp = new List<string> { "A01", "A02", "A03", "A04", "A05", "A06", "A07","A08" };
                     //user.DisableMenuOptions = default_usermenu.Concat(temp).ToList();
                     break;
                 case UserRights.Manager:
-                    temp = new List<string> { "A01", "A02", "A03", "A04", "A05", "A06", "A07" };
+                    temp = new List<string> { "A01", "A02", "A03", "A04", "A05", "A06", "A07", "A08" };
                     //user.DisableMenuOptions = default_usermenu.Concat(temp).ToList();
                     break;
                 case UserRights.Finance:
-                    temp = new List<string> { "A01", "A02", "A03", "A04", "A05","A06" };
+                    temp = new List<string> { "A01", "A02", "A03", "A04", "A05","A06", "A08" };
                     //user.DisableMenuOptions = default_usermenu.Concat(temp).ToList();
                     break;
                 default:
-                    temp = new List<string> { "A01", "A02", "A03", "A04", "A05", "A06", "A07" };
+                    temp = new List<string> { "A01", "A02", "A03", "A04", "A05", "A06", "A07", "A08" };
                     //user.DisableMenuOptions = default_usermenu.Concat(temp).ToList();
                     break;
             }

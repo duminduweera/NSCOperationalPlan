@@ -44,8 +44,14 @@
             this.opt1 = new System.Windows.Forms.RadioButton();
             this.opt2 = new System.Windows.Forms.RadioButton();
             this.opt0 = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboManager = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cboDirector = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv01)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -198,12 +204,70 @@
             this.opt0.UseVisualStyleBackColor = true;
             this.opt0.CheckedChanged += new System.EventHandler(this.opt0_CheckedChanged);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cboManager);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.cboDirector);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(548, 68);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(521, 81);
+            this.groupBox1.TabIndex = 117;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Visible = false;
+            // 
+            // cboManager
+            // 
+            this.cboManager.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboManager.FormattingEnabled = true;
+            this.cboManager.Location = new System.Drawing.Point(181, 49);
+            this.cboManager.Name = "cboManager";
+            this.cboManager.Size = new System.Drawing.Size(316, 24);
+            this.cboManager.TabIndex = 117;
+            this.cboManager.SelectedIndexChanged += new System.EventHandler(this.cboManager_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label7.Location = new System.Drawing.Point(19, 46);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(156, 23);
+            this.label7.TabIndex = 118;
+            this.label7.Text = "Responsible Manager :";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cboDirector
+            // 
+            this.cboDirector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDirector.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboDirector.FormattingEnabled = true;
+            this.cboDirector.Location = new System.Drawing.Point(181, 19);
+            this.cboDirector.Name = "cboDirector";
+            this.cboDirector.Size = new System.Drawing.Size(316, 24);
+            this.cboDirector.TabIndex = 116;
+            this.cboDirector.SelectedIndexChanged += new System.EventHandler(this.cboDirector_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label1.Location = new System.Drawing.Point(32, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(142, 23);
+            this.label1.TabIndex = 119;
+            this.label1.Text = "Responsible Director :";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // frmMonthlyProgress
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1422, 706);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.opt2);
             this.Controls.Add(this.opt0);
             this.Controls.Add(this.opt1);
@@ -217,6 +281,7 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv01)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,5 +303,10 @@
         private System.Windows.Forms.RadioButton opt1;
         private System.Windows.Forms.RadioButton opt2;
         private System.Windows.Forms.RadioButton opt0;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox cboManager;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cboDirector;
+        private System.Windows.Forms.Label label1;
     }
 }

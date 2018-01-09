@@ -33,10 +33,16 @@ namespace NSCOperationalPlan
             if (Program.OPLogin(txtUserName.Text.ToString(), txtPassword.Text.ToString()) == true)
             {
                 NSCUtils.ADUser aduser = new NSCUtils.ADUser(txtUserName.Text.ToString());
+                OPGlobals.PreviousUser = OPGlobals.CurrentUser;
+
                 Program.LoadUser(aduser, "P");
 
                 Cursor.Current = Cursors.AppStarting;
+                frmOperationPlan frm = frmOperationPlan.getInstance();
+                frm.ArrangeMenu();
+                MessageBox.Show("Hi " + OPGlobals.CurrentUser.UserName + ", Welcome to the NSC Operational Plan !", "Operation Plan", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Dispose();
+
             }
             else
             {

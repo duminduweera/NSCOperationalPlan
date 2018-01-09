@@ -149,6 +149,29 @@ namespace NSCOperationalPlan
 
             return result;
         }
+        public bool ChangeManagerKPI(Database db, DbConnection con, DbTransaction trans, string managerTo)
+        {
+            bool result = false;
+
+            Dictionary<string, dynamic> strdct = new Dictionary<string, dynamic>();
+            strdct.Add("KPI_ID", this._kpiID);
+            strdct.Add("ManagerFrom", this._managerID);
+            strdct.Add("ManagerTo", managerTo);
+
+            string query = "UPDATE kpi SET manager_id = @ManagerTo WHERE id = @KPI_ID AND manager_id = @ManagerFrom";
+
+            try
+            {
+                db.InsertUpdateDeleteRecord(con, trans, query, strdct);
+                result = true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message + Environment.NewLine + "Data NOT Saved, Please Contact IT");
+            }
+
+            return result;
+        }
 
         public bool InsertKPIEstimate(Database db, DbConnection con, DbTransaction trans)
         {
@@ -353,8 +376,9 @@ namespace NSCOperationalPlan
 
             strsql = "Select A.kpi_id, A.kpm_id, A.kpm_description, A.manager_id, A.manager_name, A.manager_description, A.director_description,"
             + " A.director_name, A.director_id, A.department, A.sub_department, A.efficiency_description, A.kpi_prefix_id, A.kpi_estimate_year,"
-            + " A.kpi_prefix, A.kpi_prefix_short, A.kpi_estimate, A.unit_id, A.kpi_unit, A.kpi_unit_short, A.service_plan_id, A.service_plan,"
-            + " B.kpi_year, B.kpi_month, B.kpi_progress, B.kpi_remark From view_kpi A Left Join"
+            + " A.kpi_prefix, A.kpi_prefix_short, if(A.kpi_estimate>0,A.kpi_estimate,0) as kpi_estimate, A.unit_id, A.kpi_unit, A.kpi_unit_short, A.service_plan_id, A.service_plan,"
+            + " '" + opYear + "' as kpi_year, " + opMonth + " as kpi_month,"
+            + " if(B.kpi_progress>0, B.kpi_progress,0) as kpi_progress, B.kpi_remark From view_kpi A Left Join"
             + " (Select kpi_progress.kpi_id, kpi_progress.kpi_year, kpi_progress.kpi_month, kpi_progress.kpi_progress, kpi_progress.kpi_remark"
             + " From kpi_progress Where kpi_progress.kpi_year = '" + opYear + "' And kpi_progress.kpi_month = " + opMonth + ") B On A.kpi_id = B.kpi_id" ;
             return strsql;
@@ -365,7 +389,7 @@ namespace NSCOperationalPlan
             strsql = GetMonthlyKPIProgressQuery(opYear, opMonth);
             if (!string.IsNullOrEmpty(opDirector)  && opDirector != "-0-")
             {
-                strsql += " WHERE director_id='" + opDirector + "'";
+                strsql += " WHERE manager_id='" + opDirector + "'";
             }
             return strsql;
         }

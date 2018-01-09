@@ -48,37 +48,40 @@
             this.tsbPrint = new System.Windows.Forms.ToolStripButton();
             this.label3 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
+            this.gpbox = new System.Windows.Forms.GroupBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.grd1)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            this.gpbox.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Location = new System.Drawing.Point(53, 140);
+            this.label1.Location = new System.Drawing.Point(12, 141);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 23);
+            this.label1.Size = new System.Drawing.Size(62, 23);
             this.label1.TabIndex = 29;
-            this.label1.Text = "Current Month :";
+            this.label1.Text = "Month :";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label2.Location = new System.Drawing.Point(53, 169);
+            this.label2.Location = new System.Drawing.Point(224, 143);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 23);
+            this.label2.Size = new System.Drawing.Size(53, 23);
             this.label2.TabIndex = 29;
-            this.label2.Text = "Current Year :";
+            this.label2.Text = "Year :";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtCurrentYear
             // 
             this.txtCurrentYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCurrentYear.ForeColor = System.Drawing.Color.Blue;
-            this.txtCurrentYear.Location = new System.Drawing.Point(169, 169);
+            this.txtCurrentYear.Location = new System.Drawing.Point(283, 143);
             this.txtCurrentYear.MaxLength = 5;
             this.txtCurrentYear.Name = "txtCurrentYear";
             this.txtCurrentYear.Size = new System.Drawing.Size(138, 23);
@@ -89,7 +92,7 @@
             this.cboCurrentMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCurrentMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCurrentMonth.FormattingEnabled = true;
-            this.cboCurrentMonth.Location = new System.Drawing.Point(169, 141);
+            this.cboCurrentMonth.Location = new System.Drawing.Point(80, 142);
             this.cboCurrentMonth.Name = "cboCurrentMonth";
             this.cboCurrentMonth.Size = new System.Drawing.Size(138, 24);
             this.cboCurrentMonth.TabIndex = 31;
@@ -97,9 +100,9 @@
             // grd1
             // 
             this.grd1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grd1.Location = new System.Drawing.Point(45, 195);
+            this.grd1.Location = new System.Drawing.Point(45, 172);
             this.grd1.Name = "grd1";
-            this.grd1.Size = new System.Drawing.Size(306, 143);
+            this.grd1.Size = new System.Drawing.Size(376, 232);
             this.grd1.TabIndex = 32;
             // 
             // toolStrip1
@@ -120,7 +123,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(378, 54);
+            this.toolStrip1.Size = new System.Drawing.Size(476, 54);
             this.toolStrip1.TabIndex = 33;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -224,9 +227,9 @@
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label3.Location = new System.Drawing.Point(53, 112);
+            this.label3.Location = new System.Drawing.Point(8, 112);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 23);
+            this.label3.Size = new System.Drawing.Size(66, 23);
             this.label3.TabIndex = 34;
             this.label3.Text = "New ID :";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -236,17 +239,37 @@
             this.txtID.Enabled = false;
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.ForeColor = System.Drawing.Color.Blue;
-            this.txtID.Location = new System.Drawing.Point(168, 112);
+            this.txtID.Location = new System.Drawing.Point(80, 113);
             this.txtID.MaxLength = 5;
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(138, 23);
             this.txtID.TabIndex = 35;
             // 
+            // gpbox
+            // 
+            this.gpbox.Controls.Add(this.progressBar1);
+            this.gpbox.Location = new System.Drawing.Point(45, 57);
+            this.gpbox.Name = "gpbox";
+            this.gpbox.Size = new System.Drawing.Size(376, 50);
+            this.gpbox.TabIndex = 37;
+            this.gpbox.TabStop = false;
+            this.gpbox.Visible = false;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(0, 25);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(376, 19);
+            this.progressBar1.Step = 1;
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar1.TabIndex = 37;
+            // 
             // frmParameters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(378, 347);
+            this.ClientSize = new System.Drawing.Size(476, 416);
+            this.Controls.Add(this.gpbox);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.toolStrip1);
@@ -261,6 +284,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grd1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.gpbox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,5 +310,7 @@
         private System.Windows.Forms.ToolStripButton tsbPrint;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.GroupBox gpbox;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

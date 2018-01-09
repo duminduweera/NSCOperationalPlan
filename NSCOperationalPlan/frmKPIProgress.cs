@@ -23,6 +23,18 @@ namespace NSCOperationalPlan
             InitializeComponent();
             dgv = new List<DataGridView>() { dgv01, dgv02, dgv03 };
         }
+        private void frmKPIProgress_Load(object sender, EventArgs e)
+        {
+            ArrangeGrids();
+            //LoadKPIFromDatabase();
+            ArrangeScreen();
+            opt0.Checked = true;
+            if (OPGlobals.CurrentUser.Permission == UserRights.Administrator || OPGlobals.CurrentUser.Permission == UserRights.GM)
+            {
+                groupBox1.Visible = true;
+                LoadDirectors();
+            }
+        }
 
         private void ArrangeGrids()
         {
@@ -76,27 +88,84 @@ namespace NSCOperationalPlan
             LoadFromDatabase(dgv03, "003");
         }
 
+        #region --- Select the Manager (ONLY FOR ADMINISTRATOR FUNCTION)--- 
+        private void LoadDirectors()
+        {
+            DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
+            DataTable tb = db.GetDataTable(conn, @"SELECT * FROM director_view;");
+
+            //----- Insert a new Row in 0 possition ---
+            DataRow dr = tb.NewRow();
+            dr["director_id"] = "-0-";
+            dr["director_description"] = "-NONE-";
+            tb.Rows.InsertAt(dr, 0);
+
+            cboDirector.DataSource = tb;
+            cboDirector.DisplayMember = "director_description";
+            cboDirector.ValueMember = "director_id";
+        }
+        private void LoadManagers()
+        {
+            DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
+
+            DataRowView row = (DataRowView)cboDirector.SelectedItem;
+            string strsql = "SELECT * FROM view_directors_plus_managers WHERE director_id = '" + row["director_id"].ToString() + "';";
+            DataTable tb = db.GetDataTable(conn, @strsql);
+
+            cboManager.DataSource = tb;
+            cboManager.DisplayMember = "manager_description";
+            cboManager.ValueMember = "manager_id";
+        }
+        private void cboDirector_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadManagers();
+        }
+        private void cboManager_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadKPIFromDatabase();
+        }
+
+        //-----------cboDirector_SelectedIndexChanged
+        //LoadManagers();
+        //-----------Manager SelectedIndexChanged---
+        //FillGrid();
+        #endregion
+
+
         private void LoadFromDatabase(DataGridView dgv, string kpitype)
         {
             DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
             //DataTable tb;
             string strsql;
 
-            if (opt2.Checked)
+            DataRowView dr1 = (DataRowView)cboDirector.SelectedItem;
+            DataRowView dr2 = (DataRowView)cboManager.SelectedItem;
+
+            if (dr2 != null)
             {
-                strsql = KeyPerformanceIndex.GetQueryKPIwithProgress(OPGlobals.currentYear, OPGlobals.currentMonth, kpitype);
-                //tb = KeyPerformanceIndex.GetKPIwithProgressTable(db, conn, OPGlobals.currentYear, OPGlobals.currentMonth, kpitype);
-            }
-            else if (opt1.Checked)
-            {
-                strsql = KeyPerformanceIndex.GetQueryKPIwithProgress(OPGlobals.currentYear, OPGlobals.currentMonth, kpitype, OPGlobals.CurrentUser.DirectorID);
-                //tb = KeyPerformanceIndex.GetKPIwithProgressTable(db, conn, OPGlobals.CurrentUser.DirectorID, OPGlobals.currentYear, OPGlobals.currentMonth, kpitype);
+                strsql = KeyPerformanceIndex.GetQueryKPIwithProgress(OPGlobals.currentYear, OPGlobals.currentMonth, kpitype, dr1["director_id"].ToString(), dr2["manager_id"].ToString());
             }
             else
             {
-                strsql = KeyPerformanceIndex.GetQueryKPIwithProgress(OPGlobals.currentYear, OPGlobals.currentMonth, kpitype, OPGlobals.CurrentUser.DirectorID, OPGlobals.CurrentUser.ManagerID);
-                //tb = KeyPerformanceIndex.GetKPIwithProgressTable(db, conn, OPGlobals.CurrentUser.ManagerID, OPGlobals.currentYear, OPGlobals.currentMonth, kpitype);
+                if (opt2.Checked)
+                {
+                    strsql = KeyPerformanceIndex.GetQueryKPIwithProgress(OPGlobals.currentYear, OPGlobals.currentMonth, kpitype);
+                    //tb = KeyPerformanceIndex.GetKPIwithProgressTable(db, conn, OPGlobals.currentYear, OPGlobals.currentMonth, kpitype);
+                }
+                else if (opt1.Checked)
+                {
+                    strsql = KeyPerformanceIndex.GetQueryKPIwithProgress(OPGlobals.currentYear, OPGlobals.currentMonth, kpitype, OPGlobals.CurrentUser.DirectorID);
+                    //tb = KeyPerformanceIndex.GetKPIwithProgressTable(db, conn, OPGlobals.CurrentUser.DirectorID, OPGlobals.currentYear, OPGlobals.currentMonth, kpitype);
+                }
+                else
+                {
+                    strsql = KeyPerformanceIndex.GetQueryKPIwithProgress(OPGlobals.currentYear, OPGlobals.currentMonth, kpitype, OPGlobals.CurrentUser.DirectorID, OPGlobals.CurrentUser.ManagerID);
+                    //tb = KeyPerformanceIndex.GetKPIwithProgressTable(db, conn, OPGlobals.CurrentUser.ManagerID, OPGlobals.currentYear, OPGlobals.currentMonth, kpitype);
+                }
             }
+
+
+
             //strsql += " AND A.kpm_id = '" + kpitype + "'";
 
             DataTable tb = db.GetDataTable(conn, strsql);
@@ -181,14 +250,6 @@ namespace NSCOperationalPlan
             }
 
             this.Dispose();
-        }
-
-        private void frmKPIProgress_Load(object sender, EventArgs e)
-        {
-            ArrangeGrids();
-            //LoadKPIFromDatabase();
-            ArrangeScreen();
-            opt0.Checked = true;
         }
 
         private void ArrangeScreen()

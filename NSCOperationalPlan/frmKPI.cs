@@ -182,6 +182,10 @@ namespace NSCOperationalPlan
             tabkpi.SelectedTab = tab01;
 
             ClearScreenData("NEW");
+            if(OPGlobals.CurrentUser.Permission != UserRights.Administrator)
+            {
+                txtKPIID.Visible = false;
+            }
 
             //mSelectedKPIForEdit.Clear();
 
