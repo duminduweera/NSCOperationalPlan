@@ -38,12 +38,6 @@
             this.tsbClear = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbPrint = new System.Windows.Forms.ToolStripButton();
-            this.dgv01 = new System.Windows.Forms.DataGridView();
-            this.dgv02 = new System.Windows.Forms.DataGridView();
-            this.dgv03 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.opt2 = new System.Windows.Forms.RadioButton();
             this.opt0 = new System.Windows.Forms.RadioButton();
             this.opt1 = new System.Windows.Forms.RadioButton();
@@ -52,11 +46,22 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cboDirector = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dgv01 = new System.Windows.Forms.DataGridView();
+            this.dgv02 = new System.Windows.Forms.DataGridView();
+            this.dgv03 = new System.Windows.Forms.DataGridView();
             this.toolStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv03)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -74,7 +79,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(1506, 54);
+            this.toolStrip1.Size = new System.Drawing.Size(1521, 54);
             this.toolStrip1.TabIndex = 16;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -150,77 +155,11 @@
             this.tsbPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbPrint.Click += new System.EventHandler(this.tsbPrint_Click);
             // 
-            // dgv01
-            // 
-            this.dgv01.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv01.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv01.Location = new System.Drawing.Point(12, 125);
-            this.dgv01.MultiSelect = false;
-            this.dgv01.Name = "dgv01";
-            this.dgv01.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgv01.Size = new System.Drawing.Size(1482, 267);
-            this.dgv01.TabIndex = 18;
-            // 
-            // dgv02
-            // 
-            this.dgv02.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv02.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv02.Location = new System.Drawing.Point(11, 421);
-            this.dgv02.Name = "dgv02";
-            this.dgv02.Size = new System.Drawing.Size(1483, 268);
-            this.dgv02.TabIndex = 19;
-            // 
-            // dgv03
-            // 
-            this.dgv03.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv03.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv03.Location = new System.Drawing.Point(11, 718);
-            this.dgv03.Name = "dgv03";
-            this.dgv03.Size = new System.Drawing.Size(1483, 224);
-            this.dgv03.TabIndex = 20;
-            this.dgv03.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv03_CellClick);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.BackColor = System.Drawing.Color.OliveDrab;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(12, 102);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(259, 23);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Efficiency Measures";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.BackColor = System.Drawing.Color.SteelBlue;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(11, 398);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(260, 23);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Effectiveness Measures";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.BackColor = System.Drawing.Color.Sienna;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(12, 695);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(259, 23);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "Workload Measures";
-            // 
             // opt2
             // 
             this.opt2.AutoSize = true;
             this.opt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.opt2.Location = new System.Drawing.Point(379, 98);
+            this.opt2.Location = new System.Drawing.Point(513, 123);
             this.opt2.Name = "opt2";
             this.opt2.Size = new System.Drawing.Size(248, 21);
             this.opt2.TabIndex = 109;
@@ -233,7 +172,7 @@
             // 
             this.opt0.AutoSize = true;
             this.opt0.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.opt0.Location = new System.Drawing.Point(379, 55);
+            this.opt0.Location = new System.Drawing.Point(513, 80);
             this.opt0.Name = "opt0";
             this.opt0.Size = new System.Drawing.Size(152, 21);
             this.opt0.TabIndex = 110;
@@ -246,7 +185,7 @@
             // 
             this.opt1.AutoSize = true;
             this.opt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.opt1.Location = new System.Drawing.Point(379, 78);
+            this.opt1.Location = new System.Drawing.Point(513, 103);
             this.opt1.Name = "opt1";
             this.opt1.Size = new System.Drawing.Size(60, 21);
             this.opt1.TabIndex = 111;
@@ -261,7 +200,7 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.cboDirector);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(725, 55);
+            this.groupBox1.Location = new System.Drawing.Point(975, 80);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(521, 70);
             this.groupBox1.TabIndex = 118;
@@ -312,31 +251,106 @@
             this.label4.Text = "Responsible Director :";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(11, 156);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1500, 594);
+            this.tabControl1.TabIndex = 119;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.tabPage1.Controls.Add(this.dgv01);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1492, 565);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Efficiency Measures";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.tabPage2.Controls.Add(this.dgv02);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1492, 565);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Effectiveness Measures";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.Tan;
+            this.tabPage3.Controls.Add(this.dgv03);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(1492, 565);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Workload Measures";
+            // 
+            // dgv01
+            // 
+            this.dgv01.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv01.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv01.Location = new System.Drawing.Point(11, 12);
+            this.dgv01.MultiSelect = false;
+            this.dgv01.Name = "dgv01";
+            this.dgv01.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgv01.Size = new System.Drawing.Size(1470, 542);
+            this.dgv01.TabIndex = 19;
+            // 
+            // dgv02
+            // 
+            this.dgv02.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv02.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv02.Location = new System.Drawing.Point(11, 12);
+            this.dgv02.Name = "dgv02";
+            this.dgv02.Size = new System.Drawing.Size(1470, 542);
+            this.dgv02.TabIndex = 20;
+            // 
+            // dgv03
+            // 
+            this.dgv03.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv03.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv03.Location = new System.Drawing.Point(11, 12);
+            this.dgv03.Name = "dgv03";
+            this.dgv03.Size = new System.Drawing.Size(1470, 542);
+            this.dgv03.TabIndex = 21;
+            // 
             // frmKPIProgress
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1506, 954);
+            this.ClientSize = new System.Drawing.Size(1521, 762);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.opt2);
             this.Controls.Add(this.opt0);
             this.Controls.Add(this.opt1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgv03);
-            this.Controls.Add(this.dgv02);
-            this.Controls.Add(this.dgv01);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmKPIProgress";
             this.Text = "frmKPIProgress";
             this.Load += new System.EventHandler(this.frmKPIProgress_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv01)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv02)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv03)).EndInit();
-            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -351,12 +365,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton tsbPrint;
-        private System.Windows.Forms.DataGridView dgv01;
-        private System.Windows.Forms.DataGridView dgv02;
-        private System.Windows.Forms.DataGridView dgv03;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ToolStripButton tsbPreviousMonth;
         private System.Windows.Forms.ToolStripButton tsbClear;
         private System.Windows.Forms.RadioButton opt2;
@@ -367,5 +375,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cboDirector;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.DataGridView dgv01;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView dgv02;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.DataGridView dgv03;
     }
 }

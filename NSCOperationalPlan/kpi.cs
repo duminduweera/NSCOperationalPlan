@@ -389,8 +389,11 @@ namespace NSCOperationalPlan
             strsql = GetMonthlyKPIProgressQuery(opYear, opMonth);
             if (!string.IsNullOrEmpty(opDirector)  && opDirector != "-0-")
             {
-                strsql += " WHERE manager_id='" + opDirector + "'";
+                strsql += " WHERE director_id='" + opDirector + "'";
+                //strsql += " WHERE manager_id='" + opDirector + "'";
+
             }
+
             return strsql;
         }
         public static string GetMonthlyKPIProgressQuery(string serviceID, string opYear, int opMonth)
