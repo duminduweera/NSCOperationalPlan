@@ -116,89 +116,48 @@ namespace NSCOperationalPlan
             if (conn.State == ConnectionState.Closed) { conn.Open(); }
 
             using (DbTransaction trans = conn.BeginTransaction())
-            {
-                try
-                {
+            {               
                     for (int i = 0; i < dgv01.RowCount; i++)
                     {
                         dgv01.CurrentCell = dgv01.Rows[i].Cells[0];
                         pb1.Value++;
-
+                    try
+                    {
                         projected = Double.Parse(string.IsNullOrEmpty(dgv01.Rows[i].Cells["Projected"].Value.ToString()) ? "0" : dgv01.Rows[i].Cells["Projected"].Value.ToString(),
-                            NumberStyles.AllowCurrencySymbol | NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint);
+                           NumberStyles.AllowCurrencySymbol | NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint);
                         revised = Double.Parse(string.IsNullOrEmpty(dgv01.Rows[i].Cells["Rev.Budget"].Value.ToString()) ? "0" : dgv01.Rows[i].Cells["Rev.Budget"].Value.ToString(),
                             NumberStyles.AllowCurrencySymbol | NumberStyles.AllowDecimalPoint | NumberStyles.AllowThousands);
-
                         if (projected <= 0)
-                        {
-                            msg += "Error in Row " + (i + 1).ToString() + " - Projected Budget" + Environment.NewLine;
+                        {                           
                             continue;
                         }
-
-                        if (projected != revised)
-                        {
-                            cw = new CapitalWork(int.Parse(dgv01.Rows[i].Cells["cpwID"].Value.ToString()));
-                            cw.CapitalWorkYear = OPGlobals.currentYear;
-                            cw.CapitalWorkMonth = OPGlobals.currentMonth;
-                            cw.RevisedBudget = projected;
-                            if (revised > 0)        //Edit
-                            {
-                                cw.UpdateCWPQBR(db, conn, trans);
-                            }
-                            else                    //New
-                            {
-                                cw.InsertCWPQBR(db, conn, trans);
-                            }
-                        }
+                        cw = new CapitalWork(int.Parse(dgv01.Rows[i].Cells["cpwID"].Value.ToString()));
+                        cw.CapitalWorkYear = OPGlobals.currentYear;
+                        cw.CapitalWorkMonth = OPGlobals.currentMonth;
+                        cw.RevisedBudget = projected;
+                        if (!cw.InsertCWPQBR(db, conn, trans)) {
+                            cw.UpdateCWPQBR(db, conn, trans);
+                        }                       
+                    }
+                    catch (NullReferenceException ex1)
+                    {
+                         continue;                         
+                    }
+                    catch (Exception ex)
+                    {
+                        trans.Rollback();
+                        msg = ex.Message;
+                        break;
+                    }                    
                     }
                     trans.Commit();
                     msg += "Data saved successfully";
-                    LoadTableFromDatabase();
-                }
-                catch (Exception ex)
-                {
-                    trans.Rollback();
-                    msg = ex.Message ;
-                }
+                    LoadTableFromDatabase();           
             }
             conn.Close();
-
             MessageBox.Show(msg, "OPERATION PLAN", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            pb1.Visible = false;
-
-            //DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
-            //if (conn.State == ConnectionState.Closed) { conn.Open(); }
-            //using (DbTransaction trans = conn.BeginTransaction())
-            //{
-            //    try
-            //    {
-            //        for (int i = 0; i < cpw.Count; i++)
-            //        {
-
-            //            if (cpw.Values.ElementAt(i))        // Add New Progress
-            //            {
-            //                cpw.Keys.ElementAt(i).InsertCWPMonthly(db, conn, trans);
-            //            }
-            //            else                                //Edit an existing Progress
-            //            {
-            //                cpw.Keys.ElementAt(i).UpdateCWPMonthly(db, conn, trans);
-            //            }
-            //        }
-
-            //        trans.Commit();
-            //        msg2 += "Capital Work Monthly Progress has been saved/updated successfully";
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        trans.Rollback();
-            //        opstatus = false;
-            //        msg2 += "Data NOT Saved ..." + Environment.NewLine + ex.Message;
-            //    }
-            //}
-            //conn.Close();
+            pb1.Visible = false;     
         }
-
         private void tsbPrint_Click(object sender, EventArgs e)
         {
             clsReports.PrintCapitalWorksQBR(OPGlobals.currentYear, OPGlobals.currentMonth);

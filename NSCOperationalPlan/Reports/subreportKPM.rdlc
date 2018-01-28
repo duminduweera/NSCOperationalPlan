@@ -384,7 +384,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(Code.CheckNullAndReturnAsString(Fields!kpi_progress.Value) &lt;&gt; -9999, Switch(Fields!kpi_unit.Value = "$",Fields!kpi_prefix_short.Value + "" + Fields!kpi_unit.Value + " " + Format(Fields!kpi_progress.Value,"#,##0.##").ToString , 1=1 , Format(Fields!kpi_progress.Value,"#,##0.##").ToString + " " + Fields!kpi_unit.Value), "-")</Value>
+                                  <Value>=IIF(Code.CheckNullAndReturnAsString(Fields!kpi_progress.Value) &lt;&gt; -9999, Switch(Fields!kpi_unit.Value = "$",Fields!kpi_unit.Value + " " + Format(Fields!kpi_progress.Value,"#,##0.##").ToString , 1=1 , Format(Fields!kpi_progress.Value,"#,##0.##").ToString + " " + Fields!kpi_unit.Value), "-")</Value>
                                   <Style>
                                     <FontFamily>Calibri</FontFamily>
                                     <Color>#4d4d4d</Color>
@@ -408,6 +408,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -639,7 +640,7 @@
             </TablixRowHierarchy>
             <DataSetName>DataSetKPM</DataSetName>
             <Height>2.5cm</Height>
-            <Width>17.43952cm</Width>
+            <Width>17.43953cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -650,7 +651,7 @@
         <Height>0.98425in</Height>
         <Style />
       </Body>
-      <Width>6.86595in</Width>
+      <Width>6.86596in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>

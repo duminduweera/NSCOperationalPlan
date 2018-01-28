@@ -384,7 +384,7 @@ namespace NSCOperationalPlan
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message + Environment.NewLine + "Data NOT Saved to QBR Table, Please Contact IT");
+                return false;                
             }
 
             return result;
@@ -409,7 +409,7 @@ namespace NSCOperationalPlan
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message + Environment.NewLine + "Data NOT Saved, Update Error QBR Table");
+                 return false;
             }
 
             return result;
