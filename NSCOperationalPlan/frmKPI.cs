@@ -43,6 +43,7 @@ namespace NSCOperationalPlan
             dct.Add("Est.Year", 60);        //10
             dct.Add("SP_ID", 0);            //11
             dct.Add("Service Plan", 230);   //12
+            dct.Add("STATUS", 50);          //13
 
             dct.Add("BDescription", 0);    //2
             dct.Add("BPrefixID", 0);         //3
@@ -50,9 +51,10 @@ namespace NSCOperationalPlan
             dct.Add("BUnitID", 0);           //6
             dct.Add("BManagerID", 0);        //8
             dct.Add("BSP_ID", 0);            //11
+            dct.Add("BSTATUS", 0);            //13
 
 
-            int[] hiddenRows = { 1, 3, 6, 8, 11, 13, 14, 15, 16, 17, 18 };
+            int[] hiddenRows = { 1, 3, 6, 8, 11, 14, 15, 16, 17, 18, 19, 20 };
             //int[] hiddenRows = { };
 
             for (int i = 0; i < dgvList.Count; i++)
@@ -71,7 +73,7 @@ namespace NSCOperationalPlan
                 try
                 {
                     {
-                        dgv.Rows.Add(new String[] {(dgv.RowCount+1).ToString(), "", txtEffiDes.Text,
+                        dgv.Rows.Add((dgv.RowCount+1).ToString(), "", txtEffiDes.Text,
                         cboEffiPrefix.SelectedValue.ToString(),
                         cboEffiPrefix.Text,
                         txtEffiValue.Text,
@@ -81,8 +83,9 @@ namespace NSCOperationalPlan
                         cboManager.Text,
                         txtEffiYear.Text,
                         cboServicePlan.SelectedValue.ToString(),
-                        cboServicePlan.Text
-                    });
+                        cboServicePlan.Text,
+                        (chkStatus.Checked==true) ? true : false
+                    );
                     }
                     MyGridUtils.ColorDataGrid(dgv);
                     dgv.CurrentCell = null;
@@ -104,6 +107,7 @@ namespace NSCOperationalPlan
                 dgv.SelectedRows[0].Cells["Unit"].Value = cboEffiUnits.Text;
                 dgv.SelectedRows[0].Cells["SP_ID"].Value = cboServicePlan.SelectedValue.ToString();
                 dgv.SelectedRows[0].Cells["Service Plan"].Value = cboServicePlan.Text;
+                dgv.SelectedRows[0].Cells["STATUS"].Value = (chkStatus.Checked == true) ? true : false;
 
                 txtKPIID.Text = "";
             }
@@ -302,8 +306,8 @@ namespace NSCOperationalPlan
                 for (int i = 0; i < dgv.RowCount; i++)
                 {
                     if (!MyGridUtils.IsColumnDataChanged(dgv.Rows[i], 
-                        new List<String>() { "Description", "PrefixID", "Value", "UnitID", "ManagerID", "SP_ID" }, 
-                        new List<String>() { "BDescription", "BPrefixID", "BValue", "BUnitID", "BManagerID", "BSP_ID" }))
+                        new List<String>() { "Description", "PrefixID", "Value", "UnitID", "ManagerID", "SP_ID", "STATUS" }, 
+                        new List<String>() { "BDescription", "BPrefixID", "BValue", "BUnitID", "BManagerID", "BSP_ID", "BSTATUS" }))
                     {
                         continue;
                     }
@@ -330,6 +334,8 @@ namespace NSCOperationalPlan
                     kpi.EstimateValue = Convert.ToDouble(dgv.Rows[i].Cells["Value"].Value);
                     kpi.Unit = dgv.Rows[i].Cells["UnitID"].Value.ToString();
                     kpi.ServicePlanID = dgv.Rows[i].Cells["SP_ID"].Value == null ? "000" : dgv.Rows[i].Cells["SP_ID"].Value.ToString();
+                    kpi.Status = ((dgv.Rows[i].Cells["STATUS"].Value.ToString().ToUpper() == "TRUE") ? true : false);
+
                     if (mNewFlag)
                     {
                         kpi.InsertKPI(db, con, trans);
@@ -439,7 +445,7 @@ namespace NSCOperationalPlan
                 DataTable tb = KeyPerformanceIndex.GetKPITable(db, conn, cboManager.SelectedValue.ToString(), OPGlobals.currentYear, kpitype);
                 foreach (DataRow row in tb.Rows)
                 {
-                    dgv.Rows.Add(new String[] {(dgv.RowCount+1).ToString(),
+                    dgv.Rows.Add((dgv.RowCount+1).ToString(),
                         row["kpi_id"].ToString(),
                         row["efficiency_description"].ToString(),
                         row["kpi_prefix_id"].ToString(),
@@ -452,13 +458,15 @@ namespace NSCOperationalPlan
                         row["kpi_estimate_year"].ToString(),
                         row["service_plan_id"].ToString(),
                         row["service_plan"].ToString(),
+                        row["kpi_status"],
                         row["efficiency_description"].ToString(),
                         row["kpi_prefix_id"].ToString(),
                         row["kpi_estimate"].ToString(),
                         row["unit_id"].ToString(),
                         row["manager_id"].ToString(),
-                        row["service_plan_id"].ToString()
-                });
+                        row["service_plan_id"].ToString(),
+                        row["kpi_status"]
+                );
                 }
                 dgv.CurrentCell = null;
             }
@@ -477,7 +485,7 @@ namespace NSCOperationalPlan
             try { cboEffiPrefix.SelectedValue = dgvRow.Cells["PrefixID"].Value.ToString(); } catch { }
             try { cboEffiUnits.SelectedValue = dgvRow.Cells["UnitID"].Value.ToString(); } catch { }
             try { cboServicePlan.SelectedValue = dgvRow.Cells["SP_ID"].Value.ToString(); } catch { }
-
+            try { chkStatus.Checked = ((dgvRow.Cells["BSTATUS"].Value.ToString().ToUpper() == "TRUE") ? true : false); } catch { chkStatus.Checked = false; }
         }
 
         private void tabkpi_Selected(object sender, TabControlEventArgs e)

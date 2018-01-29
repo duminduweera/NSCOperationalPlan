@@ -21,6 +21,7 @@ namespace NSCOperationalPlan
         private int     _kpiMonth;
         private string  _monthlyRemark;
         private string  _service_plan_id;
+        private bool _status;
 
         #region --- Class Members
         public int KPIID
@@ -89,9 +90,14 @@ namespace NSCOperationalPlan
             get { return _monthlyRemark; }
             set { _monthlyRemark = value; }
         }
+        public bool Status
+        {
+            get { return _status; }
+            set { _status = value; }
+        }
         #endregion
 
-        public KeyPerformanceIndex() { }
+        public KeyPerformanceIndex() { this._status = true; }
 
         public bool InsertKPI(Database db, DbConnection con, DbTransaction trans)
         {
@@ -104,10 +110,11 @@ namespace NSCOperationalPlan
             strdct.Add("Prefix", this._kpiPrefix);
             strdct.Add("Units", this._kpiUnit);
             strdct.Add("ServicePlan", this._service_plan_id);
+            strdct.Add("Status", this._status);
 
             string query = @"INSERT INTO kpi"
-                + " (id, kpm_id, manager_id, efficiency_description, prefix, unit, service_plan_id)"
-                + " VALUES (@KPI_ID, @KPM_ID, @ManagerID, @Description, @Prefix, @Units, @ServicePlan)";
+                + " (id, kpm_id, manager_id, efficiency_description, prefix, unit, service_plan_id, kpistatus)"
+                + " VALUES (@KPI_ID, @KPM_ID, @ManagerID, @Description, @Prefix, @Units, @ServicePlan, @Status)";
             try
             {
                 db.InsertUpdateDeleteRecord(con, trans, query, strdct);
@@ -132,10 +139,11 @@ namespace NSCOperationalPlan
             strdct.Add("Prefix", this._kpiPrefix);
             strdct.Add("Units", this._kpiUnit);
             strdct.Add("ServicePlan", this._service_plan_id);
+            strdct.Add("Status", this._status);
 
 
             string query = "UPDATE kpi SET manager_id = @ManagerID,"
-                + " efficiency_description = @Description , prefix = @Prefix, unit = @Units, service_plan_id = @ServicePlan WHERE id = @KPI_ID;";
+                + " efficiency_description = @Description , prefix = @Prefix, unit = @Units, service_plan_id = @ServicePlan, kpistatus = @status WHERE id = @KPI_ID;";
 
             try
             {
@@ -330,14 +338,6 @@ namespace NSCOperationalPlan
 
         public static string GetQueryKPIwithProgress(string kpiyear, int kpimonth, string kpm)
         {
-            //string strsql = "SELECT A.kpi_id, A.kpm_id, A.kpm_description, A.manager_id, A.director_id, A.manager_name, A.manager_description,"
-            //    + " A.director_name, A.director_description, A.efficiency_description, A.kpi_prefix_id, A.kpi_prefix, A.kpi_prefix_short,"
-            //    + " A.kpi_estimate, A.unit_id, A.kpi_unit, A.kpi_unit_short, A.kpi_estimate_year, B.kpi_progress, B.kpi_remark, B.kpi_month, B.kpi_year"
-            //    + " FROM view_kpi A Left Join"
-            //    + "(Select kpi_progress.kpi_id, kpi_progress.kpi_year, kpi_progress.kpi_month, kpi_progress.kpi_progress, kpi_progress.kpi_remark"
-            //    + " FROM kpi_progress WHERE kpi_progress.kpi_year = '" + kpiyear + "' AND kpi_progress.kpi_month =" + kpimonth + ") B "
-            //    + " On A.kpi_id = B.kpi_id"
-            //    + " WHERE A.kpi_estimate_year = '" + kpiyear + "' and A.kpm_id = '" + kpm + "'";
             string strsql = GetMonthlyKPIProgressQuery(kpiyear, kpimonth);
             strsql += " AND A.kpm_id = '" + kpm + "'";
             return strsql;
@@ -380,7 +380,8 @@ namespace NSCOperationalPlan
             + " '" + opYear + "' as kpi_year, " + opMonth + " as kpi_month,"
             + " if(B.kpi_progress>0, B.kpi_progress,0) as kpi_progress, B.kpi_remark From view_kpi A Left Join"
             + " (Select kpi_progress.kpi_id, kpi_progress.kpi_year, kpi_progress.kpi_month, kpi_progress.kpi_progress, kpi_progress.kpi_remark"
-            + " From kpi_progress Where kpi_progress.kpi_year = '" + opYear + "' And kpi_progress.kpi_month = " + opMonth + ") B On A.kpi_id = B.kpi_id" ;
+            + " From kpi_progress Where kpi_progress.kpi_year = '" + opYear + "' And kpi_progress.kpi_month = " + opMonth + ") B On A.kpi_id = B.kpi_id"
+            + " WHERE kpi_status = " + true ;
             return strsql;
         }
         public static string GetMonthlyKPIProgressQuery(string opYear, int opMonth, string opDirector)
@@ -389,7 +390,7 @@ namespace NSCOperationalPlan
             strsql = GetMonthlyKPIProgressQuery(opYear, opMonth);
             if (!string.IsNullOrEmpty(opDirector)  && opDirector != "-0-")
             {
-                strsql += " WHERE director_id='" + opDirector + "'";
+                strsql += " AND director_id='" + opDirector + "'";
                 //strsql += " WHERE manager_id='" + opDirector + "'";
 
             }
@@ -402,7 +403,7 @@ namespace NSCOperationalPlan
             strsql = GetMonthlyKPIProgressQuery(opYear, opMonth);
             if (!string.IsNullOrEmpty(serviceID) && serviceID != "000")
             {
-                strsql += " WHERE service_plan_id ='" + serviceID + "'";
+                strsql += " AND service_plan_id ='" + serviceID + "'";
             }
             return strsql;
         }
@@ -415,11 +416,11 @@ namespace NSCOperationalPlan
 
             if (string.IsNullOrEmpty(opManager) || opManager == "-0-")
             {
-                strsql += " WHERE director_id='" + opDirector + "'";
+                strsql += " AND director_id='" + opDirector + "'";
             }
             else
             {
-                strsql += " WHERE director_id='" + opDirector + "' AND manager_id='" + opManager + "'";
+                strsql += " AND director_id='" + opDirector + "' AND manager_id='" + opManager + "'";
             }
 
             return strsql;

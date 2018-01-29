@@ -406,6 +406,7 @@ namespace NSCOperationalPlan
             frmprint.dataTable = CapitalWork.GetTableCapitalWorksMonthlyProgress(cpw_year, cpw_month);
             frmprint.reportName = @"rptcpw_progressCouncil.rdlc";
 
+
             frmprint.Show();
 
         }
@@ -425,6 +426,8 @@ namespace NSCOperationalPlan
 
             frmprint.dataTable = CapitalWork.GetTableCapitalWorksMonthlyProgress(cpw_year, cpw_month, directorId, managerId);
             frmprint.reportName = @"rptcpw_progressCouncil.rdlc";
+
+            
 
             frmprint.Show();
 
