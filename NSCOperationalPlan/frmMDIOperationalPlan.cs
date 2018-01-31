@@ -377,9 +377,7 @@ namespace NSCOperationalPlan
 
         private void originalBudgetToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCPW frmcpw = new frmCPW();
-            ArrangeForm(frmcpw);
-            frmcpw.ShowDialog();       // .Show();
+           
         }
 
         private void capitalWorkMonthlyProgressToolStripMenuItem_Click(object sender, EventArgs e)
@@ -490,6 +488,13 @@ namespace NSCOperationalPlan
             FrmReAssignManager frm = new FrmReAssignManager();
             ArrangeForm(frm);
             frm.ShowDialog();
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            frmCPW frmcpw = new frmCPW();
+            ArrangeForm(frmcpw);
+            frmcpw.ShowDialog();       // .Show();
         }
 
         //private void subReportingTestingToolStripMenuItem_Click(object sender, EventArgs e)
