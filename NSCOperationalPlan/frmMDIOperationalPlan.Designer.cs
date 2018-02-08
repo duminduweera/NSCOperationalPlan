@@ -44,8 +44,8 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuPI = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCPW = new System.Windows.Forms.ToolStripMenuItem();
-            this.originalBudgetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MonthlyYTDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.QBRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
@@ -110,6 +110,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuRptDeliveryPlan = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -143,6 +145,7 @@
             this.toolStripSeparator5,
             this.mnuPI,
             this.toolStripSeparator1,
+            this.toolStripMenuItem4,
             this.mnuCPW,
             this.toolStripSeparator17,
             this.reAssignManagerToolStripMenuItem,
@@ -233,10 +236,17 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(247, 6);
             // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(250, 22);
+            this.toolStripMenuItem4.Tag = "A07_1";
+            this.toolStripMenuItem4.Text = "Capital Works";
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
+            // 
             // mnuCPW
             // 
             this.mnuCPW.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.originalBudgetToolStripMenuItem,
             this.MonthlyYTDToolStripMenuItem,
             this.QBRToolStripMenuItem});
             this.mnuCPW.Image = global::NSCOperationalPlan.Properties.Resources.cpw_32x32;
@@ -244,15 +254,6 @@
             this.mnuCPW.Size = new System.Drawing.Size(250, 22);
             this.mnuCPW.Tag = "A07";
             this.mnuCPW.Text = "Capital Work Program";
-            // 
-            // originalBudgetToolStripMenuItem
-            // 
-            this.originalBudgetToolStripMenuItem.Image = global::NSCOperationalPlan.Properties.Resources.cpw_32x32;
-            this.originalBudgetToolStripMenuItem.Name = "originalBudgetToolStripMenuItem";
-            this.originalBudgetToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.originalBudgetToolStripMenuItem.Tag = "A71";
-            this.originalBudgetToolStripMenuItem.Text = "Original Budget";
-            this.originalBudgetToolStripMenuItem.Click += new System.EventHandler(this.originalBudgetToolStripMenuItem_Click);
             // 
             // MonthlyYTDToolStripMenuItem
             // 
@@ -369,7 +370,9 @@
             this.toolStripSeparator13,
             this.councilReportToolStripMenuItem,
             this.toolStripSeparator14,
-            this.mnuRptCouncilSource});
+            this.mnuRptCouncilSource,
+            this.toolStripSeparator9,
+            this.mnuRptDeliveryPlan});
             this.testToolStripMenuItem.Name = "testToolStripMenuItem";
             this.testToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.testToolStripMenuItem.Tag = "C00";
@@ -845,6 +848,18 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(238, 6);
+            // 
+            // mnuRptDeliveryPlan
+            // 
+            this.mnuRptDeliveryPlan.Name = "mnuRptDeliveryPlan";
+            this.mnuRptDeliveryPlan.Size = new System.Drawing.Size(241, 22);
+            this.mnuRptDeliveryPlan.Text = "Delivery Program";
+            this.mnuRptDeliveryPlan.Click += new System.EventHandler(this.mnuRptDeliveryPlan_Click);
+            // 
             // frmOperationPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -928,7 +943,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator15;
         private System.Windows.Forms.ToolStripMenuItem mnuMonthlyKPIProgress;
         private System.Windows.Forms.ToolStripMenuItem mnuCPW;
-        private System.Windows.Forms.ToolStripMenuItem originalBudgetToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MonthlyYTDToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem QBRToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator17;
@@ -958,6 +972,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem reAssignManagerToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
+        private System.Windows.Forms.ToolStripMenuItem mnuRptDeliveryPlan;
     }
 }
 

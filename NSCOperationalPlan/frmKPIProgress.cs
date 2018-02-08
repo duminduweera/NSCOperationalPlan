@@ -256,7 +256,7 @@ namespace NSCOperationalPlan
         {
 
             //this.Width = Screen.FromControl(this).Bounds.Width;
-            this.Height = Screen.FromControl(this).Bounds.Height - 200;
+            //this.Height = Screen.FromControl(this).Bounds.Height - 200;
 
             opt1.Text = "Show all Actions in " + OPGlobals.CurrentUser.Department;
 

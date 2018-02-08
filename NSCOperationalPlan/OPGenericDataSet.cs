@@ -4,6 +4,11 @@
 
     partial class OPGenericDataSet
     {
+        partial class DeliveryProgramDataTable
+        {
+            
+        }
+
         partial class EOFYActionsDataTable
         {
         }

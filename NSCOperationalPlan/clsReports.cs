@@ -105,7 +105,6 @@ namespace NSCOperationalPlan
             frmprint.Show();
 
         }
-
       
         public static void PrintAction(string query)
         {
@@ -212,7 +211,6 @@ namespace NSCOperationalPlan
 
         }
 
-
         public static void PrintActionByThemeGraph()
         {
             frmPrint frmprint = new frmPrint();
@@ -280,32 +278,6 @@ namespace NSCOperationalPlan
             frmprint.Show();
         }
 
-        //public static void PrintStrategyDashboard(string pyear, int pmonth)
-        //{
-        //    frmPrint frmprint = new frmPrint();
-
-        //    Database db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
-        //    DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
-        //    DataTable tb = new DataTable();
-        //    string strsql = null;
-
-        //    strsql = "Select B.status_id, B.status_short, B.status_color, B.completed_actions_by_status_by_strategy," + pmonth + " as progress_month, A.strategy_objective_id,"
-        //        + " Concat(A.strategy_objective_id, ' - ', A.strategy_objective) As strategy_objective,"
-        //        + " A.strategy_id, Concat(A.strategy_id, ' - ', A.strategy) As strategy, A.theme_id, A.theme_short, A.theme_color, A.number_of_actions, A.delivery_program_year"
-        //        + " From (Select view_action_count_by_strategy.* From view_action_count_by_strategy"
-        //        + " Where view_action_count_by_strategy.delivery_program_year = '" + pyear + "' Order By"
-        //        + " view_action_count_by_strategy.theme_id, view_action_count_by_strategy.strategy_objective_id, view_action_count_by_strategy.strategy_id) A Left Join"
-        //        + " (Select view_completed_action_by_strategy_status.* From view_completed_action_by_strategy_status Where"
-        //        + " view_completed_action_by_strategy_status.progress_year = '" + pyear + "' And view_completed_action_by_strategy_status.progress_month = " + pmonth
-        //        + " Order By view_completed_action_by_strategy_status.status_id) B On A.delivery_program_year = B.progress_year And A.strategy_id = B.strategy_id;";
-        //    tb = db.GetDataTable(conn, strsql);
-
-        //    frmprint.dataTable = tb;
-        //    frmprint.reportName = @"rptCompletedActionsByStrategy.rdlc";
-
-        //    frmprint.Show();
-
-        //}
         public static void PrintStrategyDashboard(string strsql)
         {
             frmPrint frmprint = new frmPrint();
@@ -379,7 +351,6 @@ namespace NSCOperationalPlan
             frmprint.Show();
         }
 
-
         public static void PrintCapitalWorksDepartmentSummary(string cpw_year, int cpw_month, string department)
         {
             frmPrint frmprint = new frmPrint();
@@ -406,6 +377,7 @@ namespace NSCOperationalPlan
             frmprint.dataTable = CapitalWork.GetTableCapitalWorksMonthlyProgress(cpw_year, cpw_month);
             frmprint.reportName = @"rptcpw_progressCouncil.rdlc";
 
+
             frmprint.Show();
 
         }
@@ -425,6 +397,8 @@ namespace NSCOperationalPlan
 
             frmprint.dataTable = CapitalWork.GetTableCapitalWorksMonthlyProgress(cpw_year, cpw_month, directorId, managerId);
             frmprint.reportName = @"rptcpw_progressCouncil.rdlc";
+
+            
 
             frmprint.Show();
 
@@ -551,7 +525,6 @@ namespace NSCOperationalPlan
             PrintKPIProgressReportCouncil(strsql);
         }
 
-
         public static void PrintKPIProgressFull(string opYear, int opMonth)
         {
             string strsql = KeyPerformanceIndex.GetMonthlyKPIProgressQuery(opYear, opMonth);
@@ -567,7 +540,6 @@ namespace NSCOperationalPlan
             string strsql = KeyPerformanceIndex.GetMonthlyKPIProgressQuery(opYear, opMonth, directorID, managerId);
             PrintKPIProgressReportFull(strsql);
         }
-
 
         public static void TestSubReport(string opYear, int opMonth, string directorID, string managerID)
         {
@@ -599,5 +571,22 @@ namespace NSCOperationalPlan
             frmprint.Show();
 
         }
+
+        public static void PrintDeliveryProgram()
+        {
+            frmPrint frmprint = new frmPrint();
+
+            Database db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
+            DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
+            string strsql = "SELECT view_delivery_program.* FROM view_delivery_program;";
+            DataTable tb = db.GetDataTable(conn, strsql);
+
+            frmprint.dataTable = tb;
+            frmprint.reportName = @"rptStrategyMeasureMonthly.rdlc";
+
+            frmprint.Show();
+
+        }
+
     }
 }

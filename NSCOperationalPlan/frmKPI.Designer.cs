@@ -68,6 +68,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtKPIID = new System.Windows.Forms.TextBox();
+            this.chkStatus = new System.Windows.Forms.CheckBox();
             this.toolStrip1.SuspendLayout();
             this.tabkpi.SuspendLayout();
             this.tab01.SuspendLayout();
@@ -207,11 +208,11 @@
             this.tabkpi.Controls.Add(this.tab03);
             this.tabkpi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabkpi.ItemSize = new System.Drawing.Size(200, 23);
-            this.tabkpi.Location = new System.Drawing.Point(10, 314);
+            this.tabkpi.Location = new System.Drawing.Point(10, 283);
             this.tabkpi.Multiline = true;
             this.tabkpi.Name = "tabkpi";
             this.tabkpi.SelectedIndex = 0;
-            this.tabkpi.Size = new System.Drawing.Size(1326, 586);
+            this.tabkpi.Size = new System.Drawing.Size(1326, 524);
             this.tabkpi.TabIndex = 16;
             this.tabkpi.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabkpi_DrawItem);
             this.tabkpi.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabkpi_Selected);
@@ -223,7 +224,7 @@
             this.tab01.Location = new System.Drawing.Point(4, 27);
             this.tab01.Name = "tab01";
             this.tab01.Padding = new System.Windows.Forms.Padding(3);
-            this.tab01.Size = new System.Drawing.Size(1318, 555);
+            this.tab01.Size = new System.Drawing.Size(1318, 493);
             this.tab01.TabIndex = 0;
             this.tab01.Text = "Efficiency Measure";
             // 
@@ -235,7 +236,7 @@
             this.dgv01.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv01.Location = new System.Drawing.Point(7, 6);
             this.dgv01.Name = "dgv01";
-            this.dgv01.Size = new System.Drawing.Size(1305, 543);
+            this.dgv01.Size = new System.Drawing.Size(1305, 481);
             this.dgv01.TabIndex = 0;
             this.dgv01.DoubleClick += new System.EventHandler(this.dgv01_DoubleClick);
             // 
@@ -342,7 +343,7 @@
             this.txtEffiID.BackColor = System.Drawing.Color.White;
             this.txtEffiID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEffiID.ForeColor = System.Drawing.Color.Blue;
-            this.txtEffiID.Location = new System.Drawing.Point(1094, 211);
+            this.txtEffiID.Location = new System.Drawing.Point(1102, 193);
             this.txtEffiID.Name = "txtEffiID";
             this.txtEffiID.Size = new System.Drawing.Size(135, 23);
             this.txtEffiID.TabIndex = 57;
@@ -354,7 +355,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Window;
             this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label5.Location = new System.Drawing.Point(512, 211);
+            this.label5.Location = new System.Drawing.Point(512, 191);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(135, 23);
             this.label5.TabIndex = 56;
@@ -367,7 +368,7 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.Window;
             this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label8.Location = new System.Drawing.Point(362, 212);
+            this.label8.Location = new System.Drawing.Point(362, 192);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(135, 23);
             this.label8.TabIndex = 55;
@@ -379,7 +380,7 @@
             this.cboEffiUnits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEffiUnits.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboEffiUnits.FormattingEnabled = true;
-            this.cboEffiUnits.Location = new System.Drawing.Point(513, 234);
+            this.cboEffiUnits.Location = new System.Drawing.Point(513, 214);
             this.cboEffiUnits.Name = "cboEffiUnits";
             this.cboEffiUnits.Size = new System.Drawing.Size(134, 24);
             this.cboEffiUnits.TabIndex = 7;
@@ -389,7 +390,7 @@
             this.cboEffiPrefix.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEffiPrefix.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboEffiPrefix.FormattingEnabled = true;
-            this.cboEffiPrefix.Location = new System.Drawing.Point(211, 236);
+            this.cboEffiPrefix.Location = new System.Drawing.Point(211, 216);
             this.cboEffiPrefix.Name = "cboEffiPrefix";
             this.cboEffiPrefix.Size = new System.Drawing.Size(134, 24);
             this.cboEffiPrefix.TabIndex = 5;
@@ -399,7 +400,7 @@
             this.txtEffiValue.BackColor = System.Drawing.Color.White;
             this.txtEffiValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEffiValue.ForeColor = System.Drawing.Color.Blue;
-            this.txtEffiValue.Location = new System.Drawing.Point(362, 235);
+            this.txtEffiValue.Location = new System.Drawing.Point(362, 215);
             this.txtEffiValue.Name = "txtEffiValue";
             this.txtEffiValue.Size = new System.Drawing.Size(135, 23);
             this.txtEffiValue.TabIndex = 6;
@@ -409,7 +410,7 @@
             this.txtEffiDes.BackColor = System.Drawing.Color.White;
             this.txtEffiDes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEffiDes.ForeColor = System.Drawing.Color.Blue;
-            this.txtEffiDes.Location = new System.Drawing.Point(211, 182);
+            this.txtEffiDes.Location = new System.Drawing.Point(211, 162);
             this.txtEffiDes.Name = "txtEffiDes";
             this.txtEffiDes.Size = new System.Drawing.Size(1026, 23);
             this.txtEffiDes.TabIndex = 4;
@@ -420,7 +421,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Window;
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label4.Location = new System.Drawing.Point(210, 213);
+            this.label4.Location = new System.Drawing.Point(210, 193);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(135, 23);
             this.label4.TabIndex = 49;
@@ -431,7 +432,7 @@
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label2.Location = new System.Drawing.Point(62, 184);
+            this.label2.Location = new System.Drawing.Point(62, 164);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(142, 23);
             this.label2.TabIndex = 48;
@@ -444,9 +445,9 @@
             this.lblkpi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblkpi.ForeColor = System.Drawing.Color.Black;
             this.lblkpi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblkpi.Location = new System.Drawing.Point(979, 237);
+            this.lblkpi.Location = new System.Drawing.Point(1196, 217);
             this.lblkpi.Name = "lblkpi";
-            this.lblkpi.Size = new System.Drawing.Size(331, 63);
+            this.lblkpi.Size = new System.Drawing.Size(114, 63);
             this.lblkpi.TabIndex = 58;
             this.lblkpi.Text = "Prefix";
             this.lblkpi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -457,7 +458,7 @@
             this.btnEffiAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEffiAdd.Image = global::NSCOperationalPlan.Properties.Resources.Efficiency;
             this.btnEffiAdd.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEffiAdd.Location = new System.Drawing.Point(799, 213);
+            this.btnEffiAdd.Location = new System.Drawing.Point(799, 193);
             this.btnEffiAdd.Name = "btnEffiAdd";
             this.btnEffiAdd.Size = new System.Drawing.Size(254, 81);
             this.btnEffiAdd.TabIndex = 8;
@@ -509,11 +510,23 @@
             this.txtKPIID.Size = new System.Drawing.Size(135, 23);
             this.txtKPIID.TabIndex = 60;
             // 
+            // chkStatus
+            // 
+            this.chkStatus.AutoSize = true;
+            this.chkStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkStatus.Location = new System.Drawing.Point(211, 247);
+            this.chkStatus.Name = "chkStatus";
+            this.chkStatus.Size = new System.Drawing.Size(71, 24);
+            this.chkStatus.TabIndex = 61;
+            this.chkStatus.Text = "Active";
+            this.chkStatus.UseVisualStyleBackColor = true;
+            // 
             // frmKPI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1348, 912);
+            this.ClientSize = new System.Drawing.Size(1348, 808);
+            this.Controls.Add(this.chkStatus);
             this.Controls.Add(this.txtKPIID);
             this.Controls.Add(this.cboServicePlan);
             this.Controls.Add(this.label3);
@@ -594,5 +607,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtKPIID;
+        private System.Windows.Forms.CheckBox chkStatus;
     }
 }

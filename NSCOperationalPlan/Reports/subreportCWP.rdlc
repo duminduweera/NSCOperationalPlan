@@ -896,7 +896,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!cpw_ytod.Value)</Value>
+                                  <Value>=iif(Sum(Fields!cpw_ytod.Value) Is Nothing, 0, Sum(Fields!cpw_ytod.Value))</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
                                     <FontSize>9pt</FontSize>
@@ -929,6 +929,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -1166,7 +1167,7 @@
         <Height>1.2188in</Height>
         <Style />
       </Body>
-      <Width>6.76801in</Width>
+      <Width>6.76802in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>

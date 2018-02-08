@@ -85,8 +85,8 @@ namespace NSCOperationalPlan
                 //=========================================
                 if (AD_INTERGRATE)
                 {
-                    //NSCUtils.ADUser u = new NSCUtils.ADUser("farrego");
-                    //NSCUtils.ADUser u = new NSCUtils.ADUser("birchbr");
+                    //NSCUtils.ADUser u = new NSCUtils.ADUser("meppelu");
+                    //NSCUtils.ADUser u = new NSCUtils.ADUser("tregofi");
                     //mccleti
                     NSCUtils.ADUser u = new ADUser();
                     if (string.IsNullOrEmpty(u.UserName))
@@ -276,18 +276,18 @@ namespace NSCOperationalPlan
                     //user.DisableMenuOptions = new List<string> { };
                     break;
                 case UserRights.GM:
-                    temp = new List<string> { "A07", "A08" };
+                    temp = new List<string> { "A07", "A08", "A07_1" };
                     break;
                 case UserRights.Editor:
-                    temp = new List<string> { "A07", "A08" };
+                    temp = new List<string> { "A07" };
                     //user.DisableMenuOptions = default_usermenu.Concat(temp).ToList();
                     break;
                 case UserRights.Director:
-                    temp = new List<string> { "A01", "A02", "A03", "A04", "A05", "A06", "A07","A08" };
+                    temp = new List<string> { "A01", "A02", "A03", "A04", "A05", "A06", "A07", "A07_1", "A08" };
                     //user.DisableMenuOptions = default_usermenu.Concat(temp).ToList();
                     break;
                 case UserRights.Manager:
-                    temp = new List<string> { "A01", "A02", "A03", "A04", "A05", "A06", "A07", "A08" };
+                    temp = new List<string> { "A01", "A02", "A03", "A04", "A05", "A06", "A07", "A07_1", "A08" };
                     //user.DisableMenuOptions = default_usermenu.Concat(temp).ToList();
                     break;
                 case UserRights.Finance:
@@ -295,7 +295,7 @@ namespace NSCOperationalPlan
                     //user.DisableMenuOptions = default_usermenu.Concat(temp).ToList();
                     break;
                 default:
-                    temp = new List<string> { "A01", "A02", "A03", "A04", "A05", "A06", "A07", "A08" };
+                    temp = new List<string> { "A01", "A02", "A03", "A04", "A05", "A06", "A07", "A07_1", "A08" };
                     //user.DisableMenuOptions = default_usermenu.Concat(temp).ToList();
                     break;
             }
