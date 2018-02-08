@@ -497,6 +497,11 @@ namespace NSCOperationalPlan
             frmcpw.ShowDialog();       // .Show();
         }
 
+        private void mnuRptDeliveryPlan_Click(object sender, EventArgs e)
+        {
+            clsReports.PrintDeliveryProgram();
+        }
+
         //private void subReportingTestingToolStripMenuItem_Click(object sender, EventArgs e)
         //{
 
