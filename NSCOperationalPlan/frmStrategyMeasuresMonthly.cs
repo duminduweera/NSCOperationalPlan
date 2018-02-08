@@ -38,13 +38,13 @@ namespace NSCOperationalPlan
 
 #endif
 
-            hiddenRows = new int[] { 6, 7, 8 };
+            
 
             readonlyrows = new int[] { 0, 1, 2, 3, 4, 5 };
             if (OPGlobals.CurrentUser.Permission == UserRights.Director)
             {
                 chk1.Visible = true;
-                readonlyrows = new int[] { 0, 1, 2, 3, 4 };
+                readonlyrows = new int[] { 0, 1, 2, 3, 4, 5 };
             }
             if (OPGlobals.CurrentUser.Permission == UserRights.GM)
             {
@@ -55,15 +55,20 @@ namespace NSCOperationalPlan
         private void ArrangeGrid()
         {
             Dictionary<string, int> coloumnDict = new Dictionary<string, int>();
+            //hiddenRows = new int[] { 8, 9, 10 };
             coloumnDict.Add("#", 35);//0
             coloumnDict.Add("Strategy", 350);//1
             coloumnDict.Add("Measure", 500);//2
             coloumnDict.Add("Source", 100);//3
             coloumnDict.Add("Accountable Director", 150);//4
-            coloumnDict.Add("Progress", 500);//5
-            coloumnDict.Add("ProgressOriginal", 240);//6
-            coloumnDict.Add("themeColour", 240);//7
-            coloumnDict.Add("ResponsibleManagerOriginal", 240);//8
+            coloumnDict.Add("Estimated Target", 240);//5
+            coloumnDict.Add("Current Result", 240);//6
+            coloumnDict.Add("Comments", 500);//7
+            coloumnDict.Add("ProgressOriginal", 240);//8
+            coloumnDict.Add("themeColour", 240);//9
+            coloumnDict.Add("ResponsibleManagerOriginal", 240);//10
+           
+            //coloumnDict.Add("")
             MyDLLs.MyGridUtils.ArrangeDataGrid(dgv, coloumnDict, hiddenRows);
 
             dgv.RowTemplate.MinimumHeight = 28;

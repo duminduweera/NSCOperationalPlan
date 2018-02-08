@@ -35,14 +35,11 @@ namespace NSCOperationalPlan
         {
             Dictionary<string, int> dct = new Dictionary<string, int>();
 
-            dct.Add("Strategy Measure ID", 60);
-            dct.Add("Strategy ID", 60);                //1
-            dct.Add("Director ID", 60);        //2    
-            dct.Add("Description", 700);         //3
-            dct.Add("Measure Code", 60);//4                    
-            dct.Add("Year", 60);   //5
-            dct.Add("Source", 120);   //5
-            dct.Add("How Measured", 240);   //5
+            dct.Add("Measure Code", 60);
+            dct.Add("Current Result", 60);                //1
+            dct.Add("E Target", 60);        //2    
+            dct.Add("Frequency of Reporting", 700);         //3
+            
             int[] hiddenRows = { };
             int[] readonlyrows = { };
             MyDLLs.MyGridUtils.ArrangeDataGrid(dg1, dct, hiddenRows);
@@ -136,6 +133,26 @@ namespace NSCOperationalPlan
 
             }
             
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
 
         }
     }
