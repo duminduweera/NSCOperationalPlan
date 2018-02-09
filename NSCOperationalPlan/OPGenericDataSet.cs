@@ -6,7 +6,7 @@
     {
         partial class DeliveryProgramDataTable
         {
-            
+
         }
 
         partial class EOFYActionsDataTable

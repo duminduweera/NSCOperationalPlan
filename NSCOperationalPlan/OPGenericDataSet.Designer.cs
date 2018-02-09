@@ -2728,7 +2728,7 @@ namespace NSCOperationalPlan {
             
             private global::System.Data.DataColumn columnstrategy_measure_target;
             
-            private global::System.Data.DataColumn columncomment;
+            private global::System.Data.DataColumn columndp_comment;
             
             private global::System.Data.DataColumn columnhow_measured;
             
@@ -2869,9 +2869,9 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn commentColumn {
+            public global::System.Data.DataColumn dp_commentColumn {
                 get {
-                    return this.columncomment;
+                    return this.columndp_comment;
                 }
             }
             
@@ -2957,7 +2957,7 @@ namespace NSCOperationalPlan {
                         string strategy_measure_description, 
                         string strategy_measure_source, 
                         string strategy_measure_target, 
-                        string comment, 
+                        string dp_comment, 
                         string how_measured, 
                         string dp_year, 
                         string dp_month, 
@@ -2976,7 +2976,7 @@ namespace NSCOperationalPlan {
                         strategy_measure_description,
                         strategy_measure_source,
                         strategy_measure_target,
-                        comment,
+                        dp_comment,
                         how_measured,
                         dp_year,
                         dp_month,
@@ -3015,7 +3015,7 @@ namespace NSCOperationalPlan {
                 this.columnstrategy_measure_description = base.Columns["strategy_measure_description"];
                 this.columnstrategy_measure_source = base.Columns["strategy_measure_source"];
                 this.columnstrategy_measure_target = base.Columns["strategy_measure_target"];
-                this.columncomment = base.Columns["comment"];
+                this.columndp_comment = base.Columns["dp_comment"];
                 this.columnhow_measured = base.Columns["how_measured"];
                 this.columndp_year = base.Columns["dp_year"];
                 this.columndp_month = base.Columns["dp_month"];
@@ -3049,8 +3049,8 @@ namespace NSCOperationalPlan {
                 base.Columns.Add(this.columnstrategy_measure_source);
                 this.columnstrategy_measure_target = new global::System.Data.DataColumn("strategy_measure_target", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstrategy_measure_target);
-                this.columncomment = new global::System.Data.DataColumn("comment", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncomment);
+                this.columndp_comment = new global::System.Data.DataColumn("dp_comment", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndp_comment);
                 this.columnhow_measured = new global::System.Data.DataColumn("how_measured", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnhow_measured);
                 this.columndp_year = new global::System.Data.DataColumn("dp_year", typeof(string), null, global::System.Data.MappingType.Element);
@@ -5555,17 +5555,17 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string comment {
+            public string dp_comment {
                 get {
                     try {
-                        return ((string)(this[this.tableDeliveryProgram.commentColumn]));
+                        return ((string)(this[this.tableDeliveryProgram.dp_commentColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'comment\' in table \'DeliveryProgram\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'dp_comment\' in table \'DeliveryProgram\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDeliveryProgram.commentColumn] = value;
+                    this[this.tableDeliveryProgram.dp_commentColumn] = value;
                 }
             }
             
@@ -5779,14 +5779,14 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IscommentNull() {
-                return this.IsNull(this.tableDeliveryProgram.commentColumn);
+            public bool Isdp_commentNull() {
+                return this.IsNull(this.tableDeliveryProgram.dp_commentColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetcommentNull() {
-                this[this.tableDeliveryProgram.commentColumn] = global::System.Convert.DBNull;
+            public void Setdp_commentNull() {
+                this[this.tableDeliveryProgram.dp_commentColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
