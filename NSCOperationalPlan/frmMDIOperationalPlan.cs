@@ -52,6 +52,8 @@ namespace NSCOperationalPlan
             System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Default;
             tsCPW.Enabled = OPGlobals.CapitalWorksEnabled;
             capitalWorkMonthlyProgressToolStripMenuItem.Enabled = OPGlobals.CapitalWorksEnabled;
+            tsStrategyMeasure.Enabled = OPGlobals.DeliveryProgramEnabled;
+            
 
         }
 

@@ -34,9 +34,7 @@ namespace NSCOperationalPlan
         public static bool CapitalWorksEnabled = false;
 
         public static Database db;
-
-
-
+        public static bool DeliveryProgramEnabled = false;
 
         public static int GetPreviousMonth(int cmonth, string cyear)
         {
