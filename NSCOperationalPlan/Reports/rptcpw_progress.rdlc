@@ -19,7 +19,7 @@
       <Fields>
         <Field Name="cpw_id">
           <DataField>cpw_id</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="cpw_manager_id">
           <DataField>cpw_manager_id</DataField>
@@ -79,44 +79,48 @@
         </Field>
         <Field Name="cpw_original_budget">
           <DataField>cpw_original_budget</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="cpw_revised_budget">
           <DataField>cpw_revised_budget</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="cpw_year">
           <DataField>cpw_year</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="cpw_month">
-          <DataField>cpw_month</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
         <Field Name="cpw_ytod">
           <DataField>cpw_ytod</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="cpw_projected">
           <DataField>cpw_projected</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="cpw_percentage">
           <DataField>cpw_percentage</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="cpw_remark">
           <DataField>cpw_remark</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="cpw_carry_over">
+          <DataField>cpw_carry_over</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cpw_month">
+          <DataField>cpw_month</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>nsc_operation_planDataSet</rd:DataSetName>
-        <rd:SchemaPath>F:\VisualStudioProjects\DesktopApplications\NSCOperationalPlan\NSCOperationalPlan\nsc_operation_planDataSet1.xsd</rd:SchemaPath>
-        <rd:TableName>view_cpw_progress</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>view_cpw_progressTableAdapter</rd:TableAdapterName>
+        <rd:DataSetName>OPGenericDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\weeradu\Source\Repos\NSCOperationalPlan\NSCOperationalPlan\OPGenericDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>rptcpw_progress</rd:TableName>
+        <rd:TableAdapterFillMethod />
+        <rd:TableAdapterGetDataMethod />
+        <rd:TableAdapterName />
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -1582,14 +1586,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox50">
+                        <Textbox Name="cpw_carry_over">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!cpw_revised_budget.Value - Fields!cpw_original_budget.Value</Value>
+                                  <Value>=Fields!cpw_carry_over.Value</Value>
                                   <Style>
                                     <FontFamily>Tahoma</FontFamily>
                                     <FontSize>9pt</FontSize>
@@ -1601,7 +1605,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox50</rd:DefaultName>
+                          <rd:DefaultName>cpw_carry_over</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>#e5e5e5</Color>
@@ -1961,7 +1965,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=sum(Fields!cpw_revised_budget.Value - Fields!cpw_original_budget.Value)</Value>
+                                  <Value>=sum(Fields!cpw_carry_over.Value)</Value>
                                   <Style>
                                     <FontFamily>Tahoma</FontFamily>
                                     <FontSize>9pt</FontSize>
@@ -2326,7 +2330,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=sum(Fields!cpw_revised_budget.Value - Fields!cpw_original_budget.Value)</Value>
+                                  <Value>=sum(Fields!cpw_carry_over.Value)</Value>
                                   <Style>
                                     <FontFamily>Tahoma</FontFamily>
                                     <FontSize>9pt</FontSize>
@@ -2682,7 +2686,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=sum(Fields!cpw_revised_budget.Value - Fields!cpw_original_budget.Value)</Value>
+                                  <Value>=sum(Fields!cpw_carry_over.Value)</Value>
                                   <Style>
                                     <FontFamily>Tahoma</FontFamily>
                                     <FontSize>9pt</FontSize>
@@ -2705,6 +2709,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
