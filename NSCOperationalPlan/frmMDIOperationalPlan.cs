@@ -504,6 +504,11 @@ namespace NSCOperationalPlan
             clsReports.PrintDeliveryProgram();
         }
 
+        private void monthlyProgressServicePlanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clsReports.PrintCapitalWorksMonthlyProgressByServicePlan(OPGlobals.currentYear, OPGlobals.currentMonth);
+        }
+
         //private void subReportingTestingToolStripMenuItem_Click(object sender, EventArgs e)
         //{
 

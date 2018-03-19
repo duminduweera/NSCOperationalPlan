@@ -318,6 +318,16 @@ namespace NSCOperationalPlan
             frmprint.Show();
 
         }
+        public static void PrintCapitalWorksMonthlyProgressByServicePlan(string cpw_year, int cpw_month)
+        {
+            frmPrint frmprint = new frmPrint();
+
+            frmprint.dataTable = CapitalWork.GetTableCapitalWorksMonthlyProgress(cpw_year, cpw_month);
+            frmprint.reportName = @"rptcpw_progress_by_service_plan.rdlc";
+
+            frmprint.Show();
+
+        }
         public static void PrintCapitalWorksSummary(string cpw_year, int cpw_month)
         {
             frmPrint frmprint = new frmPrint();

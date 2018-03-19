@@ -81,6 +81,8 @@
             this.councilReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuRptCouncilSource = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuRptDeliveryPlan = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setCurrentMonthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -110,8 +112,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
-            this.mnuRptDeliveryPlan = new System.Windows.Forms.ToolStripMenuItem();
+            this.monthlyProgressServicePlanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -470,6 +471,7 @@
             // 
             this.capitalWorkProgramToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.capitalWorkProgramToolStripMenuItem2,
+            this.monthlyProgressServicePlanToolStripMenuItem,
             this.toolStripSeparator21,
             this.monthlyProgressToolStripMenuItem,
             this.toolStripSeparator23,
@@ -483,20 +485,20 @@
             // capitalWorkProgramToolStripMenuItem2
             // 
             this.capitalWorkProgramToolStripMenuItem2.Name = "capitalWorkProgramToolStripMenuItem2";
-            this.capitalWorkProgramToolStripMenuItem2.Size = new System.Drawing.Size(196, 22);
+            this.capitalWorkProgramToolStripMenuItem2.Size = new System.Drawing.Size(249, 22);
             this.capitalWorkProgramToolStripMenuItem2.Tag = "C71";
-            this.capitalWorkProgramToolStripMenuItem2.Text = "Monthly Progress";
+            this.capitalWorkProgramToolStripMenuItem2.Text = "Monthly Progress by Manager";
             this.capitalWorkProgramToolStripMenuItem2.Click += new System.EventHandler(this.capitalWorkProgramToolStripMenuItem2_Click);
             // 
             // toolStripSeparator21
             // 
             this.toolStripSeparator21.Name = "toolStripSeparator21";
-            this.toolStripSeparator21.Size = new System.Drawing.Size(193, 6);
+            this.toolStripSeparator21.Size = new System.Drawing.Size(246, 6);
             // 
             // monthlyProgressToolStripMenuItem
             // 
             this.monthlyProgressToolStripMenuItem.Name = "monthlyProgressToolStripMenuItem";
-            this.monthlyProgressToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.monthlyProgressToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
             this.monthlyProgressToolStripMenuItem.Tag = "C72";
             this.monthlyProgressToolStripMenuItem.Text = "Capital Work Program";
             this.monthlyProgressToolStripMenuItem.Click += new System.EventHandler(this.monthlyProgressToolStripMenuItem_Click);
@@ -504,12 +506,12 @@
             // toolStripSeparator23
             // 
             this.toolStripSeparator23.Name = "toolStripSeparator23";
-            this.toolStripSeparator23.Size = new System.Drawing.Size(193, 6);
+            this.toolStripSeparator23.Size = new System.Drawing.Size(246, 6);
             // 
             // mnuRptCPWSummary
             // 
             this.mnuRptCPWSummary.Name = "mnuRptCPWSummary";
-            this.mnuRptCPWSummary.Size = new System.Drawing.Size(196, 22);
+            this.mnuRptCPWSummary.Size = new System.Drawing.Size(249, 22);
             this.mnuRptCPWSummary.Tag = "C73";
             this.mnuRptCPWSummary.Text = "Capital Work Summary";
             this.mnuRptCPWSummary.Click += new System.EventHandler(this.mnuRptCPWSummary_Click);
@@ -541,6 +543,18 @@
             this.mnuRptCouncilSource.Size = new System.Drawing.Size(241, 22);
             this.mnuRptCouncilSource.Text = "Council Source Plan";
             this.mnuRptCouncilSource.Click += new System.EventHandler(this.mnuRptCouncilSource_Click);
+            // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(238, 6);
+            // 
+            // mnuRptDeliveryPlan
+            // 
+            this.mnuRptDeliveryPlan.Name = "mnuRptDeliveryPlan";
+            this.mnuRptDeliveryPlan.Size = new System.Drawing.Size(241, 22);
+            this.mnuRptDeliveryPlan.Text = "Delivery Program";
+            this.mnuRptDeliveryPlan.Click += new System.EventHandler(this.mnuRptDeliveryPlan_Click);
             // 
             // toolsToolStripMenuItem
             // 
@@ -848,17 +862,12 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // toolStripSeparator9
+            // monthlyProgressServicePlanToolStripMenuItem
             // 
-            this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(238, 6);
-            // 
-            // mnuRptDeliveryPlan
-            // 
-            this.mnuRptDeliveryPlan.Name = "mnuRptDeliveryPlan";
-            this.mnuRptDeliveryPlan.Size = new System.Drawing.Size(241, 22);
-            this.mnuRptDeliveryPlan.Text = "Delivery Program";
-            this.mnuRptDeliveryPlan.Click += new System.EventHandler(this.mnuRptDeliveryPlan_Click);
+            this.monthlyProgressServicePlanToolStripMenuItem.Name = "monthlyProgressServicePlanToolStripMenuItem";
+            this.monthlyProgressServicePlanToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
+            this.monthlyProgressServicePlanToolStripMenuItem.Text = "Monthly Progress by Service Plan";
+            this.monthlyProgressServicePlanToolStripMenuItem.Click += new System.EventHandler(this.monthlyProgressServicePlanToolStripMenuItem_Click);
             // 
             // frmOperationPlan
             // 
@@ -975,6 +984,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
         private System.Windows.Forms.ToolStripMenuItem mnuRptDeliveryPlan;
+        private System.Windows.Forms.ToolStripMenuItem monthlyProgressServicePlanToolStripMenuItem;
     }
 }
 
