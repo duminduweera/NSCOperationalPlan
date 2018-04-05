@@ -4,6 +4,10 @@
 
     partial class OPGenericDataSet
     {
+        partial class rptcpw_progressDataTable
+        {
+        }
+
         partial class DeliveryProgramDataTable
         {
 

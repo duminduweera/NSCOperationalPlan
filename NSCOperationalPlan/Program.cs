@@ -155,7 +155,7 @@ namespace NSCOperationalPlan
             }
         }
 
-        private static void setCapitalWorksEnabled(clsUser aduser)
+        private static void disableMenuItems(clsUser aduser)
         {
             Database db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
             DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
@@ -169,12 +169,15 @@ namespace NSCOperationalPlan
             //    || aduser.Permission == UserRights.Administrator)
             {
                 OPGlobals.CapitalWorksEnabled = true;
+                OPGlobals.DeliveryProgramEnabled = true;
             }
             else
             {
                 OPGlobals.CapitalWorksEnabled = Convert.ToBoolean(Convert.ToInt32(tb.Rows[0][0].ToString()));
+                OPGlobals.CapitalWorksEnabled = Convert.ToBoolean(Convert.ToInt32(tb.Rows[0][1].ToString()));
             }
         }
+
 
         public static bool OPLogin(string username, string password)
         {
@@ -217,10 +220,12 @@ namespace NSCOperationalPlan
                 }
 
                 SetMenus(user);
-                setCapitalWorksEnabled(user);
+                disableMenuItems(user);
+                
 
 #if DEBUG
                 OPGlobals.CapitalWorksEnabled = true;
+                OPGlobals.DeliveryProgramEnabled = true;
 
 #endif
 

@@ -52,6 +52,8 @@ namespace NSCOperationalPlan
             System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Default;
             tsCPW.Enabled = OPGlobals.CapitalWorksEnabled;
             capitalWorkMonthlyProgressToolStripMenuItem.Enabled = OPGlobals.CapitalWorksEnabled;
+            tsStrategyMeasure.Enabled = OPGlobals.DeliveryProgramEnabled;
+            
 
         }
 
@@ -500,6 +502,11 @@ namespace NSCOperationalPlan
         private void mnuRptDeliveryPlan_Click(object sender, EventArgs e)
         {
             clsReports.PrintDeliveryProgram();
+        }
+
+        private void monthlyProgressServicePlanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clsReports.PrintCapitalWorksMonthlyProgressByServicePlan(OPGlobals.currentYear, OPGlobals.currentMonth);
         }
 
         //private void subReportingTestingToolStripMenuItem_Click(object sender, EventArgs e)
