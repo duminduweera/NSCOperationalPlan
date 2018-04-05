@@ -78,10 +78,12 @@ namespace NSCOperationalPlan
 
             try
             {
-                string strsql = CapitalWork.GetSQLCapitalWorksYTD(OPGlobals.currentYear, OPGlobals.currentMonth) 
-                    + " ORDER BY A.director_id, A.cpw_manager_id, A.cpw_id;";
+                //string strsql = CapitalWork.GetSQLCapitalWorksYTD(OPGlobals.currentYear, OPGlobals.currentMonth) 
+                //    + " ORDER BY A.director_id, A.cpw_manager_id, A.cpw_id;";
 
-                DataTable tb = db.GetDataTable(conn, strsql);
+                DataTable tb = CapitalWork.GetTableCapitalWorksYTDDataEntry(OPGlobals.currentYear, OPGlobals.currentMonth);
+
+                //DataTable tb = db.GetDataTable(conn, strsql);
                 foreach (DataRow row in tb.Rows)
                 {
                     dgv01.Rows.Add(new String[] {(dgv01.RowCount+1).ToString(),

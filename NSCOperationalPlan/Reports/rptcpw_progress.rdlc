@@ -2142,7 +2142,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=sum(Fields!cpw_revised_budget.Value - Fields!cpw_projected.Value)</Value>
                                   <Style>
                                     <FontFamily>Tahoma</FontFamily>
                                     <FontSize>9pt</FontSize>
@@ -2503,7 +2503,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Sum(Fields!cpw_revised_budget.Value - Fields!cpw_projected.Value)</Value>
                                   <Style>
                                     <FontFamily>Tahoma</FontFamily>
                                     <FontSize>9pt</FontSize>
@@ -2861,7 +2861,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Sum(Fields!cpw_revised_budget.Value - Fields!cpw_projected.Value)</Value>
                                   <Style>
                                     <FontFamily>Tahoma</FontFamily>
                                     <FontSize>9pt</FontSize>
@@ -3463,7 +3463,7 @@
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
             <Height>4.8cm</Height>
-            <Width>39.90589cm</Width>
+            <Width>39.90591cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3474,7 +3474,7 @@
         <Height>1.88976in</Height>
         <Style />
       </Body>
-      <Width>15.71098in</Width>
+      <Width>15.71099in</Width>
       <Page>
         <PageHeader>
           <Height>1.45521cm</Height>
@@ -3607,7 +3607,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>2.34127cm</Height>
+          <Height>2.2619cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -3630,7 +3630,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox3</rd:DefaultName>
-              <Top>0.16384cm</Top>
+              <Top>0.16383cm</Top>
               <Left>0.95495cm</Left>
               <Height>0.6cm</Height>
               <Width>6.86562cm</Width>
@@ -3648,7 +3648,7 @@
               <Source>Embedded</Source>
               <Value>logo_only</Value>
               <Sizing>FitProportional</Sizing>
-              <Top>0.07055cm</Top>
+              <Top>0.07054cm</Top>
               <Left>34.1861cm</Left>
               <Height>1.97967cm</Height>
               <Width>4.86021cm</Width>

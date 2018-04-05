@@ -626,17 +626,76 @@ namespace NSCOperationalPlan
 
             return tb;
         }
+        public static string GetSQLCapitalWorksYTDDataEntry(string cpw_year, int cpw_month)
+        {
+            int qtr = OPGlobals.GetQuarter(cpw_month);
+            if (qtr > 1) { qtr -= 1 ; }
+
+            string strsql = "SELECT A.capital_works_id AS cpw_id,"
+                + " A.capital_works_jobno AS cpw_jobno,"
+                + " A.capital_works_manager_id AS cpw_manager_id,"
+                + " A.capital_works_service_plann_id AS cpw_service_plann_id,"
+                + " A.capital_works_description AS cpw_description,"
+                + " A.capital_works_original_budget AS cpw_original_budget,"
+                + " C.service_plan AS service_plan,"
+                + " D.capital_works_revised_budget AS cpw_revised_budget,"
+                + " B.capital_works_ytd as cpw_ytd FROM capital_works A"
+                + " LEFT JOIN service_plan C ON C.id = A.capital_works_service_plann_id"
+                + " LEFT JOIN (SELECT capital_works_qbr.capital_works_id,"
+                    + " capital_works_qbr.capital_works_year,"
+                    + " capital_works_qbr.capital_works_quarter,"
+                    + " capital_works_qbr.capital_works_revised_budget FROM capital_works_qbr"
+                    + " WHERE capital_works_qbr.capital_works_year = '" + cpw_year + "' AND"
+                    + " capital_works_qbr.capital_works_quarter = " + qtr + ") D ON"
+                + " D.capital_works_id = A.capital_works_id AND D.capital_works_year = A.capital_works_year"
+                + " LEFT JOIN (SELECT capital_works_ytd.capital_works_id,"
+                    + " capital_works_ytd.capital_works_month,"
+                    + " capital_works_ytd.capital_works_ytd,"
+                    + " capital_works_ytd.capital_works_year FROM capital_works_ytd"
+                    + " WHERE capital_works_ytd.capital_works_month = " + cpw_month + " AND capital_works_ytd.capital_works_year = '" + cpw_year + "'"
+                    + " ORDER BY capital_works_ytd.capital_works_id) B ON"
+                + " B.capital_works_id = A.capital_works_id WHERE A.capital_works_year = '" + cpw_year + "'";
+
+            //string strsql1 = "SELECT A.capital_works_id as cpw_id,"
+            //    + " A.capital_works_jobno as cpw_jobno,"
+            //    + " A.capital_works_manager_id as cpw_manager_id,"
+            //    + " A.capital_works_service_plann_id as cpw_service_plann_id,"
+            //    + " A.capital_works_description as cpw_description,"
+            //    + " A.capital_works_original_budget as cpw_original_budget,"
+            //    + " B.capital_works_year as cpw_year,"
+            //    + " B.capital_works_month as cpw_month,"
+            //    + " B.capital_works_ytd as cpw_ytd,"
+            //    + " C.service_plan as service_plan,"
+            //    + " D.capital_works_revised_budget as cpw_revised_budget"
+            //    + " FROM capital_works A"
+            //    + " LEFT JOIN capital_works_ytd B ON B.capital_works_id = A.capital_works_id AND B.capital_works_year = A.capital_works_year"
+            //    + " LEFT JOIN service_plan C ON C.id = A.capital_works_service_plann_id"
+            //    + " LEFT JOIN (SELECT capital_works_qbr.capital_works_id,"
+            //    + " capital_works_qbr.capital_works_year,"
+            //    + " capital_works_qbr.capital_works_quarter,"
+            //    + " capital_works_qbr.capital_works_revised_budget"
+            //    + " FROM capital_works_qbr WHERE capital_works_qbr.capital_works_year = '" + cpw_year 
+            //    + "' AND capital_works_qbr.capital_works_quarter = " + qtr + ") D"
+            //    + " ON D.capital_works_id = A.capital_works_id AND D.capital_works_year = A.capital_works_year"
+            //    + " WHERE B.capital_works_month = " + cpw_month + " AND B.capital_works_year = '" + cpw_year + "'";
+
+            return strsql;
+        }
+
+        public static DataTable GetTableCapitalWorksYTDDataEntry(string cpw_year, int cpw_month)
+        {
+            Database db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
+            DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
+
+            string strsql = GetSQLCapitalWorksYTDDataEntry(cpw_year, cpw_month)
+                + " ORDER BY A.capital_works_manager_id, A.capital_works_id;";
+            DataTable tb = db.GetDataTable(conn, strsql);
+            return tb;
+        }
 
         public static string GetSQLCapitalWorksYTD(string cpw_year, int cpw_month)
         {
             string strsql = "";
-
-            //strsql = "SELECT A.*, " + OPGlobals.GetQuarter(cpw_month) + " As cpw_quarter, C.capital_works_month As cpw_month,"
-            //    + " C.capital_works_ytd As cpw_ytd From view_cpw A Left Join"
-            //    + " (Select capital_works_ytd.* From capital_works_ytd"
-            //    + " Where capital_works_ytd.capital_works_month = " + cpw_month
-            //    + " And capital_works_ytd.capital_works_year = '" + cpw_year + "') C On"
-            //    + " A.cpw_id = C.capital_works_id And A.cpw_year = C.capital_works_year";
 
             strsql = "SELECT A.*, C.capital_works_month As cpw_month,"
                 + " C.capital_works_ytd As cpw_ytd From view_cpw_qbr A Left Join"

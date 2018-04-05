@@ -118,6 +118,14 @@ namespace NSCOperationalPlan
 
                 OPGlobals.currentYear = tb.Rows[0][1].ToString();
                 OPGlobals.currentMonth = int.Parse(tb.Rows[0][2].ToString());
+
+                //--- TODO ---
+                //---  Remove this in production---
+                OPGlobals.currentMonth = OPGlobals.GetPreviousMonth(OPGlobals.currentMonth, OPGlobals.currentYear);
+                //=================================
+
+
+
                 OPGlobals.FinancialYearStarts = new DateTime(int.Parse(OPGlobals.currentYear.Substring(0, 2)), 7, 1);
                 OPGlobals.CurrentQuarter = OPGlobals.GetQuarter(OPGlobals.currentMonth);
 
