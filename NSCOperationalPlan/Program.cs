@@ -85,7 +85,7 @@ namespace NSCOperationalPlan
                 //=========================================
                 if (AD_INTERGRATE)
                 {
-                    //NSCUtils.ADUser u = new NSCUtils.ADUser("meppelu");
+                    //NSCUtils.ADUser u = new NSCUtils.ADUser("masonli");
                     //NSCUtils.ADUser u = new NSCUtils.ADUser("tregofi");
                     //mccleti
                     NSCUtils.ADUser u = new ADUser();
@@ -121,7 +121,7 @@ namespace NSCOperationalPlan
 
                 //--- TODO ---
                 //---  Remove this in production---
-                OPGlobals.currentMonth = OPGlobals.GetPreviousMonth(OPGlobals.currentMonth, OPGlobals.currentYear);
+                //OPGlobals.currentMonth = OPGlobals.GetPreviousMonth(OPGlobals.currentMonth, OPGlobals.currentYear);
                 //=================================
 
 
@@ -174,7 +174,7 @@ namespace NSCOperationalPlan
             else
             {
                 OPGlobals.CapitalWorksEnabled = Convert.ToBoolean(Convert.ToInt32(tb.Rows[0][0].ToString()));
-                OPGlobals.CapitalWorksEnabled = Convert.ToBoolean(Convert.ToInt32(tb.Rows[0][1].ToString()));
+                OPGlobals.DeliveryProgramEnabled = Convert.ToBoolean(Convert.ToInt32(tb.Rows[0][1].ToString()));
             }
         }
 

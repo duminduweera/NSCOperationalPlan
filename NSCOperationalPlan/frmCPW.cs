@@ -17,6 +17,7 @@ namespace NSCOperationalPlan
         /* 
          * 
         */
+        bool mIsNew = true;
         Database db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
 
         public frmCPW()
@@ -58,6 +59,7 @@ namespace NSCOperationalPlan
             txtCPWBudget.Text = "";
             txtRevisedBudget.Text = "";
             txtJobCostNumber.Text = "";
+            txtCarryOver.Text = "";
 
         }
 
@@ -82,8 +84,9 @@ namespace NSCOperationalPlan
             dct.Add("ManagerID", 0);            //13
             dct.Add("ThemeColor", 0);           //14
             dct.Add("JobNo", 100);                //15
+            dct.Add("CarryOver", 0);                //16
 
-            int[] hiddenRows = { 8,9,10,11,12,13,14 };
+            int[] hiddenRows = { 8,9,10,11,12,13,14,16};
             //int[] hiddenRows = { };
 
             MyGridUtils.ArrangeDataGrid(dgv01, dct, hiddenRows, Color.LightGray, Color.LightSteelBlue);
@@ -95,19 +98,35 @@ namespace NSCOperationalPlan
 
             dgv01.ReadOnly = true;
         }
+
         private void LoadTableFromDatabase()
+        {
+            DataRowView row1 = (DataRowView)cboDirector.SelectedItem;
+            DataRowView row2 = (DataRowView)cboManager.SelectedItem;
+            string strsql;
+            strsql = "SELECT * FROM view_cpw_qbr"
+                + " where cpw_year='" + OPGlobals.currentYear
+                + "' AND director_id='" + row1[0] + "' AND cpw_manager_id = '" + row2[0] + "'"
+                + " Order by director_id, cpw_manager_id, cpw_id;";
+
+            LoadTableFromDatabase(strsql);
+        }
+        private void LoadTableFromDatabase(string strsql)
         {
             DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
             dgv01.Rows.Clear();
             dgv01.Refresh();
+            cboServicePlan.SelectedIndex = 0;
+            //DataRowView row1 = (DataRowView)cboDirector.SelectedItem;
+            //DataRowView row2 = (DataRowView)cboManager.SelectedItem;
             try
             {
                 if (string.IsNullOrEmpty(cboDirector.SelectedValue.ToString())) { return; }
-                string strsql;
-                strsql = "SELECT * FROM view_cpw_qbr"
-                    + " where cpw_year='" + OPGlobals.currentYear
-                    + "' AND director_id='" + cboDirector.SelectedValue + "'"
-                    + " Order by director_id, cpw_manager_id, cpw_id;";
+                //string strsql;
+                //strsql = "SELECT * FROM view_cpw_qbr"
+                //    + " where cpw_year='" + OPGlobals.currentYear
+                //    + "' AND director_id='" + row1[0] + "' AND cpw_manager_id = '" + row2[0] + "'"
+                //    + " Order by director_id, cpw_manager_id, cpw_id;";
 
                 DataTable tb = db.GetDataTable(conn, strsql);
                 foreach (DataRow row in tb.Rows)
@@ -127,7 +146,8 @@ namespace NSCOperationalPlan
                         row["cpw_service_plann_id"].ToString(),
                         row["cpw_manager_id"].ToString(),
                         row["theme_color"].ToString(),
-                        row["cpw_jobno"].ToString()
+                        row["cpw_jobno"].ToString(),
+                        string.Format("{0:$0,0.00}", row["cpw_carry_over"])
                     });
                 }
                 dgv01.CurrentCell = null;
@@ -158,8 +178,14 @@ namespace NSCOperationalPlan
             {
                 txtRevisedBudget.Text = dgv01.CurrentRow.Cells["Rev.Budget"].Value.ToString().Remove(0, 1);
             }
-            cboDirector.SelectedValue = dgv01.CurrentRow.Cells["DirectorID"].Value.ToString();
-            cboManager.SelectedValue = dgv01.CurrentRow.Cells["ManagerID"].Value.ToString();
+
+            if (!string.IsNullOrEmpty(dgv01.CurrentRow.Cells["CarryOver"].Value.ToString()))
+            {
+                txtCarryOver.Text = dgv01.CurrentRow.Cells["CarryOver"].Value.ToString().Remove(0, 1);
+            }
+
+            //cboDirector.SelectedValue = dgv01.CurrentRow.Cells["DirectorID"].Value.ToString();
+            //cboManager.SelectedValue = dgv01.CurrentRow.Cells["ManagerID"].Value.ToString();
             cboServicePlan.Text = dgv01.CurrentRow.Cells["Service Plan"].Value.ToString();
         }
         private void UpdateDataGrid(int cpwid)
@@ -188,6 +214,7 @@ namespace NSCOperationalPlan
             dgv01.CurrentRow.Cells["Description"].Value = txtCPWDescription.Text;
             dgv01.CurrentRow.Cells["Org.Budget"].Value = string.Format("{0:$0,0.00}", double.Parse(txtCPWBudget.Text));
             dgv01.CurrentRow.Cells["Rev.Budget"].Value = string.Format("{0:$0,0.00}", double.Parse(txtRevisedBudget.Text));
+            dgv01.CurrentRow.Cells["CarryOver"].Value = string.Format("{0:$0,0.00}", double.Parse(txtCarryOver.Text));
             if (!string.IsNullOrEmpty(cboServicePlan.Text))
             {
                 dgv01.CurrentRow.Cells["ServicePlanID"].Value = cboServicePlan.SelectedValue.ToString();
@@ -216,7 +243,7 @@ namespace NSCOperationalPlan
             DataRowView row = (DataRowView)cboDirector.SelectedItem;
 
             DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
-            DataTable tb = db.GetDataTable(conn, @"SELECT * FROM view_directors_plus_managers WHERE director_id = '" + row["director_id"] + "';");
+            DataTable tb = db.GetDataTable(conn, @"SELECT * FROM view_directors_plus_managers WHERE director_id = '" + row["director_id"].ToString() + "';");
 
             cboManager.DataSource = tb;
             cboManager.DisplayMember = "manager_description";
@@ -265,7 +292,7 @@ namespace NSCOperationalPlan
         private void cboDirector_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadManagers();
-            LoadTableFromDatabase();
+            //LoadTableFromDatabase();
         }
         private void cboTheme_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -273,10 +300,8 @@ namespace NSCOperationalPlan
         }
         private void cboManager_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //DataRowView row = (DataRowView)cboManager.SelectedItem;
-            //cboServicePlan.Text = row
-            //LoadTableFromDatabase();
-
+            DataRowView row = (DataRowView)cboManager.SelectedItem;
+            if (mIsNew) { LoadTableFromDatabase(); }
         }
 
         private void tsbSave_Click(object sender, EventArgs e)
@@ -305,7 +330,7 @@ namespace NSCOperationalPlan
             double number;
             if (Double.TryParse(txtCPWBudget.Text, out number)) { cpw.OriginalBudget = number; }
             if (Double.TryParse(txtRevisedBudget.Text, out number)) { cpw.RevisedBudget = number; }
-
+            if (Double.TryParse(txtCarryOver.Text, out number)) { cpw.CarryOverBudget = number; }
 
             DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
             if (conn.State == ConnectionState.Closed) { conn.Open(); }
@@ -370,6 +395,7 @@ namespace NSCOperationalPlan
 
         private void tsbEdit_Click(object sender, EventArgs e)
         {
+            mIsNew = false;
             LoadDataFromGrid();
             dgv01.Enabled = false;
             tsbNew.Enabled = true;
@@ -378,6 +404,7 @@ namespace NSCOperationalPlan
         }
         private void tsbNew_Click(object sender, EventArgs e)
         {
+            mIsNew = true;
             dgv01.Enabled = true;
             ClearData();
             tsbNew.Enabled = false;
@@ -410,6 +437,39 @@ namespace NSCOperationalPlan
                 }
             }
             conn.Close();
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtJobCostNumber_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFill_Click(object sender, EventArgs e)
+        {
+            string strsql = "SELECT * FROM view_cpw_qbr"
+                + " where cpw_year='" + OPGlobals.currentYear + "' and cpw_jobno = '" + txtJobCostNumber.Text + "'"
+                + " Order by director_id, cpw_manager_id, cpw_id;";
+            LoadTableFromDatabase(strsql);
+            if (dgv01.RowCount > 0)
+            {
+                mIsNew = false;
+                cboDirector.SelectedValue = dgv01.Rows[0].Cells["DirectorID"].Value.ToString();
+                LoadManagers();
+                cboManager.SelectedValue = dgv01.Rows[0].Cells["ManagerID"].Value.ToString();
+                cboServicePlan.Text = dgv01.Rows[0].Cells["Service Plan"].Value.ToString();
+                mIsNew = true;
+            }
+
+        }
+
+        private void dgv01_DoubleClick(object sender, EventArgs e)
+        {
+            tsbEdit_Click(this, e);
         }
     }
 }

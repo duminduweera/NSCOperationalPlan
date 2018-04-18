@@ -20,6 +20,7 @@ namespace NSCOperationalPlan
         private string  _cpwThemeID;
         private string  _cpwStrategyObjID;
         private string  _cpwDescription;
+        private double  _cpwCarryOverBudget;
         private double  _cpwOrgBudget;
         private double  _cpwReviseBudget;
         private double  _cpwytd;
@@ -74,6 +75,12 @@ namespace NSCOperationalPlan
             get { return _cpwDescription; }
             set { _cpwDescription = value; }
         }
+        public double CarryOverBudget
+        {
+            get { return _cpwCarryOverBudget; }
+            set { _cpwCarryOverBudget = value; }
+        }
+
         public double OriginalBudget
         {
             get { return _cpwOrgBudget; }
@@ -135,6 +142,9 @@ namespace NSCOperationalPlan
             strdct.Add("Description", this._cpwDescription);
             strdct.Add("Budget", this._cpwOrgBudget);
             //strdct.Add("LastRevisedBudget", this._cpwReviseBudget);
+            strdct.Add("CarryOver", this._cpwCarryOverBudget);
+
+            
 
             if (string.IsNullOrEmpty(this._cpwYear)) {
                 throw new Exception("Capital Work Year cannot be Empty");
@@ -151,8 +161,8 @@ namespace NSCOperationalPlan
 
             string query = @"INSERT INTO capital_works (capital_works_id, capital_works_jobno, capital_works_year, capital_works_manager_id,"
                 + " capital_works_service_plann_id, capital_works_stg_obj_id, capital_works_description,"
-                + " capital_works_original_budget) VALUES (@CPW_ID, @capital_works_jobno, @CPW_Year, @ManagerID, @ServicePlanID,"
-                + " @StrategyObjID, @Description, @Budget);";
+                + " capital_works_original_budget, capital_works_carry_over) VALUES (@CPW_ID, @capital_works_jobno, @CPW_Year, @ManagerID, @ServicePlanID,"
+                + " @StrategyObjID, @Description, @Budget, @CarryOver);";
             try
             {
                 db.InsertUpdateDeleteRecord(con, trans, query, strdct);
@@ -178,6 +188,8 @@ namespace NSCOperationalPlan
             strdct.Add("Description", this._cpwDescription);
             strdct.Add("Budget", this._cpwOrgBudget);
             strdct.Add("RevisedBudget", this._cpwReviseBudget);
+            strdct.Add("CarryOver", this._cpwCarryOverBudget);
+
 
             if (string.IsNullOrEmpty(this._cpwYear))
             {
@@ -198,7 +210,7 @@ namespace NSCOperationalPlan
 
             string query = @"UPDATE capital_works SET capital_works_manager_id = @ManagerID, capital_works_service_plann_id = @ServicePlanID,"
                 + " capital_works_stg_obj_id = @StrategyObjID, capital_works_description = @Description,"
-                + " capital_works_original_budget = @Budget"
+                + " capital_works_original_budget = @Budget, capital_works_carry_over = @CarryOver"
                 + " WHERE capital_works_id = " + this._cpwID + ";";
             try
             {

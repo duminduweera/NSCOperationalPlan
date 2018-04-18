@@ -79,6 +79,15 @@ namespace NSCOperationalPlan
             return 0;
         }
 
+        public static int GetStrategyMeasureMonth()
+        {
+            return GetStrategyMeasureMonth(currentMonth);
+        }
+        public static int GetStrategyMeasureMonth(int cmonth)
+        {
+            if (cmonth >= 1 && cmonth <= 6) { return 6; } else return 12;
+        }
+
         public static string ChangeToSentenceCase(string str)
         {
             // start by converting entire string to lower case

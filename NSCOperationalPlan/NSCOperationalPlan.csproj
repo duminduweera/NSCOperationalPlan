@@ -137,6 +137,18 @@
     <Compile Include="clsReports.cs" />
     <Compile Include="clsUser.cs" />
     <Compile Include="dbjoin.cs" />
+    <Compile Include="frmStratMeasureProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStratMeasureProgress.Designer.cs">
+      <DependentUpon>frmStratMeasureProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTemplate.Designer.cs">
+      <DependentUpon>FormTemplate.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAction.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -341,6 +353,12 @@
     <Compile Include="CustomException.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="StrategyMeasures.cs" />
+    <EmbeddedResource Include="frmStratMeasureProgress.resx">
+      <DependentUpon>frmStratMeasureProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTemplate.resx">
+      <DependentUpon>FormTemplate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAction.resx">
       <DependentUpon>frmAction.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -639,6 +657,7 @@
     <Content Include="nsc.ico" />
     <Content Include="op.ico" />
     <Content Include="Reports\logo_only.png" />
+    <None Include="Resources\fill.png" />
     <None Include="Resources\returns_32.png" />
     <None Include="Resources\Measure_481.png" />
     <None Include="Resources\Measure_48.png" />

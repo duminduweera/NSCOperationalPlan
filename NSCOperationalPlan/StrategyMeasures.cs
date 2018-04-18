@@ -17,17 +17,11 @@ namespace NSCOperationalPlan
         {
            
         }
+        #region --- Class Members---
         public string Comment
         {
-            get
-            {
-                return _comment;
-            }
-
-            set
-            {
-                _comment = value;
-            }
+            get { return _comment; }
+            set { _comment = value; }
         }
 
         public string Description
@@ -124,6 +118,48 @@ namespace NSCOperationalPlan
                 _month = value;
             }
         }
+        #endregion
+
+        #region --- Get Queries ---
+
+        public static string GetQueryStrategyMeasures(string cYear)
+        {
+            string strsql = "SELECT * FROM view_strategy_measure WHERE view_strategy_measure.year = '" + cYear + "'";
+            return strsql;
+        }
+
+        public static string GetQueryStrategyMeasuresProgress(string cYear, int cMonth)
+        {
+            int mnth = OPGlobals.GetStrategyMeasureMonth(cMonth);
+            string strsql = "SELECT A.*, B.month, B.current_result, B.comment FROM view_strategy_measure A"
+                + " LEFT JOIN (SELECT * FROM strategy_measure_monthly WHERE"
+                    + " strategy_measure_monthly.year = '" + cYear + "' AND"
+                    + " strategy_measure_monthly.month = " + mnth + ") B"
+                + " ON B.strategy_measure_code = A.strategy_measure_code AND B.year = A.year AND B.strategy_id = A.strategy_id"
+                + " WHERE A.year = '" + cYear + "'";
+            return strsql;
+
+        }
+        public static string GetQueryStrategyMeasuresProgress(string cYear, int cMonth, string cDirectorID)
+        {
+            string strsql = GetQueryStrategyMeasuresProgress(cYear, cMonth) + " AND director_id='" +cDirectorID + "'";
+            return strsql;
+
+        }
+        public static string GetQueryStrategyMeasuresProgress(string cYear, int cMonth, string cDirectorID, string cManagerID)
+        {
+            string strsql = GetQueryStrategyMeasuresProgress(cYear, cMonth) + " AND director_id='" + cDirectorID + "' AND manager_id='" + cManagerID + "'";
+            return strsql;
+        }
+
+        #endregion
+
+        #region --- Save Monthly/anualy progress
+
+        //strategy_measure_code , strategy_id, year, month, current_result, comment
+
+        #endregion
+
 
         internal static DataTable getMeasuresforManagers(String managerID,String year)
         {

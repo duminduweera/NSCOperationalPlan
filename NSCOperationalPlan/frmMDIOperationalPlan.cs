@@ -473,9 +473,10 @@ namespace NSCOperationalPlan
 
         private void tsStrategyMeasure_Click(object sender, EventArgs e)
         {
-            frmStrategyMeasuresMonthly frmStraMeasureMonthly = new frmStrategyMeasuresMonthly();
-            ArrangeForm(frmStraMeasureMonthly);
-            frmStraMeasureMonthly.ShowDialog();
+            //frmStratMeasureProgress frm1 = new frmStratMeasureProgress();
+            frmStrategyMeasuresMonthly frm1 = new frmStrategyMeasuresMonthly();
+            ArrangeForm(frm1);
+            frm1.ShowDialog();
         }
 
         private void importSMeasuresFromExcelToolStripMenuItem_Click(object sender, EventArgs e)
