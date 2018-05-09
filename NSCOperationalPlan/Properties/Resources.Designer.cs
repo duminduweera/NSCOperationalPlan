@@ -83,6 +83,16 @@ namespace NSCOperationalPlan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap admin_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("admin_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap backup_32 {
             get {
                 object obj = ResourceManager.GetObject("backup_32", resourceCulture);
@@ -133,9 +143,29 @@ namespace NSCOperationalPlan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cpw_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("cpw_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cpw_monthly_32 {
             get {
                 object obj = ResourceManager.GetObject("cpw_monthly_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap delivery_program_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("delivery_program_48x48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -176,6 +206,16 @@ namespace NSCOperationalPlan.Properties {
         internal static System.Drawing.Bitmap Exit_48 {
             get {
                 object obj = ResourceManager.GetObject("Exit_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fill {
+            get {
+                object obj = ResourceManager.GetObject("fill", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

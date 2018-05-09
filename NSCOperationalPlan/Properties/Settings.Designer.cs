@@ -36,8 +36,8 @@ namespace NSCOperationalPlan.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=nscutil;user id=sudinthap;database=nsc_operation_plan_17_to_21;persistsecurityinfo=" +
-            "True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=nscutil;user id=sudinthap;database=nsc_operation_plan_17_to_21;persistsecu" +
+            "rityinfo=True")]
         public string nsc_operation_planConnectionString1 {
             get {
                 return ((string)(this["nsc_operation_planConnectionString1"]));
@@ -51,6 +51,17 @@ namespace NSCOperationalPlan.Properties {
         public string nsc_operation_planConnectionString2 {
             get {
                 return ((string)(this["nsc_operation_planConnectionString2"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=nscutil;user id=sudinthap;password=NSCv90cisc0;persistsecurityinfo=True;da" +
+            "tabase=nsc_operation_plan_17_to_21")]
+        public string nsc_operation_plan_17_to_21ConnectionString {
+            get {
+                return ((string)(this["nsc_operation_plan_17_to_21ConnectionString"]));
             }
         }
     }

@@ -313,7 +313,6 @@
                               <Value>=Fields!action_id.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -356,7 +355,6 @@
                               <Value>=Fields!action_description.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -397,7 +395,6 @@
                               <Value>=CDate(Fields!delivery_program_TargetDate.Value).ToString("dd-MMM-yyyy")</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -440,7 +437,6 @@
                               <Value>=Fields!status_short.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -482,7 +478,6 @@
                               <Value>=Fields!progress_description.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -524,7 +519,6 @@
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <Format>0%</Format>
-                                <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -769,7 +763,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Height>2.12063cm</Height>
-        <Width>17.43687cm</Width>
+        <Width>17.43688cm</Width>
         <Style>
           <Border>
             <Style>None</Style>

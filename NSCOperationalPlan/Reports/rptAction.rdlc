@@ -1032,22 +1032,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value xml:space="preserve"> </Value>
-                      <Style>
-                        <FontSize>14pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Value>="20" + left(First(Fields!delivery_program_year.Value, "DataSet1"),3) + "20" + right(First(Fields!delivery_program_year.Value, "DataSet1"),2)</Value>
-                      <Style>
-                        <FontSize>14pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                        <Color>Blue</Color>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Value> Operational Plan - Actions List</Value>
+                      <Value>  Operational Plan - Actions List</Value>
                       <Style>
                         <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>

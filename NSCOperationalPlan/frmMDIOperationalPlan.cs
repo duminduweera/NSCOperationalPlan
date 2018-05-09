@@ -279,33 +279,6 @@ namespace NSCOperationalPlan
             mnuMonthlyProgress_Click(sender, e);
         }
 
-        private void mnuRptTheme_Click(object sender, EventArgs e)
-        {
-            clsReports.PrintTheme();
-        }
-
-        private void mnuRptStrategyObjective_Click(object sender, EventArgs e)
-        {
-            clsReports.PrintStrategyObjective();
-        }
-
-        private void mnuRptStrategy_Click(object sender, EventArgs e)
-        {
-            clsReports.PrintStrategy();
-        }
-
-        private void mnuRptStatus_Click(object sender, EventArgs e)
-        {
-            clsReports.PrintStatus();
-        }
-
-        private void mnuRptAction_Click(object sender, EventArgs e)
-        {
-            frmRptAction frmrptaction = new frmRptAction();
-            ArrangeForm(frmrptaction);
-            frmrptaction.ShowDialog(); 
-        }
-
         private void loginAsADifferentUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmLogin frmlogin = new frmLogin();
@@ -473,9 +446,10 @@ namespace NSCOperationalPlan
 
         private void tsStrategyMeasure_Click(object sender, EventArgs e)
         {
-            frmStrategyMeasuresMonthly frmStraMeasureMonthly = new frmStrategyMeasuresMonthly();
-            ArrangeForm(frmStraMeasureMonthly);
-            frmStraMeasureMonthly.ShowDialog();
+            frmStratMeasureProgress frm1 = new frmStratMeasureProgress();
+            //frmStrategyMeasuresMonthly frm1 = new frmStrategyMeasuresMonthly();
+            ArrangeForm(frm1);
+            frm1.ShowDialog();
         }
 
         private void importSMeasuresFromExcelToolStripMenuItem_Click(object sender, EventArgs e)
@@ -509,6 +483,47 @@ namespace NSCOperationalPlan
             clsReports.PrintCapitalWorksMonthlyProgressByServicePlan(OPGlobals.currentYear, OPGlobals.currentMonth);
         }
 
+        #region ==== Reports ====
+        private void mnuRptThemes_Click(object sender, EventArgs e)
+        {
+            clsReports.PrintTheme();
+        }
+
+        private void mnuRptStrategyObjectives_Click(object sender, EventArgs e)
+        {
+            clsReports.PrintStrategyObjective();
+        }
+
+        private void mnuRptStrategies_Click(object sender, EventArgs e)
+        {
+            clsReports.PrintStrategy();
+        }
+
+        private void mnuRptActions01_Click(object sender, EventArgs e)
+        {
+            frmRptAction frmrptaction = new frmRptAction();
+            ArrangeForm(frmrptaction);
+            frmrptaction.ShowDialog();
+        }
+
+        private void mnuRptActionStatus_Click(object sender, EventArgs e)
+        {
+            clsReports.PrintStatus();
+        }
+        #region --- Capital Work ---
+        private void mnuRptCWPbyManager_Click(object sender, EventArgs e)
+        {
+            clsReports.PrintCapitalWorksMonthlyProgress(OPGlobals.currentYear, OPGlobals.currentMonth);
+        }
+
+        private void mnuRptCWP_Click(object sender, EventArgs e)
+        {
+            clsReports.PrintCapitalWorks(OPGlobals.currentYear);
+        }
+        #endregion
+
+
+        #endregion
         //private void subReportingTestingToolStripMenuItem_Click(object sender, EventArgs e)
         //{
 

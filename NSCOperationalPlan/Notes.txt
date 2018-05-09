@@ -1,0 +1,5 @@
+﻿---Get Name from ENUM---
+cboOPMonth.Text = Enum.GetName(typeof(Months), OPGlobals.currentMonth);
+--- Convert String to Double ---
+double number;
+Double.TryParse(txtCPWBudget.Text, out number);
