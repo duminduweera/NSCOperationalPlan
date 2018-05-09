@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAction));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbClose = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -70,6 +70,8 @@
             this.cboServicePlan = new System.Windows.Forms.ComboBox();
             this.cboSourceCouncilPlan = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtTargertDate = new System.Windows.Forms.DateTimePicker();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdAction)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdDelivery)).BeginInit();
@@ -380,17 +382,17 @@
             // 
             // grdAction
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gainsboro;
-            this.grdAction.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
+            this.grdAction.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.grdAction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdAction.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdAction.DefaultCellStyle = dataGridViewCellStyle2;
             this.grdAction.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.grdAction.Location = new System.Drawing.Point(0, 522);
             this.grdAction.MultiSelect = false;
@@ -456,9 +458,9 @@
             // grdDelivery
             // 
             this.grdDelivery.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdDelivery.Location = new System.Drawing.Point(904, 365);
+            this.grdDelivery.Location = new System.Drawing.Point(1015, 365);
             this.grdDelivery.Name = "grdDelivery";
-            this.grdDelivery.Size = new System.Drawing.Size(265, 138);
+            this.grdDelivery.Size = new System.Drawing.Size(154, 138);
             this.grdDelivery.TabIndex = 49;
             this.grdDelivery.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDelivery_CellClick);
             this.grdDelivery.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDelivery_CellContentClick);
@@ -468,7 +470,7 @@
             // 
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label8.Location = new System.Drawing.Point(753, 366);
+            this.label8.Location = new System.Drawing.Point(864, 366);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(145, 23);
             this.label8.TabIndex = 32;
@@ -493,7 +495,7 @@
             this.cboServicePlan.FormattingEnabled = true;
             this.cboServicePlan.Location = new System.Drawing.Point(575, 478);
             this.cboServicePlan.Name = "cboServicePlan";
-            this.cboServicePlan.Size = new System.Drawing.Size(316, 24);
+            this.cboServicePlan.Size = new System.Drawing.Size(274, 24);
             this.cboServicePlan.TabIndex = 31;
             // 
             // cboSourceCouncilPlan
@@ -503,7 +505,7 @@
             this.cboSourceCouncilPlan.FormattingEnabled = true;
             this.cboSourceCouncilPlan.Location = new System.Drawing.Point(578, 420);
             this.cboSourceCouncilPlan.Name = "cboSourceCouncilPlan";
-            this.cboSourceCouncilPlan.Size = new System.Drawing.Size(316, 24);
+            this.cboSourceCouncilPlan.Size = new System.Drawing.Size(271, 24);
             this.cboSourceCouncilPlan.TabIndex = 51;
             // 
             // label12
@@ -517,13 +519,36 @@
             this.label12.Text = "Source Council Plan :";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // label13
+            // 
+            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label13.Location = new System.Drawing.Point(869, 453);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(140, 23);
+            this.label13.TabIndex = 50;
+            this.label13.Text = "Target Date";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtTargertDate
+            // 
+            this.txtTargertDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTargertDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtTargertDate.Location = new System.Drawing.Point(869, 476);
+            this.txtTargertDate.Name = "txtTargertDate";
+            this.txtTargertDate.Size = new System.Drawing.Size(140, 23);
+            this.txtTargertDate.TabIndex = 52;
+            // 
             // frmAction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1328, 871);
             this.ControlBox = false;
+            this.Controls.Add(this.txtTargertDate);
             this.Controls.Add(this.cboSourceCouncilPlan);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.grdDelivery);
             this.Controls.Add(this.cbopi);
@@ -606,5 +631,7 @@
         private System.Windows.Forms.ComboBox cboServicePlan;
         private System.Windows.Forms.ComboBox cboSourceCouncilPlan;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DateTimePicker txtTargertDate;
     }
 }

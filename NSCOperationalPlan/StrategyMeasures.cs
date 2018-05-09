@@ -10,113 +10,75 @@ namespace NSCOperationalPlan
 {
     class StrategyMeasures
     {
-        private String _measureCode, _description,_source,_howMeasured,_year,manager_id,strategy_id,_comment,_month;
-        private static Database db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
-        private static DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
-        public StrategyMeasures()
-        {
-           
-        }
-        #region --- Class Members---
-        public string Comment
-        {
-            get { return _comment; }
-            set { _comment = value; }
-        }
+        Database db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
 
-        public string Description
-        {get {return _description;}
-            set{_description = value;}
-        }
-        public string HowMeasured
-        {
-            get
-            {
-                return _howMeasured;
-            }
+        private String mMeasureCode, mDescription, mSource, mHowMeasured, mManager_id, mStrategy_id, mComment, mYear;
+        private int mMonth;
+        private double mCurrentProgress;
 
-            set
-            {
-                _howMeasured = value;
-            }
-        }
-
-        public string Manager_id
-        {
-            get
-            {
-                return manager_id;
-            }
-
-            set
-            {
-                manager_id = value;
-            }
-        }
-
+        #region --- Members ---
         public string MeasureCode
         {
-            get
-            {
-                return _measureCode;
-            }
-
-            set
-            {
-                _measureCode = value;
-            }
+            get { return mMeasureCode; }  
+            set { mMeasureCode = value; }
         }
-
+        public string Description
+        {
+            get { return mDescription; }
+            set { mDescription = value; }
+        }
         public string Source
         {
-            get
-            {
-                return _source;
-            }
-
-            set
-            {
-                _source = value;
-            }
+            get { return mSource; }
+            set { mSource = value; }
         }
-
-        public string Strategy_id
+        public string MeasuringCriteria
         {
-            get
-            {
-                return strategy_id;
-            }
-
-            set
-            {
-                strategy_id = value;
-            }
+            get { return mHowMeasured; }
+            set { mHowMeasured = value; }
         }
-
+        public string ManagerID
+        {
+            get { return mManager_id; }
+            set { mManager_id = value; }
+        }
+        public string StrategyID
+        {
+            get { return mStrategy_id; }
+            set { mStrategy_id = value; }
+        }
+        public string Comment
+        {
+            get { return mComment; }
+            set { mComment = value; }
+        }
         public string Year
         {
-            get
-            {
-                return _year;
-            }
-
-            set
-            {
-                _year = value;
-            }
+            get { return mYear; }
+            set { mYear = value; }
         }
-
-        public string Month
+        public int Month
         {
-            get
-            {
-                return _month;
-            }
+            get { return mMonth; }
+            set { mMonth = value; }
+        }
+        public double CurrentProgress
+        {
+            get { return mCurrentProgress; }
+            set { mCurrentProgress = value; }
+        }
+        #endregion
 
-            set
-            {
-                _month = value;
-            }
+        #region --- Constrctors ---
+        public StrategyMeasures() { }
+        public StrategyMeasures(string measureCode, string strategyCode, string year, int month ) : this()
+        {
+            this.mMeasureCode = measureCode;
+            this.mStrategy_id = strategyCode;
+            this.mYear = year;
+            this.mMonth = month;
+
+            //LoadMembersIfExist();
         }
         #endregion
 
@@ -142,7 +104,7 @@ namespace NSCOperationalPlan
         }
         public static string GetQueryStrategyMeasuresProgress(string cYear, int cMonth, string cDirectorID)
         {
-            string strsql = GetQueryStrategyMeasuresProgress(cYear, cMonth) + " AND director_id='" +cDirectorID + "'";
+            string strsql = GetQueryStrategyMeasuresProgress(cYear, cMonth) + " AND director_id='" + cDirectorID + "'";
             return strsql;
 
         }
@@ -154,69 +116,87 @@ namespace NSCOperationalPlan
 
         #endregion
 
-        #region --- Save Monthly/anualy progress
-
-        //strategy_measure_code , strategy_id, year, month, current_result, comment
-
-        #endregion
-
-
-        internal static DataTable getMeasuresforManagers(String managerID,String year)
+        #region --- Database operations ---
+        private Dictionary<string, dynamic> FillDictionary()
         {
-            String strsql = "SELECT * FROM view_strategy_measure WHERE manager_id='" + managerID + "' and year='" + year + "' ORDER BY theme_id,strategy_objective_id,rank;";    
-            return db.GetDataTable(conn, strsql);
-        }
-        internal static DataTable getMeasuresforDirectors(String director_ID, String year)
-        {
-            String strsql = "SELECT * FROM view_strategy_measure WHERE director_id='" + director_ID + "' and year='" + year + "' ORDER BY theme_id,strategy_objective_id,rank;";
-            return db.GetDataTable(conn, strsql);
-        }
+            Dictionary<string, dynamic> strdct = new Dictionary<string, dynamic>();
+            strdct.Add("MeasureCode", this.mMeasureCode);
+            strdct.Add("Description", this.mDescription);
+            strdct.Add("Source", this.mSource);
+            strdct.Add("HowMeasured", this.mHowMeasured);
+            strdct.Add("ManagerID", this.mManager_id);
+            strdct.Add("StrategyID", this.mStrategy_id);
+            strdct.Add("Comment", this.mComment);
+            strdct.Add("Month", this.mMonth);
+            strdct.Add("Year", this.mYear); 
+            strdct.Add("CurrentProgress", this.mCurrentProgress);
 
-        internal static DataTable getAllMeasures(String year)
-        {
-            String strsql = "SELECT * FROM view_strategy_measure WHERE year='" + year + "' ORDER BY theme_id,strategy_objective_id,rank;";           
-            return db.GetDataTable(conn, strsql);
+            return strdct;
         }
-
-        internal static DataTable getAllManagers()
+        private void LoadMembersIfExist()
         {
-            string strsql = "SELECT * FROM manager order by manager_description;";
-            return db.GetDataTable(conn, strsql);
-        }
+            string strsql = @"SELECT * FROM strategy_measure_monthly"
+                + " WHERE strategy_measure_code = '" + this.mMeasureCode + "'"
+                + " AND strategy_id='" + this.mStrategy_id + "'"
+                + " AND year='" + this.mYear + "' AND month = " + this.mMonth;
 
-        private bool InsertMonthlyProgress() {
+
+        }
+        public bool IsExist()
+        {
             bool result = false;
-            Database db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
+            string strsql = @"SELECT * FROM strategy_measure_monthly"
+                + " WHERE strategy_measure_code = '" + this.mMeasureCode + "'"
+                + " AND strategy_id='" + this.mStrategy_id + "'"
+                + " AND year='" + this.mYear + "' AND month = " + this.mMonth;
+
             DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
-            Dictionary<string, dynamic> dict = new Dictionary<string, dynamic>(); 
-                
-            dict.Add("strategy_measure_code", this._measureCode);
-            dict.Add("strategy_id", this.strategy_id);
-            dict.Add("year", this._year);
-            dict.Add("month", this.Month);
-            dict.Add("remark", this._comment);
-            foreach (KeyValuePair<String, dynamic> entry in dict) {
-                if (entry.Value == null) {throw new Exception("Cannot save startegy measure,  null values in "+entry.Value);}
-            }
+            DataTable tb = db.GetDataTable(conn, strsql);
+
+            if (tb.Rows.Count > 0) { result = true; }
+
+            return result;
+
+        }
+        public bool InsertMonthlyStrategyMeasures(Database db, DbConnection con, DbTransaction trans)
+        {
+            bool result = false;
+            Dictionary<string, dynamic> strdct = FillDictionary();
 
             string query = @"INSERT INTO strategy_measure_monthly"
-                + " (strategy_measure_code, strategy_id, year, month, remark)"
-                + " VALUES (@strategy_measure_code, @strategy_id, @year, @month, @remark)";
-
-            using (DbTransaction trans = conn.BeginTransaction()) {
-                try
-                {
-                    db.InsertUpdateDeleteRecord(conn, trans, query, dict);
-                    trans.Commit();
-                    result = true;
-                }
-                catch (Exception ex)
-                {
-                    trans.Rollback();
-                    throw new Exception(ex.Message + Environment.NewLine + "Data NOT Saved, Please Contact IT");                    
-                }
+                + " (strategy_measure_code, strategy_id, year, month, current_result, comment) VALUES"
+                + " (@MeasureCode, @StrategyID, @Year, @Month, @CurrentProgress, @Comment)";
+            try
+            {
+                db.InsertUpdateDeleteRecord(con, trans, query, strdct);
+                result = true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message + Environment.NewLine + "Data NOT Saved, Please Contact IT");
             }
             return result;
         }
+        public bool UpdateMonthlyStrategyMeasures(Database db, DbConnection con, DbTransaction trans)
+        {
+            bool result = false;
+
+            Dictionary<string, dynamic> strdct = FillDictionary();
+
+            string query = @"UPDATE strategy_measure_monthly SET current_result = @CurrentProgress, comment = @Comment"
+                + " WHERE strategy_measure_code= @MeasureCode and strategy_id = @StrategyID"
+                + " AND year = @Year AND month = @Month";
+            try
+            {
+                db.InsertUpdateDeleteRecord(con, trans, query, strdct);
+                result = true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message + Environment.NewLine + "Data NOT Saved, Please Contact IT");
+            }
+            return result;
+        }
+        #endregion
     }
 }

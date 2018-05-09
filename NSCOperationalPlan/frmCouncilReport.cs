@@ -22,7 +22,7 @@ namespace NSCOperationalPlan
             InitializeComponent();
         }
 
-
+        //SELECT DISTINCT delivery_program_year as dp_year FROM delivery_program order by delivery_program_year;
 
         private void LoadReportType()
         {
@@ -70,11 +70,12 @@ namespace NSCOperationalPlan
         private void LoadYears()
         {
             DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
-            DataTable tb = db.GetDataTable(conn, @"SELECT DISTINCT progress_year FROM progress ORDER BY progress_year;");
+            //DataTable tb = db.GetDataTable(conn, @"SELECT DISTINCT progress_year FROM progress ORDER BY progress_year;");
+            DataTable tb = db.GetDataTable(conn, @"SELECT DISTINCT delivery_program_year as dp_year FROM delivery_program order by delivery_program_year;");
 
             cboOPYear.DataSource = tb;
-            cboOPYear.DisplayMember = "progress_year";
-            cboOPYear.ValueMember = "progress_year";
+            cboOPYear.DisplayMember = "dp_year";
+            cboOPYear.ValueMember = "dp_year";
 
         }
         private void LoadMonths()

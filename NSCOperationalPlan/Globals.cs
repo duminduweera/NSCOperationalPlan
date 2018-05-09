@@ -20,6 +20,9 @@ namespace NSCOperationalPlan
         public static string prevoiusYear;
         public static int previousMonth;
 
+        public static string nextYear;
+        public static int nextMonth;
+
         public static string reportParth;
 
         //public static string currentuserID;
@@ -69,6 +72,16 @@ namespace NSCOperationalPlan
 
             return pyear;
         }
+        public static string GetNextYear(string cyear)
+        {
+            string pyear;
+            int y1, y2;
+            y1 = int.Parse(cyear.Substring(0, 2));
+            y2 = int.Parse(cyear.Substring(3, 2));
+
+            pyear = (y1 + 1).ToString() + "/" + (y2 + 1).ToString();
+            return pyear;
+        }
 
         public static int GetQuarter(int cmonth)
         {
@@ -79,6 +92,7 @@ namespace NSCOperationalPlan
             return 0;
         }
 
+        #region ---Strategy Measure Months and Years ---
         public static int GetStrategyMeasureMonth()
         {
             return GetStrategyMeasureMonth(currentMonth);
@@ -87,7 +101,25 @@ namespace NSCOperationalPlan
         {
             if (cmonth >= 1 && cmonth <= 6) { return 6; } else return 12;
         }
-
+        public static int GetStrategyMeasurePrevouosMonth()
+        {
+            return GetStrategyMeasurePrevouosMonth(OPGlobals.GetStrategyMeasureMonth());
+        }
+        public static int GetStrategyMeasurePrevouosMonth(int cmonth)
+        {
+            if (cmonth == 6) { return 12; } else return 6;
+        }
+        public static string GetStrategyMeasurePrevouosYear(string cyear, int cMonth)
+        {
+            string pyear = cyear;
+            int y1, y2;
+            y1 = int.Parse(cyear.Substring(0, 2));
+            y2 = int.Parse(cyear.Substring(3, 2));
+            if(cMonth==6) { pyear = (y1 - 1).ToString() + "/" + (y2 - 1).ToString(); }
+                
+            return pyear;
+        }
+        #endregion
         public static string ChangeToSentenceCase(string str)
         {
             // start by converting entire string to lower case

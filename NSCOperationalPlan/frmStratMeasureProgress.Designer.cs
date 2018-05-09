@@ -47,6 +47,7 @@
             this.opt0 = new System.Windows.Forms.RadioButton();
             this.opt1 = new System.Windows.Forms.RadioButton();
             this.dgv = new System.Windows.Forms.DataGridView();
+            this.lblMonth = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -96,6 +97,7 @@
             this.tsbSave.Size = new System.Drawing.Size(36, 51);
             this.tsbSave.Text = "Save";
             this.tsbSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbSave.Click += new System.EventHandler(this.tsbSave_Click);
             // 
             // toolStripSeparator3
             // 
@@ -111,7 +113,8 @@
             this.tsbPreviousMonth.Size = new System.Drawing.Size(56, 51);
             this.tsbPreviousMonth.Text = "Previous";
             this.tsbPreviousMonth.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsbPreviousMonth.ToolTipText = "Load From Previous Month";
+            this.tsbPreviousMonth.ToolTipText = "Load From previous period";
+            this.tsbPreviousMonth.Click += new System.EventHandler(this.tsbPreviousMonth_Click);
             // 
             // tsbClear
             // 
@@ -145,7 +148,7 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.cboDirector);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(497, 73);
+            this.groupBox1.Location = new System.Drawing.Point(450, 73);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(521, 81);
             this.groupBox1.TabIndex = 122;
@@ -160,6 +163,7 @@
             this.cboManager.Name = "cboManager";
             this.cboManager.Size = new System.Drawing.Size(316, 24);
             this.cboManager.TabIndex = 117;
+            this.cboManager.SelectedIndexChanged += new System.EventHandler(this.cboManager_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -181,6 +185,7 @@
             this.cboDirector.Name = "cboDirector";
             this.cboDirector.Size = new System.Drawing.Size(316, 24);
             this.cboDirector.TabIndex = 116;
+            this.cboDirector.SelectedIndexChanged += new System.EventHandler(this.cboDirector_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -199,11 +204,12 @@
             this.opt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.opt2.Location = new System.Drawing.Point(33, 126);
             this.opt2.Name = "opt2";
-            this.opt2.Size = new System.Drawing.Size(248, 21);
+            this.opt2.Size = new System.Drawing.Size(246, 21);
             this.opt2.TabIndex = 119;
             this.opt2.TabStop = true;
-            this.opt2.Text = "Show all Actions for all Directorates";
+            this.opt2.Text = "Show Measures for all Directorates";
             this.opt2.UseVisualStyleBackColor = true;
+            this.opt2.Click += new System.EventHandler(this.opt_Click);
             // 
             // opt0
             // 
@@ -216,6 +222,7 @@
             this.opt0.TabStop = true;
             this.opt0.Text = "My Department only";
             this.opt0.UseVisualStyleBackColor = true;
+            this.opt0.Click += new System.EventHandler(this.opt_Click);
             // 
             // opt1
             // 
@@ -228,6 +235,7 @@
             this.opt1.TabStop = true;
             this.opt1.Text = "Show";
             this.opt1.UseVisualStyleBackColor = true;
+            this.opt1.Click += new System.EventHandler(this.opt_Click);
             // 
             // dgv
             // 
@@ -243,11 +251,24 @@
             this.dgv.Size = new System.Drawing.Size(1316, 548);
             this.dgv.TabIndex = 123;
             // 
+            // lblMonth
+            // 
+            this.lblMonth.BackColor = System.Drawing.Color.GreenYellow;
+            this.lblMonth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonth.Location = new System.Drawing.Point(985, 78);
+            this.lblMonth.Name = "lblMonth";
+            this.lblMonth.Size = new System.Drawing.Size(342, 75);
+            this.lblMonth.TabIndex = 124;
+            this.lblMonth.Text = "This will be filled at run-time";
+            this.lblMonth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmStratMeasureProgress
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1340, 733);
+            this.Controls.Add(this.lblMonth);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.opt2);
@@ -286,5 +307,6 @@
         private System.Windows.Forms.RadioButton opt0;
         private System.Windows.Forms.RadioButton opt1;
         private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.Label lblMonth;
     }
 }

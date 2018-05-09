@@ -748,7 +748,7 @@ namespace NSCOperationalPlan
         public static string GetSQLCapitalWorksMonthlyProgress(string servicePlanID, string cpw_year, int cpw_month)
         {
             string strsql = GetSQLCapitalWorksMonthlyProgress(cpw_year, cpw_month);
-            strsql = strsql + " WHERE cpw_service_plann_id != '000'";
+            strsql = strsql + " WHERE A.cpw_year = '" + cpw_year + "' AND cpw_service_plann_id != '000'";
 
             if (!string.IsNullOrEmpty(servicePlanID) && servicePlanID != "000")
             {
@@ -763,7 +763,7 @@ namespace NSCOperationalPlan
             DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
 
             string strsql = GetSQLCapitalWorksMonthlyProgress(cpw_year, cpw_month) 
-                + " ORDER BY A.director_id, A.cpw_manager_id, A.cpw_id;";
+                + " WHERE A.cpw_year = '" + cpw_year + "' ORDER BY A.director_id, A.cpw_manager_id, A.cpw_id;";
             DataTable tb = db.GetDataTable(conn, strsql);
             return tb;
         }

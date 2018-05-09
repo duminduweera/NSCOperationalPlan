@@ -159,10 +159,10 @@ namespace NSCOperationalPlan
 
             MyGridUtils.ArrangeDataGrid(grdDelivery, dct, hiddenRows, Color.LightGray, Color.LightSteelBlue);
 
-            DataGridViewCalendarColumn col = new DataGridViewCalendarColumn();
-            col.HeaderText = "Target Date";
-            col.Width = 100;
-            this.grdDelivery.Columns.Add(col);
+            //DataGridViewCalendarColumn col = new DataGridViewCalendarColumn();
+            //col.HeaderText = "Target Date";
+            //col.Width = 100;
+            //this.grdDelivery.Columns.Add(col);
 
             grdDelivery.ReadOnly = false;
             grdDelivery.Columns[0].ReadOnly = true;
@@ -435,23 +435,12 @@ namespace NSCOperationalPlan
                     program_years_count ++;
                 }
             }
-            if (program_years_count == 0) {
-                MessageBox.Show("Please Select Delivery Program year(s) and try again", "OP_ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            //for (int i = 0; i < lstDelivery.Items.Count - 1; i++)
-            //{
-            //    if (lstDelivery.Items[i].Checked) { st += lstDelivery.Items[i].SubItems[0].Text; }
-            //}
-
-            //if (string.IsNullOrEmpty(st))
-            //{
+            //========= THIS WILL ALLOW USER TO ENTER ACTIONS WITHOUT YEAR ===========
+            //if (program_years_count == 0) {
             //    MessageBox.Show("Please Select Delivery Program year(s) and try again", "OP_ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //    return;
             //}
-
-            //string actionid = txtStrategyID.Text + "." + txtRank.Text;
+            //========================================================================
 
             Dictionary<string, dynamic> strdct = new Dictionary<string, dynamic>();
 
@@ -464,8 +453,6 @@ namespace NSCOperationalPlan
             strdct.Add("PIndicatorID", int.Parse(txtPIID.Text));
             strdct.Add("ServicePlanID", cboServicePlan.SelectedValue.ToString());
             strdct.Add("CouncilPlanID", cboSourceCouncilPlan.SelectedValue.ToString());
-
-            //actionid = txtActionID.Text;
 
             try
             {
@@ -489,8 +476,11 @@ namespace NSCOperationalPlan
                             UpdateAction(conn, trans, strdct);
                             UpdateTableAfterSave();
                         }
-                        InserDeliveryPlan(conn, trans, strdct["ActionID"]);
-
+                        //==== Save Action without Year ====
+                        //if (program_years_count > 0)
+                        //{
+                            InserDeliveryPlan(conn, trans, strdct["ActionID"]);
+                        //}
                         trans.Commit();
                         MessageBox.Show("Theme has been saved/updated successfully", "OP MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -578,7 +568,8 @@ namespace NSCOperationalPlan
                         strdct1.Clear();
                         strdct1.Add("ActionID", actionID);
                         strdct1.Add("DeliveryProgram", dr.Cells[1].Value.ToString());
-                        strdct1.Add("TargetDate", dr.Cells[2].Value);
+                        //strdct1.Add("TargetDate", dr.Cells[2].Value);
+                        strdct1.Add("TargetDate", txtTargertDate.Value);
 
                         query = @"INSERT INTO delivery_program (action_id, delivery_program_year,delivery_program_TargetDate)"
                             + " VALUES (@ActionID , @DeliveryProgram, @TargetDate)";
@@ -754,6 +745,9 @@ namespace NSCOperationalPlan
             cboDirector.SelectedIndex = 0;
             grdAction.CurrentCell = null;
             ChangeActionID();
+
+            txtTargertDate.Format = DateTimePickerFormat.Custom;
+            txtTargertDate.CustomFormat = " ";
         }
 
         private void listAction_DoubleClick(object sender, EventArgs e)
@@ -792,6 +786,8 @@ namespace NSCOperationalPlan
 
             CleargrdDelivery();
 
+            string targetDate="";
+
             foreach (DataRow tr in tb.Rows)
             {
                 foreach (DataGridViewRow dr in grdDelivery.Rows)
@@ -802,11 +798,26 @@ namespace NSCOperationalPlan
                     {
                         //chk.Value = chk.TrueValue;
                         dr.SetValues(true);
-                        dr.Cells[2].Value = tr["delivery_program_TargetDate"];
+                        //dr.Cells[2].Value = tr["delivery_program_TargetDate"];
+                        if (tr["delivery_program_TargetDate"].ToString() != null && string.IsNullOrEmpty(targetDate))
+                        {
+                            targetDate = tr["delivery_program_TargetDate"].ToString();
+                        }
                     }
                 }
             }
-
+            if (!string.IsNullOrEmpty(targetDate))
+            {
+                txtTargertDate.Format = DateTimePickerFormat.Custom;
+                txtTargertDate.CustomFormat = "dd-MMM-yyyy";
+                txtTargertDate.Value = DateTime.Parse(targetDate);
+            } else
+            {
+                txtTargertDate.Format = DateTimePickerFormat.Custom;
+                txtTargertDate.CustomFormat = " ";
+                //txtTargertDate.Value = "";
+            }
+            
             //ClearListView(lstDelivery);
 
             //foreach (DataRow d in tb.Rows)
@@ -833,7 +844,6 @@ namespace NSCOperationalPlan
                 dr.SetValues(false);
                 //dr.Cells[2].Value = null;
             }
-
         }
         private void tsbEdit_Click(object sender, EventArgs e)
         {
@@ -880,6 +890,7 @@ namespace NSCOperationalPlan
             LoadSourceCouncilPlan();
             LoadDirectors();
             //ArrangeScreen();
+            ClearDataEntry();
         }
 
         //private void ArrangeScreen() { }
