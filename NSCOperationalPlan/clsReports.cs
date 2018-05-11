@@ -589,12 +589,16 @@ namespace NSCOperationalPlan
             Database db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
             DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
             //string strsql = "SELECT view_delivery_program.* FROM view_delivery_program;";
-            string strsql = "SELECT * FROM view_delivery_program_17_21;";
+            //string strsql = "SELECT * FROM view_delivery_program_17_21;";
+            string strsql = "SELECT * FROM view_delivery_program_chart order by strategy_measure_code, rank;";
+                //+ " WHERE strategy_measure_code = 'CL01' order by strategy_measure_code, rank;";
+
             DataTable tb = db.GetDataTable(conn, strsql);
 
             frmprint.dataTable = tb;
             //frmprint.reportName = @"rptStrategyMeasureMonthly.rdlc";
-            frmprint.reportName = @"Report2.rdlc";
+            //frmprint.reportName = @"Report4.rdlc";
+            frmprint.reportName = @"rptStrategyMeasureMonthlyWithChart.rdlc";
 
             frmprint.Show();
 

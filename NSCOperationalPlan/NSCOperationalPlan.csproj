@@ -321,6 +321,14 @@
     <Compile Include="Globals.cs" />
     <Compile Include="kpi.cs" />
     <Compile Include="MonthlyProgress.cs" />
+    <Compile Include="OPGlobal.cs">
+      <DependentUpon>OPGlobal.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OPGlobal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OPGlobal.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -470,6 +478,9 @@
     <EmbeddedResource Include="Reports\Report1.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptStrategyMeasureMonthlyWithChart.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptCouncilReport.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -579,6 +590,17 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <None Include="Imported Files\Stategy Measures.xlsx" />
+    <None Include="OPGlobal.xsc">
+      <DependentUpon>OPGlobal.xsd</DependentUpon>
+    </None>
+    <None Include="OPGlobal.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OPGlobal.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="OPGlobal.xss">
+      <DependentUpon>OPGlobal.xsd</DependentUpon>
+    </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
