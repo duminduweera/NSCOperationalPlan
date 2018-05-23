@@ -144,12 +144,6 @@
     <Compile Include="frmStratMeasureProgress.Designer.cs">
       <DependentUpon>frmStratMeasureProgress.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTemplate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormTemplate.Designer.cs">
-      <DependentUpon>FormTemplate.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmAction.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -306,6 +300,12 @@
     <Compile Include="frmStrategyObjective.Designer.cs">
       <DependentUpon>frmStrategyObjective.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmUnits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUnits.Designer.cs">
+      <DependentUpon>frmUnits.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTheme.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -320,6 +320,7 @@
     </Compile>
     <Compile Include="Globals.cs" />
     <Compile Include="kpi.cs" />
+    <Compile Include="Models\Units.cs" />
     <Compile Include="MonthlyProgress.cs" />
     <Compile Include="OPGlobal.cs">
       <DependentUpon>OPGlobal.xsd</DependentUpon>
@@ -342,9 +343,6 @@
     <Compile Include="StrategyMeasures.cs" />
     <EmbeddedResource Include="frmStratMeasureProgress.resx">
       <DependentUpon>frmStratMeasureProgress.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormTemplate.resx">
-      <DependentUpon>FormTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAction.resx">
       <DependentUpon>frmAction.cs</DependentUpon>
@@ -426,6 +424,9 @@
     <EmbeddedResource Include="frmStrategyObjective.resx">
       <DependentUpon>frmStrategyObjective.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmUnits.resx">
+      <DependentUpon>frmUnits.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTheme.resx">
       <DependentUpon>frmTheme.cs</DependentUpon>
     </EmbeddedResource>
@@ -476,6 +477,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Report1.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Report2.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptStrategyMeasureMonthlyWithChart.rdlc">
@@ -635,6 +639,11 @@
     <Content Include="nsc.ico" />
     <Content Include="op.ico" />
     <Content Include="Reports\logo_only.png" />
+    <None Include="Resources\fill_color.png" />
+    <None Include="Resources\font_color1.png" />
+    <None Include="Resources\font_color.png" />
+    <None Include="Resources\fontcolor.png" />
+    <None Include="Resources\backgroundfill.png" />
     <None Include="Resources\delivery_program_48x48.png" />
     <None Include="Resources\cpw_48x48.png" />
     <None Include="Resources\admin_32x32.png" />

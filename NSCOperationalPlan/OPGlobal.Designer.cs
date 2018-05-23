@@ -320,6 +320,10 @@ namespace NSCOperationalPlan {
             
             private global::System.Data.DataColumn columntheme_description;
             
+            private global::System.Data.DataColumn columntheme_color;
+            
+            private global::System.Data.DataColumn columntheme_alpha_color;
+            
             private global::System.Data.DataColumn columnstrategy_objective_id;
             
             private global::System.Data.DataColumn columnstrategy_objective;
@@ -404,6 +408,22 @@ namespace NSCOperationalPlan {
             public global::System.Data.DataColumn theme_descriptionColumn {
                 get {
                     return this.columntheme_description;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn theme_colorColumn {
+                get {
+                    return this.columntheme_color;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn theme_alpha_colorColumn {
+                get {
+                    return this.columntheme_alpha_color;
                 }
             }
             
@@ -568,6 +588,8 @@ namespace NSCOperationalPlan {
                         string theme_id, 
                         string theme_short, 
                         string theme_description, 
+                        string theme_color, 
+                        string theme_alpha_color, 
                         string strategy_objective_id, 
                         string strategy_objective, 
                         string strategy_id, 
@@ -588,6 +610,8 @@ namespace NSCOperationalPlan {
                         theme_id,
                         theme_short,
                         theme_description,
+                        theme_color,
+                        theme_alpha_color,
                         strategy_objective_id,
                         strategy_objective,
                         strategy_id,
@@ -628,6 +652,8 @@ namespace NSCOperationalPlan {
                 this.columntheme_id = base.Columns["theme_id"];
                 this.columntheme_short = base.Columns["theme_short"];
                 this.columntheme_description = base.Columns["theme_description"];
+                this.columntheme_color = base.Columns["theme_color"];
+                this.columntheme_alpha_color = base.Columns["theme_alpha_color"];
                 this.columnstrategy_objective_id = base.Columns["strategy_objective_id"];
                 this.columnstrategy_objective = base.Columns["strategy_objective"];
                 this.columnstrategy_id = base.Columns["strategy_id"];
@@ -654,6 +680,10 @@ namespace NSCOperationalPlan {
                 base.Columns.Add(this.columntheme_short);
                 this.columntheme_description = new global::System.Data.DataColumn("theme_description", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntheme_description);
+                this.columntheme_color = new global::System.Data.DataColumn("theme_color", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntheme_color);
+                this.columntheme_alpha_color = new global::System.Data.DataColumn("theme_alpha_color", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntheme_alpha_color);
                 this.columnstrategy_objective_id = new global::System.Data.DataColumn("strategy_objective_id", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstrategy_objective_id);
                 this.columnstrategy_objective = new global::System.Data.DataColumn("strategy_objective", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1348,6 +1378,39 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string theme_color {
+                get {
+                    try {
+                        return ((string)(this[this.tabledeliveryprogram_chart.theme_colorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'theme_color\' in table \'deliveryprogram_chart\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledeliveryprogram_chart.theme_colorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string theme_alpha_color {
+                get {
+                    try {
+                        return ((string)(this[this.tabledeliveryprogram_chart.theme_alpha_colorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'theme_alpha_color\' in table \'deliveryprogram_chart\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tabledeliveryprogram_chart.theme_alpha_colorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string strategy_objective_id {
                 get {
                     try {
@@ -1625,6 +1688,30 @@ namespace NSCOperationalPlan {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Settheme_descriptionNull() {
                 this[this.tabledeliveryprogram_chart.theme_descriptionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istheme_colorNull() {
+                return this.IsNull(this.tabledeliveryprogram_chart.theme_colorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settheme_colorNull() {
+                this[this.tabledeliveryprogram_chart.theme_colorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Istheme_alpha_colorNull() {
+                return this.IsNull(this.tabledeliveryprogram_chart.theme_alpha_colorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Settheme_alpha_colorNull() {
+                this[this.tabledeliveryprogram_chart.theme_alpha_colorColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

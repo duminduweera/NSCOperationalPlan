@@ -227,7 +227,7 @@ namespace NSCOperationalPlan
             tb = db.GetDataTable(conn, strsql);
             if (tb.Rows.Count == 0)
             {
-                strsql = "SELECT DISTINCT theme_id, theme_short,theme_color, theme_color,action_by_theme,"
+                strsql = "SELECT DISTINCT theme_id, theme_short, theme_color, theme_color,action_by_theme,"
                     + " null as status_id, null as status_short, null as status_color, null as completed_action, null as progress_month"
                     + " FROM view_dashboard_top WHERE delivery_program_year = '" + OPGlobals.prevoiusYear + "' ORDER BY theme_id";
                 tb = db.GetDataTable(conn, strsql);
@@ -590,22 +590,26 @@ namespace NSCOperationalPlan
             DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
             //string strsql = "SELECT view_delivery_program.* FROM view_delivery_program;";
             //string strsql = "SELECT * FROM view_delivery_program_17_21;";
+
             string strsql = "SELECT * FROM view_delivery_program_chart order by strategy_measure_code, rank;";
-                //+ " WHERE strategy_measure_code = 'CL01' order by strategy_measure_code, rank;";
 
             DataTable tb = db.GetDataTable(conn, strsql);
 
             frmprint.dataTable = tb;
             //frmprint.reportName = @"rptStrategyMeasureMonthly.rdlc";
-            //frmprint.reportName = @"Report4.rdlc";
-            frmprint.reportName = @"rptStrategyMeasureMonthlyWithChart.rdlc";
 
+            frmprint.reportName = @"rptStrategyMeasureMonthlyWithChart.rdlc";
             frmprint.Show();
 
         }
         private static void PrepareDataForDeliveryProgramReport()
         {
             string strsql = "SELECT DISTINCT view_delivery_program.* FROM view_delivery_program;";
+        }
+        private string AddRGBtoAhplpha(string colorRGB)
+        {
+            var color = System.Drawing.ColorTranslator.FromHtml(colorRGB);
+            return color.ToString();
         }
 
     }

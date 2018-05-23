@@ -520,8 +520,15 @@ namespace NSCOperationalPlan
         {
             clsReports.PrintCapitalWorks(OPGlobals.currentYear);
         }
-        #endregion
 
+        private void tsmUnits_Click(object sender, EventArgs e)
+        {
+            frmUnits frm1= new frmUnits();
+            ArrangeForm(frm1);
+            frm1.ShowDialog();
+        }
+
+        #endregion
 
         #endregion
         //private void subReportingTestingToolStripMenuItem_Click(object sender, EventArgs e)

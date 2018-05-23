@@ -93,6 +93,16 @@ namespace NSCOperationalPlan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap backgroundfill {
+            get {
+                object obj = ResourceManager.GetObject("backgroundfill", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap backup_32 {
             get {
                 object obj = ResourceManager.GetObject("backup_32", resourceCulture);
@@ -216,6 +226,46 @@ namespace NSCOperationalPlan.Properties {
         internal static System.Drawing.Bitmap fill {
             get {
                 object obj = ResourceManager.GetObject("fill", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fill_color {
+            get {
+                object obj = ResourceManager.GetObject("fill_color", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap font_color {
+            get {
+                object obj = ResourceManager.GetObject("font_color", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap font_color1 {
+            get {
+                object obj = ResourceManager.GetObject("font_color1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fontcolor {
+            get {
+                object obj = ResourceManager.GetObject("fontcolor", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
