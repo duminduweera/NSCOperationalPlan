@@ -344,6 +344,8 @@ namespace NSCOperationalPlan {
             
             private global::System.Data.DataColumn columnunit_short;
             
+            private global::System.Data.DataColumn columnunit_full;
+            
             private global::System.Data.DataColumn columnrank;
             
             private global::System.Data.DataColumn columndp_Year;
@@ -509,6 +511,14 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn unit_fullColumn {
+                get {
+                    return this.columnunit_full;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn rankColumn {
                 get {
                     return this.columnrank;
@@ -600,6 +610,7 @@ namespace NSCOperationalPlan {
                         string how_measured, 
                         string prefix_short, 
                         string unit_short, 
+                        string unit_full, 
                         string rank, 
                         string dp_Year, 
                         string dp_value, 
@@ -622,6 +633,7 @@ namespace NSCOperationalPlan {
                         how_measured,
                         prefix_short,
                         unit_short,
+                        unit_full,
                         rank,
                         dp_Year,
                         dp_value,
@@ -664,6 +676,7 @@ namespace NSCOperationalPlan {
                 this.columnhow_measured = base.Columns["how_measured"];
                 this.columnprefix_short = base.Columns["prefix_short"];
                 this.columnunit_short = base.Columns["unit_short"];
+                this.columnunit_full = base.Columns["unit_full"];
                 this.columnrank = base.Columns["rank"];
                 this.columndp_Year = base.Columns["dp_Year"];
                 this.columndp_value = base.Columns["dp_value"];
@@ -704,6 +717,8 @@ namespace NSCOperationalPlan {
                 base.Columns.Add(this.columnprefix_short);
                 this.columnunit_short = new global::System.Data.DataColumn("unit_short", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnunit_short);
+                this.columnunit_full = new global::System.Data.DataColumn("unit_full", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnunit_full);
                 this.columnrank = new global::System.Data.DataColumn("rank", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnrank);
                 this.columndp_Year = new global::System.Data.DataColumn("dp_Year", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1575,6 +1590,22 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string unit_full {
+                get {
+                    try {
+                        return ((string)(this[this.tabledeliveryprogram_chart.unit_fullColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'unit_full\' in table \'deliveryprogram_chart\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledeliveryprogram_chart.unit_fullColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string rank {
                 get {
                     try {
@@ -1832,6 +1863,18 @@ namespace NSCOperationalPlan {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setunit_shortNull() {
                 this[this.tabledeliveryprogram_chart.unit_shortColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isunit_fullNull() {
+                return this.IsNull(this.tabledeliveryprogram_chart.unit_fullColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setunit_fullNull() {
+                this[this.tabledeliveryprogram_chart.unit_fullColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -528,6 +528,13 @@ namespace NSCOperationalPlan
             frm1.ShowDialog();
         }
 
+        private void mnuDeliveryProgram_Click(object sender, EventArgs e)
+        {
+            frmDeliveryProgramView frm1 = new frmDeliveryProgramView();
+            ArrangeForm(frm1);
+            frm1.ShowDialog();
+        }
+
         #endregion
 
         #endregion

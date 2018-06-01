@@ -193,7 +193,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -235,7 +234,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -278,7 +276,6 @@ Jun 2021</Value>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -320,7 +317,6 @@ Jun 2021</Value>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -365,7 +361,6 @@ Jun 2021</Value>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -476,7 +471,7 @@ Jun 2021</Value>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=iif(Fields!target_for_column.Value = -1,"TBD",iif(Fields!prefix_short.Value is Nothing,"",Fields!prefix_short.Value) + " " + format(Fields!target_for_column.Value,"###,##0") + iif(Fields!unit_short.Value is Nothing,"", " " + Fields!unit_short.Value))</Value>
+                              <Value>=iif(Fields!target_for_column.Value = -1,"TBD",iif(Fields!prefix_short.Value is Nothing,"",Fields!prefix_short.Value) + " " + format(Fields!target_for_column.Value,"###,##0") + iif(Fields!unit_full.Value is Nothing,"", " " + Fields!unit_full.Value))</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -514,6 +509,7 @@ Jun 2021</Value>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1323,6 +1319,10 @@ Jun 2021</Value>
         </Field>
         <Field Name="unit_short">
           <DataField>unit_short</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="unit_full">
+          <DataField>unit_full</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="rank">

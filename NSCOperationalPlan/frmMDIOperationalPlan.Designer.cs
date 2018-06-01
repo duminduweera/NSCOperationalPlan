@@ -110,6 +110,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.mnuDeliveryProgram = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -148,6 +150,8 @@
             this.mnuCPW,
             this.toolStripSeparator17,
             this.reAssignManagerToolStripMenuItem,
+            this.toolStripSeparator11,
+            this.mnuDeliveryProgram,
             this.toolStripSeparator7,
             this.mnuExit});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -624,12 +628,14 @@
             this.tsmUnits});
             this.fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
             this.fileToolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem1.Tag = "E00";
             this.fileToolStripMenuItem1.Text = "F&ile";
             // 
             // tsmUnits
             // 
             this.tsmUnits.Name = "tsmUnits";
-            this.tsmUnits.Size = new System.Drawing.Size(152, 22);
+            this.tsmUnits.Size = new System.Drawing.Size(101, 22);
+            this.tsmUnits.Tag = "E01";
             this.tsmUnits.Text = "&Units";
             this.tsmUnits.Click += new System.EventHandler(this.tsmUnits_Click);
             // 
@@ -637,7 +643,7 @@
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Tag = "E00";
+            this.helpToolStripMenuItem.Tag = "F00";
             this.helpToolStripMenuItem.Text = "&Help";
             // 
             // statusStrip1
@@ -845,6 +851,19 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
+            // mnuDeliveryProgram
+            // 
+            this.mnuDeliveryProgram.Name = "mnuDeliveryProgram";
+            this.mnuDeliveryProgram.Size = new System.Drawing.Size(250, 22);
+            this.mnuDeliveryProgram.Tag = "A09";
+            this.mnuDeliveryProgram.Text = "Delivery Program";
+            this.mnuDeliveryProgram.Click += new System.EventHandler(this.mnuDeliveryProgram_Click);
+            // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(247, 6);
+            // 
             // frmOperationPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -958,6 +977,8 @@
         private System.Windows.Forms.ToolStripMenuItem mnuRptCWP;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem tsmUnits;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
+        private System.Windows.Forms.ToolStripMenuItem mnuDeliveryProgram;
     }
 }
 
