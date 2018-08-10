@@ -593,8 +593,8 @@ namespace NSCOperationalPlan
             DataTable tb = db.GetDataTable(conn, strsql);
 
             frmprint.dataTable = tb;
-            //frmprint.reportName = @"rptStrategyMeasureMonthly.rdlc";
-            frmprint.reportName = @"Report2.rdlc";
+            frmprint.reportName = @"rptStrategyMeasureMonthlyWithChart.rdlc";
+            //frmprint.reportName = @"Report2.rdlc";
 
             frmprint.Show();
 
