@@ -140,6 +140,7 @@
                       <rd:DefaultName>strategy_objective_id1</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>White</Color>
                           <Style>None</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -192,6 +193,7 @@
                       </Style>
                     </Textbox>
                     <ColSpan>6</ColSpan>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell />
@@ -1238,6 +1240,7 @@
                         <rd:DefaultName>strategy_objective_id</rd:DefaultName>
                         <Style>
                           <Border>
+                            <Color>White</Color>
                             <Style>None</Style>
                           </Border>
                           <PaddingLeft>2pt</PaddingLeft>
@@ -1274,6 +1277,7 @@
                             <rd:DefaultName>Textbox41</rd:DefaultName>
                             <Style>
                               <Border>
+                                <Color>White</Color>
                                 <Style>None</Style>
                               </Border>
                               <PaddingLeft>2pt</PaddingLeft>
@@ -1358,7 +1362,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Height>4.5175cm</Height>
-        <Width>18.36688cm</Width>
+        <Width>18.36689cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1366,7 +1370,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>1.77854in</Height>
+    <Height>1.80979in</Height>
     <Style />
   </Body>
   <Width>7.23106in</Width>

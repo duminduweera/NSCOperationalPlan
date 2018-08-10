@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTheme));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -41,12 +41,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtThemeCode = new System.Windows.Forms.TextBox();
             this.txtTheme = new System.Windows.Forms.TextBox();
-            this.btnColor = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.label7 = new System.Windows.Forms.Label();
             this.txtThemeShort = new System.Windows.Forms.TextBox();
             this.txtThemeColor = new System.Windows.Forms.TextBox();
             this.dgv1 = new System.Windows.Forms.DataGridView();
+            this.txtThemeColorFont = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtBkgAlpha = new System.Windows.Forms.TextBox();
+            this.btnColorFont = new System.Windows.Forms.Button();
+            this.btnColor = new System.Windows.Forms.Button();
             this.tsbClose = new System.Windows.Forms.ToolStripButton();
             this.tsbNew = new System.Windows.Forms.ToolStripButton();
             this.tsbEdit = new System.Windows.Forms.ToolStripButton();
@@ -54,6 +58,7 @@
             this.tsbSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.tsbPrint = new System.Windows.Forms.ToolStripButton();
+            this.btnBkgAlpha = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.SuspendLayout();
@@ -126,11 +131,11 @@
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label3.Location = new System.Drawing.Point(306, 71);
+            this.label3.Location = new System.Drawing.Point(294, 71);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 23);
+            this.label3.Size = new System.Drawing.Size(121, 23);
             this.label3.TabIndex = 27;
-            this.label3.Text = "Theme Color :";
+            this.label3.Text = "Theme Bkg Color :";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtThemeCode
@@ -151,16 +156,6 @@
             this.txtTheme.Name = "txtTheme";
             this.txtTheme.Size = new System.Drawing.Size(756, 111);
             this.txtTheme.TabIndex = 28;
-            // 
-            // btnColor
-            // 
-            this.btnColor.Location = new System.Drawing.Point(545, 72);
-            this.btnColor.Name = "btnColor";
-            this.btnColor.Size = new System.Drawing.Size(31, 23);
-            this.btnColor.TabIndex = 29;
-            this.btnColor.Text = "...";
-            this.btnColor.UseVisualStyleBackColor = true;
-            this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
             // 
             // colorDialog1
             // 
@@ -194,23 +189,23 @@
             this.txtThemeColor.ForeColor = System.Drawing.Color.White;
             this.txtThemeColor.Location = new System.Drawing.Point(421, 72);
             this.txtThemeColor.Name = "txtThemeColor";
-            this.txtThemeColor.Size = new System.Drawing.Size(118, 22);
+            this.txtThemeColor.Size = new System.Drawing.Size(100, 22);
             this.txtThemeColor.TabIndex = 28;
             this.txtThemeColor.Enter += new System.EventHandler(this.txtThemeColor_Enter);
             // 
             // dgv1
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
-            this.dgv1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Gainsboro;
+            this.dgv1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv1.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgv1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgv1.Location = new System.Drawing.Point(0, 276);
             this.dgv1.MultiSelect = false;
@@ -221,6 +216,59 @@
             this.dgv1.TabIndex = 30;
             this.dgv1.TabStop = false;
             this.dgv1.DoubleClick += new System.EventHandler(this.dgv1_DoubleClick);
+            // 
+            // txtThemeColorFont
+            // 
+            this.txtThemeColorFont.BackColor = System.Drawing.SystemColors.Window;
+            this.txtThemeColorFont.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtThemeColorFont.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtThemeColorFont.ForeColor = System.Drawing.Color.Black;
+            this.txtThemeColorFont.Location = new System.Drawing.Point(16, 224);
+            this.txtThemeColorFont.Name = "txtThemeColorFont";
+            this.txtThemeColorFont.Size = new System.Drawing.Size(97, 22);
+            this.txtThemeColorFont.TabIndex = 32;
+            this.txtThemeColorFont.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label4.Location = new System.Drawing.Point(618, 70);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(147, 23);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "Theme 2nd Bkg Color :";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtBkgAlpha
+            // 
+            this.txtBkgAlpha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBkgAlpha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBkgAlpha.ForeColor = System.Drawing.Color.White;
+            this.txtBkgAlpha.Location = new System.Drawing.Point(771, 72);
+            this.txtBkgAlpha.Name = "txtBkgAlpha";
+            this.txtBkgAlpha.Size = new System.Drawing.Size(97, 22);
+            this.txtBkgAlpha.TabIndex = 34;
+            // 
+            // btnColorFont
+            // 
+            this.btnColorFont.Image = global::NSCOperationalPlan.Properties.Resources.font_color1;
+            this.btnColorFont.Location = new System.Drawing.Point(564, 72);
+            this.btnColorFont.Name = "btnColorFont";
+            this.btnColorFont.Size = new System.Drawing.Size(31, 23);
+            this.btnColorFont.TabIndex = 33;
+            this.btnColorFont.UseVisualStyleBackColor = true;
+            this.btnColorFont.Click += new System.EventHandler(this.btnColorFont_Click);
+            // 
+            // btnColor
+            // 
+            this.btnColor.Image = global::NSCOperationalPlan.Properties.Resources.fill_color;
+            this.btnColor.Location = new System.Drawing.Point(527, 70);
+            this.btnColor.Name = "btnColor";
+            this.btnColor.Size = new System.Drawing.Size(31, 23);
+            this.btnColor.TabIndex = 29;
+            this.btnColor.UseVisualStyleBackColor = true;
+            this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
             // 
             // tsbClose
             // 
@@ -300,12 +348,27 @@
             this.tsbPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbPrint.Click += new System.EventHandler(this.tsbPrint_Click);
             // 
+            // btnBkgAlpha
+            // 
+            this.btnBkgAlpha.Image = global::NSCOperationalPlan.Properties.Resources.fill_color;
+            this.btnBkgAlpha.Location = new System.Drawing.Point(874, 72);
+            this.btnBkgAlpha.Name = "btnBkgAlpha";
+            this.btnBkgAlpha.Size = new System.Drawing.Size(31, 23);
+            this.btnBkgAlpha.TabIndex = 29;
+            this.btnBkgAlpha.UseVisualStyleBackColor = true;
+            this.btnBkgAlpha.Click += new System.EventHandler(this.btnBkgAlpha_Click);
+            // 
             // frmTheme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 650);
+            this.Controls.Add(this.txtBkgAlpha);
+            this.Controls.Add(this.btnColorFont);
+            this.Controls.Add(this.txtThemeColorFont);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.dgv1);
+            this.Controls.Add(this.btnBkgAlpha);
             this.Controls.Add(this.btnColor);
             this.Controls.Add(this.txtThemeShort);
             this.Controls.Add(this.txtTheme);
@@ -356,5 +419,10 @@
         private System.Windows.Forms.ToolStripButton tsbPrint;
         private System.Windows.Forms.TextBox txtThemeColor;
         private System.Windows.Forms.DataGridView dgv1;
+        private System.Windows.Forms.Button btnColorFont;
+        private System.Windows.Forms.TextBox txtThemeColorFont;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtBkgAlpha;
+        private System.Windows.Forms.Button btnBkgAlpha;
     }
 }

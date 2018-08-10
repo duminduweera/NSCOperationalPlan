@@ -6,28 +6,28 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>4.04341cm</Width>
+              <Width>5.27813cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.04139cm</Width>
+              <Width>2.68521cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.73271cm</Width>
+              <Width>2.23542cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.595cm</Width>
+              <Width>4.32563cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.26049cm</Width>
+              <Width>3.98167cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.66202cm</Height>
+              <Height>0.6cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="theme_description1">
+                    <Textbox Name="theme_short">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -39,14 +39,13 @@
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>14pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>=Fields!theme_color.Value</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>theme_description1</rd:DefaultName>
+                      <rd:DefaultName>theme_short</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -67,18 +66,18 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.67855cm</Height>
+              <Height>0.6cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox72">
+                    <Textbox Name="strategy_objective">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>="Objective " + Fields!strategy_objective_id.Value + " - " + Fields!strategy_objective.Value</Value>
+                              <Value>="Objective " + Fields!strategy_objective_id.Value + " - " + Fields!strategy_objective.Value + System.Environment.NewLine</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -89,7 +88,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox72</rd:DefaultName>
+                      <rd:DefaultName>strategy_objective</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -97,6 +96,7 @@
                         <VerticalAlign>Top</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
+                        <PaddingBottom>6pt</PaddingBottom>
                       </Style>
                     </Textbox>
                     <ColSpan>5</ColSpan>
@@ -109,18 +109,18 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.89187cm</Height>
+              <Height>0.44125cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="strategy1">
+                    <Textbox Name="strategy">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>= Fields!strategy_id.Value + " - " + Fields!strategy.Value</Value>
+                              <Value>=Fields!strategy_id.Value + " - " + Fields!strategy.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontWeight>Bold</FontWeight>
@@ -130,7 +130,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>strategy1</rd:DefaultName>
+                      <rd:DefaultName>strategy</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -138,8 +138,7 @@
                         <VerticalAlign>Top</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>8pt</PaddingTop>
-                        <PaddingBottom>4pt</PaddingBottom>
+                        <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
                     <ColSpan>5</ColSpan>
@@ -152,18 +151,18 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>1.05063cm</Height>
+              <Height>0.6cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox33">
+                    <Textbox Name="Textbox62">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value EvaluationMode="Constant">Measure</Value>
+                              <Value>Measure</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -174,19 +173,21 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox33</rd:DefaultName>
+                      <rd:DefaultName>Textbox62</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
                         </Border>
                         <TopBorder>
+                          <Color>Black</Color>
                           <Style>Solid</Style>
+                          <Width>1pt</Width>
                         </TopBorder>
                         <LeftBorder>
+                          <Color>Black</Color>
                           <Style>Solid</Style>
+                          <Width>1pt</Width>
                         </LeftBorder>
-                        <BackgroundColor>=Fields!theme_alpha_color.Value</BackgroundColor>
-                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -197,7 +198,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox34">
+                    <Textbox Name="Textbox112">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -215,19 +216,21 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox34</rd:DefaultName>
+                      <rd:DefaultName>Textbox112</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
                         </Border>
                         <TopBorder>
+                          <Color>Black</Color>
                           <Style>Solid</Style>
+                          <Width>1pt</Width>
                         </TopBorder>
                         <LeftBorder>
+                          <Color>Black</Color>
                           <Style>Solid</Style>
+                          <Width>1pt</Width>
                         </LeftBorder>
-                        <BackgroundColor>=Fields!theme_alpha_color.Value</BackgroundColor>
-                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -238,15 +241,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox35">
+                    <Textbox Name="Textbox66">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Target
-Jun 2021</Value>
+                              <Value>Target Jun 2021</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -257,19 +259,21 @@ Jun 2021</Value>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox35</rd:DefaultName>
+                      <rd:DefaultName>Textbox66</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
                         </Border>
                         <TopBorder>
+                          <Color>Black</Color>
                           <Style>Solid</Style>
+                          <Width>1pt</Width>
                         </TopBorder>
                         <LeftBorder>
+                          <Color>Black</Color>
                           <Style>Solid</Style>
+                          <Width>1pt</Width>
                         </LeftBorder>
-                        <BackgroundColor>=Fields!theme_alpha_color.Value</BackgroundColor>
-                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -280,7 +284,7 @@ Jun 2021</Value>
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox48">
+                    <Textbox Name="Textbox118">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -298,19 +302,21 @@ Jun 2021</Value>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox48</rd:DefaultName>
+                      <rd:DefaultName>Textbox118</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
                         </Border>
                         <TopBorder>
+                          <Color>Black</Color>
                           <Style>Solid</Style>
+                          <Width>1pt</Width>
                         </TopBorder>
                         <LeftBorder>
+                          <Color>Black</Color>
                           <Style>Solid</Style>
+                          <Width>1pt</Width>
                         </LeftBorder>
-                        <BackgroundColor>=Fields!theme_alpha_color.Value</BackgroundColor>
-                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -321,7 +327,7 @@ Jun 2021</Value>
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox37">
+                    <Textbox Name="Textbox124">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -339,22 +345,26 @@ Jun 2021</Value>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox37</rd:DefaultName>
+                      <rd:DefaultName>Textbox124</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
                         </Border>
                         <TopBorder>
+                          <Color>Black</Color>
                           <Style>Solid</Style>
+                          <Width>1pt</Width>
                         </TopBorder>
                         <LeftBorder>
+                          <Color>Black</Color>
                           <Style>Solid</Style>
+                          <Width>1pt</Width>
                         </LeftBorder>
                         <RightBorder>
+                          <Color>Black</Color>
                           <Style>Solid</Style>
+                          <Width>1pt</Width>
                         </RightBorder>
-                        <BackgroundColor>=Fields!theme_alpha_color.Value</BackgroundColor>
-                        <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -366,28 +376,29 @@ Jun 2021</Value>
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>5.16875cm</Height>
+              <Height>4.19833cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="strategy_measure_description">
+                    <Textbox Name="strategy_measure_code">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>= Fields!strategy_measure_code.Value + " - " + Fields!strategy_measure_description.Value</Value>
+                              <Value>=Fields!strategy_measure_code.Value + " - " + Fields!strategy_measure_description.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
+                                <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>strategy_measure_description</rd:DefaultName>
+                      <rd:DefaultName>strategy_measure_code</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -417,7 +428,7 @@ Jun 2021</Value>
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="how_measured">
+                    <Textbox Name="how_measured1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -428,13 +439,14 @@ Jun 2021</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
+                                <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>how_measured</rd:DefaultName>
+                      <rd:DefaultName>how_measured1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -471,16 +483,15 @@ Jun 2021</Value>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=iif(Fields!target_for_column.Value = -1,"TBD",iif(Fields!prefix_short.Value is Nothing,"",Fields!prefix_short.Value) + " " + format(Fields!target_for_column.Value,"###,##0") + iif(Fields!unit_full.Value is Nothing,"", " " + Fields!unit_full.Value))</Value>
+                              <Value>=iif(Fields!target_for_column.Value = -1,"TBD",iif(Fields!prefix_short.Value is Nothing,"",Fields!prefix_short.Value) + " " + format(Fields!target_for_column.Value,"###,##0") + iif(Fields!unit_short.Value is Nothing,"", " " + Fields!unit_short.Value))</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
+                                <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
+                          <Style />
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>prefix_short</rd:DefaultName>
@@ -509,7 +520,6 @@ Jun 2021</Value>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -520,12 +530,12 @@ Jun 2021</Value>
                           <ChartMember>
                             <Group Name="Chart1_CategoryGroup">
                               <GroupExpressions>
-                                <GroupExpression>=Fields!rank.Value</GroupExpression>
+                                <GroupExpression>=Fields!dp_Year.Value</GroupExpression>
                               </GroupExpressions>
                             </Group>
                             <SortExpressions>
                               <SortExpression>
-                                <Value>=Fields!rank.Value</Value>
+                                <Value>=Fields!dp_Year.Value</Value>
                               </SortExpression>
                             </SortExpressions>
                             <Label>=Fields!dp_Year.Value</Label>
@@ -548,31 +558,15 @@ Jun 2021</Value>
                             <ChartDataPoints>
                               <ChartDataPoint>
                                 <ChartDataPointValues>
-                                  <Y>=Sum(Fields!dp_value.Value)</Y>
+                                  <Y>=Count(Fields!dp_value.Value)</Y>
                                 </ChartDataPointValues>
                                 <ChartDataLabel>
-                                  <Style>
-                                    <FontFamily>Arial Narrow</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                    <Format>#,0;(#,0)</Format>
-                                    <Color>Red</Color>
-                                  </Style>
-                                  <UseValueAsLabel>true</UseValueAsLabel>
-                                  <Visible>true</Visible>
+                                  <Style />
                                 </ChartDataLabel>
-                                <Style>
-                                  <Border>
-                                    <Width>1.5pt</Width>
-                                  </Border>
-                                  <Color>Red</Color>
-                                </Style>
+                                <Style />
                                 <ChartMarker>
-                                  <Type>Circle</Type>
-                                  <Style>
-                                    <Border>
-                                      <Color>Black</Color>
-                                    </Border>
-                                  </Style>
+                                  <Type>Auto</Type>
+                                  <Style />
                                 </ChartMarker>
                                 <DataElementOutput>Output</DataElementOutput>
                               </ChartDataPoint>
@@ -588,9 +582,6 @@ Jun 2021</Value>
                                 <Style />
                               </ChartDataLabel>
                             </ChartEmptyPoints>
-                            <ChartItemInLegend>
-                              <LegendText>Current</LegendText>
-                            </ChartItemInLegend>
                             <ValueAxisName>Primary</ValueAxisName>
                             <CategoryAxisName>Primary</CategoryAxisName>
                             <ChartSmartLabel>
@@ -602,39 +593,21 @@ Jun 2021</Value>
                             <ChartDataPoints>
                               <ChartDataPoint>
                                 <ChartDataPointValues>
-                                  <Y>=Sum(Fields!dp_target.Value)</Y>
+                                  <Y>=Count(Fields!dp_target.Value)</Y>
                                 </ChartDataPointValues>
                                 <ChartDataLabel>
-                                  <Style>
-                                    <FontFamily>Arial Narrow</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                    <Format>#,0;(#,0)</Format>
-                                    <Color>Blue</Color>
-                                  </Style>
-                                  <UseValueAsLabel>true</UseValueAsLabel>
-                                  <Visible>true</Visible>
+                                  <Style />
                                 </ChartDataLabel>
-                                <Style>
-                                  <Color>Blue</Color>
-                                </Style>
+                                <Style />
                                 <ChartMarker>
-                                  <Type>Cross</Type>
-                                  <Size>4pt</Size>
-                                  <Style>
-                                    <Border>
-                                      <Color>Black</Color>
-                                      <Width>0.25pt</Width>
-                                    </Border>
-                                  </Style>
+                                  <Type>Auto</Type>
+                                  <Style />
                                 </ChartMarker>
                                 <DataElementOutput>Output</DataElementOutput>
                               </ChartDataPoint>
                             </ChartDataPoints>
                             <Type>Line</Type>
-                            <Style>
-                              <ShadowColor>Black</ShadowColor>
-                              <ShadowOffset>0pt</ShadowOffset>
-                            </Style>
+                            <Style />
                             <ChartEmptyPoints>
                               <Style />
                               <ChartMarker>
@@ -644,9 +617,6 @@ Jun 2021</Value>
                                 <Style />
                               </ChartDataLabel>
                             </ChartEmptyPoints>
-                            <ChartItemInLegend>
-                              <LegendText>Target</LegendText>
-                            </ChartItemInLegend>
                             <ValueAxisName>Primary</ValueAxisName>
                             <CategoryAxisName>Primary</CategoryAxisName>
                             <ChartSmartLabel>
@@ -661,8 +631,7 @@ Jun 2021</Value>
                           <ChartCategoryAxes>
                             <ChartAxis Name="Primary">
                               <Style>
-                                <FontFamily>Arial Narrow</FontFamily>
-                                <FontSize>6pt</FontSize>
+                                <FontSize>8pt</FontSize>
                               </Style>
                               <ChartAxisTitle>
                                 <Caption />
@@ -692,10 +661,6 @@ Jun 2021</Value>
                               <CrossAt>NaN</CrossAt>
                               <Minimum>NaN</Minimum>
                               <Maximum>NaN</Maximum>
-                              <Angle>-45</Angle>
-                              <AllowLabelRotation>Rotate45</AllowLabelRotation>
-                              <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
-                              <MaxFontSize>8pt</MaxFontSize>
                               <ChartAxisScaleBreak>
                                 <Style />
                               </ChartAxisScaleBreak>
@@ -741,13 +706,10 @@ Jun 2021</Value>
                           <ChartValueAxes>
                             <ChartAxis Name="Primary">
                               <Style>
-                                <FontFamily>Arial Narrow</FontFamily>
-                                <FontSize>6pt</FontSize>
-                                <Format>#,0;(#,0)</Format>
+                                <FontSize>8pt</FontSize>
                               </Style>
                               <ChartAxisTitle>
                                 <Caption />
-                                <Position>Near</Position>
                                 <Style>
                                   <FontSize>8pt</FontSize>
                                 </Style>
@@ -773,7 +735,6 @@ Jun 2021</Value>
                               <CrossAt>NaN</CrossAt>
                               <Minimum>NaN</Minimum>
                               <Maximum>NaN</Maximum>
-                              <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
                               <ChartAxisScaleBreak>
                                 <Style />
                               </ChartAxisScaleBreak>
@@ -816,9 +777,7 @@ Jun 2021</Value>
                             </ChartAxis>
                           </ChartValueAxes>
                           <Style>
-                            <BackgroundColor>White</BackgroundColor>
-                            <BackgroundGradientType>TopBottom</BackgroundGradientType>
-                            <BackgroundGradientEndColor>OldLace</BackgroundGradientEndColor>
+                            <BackgroundGradientType>None</BackgroundGradientType>
                           </Style>
                         </ChartArea>
                       </ChartAreas>
@@ -839,7 +798,6 @@ Jun 2021</Value>
                         </Style>
                       </ChartNoDataMessage>
                       <DataSetName>DataSet1</DataSetName>
-                      <ZIndex>1</ZIndex>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -878,6 +836,7 @@ Jun 2021</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
+                                <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -919,6 +878,48 @@ Jun 2021</Value>
                 </TablixCell>
               </TablixCells>
             </TablixRow>
+            <TablixRow>
+              <Height>0.20312cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox143">
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontFamily>Calibri</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <Color>#4d4d4d</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>General</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox143</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <BackgroundColor>LightGreen</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                    </Textbox>
+                    <ColSpan>5</ColSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell />
+                <TablixCell />
+                <TablixCell />
+                <TablixCell />
+              </TablixCells>
+            </TablixRow>
           </TablixRows>
         </TablixBody>
         <TablixColumnHierarchy>
@@ -943,13 +944,14 @@ Jun 2021</Value>
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!theme_description.Value</Value>
+                  <Value>=Fields!theme_id.Value</Value>
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
                 <Size>0.07938cm</Size>
                 <CellContents>
                   <Textbox Name="theme_id">
+                    <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
                       <Paragraph>
@@ -958,15 +960,12 @@ Jun 2021</Value>
                             <Value>=Fields!theme_id.Value</Value>
                             <Style>
                               <FontFamily>Tahoma</FontFamily>
-                              <FontSize>1pt</FontSize>
                               <FontWeight>Bold</FontWeight>
-                              <Color>LightBlue</Color>
+                              <Color>White</Color>
                             </Style>
                           </TextRun>
                         </TextRuns>
-                        <Style>
-                          <TextAlign>Left</TextAlign>
-                        </Style>
+                        <Style />
                       </Paragraph>
                     </Paragraphs>
                     <rd:DefaultName>theme_id</rd:DefaultName>
@@ -974,6 +973,10 @@ Jun 2021</Value>
                       <Border>
                         <Style>None</Style>
                       </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
                     </Style>
                   </Textbox>
                 </CellContents>
@@ -983,7 +986,7 @@ Jun 2021</Value>
                   <TablixHeader>
                     <Size>0.07938cm</Size>
                     <CellContents>
-                      <Textbox Name="Textbox18">
+                      <Textbox Name="Textbox92">
                         <CanGrow>true</CanGrow>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
@@ -993,16 +996,15 @@ Jun 2021</Value>
                                 <Value />
                                 <Style>
                                   <FontFamily>Tahoma</FontFamily>
-                                  <FontSize>1pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
-                                  <Color>PaleTurquoise</Color>
+                                  <Color>White</Color>
                                 </Style>
                               </TextRun>
                             </TextRuns>
                             <Style />
                           </Paragraph>
                         </Paragraphs>
-                        <rd:DefaultName>Textbox18</rd:DefaultName>
+                        <rd:DefaultName>Textbox92</rd:DefaultName>
                         <Style>
                           <Border>
                             <Style>None</Style>
@@ -1020,7 +1022,7 @@ Jun 2021</Value>
                       <TablixHeader>
                         <Size>0.07938cm</Size>
                         <CellContents>
-                          <Textbox Name="Textbox19">
+                          <Textbox Name="Textbox93">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
@@ -1030,16 +1032,15 @@ Jun 2021</Value>
                                     <Value />
                                     <Style>
                                       <FontFamily>Tahoma</FontFamily>
-                                      <FontSize>1pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
-                                      <Color>PaleTurquoise</Color>
+                                      <Color>White</Color>
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
                                 <Style />
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>Textbox19</rd:DefaultName>
+                            <rd:DefaultName>Textbox93</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Style>None</Style>
@@ -1052,6 +1053,44 @@ Jun 2021</Value>
                           </Textbox>
                         </CellContents>
                       </TablixHeader>
+                      <TablixMembers>
+                        <TablixMember>
+                          <TablixHeader>
+                            <Size>0.07938cm</Size>
+                            <CellContents>
+                              <Textbox Name="Textbox133">
+                                <CanGrow>true</CanGrow>
+                                <KeepTogether>true</KeepTogether>
+                                <Paragraphs>
+                                  <Paragraph>
+                                    <TextRuns>
+                                      <TextRun>
+                                        <Value />
+                                        <Style>
+                                          <FontFamily>Tahoma</FontFamily>
+                                          <FontWeight>Bold</FontWeight>
+                                          <Color>White</Color>
+                                        </Style>
+                                      </TextRun>
+                                    </TextRuns>
+                                    <Style />
+                                  </Paragraph>
+                                </Paragraphs>
+                                <rd:DefaultName>Textbox133</rd:DefaultName>
+                                <Style>
+                                  <Border>
+                                    <Style>None</Style>
+                                  </Border>
+                                  <PaddingLeft>2pt</PaddingLeft>
+                                  <PaddingRight>2pt</PaddingRight>
+                                  <PaddingTop>2pt</PaddingTop>
+                                  <PaddingBottom>2pt</PaddingBottom>
+                                </Style>
+                              </Textbox>
+                            </CellContents>
+                          </TablixHeader>
+                        </TablixMember>
+                      </TablixMembers>
                     </TablixMember>
                   </TablixMembers>
                   <KeepWithGroup>After</KeepWithGroup>
@@ -1064,13 +1103,14 @@ Jun 2021</Value>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!strategy_objective.Value</Value>
+                      <Value>=Fields!strategy_objective_id.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
                     <Size>0.07938cm</Size>
                     <CellContents>
                       <Textbox Name="strategy_objective_id">
+                        <CanGrow>true</CanGrow>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
                           <Paragraph>
@@ -1079,15 +1119,12 @@ Jun 2021</Value>
                                 <Value>=Fields!strategy_objective_id.Value</Value>
                                 <Style>
                                   <FontFamily>Tahoma</FontFamily>
-                                  <FontSize>1pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
-                                  <Color>PaleTurquoise</Color>
+                                  <Color>White</Color>
                                 </Style>
                               </TextRun>
                             </TextRuns>
-                            <Style>
-                              <TextAlign>Left</TextAlign>
-                            </Style>
+                            <Style />
                           </Paragraph>
                         </Paragraphs>
                         <rd:DefaultName>strategy_objective_id</rd:DefaultName>
@@ -1095,6 +1132,10 @@ Jun 2021</Value>
                           <Border>
                             <Style>None</Style>
                           </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
                         </Style>
                       </Textbox>
                     </CellContents>
@@ -1104,7 +1145,7 @@ Jun 2021</Value>
                       <TablixHeader>
                         <Size>0.07938cm</Size>
                         <CellContents>
-                          <Textbox Name="Textbox71">
+                          <Textbox Name="Textbox75">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
@@ -1114,16 +1155,15 @@ Jun 2021</Value>
                                     <Value />
                                     <Style>
                                       <FontFamily>Tahoma</FontFamily>
-                                      <FontSize>1pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
-                                      <Color>PaleTurquoise</Color>
+                                      <Color>White</Color>
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
                                 <Style />
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>Textbox71</rd:DefaultName>
+                            <rd:DefaultName>Textbox75</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Style>None</Style>
@@ -1136,6 +1176,44 @@ Jun 2021</Value>
                           </Textbox>
                         </CellContents>
                       </TablixHeader>
+                      <TablixMembers>
+                        <TablixMember>
+                          <TablixHeader>
+                            <Size>0.07938cm</Size>
+                            <CellContents>
+                              <Textbox Name="Textbox134">
+                                <CanGrow>true</CanGrow>
+                                <KeepTogether>true</KeepTogether>
+                                <Paragraphs>
+                                  <Paragraph>
+                                    <TextRuns>
+                                      <TextRun>
+                                        <Value />
+                                        <Style>
+                                          <FontFamily>Tahoma</FontFamily>
+                                          <FontWeight>Bold</FontWeight>
+                                          <Color>White</Color>
+                                        </Style>
+                                      </TextRun>
+                                    </TextRuns>
+                                    <Style />
+                                  </Paragraph>
+                                </Paragraphs>
+                                <rd:DefaultName>Textbox134</rd:DefaultName>
+                                <Style>
+                                  <Border>
+                                    <Style>None</Style>
+                                  </Border>
+                                  <PaddingLeft>2pt</PaddingLeft>
+                                  <PaddingRight>2pt</PaddingRight>
+                                  <PaddingTop>2pt</PaddingTop>
+                                  <PaddingBottom>2pt</PaddingBottom>
+                                </Style>
+                              </Textbox>
+                            </CellContents>
+                          </TablixHeader>
+                        </TablixMember>
+                      </TablixMembers>
                       <KeepWithGroup>After</KeepWithGroup>
                     </TablixMember>
                     <TablixMember>
@@ -1146,13 +1224,14 @@ Jun 2021</Value>
                       </Group>
                       <SortExpressions>
                         <SortExpression>
-                          <Value>=Fields!strategy.Value</Value>
+                          <Value>=Fields!strategy_id.Value</Value>
                         </SortExpression>
                       </SortExpressions>
                       <TablixHeader>
                         <Size>0.07938cm</Size>
                         <CellContents>
                           <Textbox Name="strategy_id">
+                            <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
                               <Paragraph>
@@ -1161,15 +1240,12 @@ Jun 2021</Value>
                                     <Value>=Fields!strategy_id.Value</Value>
                                     <Style>
                                       <FontFamily>Tahoma</FontFamily>
-                                      <FontSize>1pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
-                                      <Color>PaleTurquoise</Color>
+                                      <Color>White</Color>
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
-                                <Style>
-                                  <TextAlign>Left</TextAlign>
-                                </Style>
+                                <Style />
                               </Paragraph>
                             </Paragraphs>
                             <rd:DefaultName>strategy_id</rd:DefaultName>
@@ -1177,26 +1253,190 @@ Jun 2021</Value>
                               <Border>
                                 <Style>None</Style>
                               </Border>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
                             </Style>
                           </Textbox>
                         </CellContents>
                       </TablixHeader>
                       <TablixMembers>
                         <TablixMember>
+                          <TablixHeader>
+                            <Size>0.07938cm</Size>
+                            <CellContents>
+                              <Textbox Name="Textbox135">
+                                <CanGrow>true</CanGrow>
+                                <KeepTogether>true</KeepTogether>
+                                <Paragraphs>
+                                  <Paragraph>
+                                    <TextRuns>
+                                      <TextRun>
+                                        <Value />
+                                        <Style>
+                                          <FontFamily>Tahoma</FontFamily>
+                                          <FontWeight>Bold</FontWeight>
+                                          <Color>White</Color>
+                                        </Style>
+                                      </TextRun>
+                                    </TextRuns>
+                                    <Style />
+                                  </Paragraph>
+                                </Paragraphs>
+                                <rd:DefaultName>Textbox135</rd:DefaultName>
+                                <Style>
+                                  <Border>
+                                    <Style>None</Style>
+                                  </Border>
+                                  <PaddingLeft>2pt</PaddingLeft>
+                                  <PaddingRight>2pt</PaddingRight>
+                                  <PaddingTop>2pt</PaddingTop>
+                                  <PaddingBottom>2pt</PaddingBottom>
+                                </Style>
+                              </Textbox>
+                            </CellContents>
+                          </TablixHeader>
+                          <TablixMembers>
+                            <TablixMember />
+                          </TablixMembers>
                           <KeepWithGroup>After</KeepWithGroup>
                         </TablixMember>
                         <TablixMember>
+                          <TablixHeader>
+                            <Size>0.07938cm</Size>
+                            <CellContents>
+                              <Textbox Name="Textbox136">
+                                <CanGrow>true</CanGrow>
+                                <KeepTogether>true</KeepTogether>
+                                <Paragraphs>
+                                  <Paragraph>
+                                    <TextRuns>
+                                      <TextRun>
+                                        <Value />
+                                        <Style>
+                                          <FontFamily>Calibri</FontFamily>
+                                          <FontSize>9pt</FontSize>
+                                          <FontWeight>Bold</FontWeight>
+                                          <Color>White</Color>
+                                        </Style>
+                                      </TextRun>
+                                    </TextRuns>
+                                    <Style />
+                                  </Paragraph>
+                                </Paragraphs>
+                                <rd:DefaultName>Textbox136</rd:DefaultName>
+                                <Style>
+                                  <Border>
+                                    <Style>None</Style>
+                                  </Border>
+                                  <PaddingLeft>2pt</PaddingLeft>
+                                  <PaddingRight>2pt</PaddingRight>
+                                  <PaddingTop>2pt</PaddingTop>
+                                  <PaddingBottom>2pt</PaddingBottom>
+                                </Style>
+                              </Textbox>
+                            </CellContents>
+                          </TablixHeader>
+                          <TablixMembers>
+                            <TablixMember />
+                          </TablixMembers>
                           <KeepWithGroup>After</KeepWithGroup>
                         </TablixMember>
                         <TablixMember>
-                          <Group Name="Details">
+                          <Group Name="strategy_measure_code">
                             <GroupExpressions>
                               <GroupExpression>=Fields!strategy_measure_code.Value</GroupExpression>
                             </GroupExpressions>
                           </Group>
+                          <SortExpressions>
+                            <SortExpression>
+                              <Value>=Fields!strategy_measure_code.Value</Value>
+                            </SortExpression>
+                          </SortExpressions>
+                          <TablixHeader>
+                            <Size>0.07938cm</Size>
+                            <CellContents>
+                              <Textbox Name="strategy_measure_code1">
+                                <CanGrow>true</CanGrow>
+                                <KeepTogether>true</KeepTogether>
+                                <Paragraphs>
+                                  <Paragraph>
+                                    <TextRuns>
+                                      <TextRun>
+                                        <Value>=Fields!strategy_measure_code.Value</Value>
+                                        <Style>
+                                          <FontFamily>Tahoma</FontFamily>
+                                          <FontWeight>Bold</FontWeight>
+                                          <Color>White</Color>
+                                        </Style>
+                                      </TextRun>
+                                    </TextRuns>
+                                    <Style />
+                                  </Paragraph>
+                                </Paragraphs>
+                                <rd:DefaultName>strategy_measure_code1</rd:DefaultName>
+                                <Style>
+                                  <Border>
+                                    <Style>None</Style>
+                                  </Border>
+                                  <PaddingLeft>2pt</PaddingLeft>
+                                  <PaddingRight>2pt</PaddingRight>
+                                  <PaddingTop>2pt</PaddingTop>
+                                  <PaddingBottom>2pt</PaddingBottom>
+                                </Style>
+                              </Textbox>
+                            </CellContents>
+                          </TablixHeader>
                           <TablixMembers>
-                            <TablixMember />
+                            <TablixMember>
+                              <Group Name="Details">
+                                <GroupExpressions>
+                                  <GroupExpression>=Fields!strategy_measure_code.Value</GroupExpression>
+                                </GroupExpressions>
+                              </Group>
+                            </TablixMember>
                           </TablixMembers>
+                        </TablixMember>
+                        <TablixMember>
+                          <TablixHeader>
+                            <Size>0.07938cm</Size>
+                            <CellContents>
+                              <Textbox Name="Textbox142">
+                                <CanGrow>true</CanGrow>
+                                <KeepTogether>true</KeepTogether>
+                                <Paragraphs>
+                                  <Paragraph>
+                                    <TextRuns>
+                                      <TextRun>
+                                        <Value>Total</Value>
+                                        <Style>
+                                          <FontFamily>Tahoma</FontFamily>
+                                          <FontWeight>Bold</FontWeight>
+                                          <Color>White</Color>
+                                        </Style>
+                                      </TextRun>
+                                    </TextRuns>
+                                    <Style />
+                                  </Paragraph>
+                                </Paragraphs>
+                                <rd:DefaultName>Textbox142</rd:DefaultName>
+                                <Style>
+                                  <Border>
+                                    <Style>None</Style>
+                                  </Border>
+                                  <PaddingLeft>2pt</PaddingLeft>
+                                  <PaddingRight>2pt</PaddingRight>
+                                  <PaddingTop>2pt</PaddingTop>
+                                  <PaddingBottom>2pt</PaddingBottom>
+                                </Style>
+                              </Textbox>
+                            </CellContents>
+                          </TablixHeader>
+                          <Visibility>
+                            <Hidden>true</Hidden>
+                          </Visibility>
+                          <KeepWithGroup>Before</KeepWithGroup>
                         </TablixMember>
                       </TablixMembers>
                     </TablixMember>
@@ -1207,22 +1447,8 @@ Jun 2021</Value>
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <SortExpressions>
-          <SortExpression>
-            <Value>=Fields!theme_id.Value</Value>
-          </SortExpression>
-          <SortExpression>
-            <Value>=val(Fields!strategy_objective_id.Value)</Value>
-          </SortExpression>
-          <SortExpression>
-            <Value>=Val(Fields!strategy_id.Value)</Value>
-          </SortExpression>
-          <SortExpression>
-            <Value>=Fields!strategy_measure_code.Value</Value>
-          </SortExpression>
-        </SortExpressions>
-        <Height>8.45182cm</Height>
-        <Width>18.91114cm</Width>
+        <Height>6.64271cm</Height>
+        <Width>18.82354cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1230,10 +1456,10 @@ Jun 2021</Value>
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>3.35873in</Height>
+    <Height>2.61524in</Height>
     <Style />
   </Body>
-  <Width>7.46616in</Width>
+  <Width>7.44209in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
@@ -1251,7 +1477,7 @@ Jun 2021</Value>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>61e4ac44-e9c7-4323-83a0-14dd7ac5c87c</rd:DataSourceID>
+      <rd:DataSourceID>76dd90c8-5de4-41d6-92e9-6f4b6166e556</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -1271,14 +1497,6 @@ Jun 2021</Value>
         </Field>
         <Field Name="theme_description">
           <DataField>theme_description</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="theme_color">
-          <DataField>theme_color</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="theme_alpha_color">
-          <DataField>theme_alpha_color</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="strategy_objective_id">
@@ -1321,10 +1539,6 @@ Jun 2021</Value>
           <DataField>unit_short</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="unit_full">
-          <DataField>unit_full</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="rank">
           <DataField>rank</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -1356,30 +1570,6 @@ Jun 2021</Value>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
-  <Code>Public Function ChangeColor(ByVal color As String) As String 
-	dim c1 as String = Right(color,6)
-	Dim c2 as Integer = 150
-
-	Dim R as Integer  = (Convert.ToInt32(Left(c1,2), 16) + c2) Mod 256
-	Dim G as Integer  = (Convert.ToInt32(Mid(c1,3,2), 16) + c2) Mod 256
-	Dim B as Integer  = (Convert.ToInt32(Right(c1,2), 16) + c2) Mod 256
-
-	'Dim R as Integer = 255 - Convert.ToInt32(Left(c1,2), 16)
-	'Dim G as Integer = 255 - Convert.ToInt32(Mid(c1,3,2), 16)
-	'Dim B as Integer = 255 - Convert.ToInt32(Right(c1,2), 16)
-	
-	Dim strR as String = Hex(R)
-	Dim strG as String = Hex(G)
-	Dim strB as String = Hex(B)
-
-	if(len(strR)&lt;2) then strR="0" &amp; strR
-	if(len(strG)&lt;2) then strG="0" &amp; strG
-	if(len(strB)&lt;2) then strB="0" &amp; strB
-
-	Dim new_color as String  = "#" &amp; strR &amp; strG &amp; strB
-
-	return new_color
-End Function</Code>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>2d0dd9a5-62e7-4e73-bcb0-b6912c1d7fbe</rd:ReportID>
+  <rd:ReportID>4a1ce15d-118c-49b2-bd3d-d8b9180a310e</rd:ReportID>
 </Report>

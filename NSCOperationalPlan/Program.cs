@@ -296,19 +296,19 @@ namespace NSCOperationalPlan
                     //user.DisableMenuOptions = default_usermenu.Concat(temp).ToList();
                     break;
                 case UserRights.Director:
-                    temp = new List<string> { "A01", "A02", "A03", "A04", "A05", "A06", "A07", "A07_1", "A08" };
+                    temp = new List<string> { "A01", "A02", "A03", "A04", "A05", "A06", "A07", "A07_1", "A08", "E01" };
                     //user.DisableMenuOptions = default_usermenu.Concat(temp).ToList();
                     break;
                 case UserRights.Manager:
-                    temp = new List<string> { "A01", "A02", "A03", "A04", "A05", "A06", "A07", "A07_1", "A08" };
+                    temp = new List<string> { "A01", "A02", "A03", "A04", "A05", "A06", "A07", "A07_1", "A08", "E01" };
                     //user.DisableMenuOptions = default_usermenu.Concat(temp).ToList();
                     break;
                 case UserRights.Finance:
-                    temp = new List<string> { "A01", "A02", "A03", "A04", "A05","A06", "A08" };
+                    temp = new List<string> { "A01", "A02", "A03", "A04", "A05","A06", "A08", "E01" };
                     //user.DisableMenuOptions = default_usermenu.Concat(temp).ToList();
                     break;
                 default:
-                    temp = new List<string> { "A01", "A02", "A03", "A04", "A05", "A06", "A07", "A07_1", "A08" };
+                    temp = new List<string> { "A01", "A02", "A03", "A04", "A05", "A06", "A07", "A07_1", "A08",  "E01" };
                     //user.DisableMenuOptions = default_usermenu.Concat(temp).ToList();
                     break;
             }

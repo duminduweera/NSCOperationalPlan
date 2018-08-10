@@ -27,22 +27,7 @@ namespace NSCOperationalPlan
             FillGrid();
         }
 
-        private void btnColor_Click(object sender, EventArgs e)
-        {
-            ColorDialog cd = new ColorDialog();
-            cd.AnyColor = true;
-            cd.SolidColorOnly = true;
-            if (cd.ShowDialog() == DialogResult.OK) 
-            {
-                txtThemeColor.BackColor = cd.Color;
-                txtThemeColor.Text = string.Format("#{0:X2}{1:X2}{2:X2}", cd.Color.R,cd.Color.G, cd.Color.B);
-            }
-            else
-            {
-                return;
-            }
-
-        }
+        
 
         private void tsbClose_Click(object sender, EventArgs e)
         {
@@ -66,7 +51,9 @@ namespace NSCOperationalPlan
                     dgv1.Rows.Add(new String[] { row["id"].ToString(),
                               row["theme_short"].ToString(),
                               row["theme_description"].ToString() + Environment.NewLine,
-                              row["theme_color"].ToString()
+                              row["theme_color"].ToString(),
+                              row["theme_fore_color"].ToString(),
+                              row["theme_alpha_color"].ToString()
                     });
                 }
                 MyDLLs.MyGridUtils.ColorDataGrid(dgv1, 0, 3);
@@ -95,8 +82,8 @@ namespace NSCOperationalPlan
             //strdct.Add("ThemeDescription", txtTheme.Text.ToString());
             //strdct.Add("ThemeColor", txtThemeColor.Text.ToString());
 
-            string query = @"INSERT INTO theme (id, theme_short, theme_description, theme_color)"
-                + " VALUES (@ThemeID , @ThemeShort, @ThemeDescription, @ThemeColor)";
+            string query = @"INSERT INTO theme (id, theme_short, theme_description, theme_color, theme_fore_color, theme_alpha_color)"
+                + " VALUES (@ThemeID , @ThemeShort, @ThemeDescription, @ThemeColor, @ThemeForeColor, @ThemeAlphaColor)";
             try
             {
                 db.InsertUpdateDeleteRecord(con, trans, query, strdct);
@@ -112,15 +99,9 @@ namespace NSCOperationalPlan
         private bool UpdateTheme(DbConnection con, DbTransaction trans, Dictionary<string,dynamic> strdct)
         {
             bool result = false;
-            //Dictionary<string, dynamic> strdct = new Dictionary<string, dynamic>();
-
-            //strdct.Add("ThemeID", txtThemeCode.Text.ToString());
-            //strdct.Add("ThemeShort", txtThemeShort.Text.ToString());
-            //strdct.Add("ThemeDescription", txtTheme.Text.ToString());
-            //strdct.Add("ThemeColor", txtThemeColor.Text.ToString());
 
             string query = @"UPDATE theme SET theme_short = @ThemeShort, theme_description = @ThemeDescription,"
-                + " theme_color = @ThemeColor WHERE id = @ThemeID";
+                + " theme_color = @ThemeColor, theme_fore_color = @ThemeForeColor, theme_alpha_color = @ThemeAlphaColor WHERE id = @ThemeID";
             try
             {
                 db.InsertUpdateDeleteRecord(con, trans, query, strdct);
@@ -142,6 +123,8 @@ namespace NSCOperationalPlan
                 strdct.Add("ThemeShort", txtThemeShort.Text.ToString());
                 strdct.Add("ThemeDescription", txtTheme.Text.ToString());
                 strdct.Add("ThemeColor", txtThemeColor.Text.ToString());
+                strdct.Add("ThemeForeColor", txtThemeColorFont.Text.ToString());
+                strdct.Add("ThemeAlphaColor", txtBkgAlpha.Text.ToString());
 
                 DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
 
@@ -185,8 +168,17 @@ namespace NSCOperationalPlan
             txtTheme.Text = "";
 
             txtThemeColor.BackColor = Color.White;
+            txtThemeColor.ForeColor = Color.Black;
             txtThemeColor.Text = "";
+
+            txtBkgAlpha.BackColor = Color.White;
+            txtBkgAlpha.Text = "";
+
+            txtThemeColorFont.BackColor = Color.White;
+            txtThemeColor.Text = "";
+
             txtThemeCode.Focus();
+
             dgv1.CurrentCell = null;
 
         }
@@ -202,6 +194,16 @@ namespace NSCOperationalPlan
                 txtTheme.Text = dgv1.CurrentRow.Cells[2].Value.ToString().TrimEnd();
                 txtThemeColor.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
                 txtThemeColor.BackColor = ColorTranslator.FromHtml(txtThemeColor.Text);
+
+                if (dgv1.CurrentRow.Cells[4].Value != null)
+                {
+                    txtThemeColor.ForeColor = ColorTranslator.FromHtml(dgv1.CurrentRow.Cells[4].Value.ToString());
+                    txtThemeColorFont.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
+                }
+                if (dgv1.CurrentRow.Cells[5].Value != null)
+                {
+                    txtBkgAlpha.BackColor = ColorTranslator.FromHtml(dgv1.CurrentRow.Cells[5].Value.ToString());
+                }
 
             }
             catch (Exception ex)
@@ -234,17 +236,6 @@ namespace NSCOperationalPlan
         private void tsbPrint_Click(object sender, EventArgs e)
         {
             clsReports.PrintTheme();
-            //frmPrint frmprint = new frmPrint();
-
-            //Database db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
-            //DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
-            //string strsql = "SELECT theme.* FROM theme ORDER BY id;";
-            //DataTable tb = db.GetDataTable(conn, strsql);
-
-            //frmprint.dataTable = tb;
-            //frmprint.reportName = @"rptTheme.rdlc";
-
-            //frmprint.Show();
         }
 
         private void txtThemeColor_Enter(object sender, EventArgs e)
@@ -260,8 +251,10 @@ namespace NSCOperationalPlan
             dct.Add("Theme Short", 250);
             dct.Add("Theme", 570);
             dct.Add("ThemeColor", 0);
+            dct.Add("ThemeForeColor", 0);
+            dct.Add("ThemeColorAlpha", 0);
 
-            int[] hiddenRows = {3};
+            int[] hiddenRows = {3,4,5};
 
             MyDLLs.MyGridUtils.ArrangeDataGrid(dgv1, dct, hiddenRows, Color.LightGray, Color.LightSteelBlue);
             dgv1.ReadOnly = true;
@@ -271,5 +264,54 @@ namespace NSCOperationalPlan
         {
             tsbEdit_Click(sender, e);
         }
+
+        private void btnColor_Click(object sender, EventArgs e)
+        {
+            ColorDialog cd = new ColorDialog();
+            cd.AnyColor = true;
+            cd.SolidColorOnly = true;
+            if (cd.ShowDialog() == DialogResult.OK)
+            {
+                txtThemeColor.BackColor = cd.Color;
+                txtThemeColor.Text = string.Format("#{0:X2}{1:X2}{2:X2}", cd.Color.R, cd.Color.G, cd.Color.B);
+            }
+            else
+            {
+                return;
+            }
+
+        }
+        private void btnColorFont_Click(object sender, EventArgs e)
+        {
+            ColorDialog cd = new ColorDialog();
+            cd.AnyColor = true;
+            cd.SolidColorOnly = true;
+            if (cd.ShowDialog() == DialogResult.OK)
+            {
+                Color t = txtThemeColor.BackColor;
+                txtThemeColor.ForeColor = cd.Color;
+                txtThemeColorFont.Text = string.Format("#{0:X2}{1:X2}{2:X2}", cd.Color.R, cd.Color.G, cd.Color.B);
+            }
+            else
+            {
+                return;
+            }
+        }
+        private void btnBkgAlpha_Click(object sender, EventArgs e)
+        {
+            ColorDialog cd = new ColorDialog();
+            cd.AnyColor = true;
+            cd.SolidColorOnly = true;
+            if (cd.ShowDialog() == DialogResult.OK)
+            {
+                txtBkgAlpha.BackColor = cd.Color;
+                txtBkgAlpha.Text = string.Format("#{0:X2}{1:X2}{2:X2}", cd.Color.R, cd.Color.G, cd.Color.B);
+            }
+            else
+            {
+                return;
+            }
+        }
+       
     }
 }
