@@ -101,6 +101,38 @@ namespace NSCOperationalPlan
         {
             if (cmonth >= 1 && cmonth <= 6) { return 6; } else return 12;
         }
+        public static int GetStrategyMeasureRank(string cyear, int cmonth)
+        {
+            switch(string.Concat(cyear.Trim(), cmonth.ToString().Trim()))
+            {
+                case "17/1812":
+                    return 1;
+                    break;
+                case "17/186":
+                    return 2;
+                    break;
+                case "18/1912":
+                    return 3;
+                    break;
+                case "18/196":
+                    return 4;
+                    break;
+                case "19/2012":
+                    return 5;
+                    break;
+                case "19/206":
+                    return 6;
+                    break;
+                case "20/2112":
+                    return 7;
+                    break;
+                case "20/216":
+                    return 8;
+                    break;
+                default:
+                    return 0;
+            }
+        }
         public static int GetStrategyMeasurePrevouosMonth()
         {
             return GetStrategyMeasurePrevouosMonth(OPGlobals.GetStrategyMeasureMonth());

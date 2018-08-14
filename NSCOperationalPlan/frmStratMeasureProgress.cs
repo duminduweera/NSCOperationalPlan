@@ -122,7 +122,7 @@ namespace NSCOperationalPlan
                             row["current_result"].ToString(),
                             row["comment"].ToString(),
                             row["strategy_id"].ToString(),
-                            String.IsNullOrEmpty(row["comment"].ToString()) ? "0" : "1"
+                            String.IsNullOrEmpty(row["comment"].ToString()) && String.IsNullOrEmpty(row["current_result"].ToString()) ? "0" : "1"
                     );
                 }
 
@@ -217,7 +217,7 @@ namespace NSCOperationalPlan
         }
         private void cboManager_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboManager.SelectedIndex > 0) { AddDatatoGrid(OPGlobals.currentYear, OPGlobals.currentMonth); }
+            if (cboManager.SelectedIndex > -1) { AddDatatoGrid(OPGlobals.currentYear, OPGlobals.currentMonth); }
         }
         #endregion
 
@@ -276,16 +276,29 @@ namespace NSCOperationalPlan
                         sm.CurrentProgress = mProgress;
 
                         sm.Comment = dgv.Rows[i].Cells["Comments"].Value.ToString();
-
-                        if (dgv.Rows[i].Cells["Exist"].Value.ToString() == "0")
+                        if (!sm.IsExist())
                         {
-                            //==== NEW ====
                             sm.InsertMonthlyStrategyMeasures(db, conn, trans);
                         } else
                         {
-                            // --- EDIT AN EXISTING RECORD ---
                             sm.UpdateMonthlyStrategyMeasures(db, conn, trans);
                         }
+                            
+                        //DbConnection conn1 = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
+                        //string t = "SELECT count(strategy_measure_code) as noofrecs FROM  strategy_measure_monthly"
+                        //    + " WHERE strategy_measure_code = '" + sm.MeasureCode + "'"
+                        //    + " AND strategy_id = '" + sm.StrategyID + "'"
+                        //    + " AND year = '" + sm.Year + "' AND month = " + sm.Month;
+                        //DataTable tb_temp = db.GetDataTable(conn, t);
+                        //if (int.Parse(tb_temp.Rows[0]["noofrecs"].ToString()) == 0)
+                        //{
+                        //    sm.InsertMonthlyStrategyMeasures(db, conn, trans);
+                        //} else
+                        //{
+                        //    sm.UpdateMonthlyStrategyMeasures(db, conn, trans);
+                        //}
+
+                        
                     }
                     trans.Commit();
                     mRetVal = true;

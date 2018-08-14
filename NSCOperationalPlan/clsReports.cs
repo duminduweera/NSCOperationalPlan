@@ -591,7 +591,7 @@ namespace NSCOperationalPlan
             //string strsql = "SELECT view_delivery_program.* FROM view_delivery_program;";
             //string strsql = "SELECT * FROM view_delivery_program_17_21;";
 
-            string strsql = "SELECT * FROM view_delivery_program_chart order by strategy_measure_code, rank;";
+            string strsql = "SELECT * FROM nsc_operation_plan_17_to_21.view_delivery_program_chart ORDER BY theme_id, strategy_objective_rank, strategy_rank, strategy_measure_code;";
 
             DataTable tb = db.GetDataTable(conn, strsql);
 

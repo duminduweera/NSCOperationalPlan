@@ -324,9 +324,13 @@ namespace NSCOperationalPlan {
             
             private global::System.Data.DataColumn columntheme_alpha_color;
             
+            private global::System.Data.DataColumn columnstrategy_objective_rank;
+            
             private global::System.Data.DataColumn columnstrategy_objective_id;
             
             private global::System.Data.DataColumn columnstrategy_objective;
+            
+            private global::System.Data.DataColumn columnstrategy_rank;
             
             private global::System.Data.DataColumn columnstrategy_id;
             
@@ -348,13 +352,13 @@ namespace NSCOperationalPlan {
             
             private global::System.Data.DataColumn columnrank;
             
-            private global::System.Data.DataColumn columndp_Year;
-            
-            private global::System.Data.DataColumn columndp_value;
+            private global::System.Data.DataColumn columndp_legend;
             
             private global::System.Data.DataColumn columndp_target;
             
-            private global::System.Data.DataColumn columntarget_for_column;
+            private global::System.Data.DataColumn columndp_value;
+            
+            private global::System.Data.DataColumn columntarget;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -431,6 +435,14 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn strategy_objective_rankColumn {
+                get {
+                    return this.columnstrategy_objective_rank;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn strategy_objective_idColumn {
                 get {
                     return this.columnstrategy_objective_id;
@@ -442,6 +454,14 @@ namespace NSCOperationalPlan {
             public global::System.Data.DataColumn strategy_objectiveColumn {
                 get {
                     return this.columnstrategy_objective;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn strategy_rankColumn {
+                get {
+                    return this.columnstrategy_rank;
                 }
             }
             
@@ -527,17 +547,9 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn dp_YearColumn {
+            public global::System.Data.DataColumn dp_legendColumn {
                 get {
-                    return this.columndp_Year;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn dp_valueColumn {
-                get {
-                    return this.columndp_value;
+                    return this.columndp_legend;
                 }
             }
             
@@ -551,9 +563,17 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn target_for_columnColumn {
+            public global::System.Data.DataColumn dp_valueColumn {
                 get {
-                    return this.columntarget_for_column;
+                    return this.columndp_value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn targetColumn {
+                get {
+                    return this.columntarget;
                 }
             }
             
@@ -600,8 +620,10 @@ namespace NSCOperationalPlan {
                         string theme_description, 
                         string theme_color, 
                         string theme_alpha_color, 
+                        string strategy_objective_rank, 
                         string strategy_objective_id, 
                         string strategy_objective, 
+                        string strategy_rank, 
                         string strategy_id, 
                         string strategy, 
                         string strategy_measure_code, 
@@ -612,10 +634,10 @@ namespace NSCOperationalPlan {
                         string unit_short, 
                         string unit_full, 
                         string rank, 
-                        string dp_Year, 
-                        string dp_value, 
+                        string dp_legend, 
                         string dp_target, 
-                        double target_for_column) {
+                        string dp_value, 
+                        double target) {
                 deliveryprogram_chartRow rowdeliveryprogram_chartRow = ((deliveryprogram_chartRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         theme_id,
@@ -623,8 +645,10 @@ namespace NSCOperationalPlan {
                         theme_description,
                         theme_color,
                         theme_alpha_color,
+                        strategy_objective_rank,
                         strategy_objective_id,
                         strategy_objective,
+                        strategy_rank,
                         strategy_id,
                         strategy,
                         strategy_measure_code,
@@ -635,10 +659,10 @@ namespace NSCOperationalPlan {
                         unit_short,
                         unit_full,
                         rank,
-                        dp_Year,
-                        dp_value,
+                        dp_legend,
                         dp_target,
-                        target_for_column};
+                        dp_value,
+                        target};
                 rowdeliveryprogram_chartRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdeliveryprogram_chartRow);
                 return rowdeliveryprogram_chartRow;
@@ -666,8 +690,10 @@ namespace NSCOperationalPlan {
                 this.columntheme_description = base.Columns["theme_description"];
                 this.columntheme_color = base.Columns["theme_color"];
                 this.columntheme_alpha_color = base.Columns["theme_alpha_color"];
+                this.columnstrategy_objective_rank = base.Columns["strategy_objective_rank"];
                 this.columnstrategy_objective_id = base.Columns["strategy_objective_id"];
                 this.columnstrategy_objective = base.Columns["strategy_objective"];
+                this.columnstrategy_rank = base.Columns["strategy_rank"];
                 this.columnstrategy_id = base.Columns["strategy_id"];
                 this.columnstrategy = base.Columns["strategy"];
                 this.columnstrategy_measure_code = base.Columns["strategy_measure_code"];
@@ -678,10 +704,10 @@ namespace NSCOperationalPlan {
                 this.columnunit_short = base.Columns["unit_short"];
                 this.columnunit_full = base.Columns["unit_full"];
                 this.columnrank = base.Columns["rank"];
-                this.columndp_Year = base.Columns["dp_Year"];
-                this.columndp_value = base.Columns["dp_value"];
+                this.columndp_legend = base.Columns["dp_legend"];
                 this.columndp_target = base.Columns["dp_target"];
-                this.columntarget_for_column = base.Columns["target_for_column"];
+                this.columndp_value = base.Columns["dp_value"];
+                this.columntarget = base.Columns["target"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -697,10 +723,14 @@ namespace NSCOperationalPlan {
                 base.Columns.Add(this.columntheme_color);
                 this.columntheme_alpha_color = new global::System.Data.DataColumn("theme_alpha_color", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntheme_alpha_color);
+                this.columnstrategy_objective_rank = new global::System.Data.DataColumn("strategy_objective_rank", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrategy_objective_rank);
                 this.columnstrategy_objective_id = new global::System.Data.DataColumn("strategy_objective_id", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstrategy_objective_id);
                 this.columnstrategy_objective = new global::System.Data.DataColumn("strategy_objective", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstrategy_objective);
+                this.columnstrategy_rank = new global::System.Data.DataColumn("strategy_rank", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstrategy_rank);
                 this.columnstrategy_id = new global::System.Data.DataColumn("strategy_id", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstrategy_id);
                 this.columnstrategy = new global::System.Data.DataColumn("strategy", typeof(string), null, global::System.Data.MappingType.Element);
@@ -721,14 +751,14 @@ namespace NSCOperationalPlan {
                 base.Columns.Add(this.columnunit_full);
                 this.columnrank = new global::System.Data.DataColumn("rank", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnrank);
-                this.columndp_Year = new global::System.Data.DataColumn("dp_Year", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndp_Year);
-                this.columndp_value = new global::System.Data.DataColumn("dp_value", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndp_value);
+                this.columndp_legend = new global::System.Data.DataColumn("dp_legend", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndp_legend);
                 this.columndp_target = new global::System.Data.DataColumn("dp_target", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndp_target);
-                this.columntarget_for_column = new global::System.Data.DataColumn("target_for_column", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntarget_for_column);
+                this.columndp_value = new global::System.Data.DataColumn("dp_value", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndp_value);
+                this.columntarget = new global::System.Data.DataColumn("target", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntarget);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1426,6 +1456,23 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string strategy_objective_rank {
+                get {
+                    try {
+                        return ((string)(this[this.tabledeliveryprogram_chart.strategy_objective_rankColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strategy_objective_rank\' in table \'deliveryprogram_chart\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledeliveryprogram_chart.strategy_objective_rankColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string strategy_objective_id {
                 get {
                     try {
@@ -1455,6 +1502,22 @@ namespace NSCOperationalPlan {
                 }
                 set {
                     this[this.tabledeliveryprogram_chart.strategy_objectiveColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string strategy_rank {
+                get {
+                    try {
+                        return ((string)(this[this.tabledeliveryprogram_chart.strategy_rankColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'strategy_rank\' in table \'deliveryprogram_chart\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledeliveryprogram_chart.strategy_rankColumn] = value;
                 }
             }
             
@@ -1622,33 +1685,17 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string dp_Year {
+            public string dp_legend {
                 get {
                     try {
-                        return ((string)(this[this.tabledeliveryprogram_chart.dp_YearColumn]));
+                        return ((string)(this[this.tabledeliveryprogram_chart.dp_legendColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'dp_Year\' in table \'deliveryprogram_chart\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'dp_legend\' in table \'deliveryprogram_chart\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledeliveryprogram_chart.dp_YearColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string dp_value {
-                get {
-                    try {
-                        return ((string)(this[this.tabledeliveryprogram_chart.dp_valueColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'dp_value\' in table \'deliveryprogram_chart\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledeliveryprogram_chart.dp_valueColumn] = value;
+                    this[this.tabledeliveryprogram_chart.dp_legendColumn] = value;
                 }
             }
             
@@ -1670,18 +1717,33 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double target_for_column {
+            public string dp_value {
                 get {
                     try {
-                        return ((double)(this[this.tabledeliveryprogram_chart.target_for_columnColumn]));
+                        return ((string)(this[this.tabledeliveryprogram_chart.dp_valueColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'target_for_column\' in table \'deliveryprogram_chart\' is DBNu" +
-                                "ll.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'dp_value\' in table \'deliveryprogram_chart\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledeliveryprogram_chart.target_for_columnColumn] = value;
+                    this[this.tabledeliveryprogram_chart.dp_valueColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double target {
+                get {
+                    try {
+                        return ((double)(this[this.tabledeliveryprogram_chart.targetColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'target\' in table \'deliveryprogram_chart\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledeliveryprogram_chart.targetColumn] = value;
                 }
             }
             
@@ -1747,6 +1809,18 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isstrategy_objective_rankNull() {
+                return this.IsNull(this.tabledeliveryprogram_chart.strategy_objective_rankColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setstrategy_objective_rankNull() {
+                this[this.tabledeliveryprogram_chart.strategy_objective_rankColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Isstrategy_objective_idNull() {
                 return this.IsNull(this.tabledeliveryprogram_chart.strategy_objective_idColumn);
             }
@@ -1767,6 +1841,18 @@ namespace NSCOperationalPlan {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setstrategy_objectiveNull() {
                 this[this.tabledeliveryprogram_chart.strategy_objectiveColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isstrategy_rankNull() {
+                return this.IsNull(this.tabledeliveryprogram_chart.strategy_rankColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setstrategy_rankNull() {
+                this[this.tabledeliveryprogram_chart.strategy_rankColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1891,26 +1977,14 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isdp_YearNull() {
-                return this.IsNull(this.tabledeliveryprogram_chart.dp_YearColumn);
+            public bool Isdp_legendNull() {
+                return this.IsNull(this.tabledeliveryprogram_chart.dp_legendColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setdp_YearNull() {
-                this[this.tabledeliveryprogram_chart.dp_YearColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isdp_valueNull() {
-                return this.IsNull(this.tabledeliveryprogram_chart.dp_valueColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setdp_valueNull() {
-                this[this.tabledeliveryprogram_chart.dp_valueColumn] = global::System.Convert.DBNull;
+            public void Setdp_legendNull() {
+                this[this.tabledeliveryprogram_chart.dp_legendColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1927,14 +2001,26 @@ namespace NSCOperationalPlan {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Istarget_for_columnNull() {
-                return this.IsNull(this.tabledeliveryprogram_chart.target_for_columnColumn);
+            public bool Isdp_valueNull() {
+                return this.IsNull(this.tabledeliveryprogram_chart.dp_valueColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Settarget_for_columnNull() {
-                this[this.tabledeliveryprogram_chart.target_for_columnColumn] = global::System.Convert.DBNull;
+            public void Setdp_valueNull() {
+                this[this.tabledeliveryprogram_chart.dp_valueColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IstargetNull() {
+                return this.IsNull(this.tabledeliveryprogram_chart.targetColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SettargetNull() {
+                this[this.tabledeliveryprogram_chart.targetColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -55,22 +55,28 @@ namespace NSCOperationalPlan
         public string Year
         {
             get { return mYear; }
-            set { mYear = value; }
+            set { mYear = value; GetPeriodRank(); }
         }
         public int Month
         {
             get { return mMonth; }
-            set { mMonth = value; }
+            set { mMonth = value; GetPeriodRank(); }
         }
         public double CurrentProgress
         {
             get { return mCurrentProgress; }
             set { mCurrentProgress = value; }
         }
+
+        public int PeriodRank { get; private set; } 
+
         #endregion
 
         #region --- Constrctors ---
-        public StrategyMeasures() { }
+        public StrategyMeasures()
+        {
+
+        }
         public StrategyMeasures(string measureCode, string strategyCode, string year, int month ) : this()
         {
             this.mMeasureCode = measureCode;
@@ -130,6 +136,7 @@ namespace NSCOperationalPlan
             strdct.Add("Month", this.mMonth);
             strdct.Add("Year", this.mYear); 
             strdct.Add("CurrentProgress", this.mCurrentProgress);
+            strdct.Add("PeriodRank", this.PeriodRank);
 
             return strdct;
         }
@@ -164,8 +171,8 @@ namespace NSCOperationalPlan
             Dictionary<string, dynamic> strdct = FillDictionary();
 
             string query = @"INSERT INTO strategy_measure_monthly"
-                + " (strategy_measure_code, strategy_id, year, month, current_result, comment) VALUES"
-                + " (@MeasureCode, @StrategyID, @Year, @Month, @CurrentProgress, @Comment)";
+                + " (strategy_measure_code, strategy_id, year, month, current_result, comment, rank) VALUES"
+                + " (@MeasureCode, @StrategyID, @Year, @Month, @CurrentProgress, @Comment, @PeriodRank )";
             try
             {
                 db.InsertUpdateDeleteRecord(con, trans, query, strdct);
@@ -196,6 +203,11 @@ namespace NSCOperationalPlan
                 throw new Exception(ex.Message + Environment.NewLine + "Data NOT Saved, Please Contact IT");
             }
             return result;
+        }
+
+        private void GetPeriodRank()
+        {
+            this.PeriodRank = OPGlobals.GetStrategyMeasureRank(this.Year, this.Month);
         }
         #endregion
     }

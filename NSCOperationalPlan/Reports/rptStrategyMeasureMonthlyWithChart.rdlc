@@ -94,7 +94,7 @@
                         <Border>
                           <Style>None</Style>
                         </Border>
-                        <VerticalAlign>Top</VerticalAlign>
+                        <VerticalAlign>Bottom</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                       </Style>
@@ -120,7 +120,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>= Fields!strategy_id.Value + " - " + Fields!strategy.Value</Value>
+                              <Value>=Fields!strategy_id.Value + " - " + Fields!strategy.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontWeight>Bold</FontWeight>
@@ -471,7 +471,8 @@ Jun 2021</Value>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=iif(Fields!target_for_column.Value = -1,"TBD",iif(Fields!prefix_short.Value is Nothing,"",Fields!prefix_short.Value) + " " + format(Fields!target_for_column.Value,"###,##0") + iif(Fields!unit_full.Value is Nothing,"", " " + Fields!unit_full.Value))</Value>
+                              <Value>=iif(Fields!target.Value = -1,"TBD",iif(Fields!prefix_short.Value is Nothing,"",Fields!prefix_short.Value) + " " 
++ format(Fields!target.Value,"###,##0") + iif(Fields!unit_full.Value is Nothing,"", " " + Fields!unit_full.Value))</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -509,7 +510,6 @@ Jun 2021</Value>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -528,7 +528,7 @@ Jun 2021</Value>
                                 <Value>=Fields!rank.Value</Value>
                               </SortExpression>
                             </SortExpressions>
-                            <Label>=Fields!dp_Year.Value</Label>
+                            <Label>=Fields!dp_legend.Value</Label>
                           </ChartMember>
                         </ChartMembers>
                       </ChartCategoryHierarchy>
@@ -602,7 +602,7 @@ Jun 2021</Value>
                             <ChartDataPoints>
                               <ChartDataPoint>
                                 <ChartDataPointValues>
-                                  <Y>=Sum(Fields!dp_target.Value)</Y>
+                                  <Y>=iif(First(Fields!dp_target.Value)=-1, Nothing, First(Fields!dp_target.Value))</Y>
                                 </ChartDataPointValues>
                                 <ChartDataLabel>
                                   <Style>
@@ -1059,12 +1059,12 @@ Jun 2021</Value>
                 <TablixMember>
                   <Group Name="strategy_objective_id">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!strategy_objective_id.Value</GroupExpression>
+                      <GroupExpression>=Fields!strategy_objective_rank.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!strategy_objective.Value</Value>
+                      <Value>=Fields!strategy_objective_rank.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
@@ -1141,12 +1141,12 @@ Jun 2021</Value>
                     <TablixMember>
                       <Group Name="strategy_id">
                         <GroupExpressions>
-                          <GroupExpression>=Fields!strategy_id.Value</GroupExpression>
+                          <GroupExpression>=Fields!strategy_rank.Value</GroupExpression>
                         </GroupExpressions>
                       </Group>
                       <SortExpressions>
                         <SortExpression>
-                          <Value>=Fields!strategy.Value</Value>
+                          <Value>=Fields!strategy_rank.Value</Value>
                         </SortExpression>
                       </SortExpressions>
                       <TablixHeader>
@@ -1179,6 +1179,7 @@ Jun 2021</Value>
                               </Border>
                             </Style>
                           </Textbox>
+                          <rd:Selected>true</rd:Selected>
                         </CellContents>
                       </TablixHeader>
                       <TablixMembers>
@@ -1281,12 +1282,20 @@ Jun 2021</Value>
           <DataField>theme_alpha_color</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="strategy_objective_rank">
+          <DataField>strategy_objective_rank</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="strategy_objective_id">
           <DataField>strategy_objective_id</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="strategy_objective">
           <DataField>strategy_objective</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="strategy_rank">
+          <DataField>strategy_rank</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="strategy_id">
@@ -1329,26 +1338,26 @@ Jun 2021</Value>
           <DataField>rank</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="dp_Year">
-          <DataField>dp_Year</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="dp_value">
-          <DataField>dp_value</DataField>
+        <Field Name="dp_legend">
+          <DataField>dp_legend</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="dp_target">
           <DataField>dp_target</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="target_for_column">
-          <DataField>target_for_column</DataField>
+        <Field Name="dp_value">
+          <DataField>dp_value</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="target">
+          <DataField>target</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>OPGlobal</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\perersu\Source\Repos\NSCOperationalPlan\NSCOperationalPlan\OPGlobal.xsd</rd:SchemaPath>
+        <rd:SchemaPath>F:\Repos\NSCOperationalPlan\NSCOperationalPlan\OPGlobal.xsd</rd:SchemaPath>
         <rd:TableName>deliveryprogram_chart</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
