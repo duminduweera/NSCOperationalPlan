@@ -83,6 +83,7 @@
             this.tsbClose.Size = new System.Drawing.Size(40, 51);
             this.tsbClose.Text = "Close";
             this.tsbClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbClose.Click += new System.EventHandler(this.tsbClose_Click);
             // 
             // toolStripSeparator1
             // 

@@ -76,6 +76,8 @@ namespace NSCOperationalPlan
             cboOPYear.DataSource = tb;
             cboOPYear.DisplayMember = "dp_year";
             cboOPYear.ValueMember = "dp_year";
+            cboOPYear.SelectedValue = OPGlobals.currentYear;
+
 
         }
         private void LoadMonths()
@@ -278,5 +280,7 @@ namespace NSCOperationalPlan
             }
             return servicePlanSql;
         }
+
+        
     }
 }

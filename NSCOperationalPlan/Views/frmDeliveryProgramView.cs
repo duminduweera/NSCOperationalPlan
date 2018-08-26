@@ -89,7 +89,7 @@ namespace NSCOperationalPlan
         }
         private void LoadTableFromDatabase()
         {
-            string strsql = "SELECT * FROM view_delivery_program;";
+            string strsql = "SELECT * FROM view_delivery_program where period_rank=2;";
 
             DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
             dgv01.Rows.Clear();

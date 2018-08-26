@@ -247,7 +247,7 @@
             this.tab02.Location = new System.Drawing.Point(4, 27);
             this.tab02.Name = "tab02";
             this.tab02.Padding = new System.Windows.Forms.Padding(3);
-            this.tab02.Size = new System.Drawing.Size(1318, 555);
+            this.tab02.Size = new System.Drawing.Size(1318, 493);
             this.tab02.TabIndex = 1;
             this.tab02.Text = "Effectiveness Measure ";
             // 
@@ -269,7 +269,7 @@
             this.tab03.Controls.Add(this.dgv03);
             this.tab03.Location = new System.Drawing.Point(4, 27);
             this.tab03.Name = "tab03";
-            this.tab03.Size = new System.Drawing.Size(1318, 555);
+            this.tab03.Size = new System.Drawing.Size(1318, 493);
             this.tab03.TabIndex = 2;
             this.tab03.Text = "Workload Measure";
             // 
@@ -337,6 +337,7 @@
             this.txtEffiYear.Name = "txtEffiYear";
             this.txtEffiYear.Size = new System.Drawing.Size(135, 23);
             this.txtEffiYear.TabIndex = 2;
+            this.txtEffiYear.TextChanged += new System.EventHandler(this.txtEffiYear_TextChanged);
             // 
             // txtEffiID
             // 

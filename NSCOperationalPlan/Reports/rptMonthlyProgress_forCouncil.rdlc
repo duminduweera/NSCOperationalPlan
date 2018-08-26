@@ -9,10 +9,10 @@
               <Width>1.62688cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.25167cm</Width>
+              <Width>4.44438cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.1154cm</Width>
+              <Width>2.35353cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.5cm</Width>
@@ -761,7 +761,7 @@
                       </Group>
                       <SortExpressions>
                         <SortExpression>
-                          <Value>=Fields!action_id.Value</Value>
+                          <Value>=Fields!action_rank.Value</Value>
                         </SortExpression>
                       </SortExpressions>
                       <TablixHeader>
@@ -812,7 +812,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Height>2.14396cm</Height>
-        <Width>18.79584cm</Width>
+        <Width>18.22667cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -823,7 +823,7 @@
     <Height>0.84408in</Height>
     <Style />
   </Body>
-  <Width>7.47794in</Width>
+  <Width>7.17586in</Width>
   <Page>
     <PageHeader>
       <Height>0.55562cm</Height>
@@ -883,6 +883,10 @@
           <DataField>service_plan</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="action_rank">
+          <DataField>action_rank</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="action_id">
           <DataField>action_id</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -917,9 +921,9 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>OPGenericDataSet</rd:DataSetName>
-        <rd:SchemaPath>D:\NSCOperationalPlan\NSCOperationalPlan\OPGenericDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>KPMMonthlyProgress</rd:TableName>
+        <rd:DataSetName>OPGlobal</rd:DataSetName>
+        <rd:SchemaPath>F:\Repos\NSCOperationalPlan\NSCOperationalPlan\OPGlobal.xsd</rd:SchemaPath>
+        <rd:TableName>rpt_action</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />

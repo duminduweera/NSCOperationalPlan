@@ -381,7 +381,7 @@ namespace NSCOperationalPlan
             + " if(B.kpi_progress>0, B.kpi_progress,0) as kpi_progress, B.kpi_remark From view_kpi A Left Join"
             + " (Select kpi_progress.kpi_id, kpi_progress.kpi_year, kpi_progress.kpi_month, kpi_progress.kpi_progress, kpi_progress.kpi_remark"
             + " From kpi_progress Where kpi_progress.kpi_year = '" + opYear + "' And kpi_progress.kpi_month = " + opMonth + ") B On A.kpi_id = B.kpi_id"
-            + " WHERE kpi_status = " + true ;
+            + " WHERE kpi_status = " + true  + " and kpi_estimate_year='" + opYear + "'";
             return strsql;
         }
         public static string GetMonthlyKPIProgressQuery(string opYear, int opMonth, string opDirector)

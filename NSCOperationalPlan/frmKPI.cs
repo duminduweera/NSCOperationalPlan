@@ -257,7 +257,7 @@ namespace NSCOperationalPlan
 
                 if (OPGlobals.CurrentUser.Permission == UserRights.Administrator)
                 {
-                    tsbDelete.Enabled = false;
+                    tsbDelete.Enabled = true;
                 }
             } else
             {
@@ -618,7 +618,10 @@ namespace NSCOperationalPlan
             MessageBox.Show(msg, "OP MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        
+        private void txtEffiYear_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }

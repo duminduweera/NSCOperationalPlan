@@ -49,10 +49,10 @@ namespace NSCOperationalPlan
             dct.Add("Directore", 150);            //6
             dct.Add("Manager", 150);               //7
 
-            dct.Add("ServiceID", 50);               //7
-            dct.Add("DirectorID", 50);               //7
-            dct.Add("ManagerID", 50);               //7
-            dct.Add("YTD", 50);
+            dct.Add("ServiceID", 50);               //8
+            dct.Add("DirectorID", 50);               //9
+            dct.Add("ManagerID", 50);               //10
+            dct.Add("YTD", 50);                 //11
 
             int[] hiddenRows = { };
             int[] readonlyrows = {  };
@@ -64,7 +64,7 @@ namespace NSCOperationalPlan
         {
             Database db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
             DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
-            DataTable tb = db.GetDataTable(conn, "SELECT capital_works_id,capital_works_jobno,capital_works_original_budget FROM nsc_operation_plan_17_to_21.capital_works order by capital_works_id;");
+            DataTable tb = db.GetDataTable(conn, "SELECT capital_works_id, capital_works_jobno, capital_works_original_budget FROM nsc_operation_plan_17_to_21.capital_works order by capital_works_id;");
             Dictionary<String, double> CapitalWorks = new Dictionary<string, double>();
 
             foreach (DataRow row in tb.Rows)
@@ -107,8 +107,9 @@ namespace NSCOperationalPlan
                         Dictionary<string, string> userDetails = new Dictionary<string, string>();
                         val = xlRange.Cells[i, 1].Value2.ToString();
                         userDetails = GetManagerID(xlRange.Cells[i, 6].Value2.ToString());
+
                         dg1.Rows.Add(new String[] {
-                            val.Substring(0,9),
+                            val.Trim(),
                             xlRange.Cells[i, 2].Value2.ToString(),
                             xlRange.Cells[i, 3].Value2.ToString(),
                             xlRange.Cells[i, 4].Value2.ToString(),
@@ -123,7 +124,7 @@ namespace NSCOperationalPlan
                 }
             }
             catch (Exception ex) {
-                int x=5;
+                MessageBox.Show(ex.Message);
             }
              pb1.Visible = false;
             //release com objects to fully kill excel process from running in the background
@@ -228,6 +229,9 @@ namespace NSCOperationalPlan
             MessageBox.Show("Capital Work Project has been imported successfully", "OP MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-     
+        private void tsbClose_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

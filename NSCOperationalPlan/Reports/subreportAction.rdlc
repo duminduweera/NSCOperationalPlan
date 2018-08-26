@@ -9,7 +9,7 @@
               <Width>1.62688cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.45792cm</Width>
+              <Width>4.31209cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.1154cm</Width>
@@ -714,7 +714,7 @@
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!action_id.Value</Value>
+                      <Value>=Fields!action_rank.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
@@ -763,7 +763,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Height>2.12063cm</Height>
-        <Width>17.43688cm</Width>
+        <Width>17.29105cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -774,7 +774,7 @@
     <Height>0.83489in</Height>
     <Style />
   </Body>
-  <Width>6.86491in</Width>
+  <Width>6.8075in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
@@ -814,6 +814,10 @@
           <DataField>service_plan</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="action_rank">
+          <DataField>action_rank</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="action_id">
           <DataField>action_id</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -848,9 +852,9 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>OPGenericDataSet</rd:DataSetName>
-        <rd:SchemaPath>D:\NSCOperationalPlan\NSCOperationalPlan\OPGenericDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>KPMMonthlyProgress</rd:TableName>
+        <rd:DataSetName>OPGlobal</rd:DataSetName>
+        <rd:SchemaPath>F:\Repos\NSCOperationalPlan\NSCOperationalPlan\OPGlobal.xsd</rd:SchemaPath>
+        <rd:TableName>rpt_action</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />
