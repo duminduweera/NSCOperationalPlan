@@ -50,6 +50,8 @@
             this.QBRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
             this.reAssignManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuDeliveryProgram = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.progressToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -89,6 +91,9 @@
             this.logBackToPreviousUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.importCPWFromExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmImportFrmExcelCWP = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmImportFrmExcelCWPYTD = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmImportFrmExcelCWPCarryover = new System.Windows.Forms.ToolStripMenuItem();
             this.importSMeasuresFromExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmUnits = new System.Windows.Forms.ToolStripMenuItem();
@@ -110,8 +115,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.mnuDeliveryProgram = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -290,6 +293,19 @@
             this.reAssignManagerToolStripMenuItem.Tag = "A08";
             this.reAssignManagerToolStripMenuItem.Text = "Re-Assign Manager";
             this.reAssignManagerToolStripMenuItem.Click += new System.EventHandler(this.reAssignManagerToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(247, 6);
+            // 
+            // mnuDeliveryProgram
+            // 
+            this.mnuDeliveryProgram.Name = "mnuDeliveryProgram";
+            this.mnuDeliveryProgram.Size = new System.Drawing.Size(250, 22);
+            this.mnuDeliveryProgram.Tag = "A09";
+            this.mnuDeliveryProgram.Text = "Delivery Program";
+            this.mnuDeliveryProgram.Click += new System.EventHandler(this.mnuDeliveryProgram_Click);
             // 
             // toolStripSeparator7
             // 
@@ -608,11 +624,36 @@
             // 
             // importCPWFromExcelToolStripMenuItem
             // 
+            this.importCPWFromExcelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmImportFrmExcelCWP,
+            this.tsmImportFrmExcelCWPYTD,
+            this.tsmImportFrmExcelCWPCarryover});
             this.importCPWFromExcelToolStripMenuItem.Name = "importCPWFromExcelToolStripMenuItem";
             this.importCPWFromExcelToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
             this.importCPWFromExcelToolStripMenuItem.Tag = "D06";
-            this.importCPWFromExcelToolStripMenuItem.Text = "Import CPW from Excel";
+            this.importCPWFromExcelToolStripMenuItem.Text = "CWP Import From Excel";
             this.importCPWFromExcelToolStripMenuItem.Click += new System.EventHandler(this.importCPWFromExcelToolStripMenuItem_Click);
+            // 
+            // tsmImportFrmExcelCWP
+            // 
+            this.tsmImportFrmExcelCWP.Name = "tsmImportFrmExcelCWP";
+            this.tsmImportFrmExcelCWP.Size = new System.Drawing.Size(164, 22);
+            this.tsmImportFrmExcelCWP.Text = "Full Program";
+            this.tsmImportFrmExcelCWP.Click += new System.EventHandler(this.fullProgramToolStripMenuItem_Click);
+            // 
+            // tsmImportFrmExcelCWPYTD
+            // 
+            this.tsmImportFrmExcelCWPYTD.Name = "tsmImportFrmExcelCWPYTD";
+            this.tsmImportFrmExcelCWPYTD.Size = new System.Drawing.Size(164, 22);
+            this.tsmImportFrmExcelCWPYTD.Text = "Import YTD";
+            this.tsmImportFrmExcelCWPYTD.Click += new System.EventHandler(this.tsmImportFrmExcelCWPYTD_Click);
+            // 
+            // tsmImportFrmExcelCWPCarryover
+            // 
+            this.tsmImportFrmExcelCWPCarryover.Name = "tsmImportFrmExcelCWPCarryover";
+            this.tsmImportFrmExcelCWPCarryover.Size = new System.Drawing.Size(164, 22);
+            this.tsmImportFrmExcelCWPCarryover.Text = "Import Carryover";
+            this.tsmImportFrmExcelCWPCarryover.Click += new System.EventHandler(this.tsmImportFrmExcelCWPCarryover_Click);
             // 
             // importSMeasuresFromExcelToolStripMenuItem
             // 
@@ -851,19 +892,6 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // mnuDeliveryProgram
-            // 
-            this.mnuDeliveryProgram.Name = "mnuDeliveryProgram";
-            this.mnuDeliveryProgram.Size = new System.Drawing.Size(250, 22);
-            this.mnuDeliveryProgram.Tag = "A09";
-            this.mnuDeliveryProgram.Text = "Delivery Program";
-            this.mnuDeliveryProgram.Click += new System.EventHandler(this.mnuDeliveryProgram_Click);
-            // 
-            // toolStripSeparator11
-            // 
-            this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(247, 6);
-            // 
             // frmOperationPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -979,6 +1007,9 @@
         private System.Windows.Forms.ToolStripMenuItem tsmUnits;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
         private System.Windows.Forms.ToolStripMenuItem mnuDeliveryProgram;
+        private System.Windows.Forms.ToolStripMenuItem tsmImportFrmExcelCWP;
+        private System.Windows.Forms.ToolStripMenuItem tsmImportFrmExcelCWPYTD;
+        private System.Windows.Forms.ToolStripMenuItem tsmImportFrmExcelCWPCarryover;
     }
 }
 

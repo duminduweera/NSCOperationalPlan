@@ -176,18 +176,19 @@ namespace NSCOperationalPlan
                 DataRowView dr1 = (DataRowView)cboDirector.SelectedItem;
                 DataRowView dr2 = (DataRowView)cboManager.SelectedItem;
 
-                if(dr2 != null)
+                strsql += " WHERE A.cpw_year ='" + OPGlobals.currentYear + "'";
+                if (dr2 != null)
                 {
-                    strsql += " WHERE cpw_manager_id ='" + dr2["manager_id"].ToString() + "'";
+                    strsql += " AND  cpw_manager_id ='" + dr2["manager_id"].ToString() + "'";
                 } else
                 {
                     if (opt0.Checked)
                     {
-                        strsql += " WHERE cpw_manager_id ='" + OPGlobals.CurrentUser.ManagerID + "'";
+                        strsql += " AND cpw_manager_id ='" + OPGlobals.CurrentUser.ManagerID + "'";
                     }
                     else if (opt1.Checked)
                     {
-                        strsql += " WHERE director_id ='" + OPGlobals.CurrentUser.DirectorID + "'";
+                        strsql += " AND director_id ='" + OPGlobals.CurrentUser.DirectorID + "'";
                     }
                 }
 

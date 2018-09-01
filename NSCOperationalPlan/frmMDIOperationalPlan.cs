@@ -432,9 +432,7 @@ namespace NSCOperationalPlan
 
         private void importCPWFromExcelToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmImportCPWfromExcel frmImportCPW = new frmImportCPWfromExcel();
-            ArrangeForm(frmImportCPW);
-            frmImportCPW.ShowDialog();
+            
         }
 
         private void mnuRptCouncilSource_Click(object sender, EventArgs e)
@@ -533,6 +531,27 @@ namespace NSCOperationalPlan
             frmDeliveryProgramView frm1 = new frmDeliveryProgramView();
             ArrangeForm(frm1);
             frm1.ShowDialog();
+        }
+
+        private void fullProgramToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmImportCPWfromExcel frmImportCPW = new frmImportCPWfromExcel();
+            ArrangeForm(frmImportCPW);
+            frmImportCPW.ShowDialog();
+        }
+
+        private void tsmImportFrmExcelCWPYTD_Click(object sender, EventArgs e)
+        {
+            frmCPWYTDImportFromExcel frmImportCPW = new frmCPWYTDImportFromExcel();
+            ArrangeForm(frmImportCPW);
+            frmImportCPW.ShowDialog();
+        }
+
+        private void tsmImportFrmExcelCWPCarryover_Click(object sender, EventArgs e)
+        {
+            frmCPWCarryOverFromExcel frmImportCPW = new frmCPWCarryOverFromExcel();
+            ArrangeForm(frmImportCPW);
+            frmImportCPW.ShowDialog();
         }
 
         #endregion

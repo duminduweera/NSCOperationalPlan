@@ -95,8 +95,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Referenced Assemblies\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
-    <Reference Include="MyDBFactory, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="MyDBFactory">
       <HintPath>..\Referenced Assemblies\MyDBFactory.dll</HintPath>
     </Reference>
     <Reference Include="MyGridUtils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -138,6 +137,18 @@
     <Compile Include="clsReports.cs" />
     <Compile Include="clsUser.cs" />
     <Compile Include="dbjoin.cs" />
+    <Compile Include="CapitalWorkProgram\frmCPWCarryOverFromExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapitalWorkProgram\frmCPWCarryOverFromExcel.Designer.cs">
+      <DependentUpon>frmCPWCarryOverFromExcel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapitalWorkProgram\frmCPWYTDImportFromExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapitalWorkProgram\frmCPWYTDImportFromExcel.Designer.cs">
+      <DependentUpon>frmCPWYTDImportFromExcel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\frmDeliveryProgramView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,34 +179,34 @@
     <Compile Include="frmCouncilReport.Designer.cs">
       <DependentUpon>frmCouncilReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCPW.cs">
+    <Compile Include="CapitalWorkProgram\frmCPW.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCPW.Designer.cs">
+    <Compile Include="CapitalWorkProgram\frmCPW.Designer.cs">
       <DependentUpon>frmCPW.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCPWMonthly.cs">
+    <Compile Include="CapitalWorkProgram\frmCPWMonthly.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCPWMonthly.Designer.cs">
+    <Compile Include="CapitalWorkProgram\frmCPWMonthly.Designer.cs">
       <DependentUpon>frmCPWMonthly.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCPWQuartelyUpdate.cs">
+    <Compile Include="CapitalWorkProgram\frmCPWQuartelyUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCPWQuartelyUpdate.Designer.cs">
+    <Compile Include="CapitalWorkProgram\frmCPWQuartelyUpdate.Designer.cs">
       <DependentUpon>frmCPWQuartelyUpdate.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCPWRPTSummary.cs">
+    <Compile Include="CapitalWorkProgram\frmCPWRPTSummary.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCPWRPTSummary.Designer.cs">
+    <Compile Include="CapitalWorkProgram\frmCPWRPTSummary.Designer.cs">
       <DependentUpon>frmCPWRPTSummary.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCPWYTDActuals.cs">
+    <Compile Include="CapitalWorkProgram\frmCPWYTDActuals.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCPWYTDActuals.Designer.cs">
+    <Compile Include="CapitalWorkProgram\frmCPWYTDActuals.Designer.cs">
       <DependentUpon>frmCPWYTDActuals.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDashBoard2.cs">
@@ -356,6 +367,12 @@
     <Compile Include="Settings.cs" />
     <Compile Include="StrategyMeasures.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <EmbeddedResource Include="CapitalWorkProgram\frmCPWCarryOverFromExcel.resx">
+      <DependentUpon>frmCPWCarryOverFromExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapitalWorkProgram\frmCPWYTDImportFromExcel.resx">
+      <DependentUpon>frmCPWYTDImportFromExcel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\frmDeliveryProgramView.resx">
       <DependentUpon>frmDeliveryProgramView.cs</DependentUpon>
     </EmbeddedResource>
@@ -372,19 +389,19 @@
     <EmbeddedResource Include="frmCouncilReport.resx">
       <DependentUpon>frmCouncilReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCPW.resx">
+    <EmbeddedResource Include="CapitalWorkProgram\frmCPW.resx">
       <DependentUpon>frmCPW.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCPWMonthly.resx">
+    <EmbeddedResource Include="CapitalWorkProgram\frmCPWMonthly.resx">
       <DependentUpon>frmCPWMonthly.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCPWQuartelyUpdate.resx">
+    <EmbeddedResource Include="CapitalWorkProgram\frmCPWQuartelyUpdate.resx">
       <DependentUpon>frmCPWQuartelyUpdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCPWRPTSummary.resx">
+    <EmbeddedResource Include="CapitalWorkProgram\frmCPWRPTSummary.resx">
       <DependentUpon>frmCPWRPTSummary.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCPWYTDActuals.resx">
+    <EmbeddedResource Include="CapitalWorkProgram\frmCPWYTDActuals.resx">
       <DependentUpon>frmCPWYTDActuals.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDashBoard2.resx">
@@ -655,6 +672,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="edit.ico" />
+    <Content Include="External References\DatabaseFactory.dll" />
     <Content Include="External References\DataGridviewCalendarColumn.dll" />
     <Content Include="Notes.txt" />
     <Content Include="nsc.ico" />
