@@ -215,10 +215,10 @@
     <Compile Include="frmDashBoard2.Designer.cs">
       <DependentUpon>frmDashBoard2.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmImportCPWfromExcel.cs">
+    <Compile Include="CapitalWorkProgram\frmImportCPWfromExcel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmImportCPWfromExcel.Designer.cs">
+    <Compile Include="CapitalWorkProgram\frmImportCPWfromExcel.Designer.cs">
       <DependentUpon>frmImportCPWfromExcel.cs</DependentUpon>
     </Compile>
     <Compile Include="frmImportStartegyMeasuresfromExcel.cs">
@@ -407,7 +407,7 @@
     <EmbeddedResource Include="frmDashBoard2.resx">
       <DependentUpon>frmDashBoard2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmImportCPWfromExcel.resx">
+    <EmbeddedResource Include="CapitalWorkProgram\frmImportCPWfromExcel.resx">
       <DependentUpon>frmImportCPWfromExcel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmImportStartegyMeasuresfromExcel.resx">

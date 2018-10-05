@@ -80,10 +80,13 @@ namespace NSCOperationalPlan
             {
                 for (int i = 2; i <= rowCount; i++)
                 {
-                    dg1.Rows.Add(new String[] {
+                    if(xlRange.Cells[i, 2].Value2 != null)
+                    {
+                        dg1.Rows.Add(new String[] {
                             xlRange.Cells[i, 1].Value2.ToString(),
                             xlRange.Cells[i, 2].Value2.ToString()
                         });
+                    }
                 }
             }
             catch (Exception ex)

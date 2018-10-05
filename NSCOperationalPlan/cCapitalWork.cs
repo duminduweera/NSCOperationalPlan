@@ -789,13 +789,15 @@ namespace NSCOperationalPlan
 
             string strsql = GetSQLCapitalWorksMonthlyProgress(cpw_year, cpw_month);
 
+            strsql = strsql + " WHERE cpw_year = '" + cpw_year + "'";
+
             if (string.IsNullOrEmpty(managerId) || managerId == "-0-")
             {
-                strsql = strsql + " WHERE director_id = '" + directorId + "'";
+                strsql = strsql + " AND director_id = '" + directorId + "'";
             }
             else
             {
-                strsql = strsql + " WHERE director_id = '" + directorId + "' AND cpw_manager_id = '" + managerId + "'";
+                strsql = strsql + " AND director_id = '" + directorId + "' AND cpw_manager_id = '" + managerId + "'";
             }
 
             DataTable tb = db.GetDataTable(conn, strsql);

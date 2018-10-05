@@ -86,7 +86,7 @@ namespace NSCOperationalPlan
                 if (AD_INTERGRATE)
                 {
                     //NSCUtils.ADUser u = new NSCUtils.ADUser("masonli");
-                    //NSCUtils.ADUser u = new NSCUtils.ADUser("rossni");
+                    //NSCUtils.ADUser u = new NSCUtils.ADUser("farregr");
                     //mccleti
                     NSCUtils.ADUser u = new ADUser();
                     if (string.IsNullOrEmpty(u.UserName))
@@ -254,9 +254,12 @@ namespace NSCOperationalPlan
             bool mRetVal = false;
             Database db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
             DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
+            DataTable tb, tb2;
+            string mUserPermission, strsql;
 
-            string strsql = "SELECT * FROM manager WHERE manager_subdept = '" + division + "';";
-            DataTable tb = db.GetDataTable(conn, strsql);
+            strsql = "SELECT * FROM manager WHERE manager_subdept = '" + division + "';";
+            tb = db.GetDataTable(conn, strsql);
+
 
             if (tb.Rows.Count > 0)
             {
@@ -264,7 +267,16 @@ namespace NSCOperationalPlan
                 user.DirectorID = tb.Rows[0]["manager_id"].ToString();
                 user.ManagerID = tb.Rows[0]["id"].ToString();
 
-                string mUserPermission = tb.Rows[0]["manager_permission"].ToString();
+                strsql = "SELECT * FROM manager WHERE manager_login_name = '" + user.UserID + "';";
+                tb2 = db.GetDataTable(conn, strsql);
+                if (tb2.Rows.Count > 0)
+                {
+                    mUserPermission = tb2.Rows[0]["manager_permission"].ToString();
+
+                } else
+                {
+                    mUserPermission = tb.Rows[0]["manager_permission"].ToString();
+                }
 
                 user.Permission = (UserRights) int.Parse(mUserPermission);
                 if(user.LoginName == tb.Rows[0]["manager_login_name"].ToString())
