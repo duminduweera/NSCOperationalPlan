@@ -116,7 +116,7 @@ namespace NSCOperationalPlan
             DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
             dgv01.Rows.Clear();
             dgv01.Refresh();
-            cboServicePlan.SelectedIndex = 0;
+            //cboServicePlan.SelectedIndex = 0;
             //DataRowView row1 = (DataRowView)cboDirector.SelectedItem;
             //DataRowView row2 = (DataRowView)cboManager.SelectedItem;
             try

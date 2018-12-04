@@ -39,6 +39,8 @@
             this.pb1 = new System.Windows.Forms.ProgressBar();
             this.dg1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,6 +48,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txt1 = new System.Windows.Forms.TextBox();
+            this.txt2 = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -62,7 +68,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(449, 54);
+            this.toolStrip1.Size = new System.Drawing.Size(507, 54);
             this.toolStrip1.TabIndex = 67;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -134,12 +140,14 @@
             this.dg1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg1.Location = new System.Drawing.Point(12, 231);
             this.dg1.Name = "dg1";
-            this.dg1.Size = new System.Drawing.Size(426, 564);
+            this.dg1.Size = new System.Drawing.Size(481, 538);
             this.dg1.TabIndex = 69;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Info;
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.label3);
@@ -148,8 +156,32 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(5, 57);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(433, 125);
+            this.panel1.Size = new System.Drawing.Size(491, 125);
             this.panel1.TabIndex = 68;
+            // 
+            // label6
+            // 
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(303, 88);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(130, 23);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "0.00";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.SystemColors.GrayText;
+            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.Control;
+            this.label7.Location = new System.Drawing.Point(303, 65);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(130, 23);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Revised Budget";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label14
             // 
@@ -206,7 +238,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.Location = new System.Drawing.Point(22, 39);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(399, 22);
+            this.label5.Size = new System.Drawing.Size(457, 22);
             this.label5.TabIndex = 1;
             this.label5.Text = "Before you import from Excel, please make sure all Coulmns are in following order" +
     "";
@@ -219,7 +251,7 @@
             this.label4.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label4.Location = new System.Drawing.Point(3, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(427, 28);
+            this.label4.Size = new System.Drawing.Size(485, 28);
             this.label4.TabIndex = 0;
             this.label4.Text = "Import from Excel";
             // 
@@ -227,11 +259,47 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(7, 784);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(62, 13);
+            this.label8.TabIndex = 73;
+            this.label8.Text = "YTD Total :";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(240, 784);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(79, 13);
+            this.label9.TabIndex = 73;
+            this.label9.Text = "Revised Total :";
+            // 
+            // txt1
+            // 
+            this.txt1.Location = new System.Drawing.Point(75, 782);
+            this.txt1.Name = "txt1";
+            this.txt1.Size = new System.Drawing.Size(100, 20);
+            this.txt1.TabIndex = 74;
+            // 
+            // txt2
+            // 
+            this.txt2.Location = new System.Drawing.Point(325, 782);
+            this.txt2.Name = "txt2";
+            this.txt2.Size = new System.Drawing.Size(100, 20);
+            this.txt2.TabIndex = 74;
+            // 
             // frmCPWYTDImportFromExcel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(449, 806);
+            this.ClientSize = new System.Drawing.Size(507, 806);
+            this.Controls.Add(this.txt2);
+            this.Controls.Add(this.txt1);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.txtRows);
             this.Controls.Add(this.label1);
@@ -268,5 +336,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txt1;
+        private System.Windows.Forms.TextBox txt2;
     }
 }

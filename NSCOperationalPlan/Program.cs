@@ -86,7 +86,7 @@ namespace NSCOperationalPlan
                 if (AD_INTERGRATE)
                 {
                     //NSCUtils.ADUser u = new NSCUtils.ADUser("masonli");
-                    //NSCUtils.ADUser u = new NSCUtils.ADUser("farregr");
+                    //NSCUtils.ADUser u = new NSCUtils.ADUser("henrymi");
                     //mccleti
                     NSCUtils.ADUser u = new ADUser();
                     if (string.IsNullOrEmpty(u.UserName))
