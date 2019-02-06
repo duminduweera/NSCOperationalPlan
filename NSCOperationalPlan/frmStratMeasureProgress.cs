@@ -25,9 +25,17 @@ namespace NSCOperationalPlan
         }
         private void frmStratMeasureProgress_Load(object sender, EventArgs e)
         {
+            if(mStartegyMEasureMonth == 6)
+            {
+                lblMonth.Text = "Strategy Measure Progress to date upto "
+                    + Enum.GetName(typeof(Months), mStartegyMEasureMonth) + " 20" + OPGlobals.currentYear.Substring(3, 2);
+
+            } else
+            {
+                lblMonth.Text = "Strategy Measure Progress to date upto "
+                    + Enum.GetName(typeof(Months), mStartegyMEasureMonth) + " 20" + OPGlobals.currentYear.Substring(0, 2);
+            }
             //--- Update Information Box ---
-            lblMonth.Text = "Strategy Measure Progress to date upto "
-                + Enum.GetName(typeof(Months), mStartegyMEasureMonth) + " 20" + OPGlobals.currentYear.Substring(3, 2);
             //=============================
             ArrangeScreen();
             ArrangeDataGridView();
