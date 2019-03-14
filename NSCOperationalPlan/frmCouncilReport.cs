@@ -31,7 +31,7 @@ namespace NSCOperationalPlan
                 {"1", "Actions by Month" },
                 {"2", "Capital Work by Month" },
                 {"3", "Key Performance Measures by Month" },
-                {"4", "Sub Reporting" }
+                {"4", "Quarterly Report Format (Actions/KPM/CWP)" }
             };
 
             cboReportType.DataSource = new BindingSource(t, null);
