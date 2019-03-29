@@ -130,13 +130,24 @@ namespace NSCOperationalPlan
 
             strsql = yrs + strsql;
 
+            //strsql = "SELECT DISTINCT Concat_Ws(' - ', theme_id, theme_short) AS theme_id, theme_color AS theme_color, strategy_objective_id AS strategy_objective_id,"
+            //    + " strategy_objective AS strategy_objective, view_strategy.strategy_id AS strategy_id, strategy AS strategy, action.id AS action_id,"
+            //    + " Concat_Ws(' - ', action.id, action.action_description) AS action, action.action_partner_org AS action_partner_org, "
+            //    + " manager.manager_description AS manager_name, delivery_program.delivery_program_year AS delivery_program_year, manager.id AS manager_id,"
+            //    + " manager.manager_id AS director_id FROM"
+            //    + " ((view_strategy LEFT JOIN action ON view_strategy.strategy_id = action.strategy_id)"
+            //    + " JOIN manager ON action.manager_id = manager.id) LEFT JOIN delivery_program ON delivery_program.action_id = action.id " + strsql
+            //    + " ORDER BY theme_id, view_strategy.strategy_rank, action.action_rank";
+
+
             strsql = "SELECT DISTINCT Concat_Ws(' - ', theme_id, theme_short) AS theme_id, theme_color AS theme_color, strategy_objective_id AS strategy_objective_id,"
                 + " strategy_objective AS strategy_objective, view_strategy.strategy_id AS strategy_id, strategy AS strategy, action.id AS action_id,"
-                + " Concat_Ws(' - ', action.id, action.action_description) AS action, action.action_partner_org AS action_partner_org, "
+                + " Concat_Ws(' - ', action.id, action.action_description) AS action, action.action_partner_org AS action_partner_org,"
                 + " manager.manager_description AS manager_name, delivery_program.delivery_program_year AS delivery_program_year, manager.id AS manager_id,"
-                + " manager.manager_id AS director_id FROM"
+                + " manager.manager_id AS director_id, council_plan.council_plan_short, council_plan.council_plan_full FROM"
                 + " ((view_strategy LEFT JOIN action ON view_strategy.strategy_id = action.strategy_id)"
-                + " JOIN manager ON action.manager_id = manager.id) LEFT JOIN delivery_program ON delivery_program.action_id = action.id " + strsql
+                + " JOIN manager ON action.manager_id = manager.id) LEFT JOIN delivery_program ON delivery_program.action_id = action.id"
+                + " INNER JOIN council_plan ON council_plan.council_plan_id = action.council_plan_id " + strsql
                 + " ORDER BY theme_id, view_strategy.strategy_rank, action.action_rank";
 
 

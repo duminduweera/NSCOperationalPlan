@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="nsc_operation_planDataSet1">
@@ -21,6 +21,10 @@
           <DataField>theme_id</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="theme_color">
+          <DataField>theme_color</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="strategy_objective_id">
           <DataField>strategy_objective_id</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -37,8 +41,8 @@
           <DataField>strategy</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="delivery_program_year">
-          <DataField>delivery_program_year</DataField>
+        <Field Name="id">
+          <DataField>id</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="action">
@@ -53,16 +57,12 @@
           <DataField>manager_name</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="council_plan_short">
-          <DataField>council_plan_short</DataField>
+        <Field Name="delivery_program_year">
+          <DataField>delivery_program_year</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="council_plan_full">
-          <DataField>council_plan_full</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="theme_color">
-          <DataField>theme_color</DataField>
+        <Field Name="manager_id">
+          <DataField>manager_id</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="director_id">
@@ -75,12 +75,12 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>OPGlobal</rd:DataSetName>
-        <rd:SchemaPath>F:\Repos\NSCOperationalPlan\NSCOperationalPlan\OPGlobal.xsd</rd:SchemaPath>
-        <rd:TableName>ActionRptWithSourcePlan</rd:TableName>
-        <rd:TableAdapterFillMethod />
-        <rd:TableAdapterGetDataMethod />
-        <rd:TableAdapterName />
+        <rd:DataSetName>nsc_operation_planDataSet1</rd:DataSetName>
+        <rd:SchemaPath>F:\VisualStudioProjects\DesktopApplications\NSCOperationalPlan\NSCOperationalPlan\nsc_operation_planDataSet1.xsd</rd:SchemaPath>
+        <rd:TableName>view_action_report_tmp</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>view_action_report_tmpTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -196,7 +196,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Source Plan</Value>
+                                  <Value>Partner Org</Value>
                                   <Style>
                                     <FontFamily>Tahoma</FontFamily>
                                     <FontSize>11pt</FontSize>
@@ -552,14 +552,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="council_plan_short">
+                        <Textbox Name="action_partner_org">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!council_plan_short.Value</Value>
+                                  <Value>=Fields!action_partner_org.Value</Value>
                                   <Style>
                                     <FontFamily>Tahoma</FontFamily>
                                     <Color>#4d4d4d</Color>
@@ -571,7 +571,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>council_plan_short</rd:DefaultName>
+                          <rd:DefaultName>action_partner_org</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>#e5e5e5</Color>

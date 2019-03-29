@@ -81,6 +81,26 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="ActionRptWithSourcePlan" msprop:Generator_TableClassName="ActionRptWithSourcePlanDataTable" msprop:Generator_TableVarName="tableActionRptWithSourcePlan" msprop:Generator_RowChangedName="ActionRptWithSourcePlanRowChanged" msprop:Generator_TablePropName="ActionRptWithSourcePlan" msprop:Generator_RowDeletingName="ActionRptWithSourcePlanRowDeleting" msprop:Generator_RowChangingName="ActionRptWithSourcePlanRowChanging" msprop:Generator_RowEvHandlerName="ActionRptWithSourcePlanRowChangeEventHandler" msprop:Generator_RowDeletedName="ActionRptWithSourcePlanRowDeleted" msprop:Generator_RowClassName="ActionRptWithSourcePlanRow" msprop:Generator_UserTableName="ActionRptWithSourcePlan" msprop:Generator_RowEvArgName="ActionRptWithSourcePlanRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="theme_id" msprop:Generator_ColumnVarNameInTable="columntheme_id" msprop:Generator_ColumnPropNameInRow="theme_id" msprop:Generator_ColumnPropNameInTable="theme_idColumn" msprop:Generator_UserColumnName="theme_id" type="xs:string" minOccurs="0" />
+              <xs:element name="strategy_objective_id" msprop:Generator_ColumnVarNameInTable="columnstrategy_objective_id" msprop:Generator_ColumnPropNameInRow="strategy_objective_id" msprop:Generator_ColumnPropNameInTable="strategy_objective_idColumn" msprop:Generator_UserColumnName="strategy_objective_id" type="xs:string" minOccurs="0" />
+              <xs:element name="strategy_objective" msprop:Generator_ColumnVarNameInTable="columnstrategy_objective" msprop:Generator_ColumnPropNameInRow="strategy_objective" msprop:Generator_ColumnPropNameInTable="strategy_objectiveColumn" msprop:Generator_UserColumnName="strategy_objective" type="xs:string" minOccurs="0" />
+              <xs:element name="strategy_id" msprop:Generator_ColumnVarNameInTable="columnstrategy_id" msprop:Generator_ColumnPropNameInRow="strategy_id" msprop:Generator_ColumnPropNameInTable="strategy_idColumn" msprop:Generator_UserColumnName="strategy_id" type="xs:string" minOccurs="0" />
+              <xs:element name="strategy" msprop:Generator_ColumnVarNameInTable="columnstrategy" msprop:Generator_ColumnPropNameInRow="strategy" msprop:Generator_ColumnPropNameInTable="strategyColumn" msprop:Generator_UserColumnName="strategy" type="xs:string" minOccurs="0" />
+              <xs:element name="delivery_program_year" msprop:Generator_ColumnVarNameInTable="columndelivery_program_year" msprop:Generator_ColumnPropNameInRow="delivery_program_year" msprop:Generator_ColumnPropNameInTable="delivery_program_yearColumn" msprop:Generator_UserColumnName="delivery_program_year" type="xs:string" minOccurs="0" />
+              <xs:element name="action" msprop:Generator_ColumnVarNameInTable="columnaction" msprop:Generator_ColumnPropNameInRow="action" msprop:Generator_ColumnPropNameInTable="actionColumn" msprop:Generator_UserColumnName="action" type="xs:string" minOccurs="0" />
+              <xs:element name="action_partner_org" msprop:Generator_ColumnVarNameInTable="columnaction_partner_org" msprop:Generator_ColumnPropNameInRow="action_partner_org" msprop:Generator_ColumnPropNameInTable="action_partner_orgColumn" msprop:Generator_UserColumnName="action_partner_org" type="xs:string" minOccurs="0" />
+              <xs:element name="manager_name" msprop:Generator_ColumnVarNameInTable="columnmanager_name" msprop:Generator_ColumnPropNameInRow="manager_name" msprop:Generator_ColumnPropNameInTable="manager_nameColumn" msprop:Generator_UserColumnName="manager_name" type="xs:string" minOccurs="0" />
+              <xs:element name="council_plan_short" msprop:Generator_ColumnVarNameInTable="columncouncil_plan_short" msprop:Generator_ColumnPropNameInRow="council_plan_short" msprop:Generator_ColumnPropNameInTable="council_plan_shortColumn" msprop:Generator_UserColumnName="council_plan_short" type="xs:string" minOccurs="0" />
+              <xs:element name="council_plan_full" msprop:Generator_ColumnVarNameInTable="columncouncil_plan_full" msprop:Generator_ColumnPropNameInRow="council_plan_full" msprop:Generator_ColumnPropNameInTable="council_plan_fullColumn" msprop:Generator_UserColumnName="council_plan_full" type="xs:string" minOccurs="0" />
+              <xs:element name="theme_color" msprop:Generator_ColumnVarNameInTable="columntheme_color" msprop:Generator_ColumnPropNameInRow="theme_color" msprop:Generator_ColumnPropNameInTable="theme_colorColumn" msprop:Generator_UserColumnName="theme_color" type="xs:string" minOccurs="0" />
+              <xs:element name="director_id" msprop:Generator_ColumnVarNameInTable="columndirector_id" msprop:Generator_ColumnPropNameInRow="director_id" msprop:Generator_ColumnPropNameInTable="director_idColumn" msprop:Generator_UserColumnName="director_id" type="xs:string" minOccurs="0" />
+              <xs:element name="director_name" msprop:Generator_ColumnVarNameInTable="columndirector_name" msprop:Generator_ColumnPropNameInRow="director_name" msprop:Generator_ColumnPropNameInTable="director_nameColumn" msprop:Generator_UserColumnName="director_name" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>
