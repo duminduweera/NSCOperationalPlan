@@ -18,6 +18,8 @@ namespace NSCOperationalPlan
     public partial class frmCPWYTDImportFromExcel : Form
     {
         Database db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
+        int ErrorCount;
+        string ErrorMessage;
 
         public frmCPWYTDImportFromExcel()
         {
@@ -58,6 +60,8 @@ namespace NSCOperationalPlan
 
         private void ReadFromExcel(string filePath)
         {
+            ErrorCount = 0;
+            ErrorMessage = "";
 
             Excel.Application xlApp = new Excel.Application();
             Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(filePath);
@@ -80,6 +84,8 @@ namespace NSCOperationalPlan
             pb1.Maximum = rowCount;
             pb1.Visible = true;
 
+            dg1.Rows.Clear();
+
             string val;
             try
             {
@@ -101,6 +107,12 @@ namespace NSCOperationalPlan
                         temp = Double.Parse(string.IsNullOrEmpty(xlRange.Cells[i, 3].Value2.ToString()) ? "0" : xlRange.Cells[i, 3].Value2.ToString(),
                                 NumberStyles.AllowCurrencySymbol | NumberStyles.AllowDecimalPoint | NumberStyles.AllowThousands);
                         totRB += temp;
+
+                        if (CapitalWork.IsExist(xlRange.Cells[i, 1].Value2.ToString()) == false)
+                        {
+                            ErrorCount++;
+                            ErrorMessage += "Missing Capital Work (" + xlRange.Cells[i, 1].Value2.ToString() + ")" + Environment.NewLine;
+                        }
                     }
                 }
                 txt1.Text = string.Format("{0:0.#0}", totYTD.ToString());
@@ -126,6 +138,12 @@ namespace NSCOperationalPlan
 
         private void tsbSave_Click(object sender, EventArgs e)
         {
+            if (ErrorCount > 0)
+            {
+                MessageBox.Show(ErrorMessage);
+                return;
+            }
+
             string path = @"\log.txt";
             Dictionary<string, dynamic> dc = new Dictionary<string, dynamic>();
             Dictionary<string, dynamic> dc2 = new Dictionary<string, dynamic>();
@@ -173,5 +191,6 @@ namespace NSCOperationalPlan
             MessageBox.Show("Capital Work Project has been imported successfully", "OP MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        
     }
 }

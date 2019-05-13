@@ -803,5 +803,15 @@ namespace NSCOperationalPlan
             DataTable tb = db.GetDataTable(conn, strsql);
             return tb;
         }
+
+        public static bool IsExist(string projectNumber)
+        {
+            string strsql = "SELECT count(*) as NoofRecs FROM capital_works WHERE capital_works_jobno = '" + projectNumber + "'";
+
+            DbConnection conn = OPGlobals.db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
+            DataTable tb = OPGlobals.db.GetDataTable(conn, strsql);
+
+            return (int.Parse(tb.Rows[0][0].ToString()) > 0) ? true : false;
+        }
     }
 }

@@ -160,10 +160,10 @@ namespace NSCOperationalPlan
             Database db = MyDLLs.MyDBFactory.GetDatabase(OPGlobals.dbProvider);
             DbConnection conn = db.CreateDbConnection(Database.ConnectionType.ConnectionString, OPGlobals.connString);
             DataTable tb = db.GetDataTable(conn, "SELECT * FROM program_settings;");
-            if (aduser.LoginName.Equals("mccleti", StringComparison.OrdinalIgnoreCase)
-                || aduser.LoginName.Equals("ratlesa", StringComparison.OrdinalIgnoreCase)
-                || aduser.LoginName.Equals("perersu", StringComparison.OrdinalIgnoreCase)
-                || aduser.LoginName.Equals("toddste", StringComparison.OrdinalIgnoreCase))
+            if (aduser.LoginName.Equals("timm", StringComparison.OrdinalIgnoreCase)
+                || aduser.LoginName.Equals("samanthar", StringComparison.OrdinalIgnoreCase)
+                || aduser.LoginName.Equals("sudinthap", StringComparison.OrdinalIgnoreCase)
+                || aduser.LoginName.Equals("stewartt", StringComparison.OrdinalIgnoreCase))
             //if (aduser.UserName.Equals("mccleti", StringComparison.InvariantCultureIgnoreCase)
             //    || aduser.UserName.Equals("ratlesa", StringComparison.InvariantCultureIgnoreCase)
             //    || aduser.Permission == UserRights.Administrator)
